@@ -1,35 +1,46 @@
 //
 //  FormationLayoutTests.swift
-//  FormationLayoutTests
+//  FormationLayout
 //
 //  Created by Evan on 18/06/15.
 //  Copyright © 2015 evancoding.com. All rights reserved.
 //
 
 import XCTest
+@testable import FormationLayout
 
 class FormationLayoutTests: XCTestCase {
     
+    var rootView: UIView!
+    var layout: FormationLayout!
+
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        rootView = UIView()
+        layout = FormationLayout(rootView: rootView)
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    // init()
+    func testInit() {
+        // should save rootView
+        XCTAssertEqual(layout.rootView, rootView)
+        
+        // should set translatesAutoresizingMaskIntoConstraints to false
+        XCTAssertEqual(rootView.translatesAutoresizingMaskIntoConstraints, false)
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    // view()
+    func testViewFactoryMethod() {
+        let uiView = UIView()
+        let container = UIView()
+        let fView = layout.view(uiView, container: container)
+
+        // should add view to container
+        XCTAssertEqual(uiView.superview!, container)
+        
+        // should pass uiView
+        XCTAssertEqual(fView.view, uiView)
+        XCTAssertEqual(layout.view(uiView).view, uiView)
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
+
 }

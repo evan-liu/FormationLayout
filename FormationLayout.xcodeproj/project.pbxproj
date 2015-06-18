@@ -9,9 +9,12 @@
 /* Begin PBXBuildFile section */
 		20506DD01B323CE100B6B14A /* FormationLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 20506DCF1B323CE100B6B14A /* FormationLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20506DD71B323CE100B6B14A /* FormationLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20506DCC1B323CE100B6B14A /* FormationLayout.framework */; };
-		20506DDC1B323CE100B6B14A /* FormationLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20506DDB1B323CE100B6B14A /* FormationLayoutTests.swift */; };
 		20506DF31B3267B300B6B14A /* LayoutTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20506DF21B3267B300B6B14A /* LayoutTarget.swift */; };
 		20506DF51B326CAB00B6B14A /* LayoutTargetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20506DF41B326CAB00B6B14A /* LayoutTargetTests.swift */; };
+		209D27E91B32A900004771BF /* FormationLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D27E81B32A900004771BF /* FormationLayout.swift */; };
+		209D27EB1B32B3BD004771BF /* FormationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D27EA1B32B3BD004771BF /* FormationView.swift */; };
+		209D27ED1B32B3D4004771BF /* FormationViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D27EC1B32B3D4004771BF /* FormationViewTests.swift */; };
+		209D27F11B32B59D004771BF /* FormationLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D27F01B32B59D004771BF /* FormationLayoutTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,10 +32,13 @@
 		20506DCF1B323CE100B6B14A /* FormationLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FormationLayout.h; sourceTree = "<group>"; };
 		20506DD11B323CE100B6B14A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20506DD61B323CE100B6B14A /* FormationLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FormationLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		20506DDB1B323CE100B6B14A /* FormationLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormationLayoutTests.swift; sourceTree = "<group>"; };
 		20506DDD1B323CE100B6B14A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20506DF21B3267B300B6B14A /* LayoutTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutTarget.swift; sourceTree = "<group>"; };
 		20506DF41B326CAB00B6B14A /* LayoutTargetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutTargetTests.swift; sourceTree = "<group>"; };
+		209D27E81B32A900004771BF /* FormationLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormationLayout.swift; sourceTree = "<group>"; };
+		209D27EA1B32B3BD004771BF /* FormationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormationView.swift; sourceTree = "<group>"; };
+		209D27EC1B32B3D4004771BF /* FormationViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormationViewTests.swift; sourceTree = "<group>"; };
+		209D27F01B32B59D004771BF /* FormationLayoutTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormationLayoutTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,8 @@
 				20506DCF1B323CE100B6B14A /* FormationLayout.h */,
 				20506DD11B323CE100B6B14A /* Info.plist */,
 				20506DF21B3267B300B6B14A /* LayoutTarget.swift */,
+				209D27E81B32A900004771BF /* FormationLayout.swift */,
+				209D27EA1B32B3BD004771BF /* FormationView.swift */,
 			);
 			path = FormationLayout;
 			sourceTree = "<group>";
@@ -85,9 +93,10 @@
 		20506DDA1B323CE100B6B14A /* FormationLayoutTests */ = {
 			isa = PBXGroup;
 			children = (
-				20506DDB1B323CE100B6B14A /* FormationLayoutTests.swift */,
 				20506DDD1B323CE100B6B14A /* Info.plist */,
 				20506DF41B326CAB00B6B14A /* LayoutTargetTests.swift */,
+				209D27EC1B32B3D4004771BF /* FormationViewTests.swift */,
+				209D27F01B32B59D004771BF /* FormationLayoutTests.swift */,
 			);
 			path = FormationLayoutTests;
 			sourceTree = "<group>";
@@ -200,7 +209,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				209D27EB1B32B3BD004771BF /* FormationView.swift in Sources */,
 				20506DF31B3267B300B6B14A /* LayoutTarget.swift in Sources */,
+				209D27E91B32A900004771BF /* FormationLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,7 +220,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				20506DF51B326CAB00B6B14A /* LayoutTargetTests.swift in Sources */,
-				20506DDC1B323CE100B6B14A /* FormationLayoutTests.swift in Sources */,
+				209D27ED1B32B3D4004771BF /* FormationViewTests.swift in Sources */,
+				209D27F11B32B59D004771BF /* FormationLayoutTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
