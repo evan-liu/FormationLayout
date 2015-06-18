@@ -10,6 +10,8 @@
 		20506DD01B323CE100B6B14A /* FormationLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 20506DCF1B323CE100B6B14A /* FormationLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20506DD71B323CE100B6B14A /* FormationLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20506DCC1B323CE100B6B14A /* FormationLayout.framework */; };
 		20506DDC1B323CE100B6B14A /* FormationLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20506DDB1B323CE100B6B14A /* FormationLayoutTests.swift */; };
+		20506DF31B3267B300B6B14A /* LayoutTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20506DF21B3267B300B6B14A /* LayoutTarget.swift */; };
+		20506DF51B326CAB00B6B14A /* LayoutTargetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20506DF41B326CAB00B6B14A /* LayoutTargetTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		20506DD61B323CE100B6B14A /* FormationLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FormationLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20506DDB1B323CE100B6B14A /* FormationLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormationLayoutTests.swift; sourceTree = "<group>"; };
 		20506DDD1B323CE100B6B14A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20506DF21B3267B300B6B14A /* LayoutTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutTarget.swift; sourceTree = "<group>"; };
+		20506DF41B326CAB00B6B14A /* LayoutTargetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutTargetTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 			children = (
 				20506DCF1B323CE100B6B14A /* FormationLayout.h */,
 				20506DD11B323CE100B6B14A /* Info.plist */,
+				20506DF21B3267B300B6B14A /* LayoutTarget.swift */,
 			);
 			path = FormationLayout;
 			sourceTree = "<group>";
@@ -82,6 +87,7 @@
 			children = (
 				20506DDB1B323CE100B6B14A /* FormationLayoutTests.swift */,
 				20506DDD1B323CE100B6B14A /* Info.plist */,
+				20506DF41B326CAB00B6B14A /* LayoutTargetTests.swift */,
 			);
 			path = FormationLayoutTests;
 			sourceTree = "<group>";
@@ -142,6 +148,7 @@
 		20506DC31B323CE100B6B14A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = evancoding.com;
 				TargetAttributes = {
@@ -193,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20506DF31B3267B300B6B14A /* LayoutTarget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20506DF51B326CAB00B6B14A /* LayoutTargetTests.swift in Sources */,
 				20506DDC1B323CE100B6B14A /* FormationLayoutTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +316,7 @@
 		20506DE11B323CE100B6B14A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -317,12 +327,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.evancoding.FormationLayout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		20506DE21B323CE100B6B14A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -375,6 +387,7 @@
 				20506DE21B323CE100B6B14A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		20506DE31B323CE100B6B14A /* Build configuration list for PBXNativeTarget "FormationLayoutTests" */ = {
 			isa = XCConfigurationList;
@@ -383,6 +396,7 @@
 				20506DE51B323CE100B6B14A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
