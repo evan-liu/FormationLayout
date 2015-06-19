@@ -34,18 +34,8 @@ public func + (var lhs: LayoutTarget, rhs: CGFloat) -> LayoutTarget {
     return lhs
 }
 
-public func + (var lhs: LayoutTarget, rhs: Int) -> LayoutTarget {
-    lhs.constant += CGFloat(rhs)
-    return lhs
-}
-
 public func - (var lhs: LayoutTarget, rhs: CGFloat) -> LayoutTarget {
     lhs.constant -= rhs
-    return lhs
-}
-
-public func - (var lhs: LayoutTarget, rhs: Int) -> LayoutTarget {
-    lhs.constant -= CGFloat(rhs)
     return lhs
 }
 
@@ -54,18 +44,8 @@ public func * (var lhs: LayoutTarget, rhs: CGFloat) -> LayoutTarget {
     return lhs
 }
 
-public func * (var lhs: LayoutTarget, rhs: Int) -> LayoutTarget {
-    lhs.multiplier *= CGFloat(rhs)
-    return lhs
-}
-
 public func / (var lhs: LayoutTarget, rhs: CGFloat) -> LayoutTarget {
     lhs.multiplier /= rhs
-    return lhs
-}
-
-public func / (var lhs: LayoutTarget, rhs: Int) -> LayoutTarget {
-    lhs.multiplier /= CGFloat(rhs)
     return lhs
 }
 
