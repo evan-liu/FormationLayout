@@ -9,7 +9,7 @@
 import UIKit
 
 /// Formation layout helper class to create and manager a group of constraints of one view.
-public final class ViewFormation {
+public final class ViewFormation : Formation {
     public let view: UIView
     private(set) public var constraints = [NSLayoutConstraint]()
     
@@ -33,28 +33,5 @@ public final class ViewFormation {
             handler(constraint)
         }
         constraints.append(constraint)
-    }
-}
-
-// MARK: - Formation
-extension ViewFormation : Formation {
-    public func checkSizeClass(hSizeClass: UIUserInterfaceSizeClass, _ vSizeClass: UIUserInterfaceSizeClass) -> Bool {
-        for exceptSizeClass in exceptSizeClasses {
-            if exceptSizeClass.match(hSizeClass, vSizeClass) {
-                return false
-            }
-        }
-        
-        if installSizeClasses.count == 0 {
-            return true 
-        }
-        
-        for installSizeClass in installSizeClasses {
-            if installSizeClass.match(hSizeClass, vSizeClass) {
-                return true
-            }
-        }
-        
-        return false
     }
 }
