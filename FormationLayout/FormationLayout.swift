@@ -47,4 +47,9 @@ public final class FormationLayout {
             formation.activate(hSizeClass, vSizeClass)
         }
     }
+    
+    /// Activate a size class by a `UITraitCollection`.
+    public func activate(traitCollection: UITraitCollection) {
+        activate(traitCollection.horizontalSizeClass, traitCollection.verticalSizeClass)
+    }
 }
