@@ -14,8 +14,8 @@
 		20506DF31B3267B300B6B14A /* LayoutTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20506DF21B3267B300B6B14A /* LayoutTarget.swift */; };
 		20506DF51B326CAB00B6B14A /* LayoutTargetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20506DF41B326CAB00B6B14A /* LayoutTargetTests.swift */; };
 		209D27E91B32A900004771BF /* FormationLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D27E81B32A900004771BF /* FormationLayout.swift */; };
-		209D27EB1B32B3BD004771BF /* FormationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D27EA1B32B3BD004771BF /* FormationView.swift */; };
-		209D27ED1B32B3D4004771BF /* FormationViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D27EC1B32B3D4004771BF /* FormationViewTests.swift */; };
+		209D27EB1B32B3BD004771BF /* ViewFormation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D27EA1B32B3BD004771BF /* ViewFormation.swift */; };
+		209D27ED1B32B3D4004771BF /* ViewFormationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D27EC1B32B3D4004771BF /* ViewFormationTests.swift */; };
 		209D27F11B32B59D004771BF /* FormationLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D27F01B32B59D004771BF /* FormationLayoutTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,8 +40,8 @@
 		20506DF21B3267B300B6B14A /* LayoutTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutTarget.swift; sourceTree = "<group>"; };
 		20506DF41B326CAB00B6B14A /* LayoutTargetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutTargetTests.swift; sourceTree = "<group>"; };
 		209D27E81B32A900004771BF /* FormationLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormationLayout.swift; sourceTree = "<group>"; };
-		209D27EA1B32B3BD004771BF /* FormationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormationView.swift; sourceTree = "<group>"; };
-		209D27EC1B32B3D4004771BF /* FormationViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormationViewTests.swift; sourceTree = "<group>"; };
+		209D27EA1B32B3BD004771BF /* ViewFormation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFormation.swift; sourceTree = "<group>"; };
+		209D27EC1B32B3D4004771BF /* ViewFormationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFormationTests.swift; sourceTree = "<group>"; };
 		209D27F01B32B59D004771BF /* FormationLayoutTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormationLayoutTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,7 +88,7 @@
 				20506DD11B323CE100B6B14A /* Info.plist */,
 				20506DCF1B323CE100B6B14A /* FormationLayout.h */,
 				209D27E81B32A900004771BF /* FormationLayout.swift */,
-				209D27EA1B32B3BD004771BF /* FormationView.swift */,
+				209D27EA1B32B3BD004771BF /* ViewFormation.swift */,
 				20506DF21B3267B300B6B14A /* LayoutTarget.swift */,
 				201205AD1B33DFE2006C47D5 /* SizeClass.swift */,
 			);
@@ -100,7 +100,7 @@
 			children = (
 				20506DDD1B323CE100B6B14A /* Info.plist */,
 				209D27F01B32B59D004771BF /* FormationLayoutTests.swift */,
-				209D27EC1B32B3D4004771BF /* FormationViewTests.swift */,
+				209D27EC1B32B3D4004771BF /* ViewFormationTests.swift */,
 				20506DF41B326CAB00B6B14A /* LayoutTargetTests.swift */,
 				201205AF1B33E572006C47D5 /* SizeClassTests.swift */,
 			);
@@ -215,7 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				209D27EB1B32B3BD004771BF /* FormationView.swift in Sources */,
+				209D27EB1B32B3BD004771BF /* ViewFormation.swift in Sources */,
 				20506DF31B3267B300B6B14A /* LayoutTarget.swift in Sources */,
 				209D27E91B32A900004771BF /* FormationLayout.swift in Sources */,
 				201205AE1B33DFE2006C47D5 /* SizeClass.swift in Sources */,
@@ -227,7 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20506DF51B326CAB00B6B14A /* LayoutTargetTests.swift in Sources */,
-				209D27ED1B32B3D4004771BF /* FormationViewTests.swift in Sources */,
+				209D27ED1B32B3D4004771BF /* ViewFormationTests.swift in Sources */,
 				209D27F11B32B59D004771BF /* FormationLayoutTests.swift in Sources */,
 				201205B01B33E572006C47D5 /* SizeClassTests.swift in Sources */,
 			);

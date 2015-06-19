@@ -17,19 +17,19 @@ public final class FormationLayout {
         rootView.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    /// Factory method to create a `FormationView` for one view.
+    /// Factory method to create a `ViewFormation` for one view.
     /// - Parameter view: The target view.
     /// - Parameter container: The container to add the view to. 
     ///     Will add the view to rootView if container is nil
     ///     and the view has no superview.
-    /// - Returns: `FormationView` instance for the target view.
-    public func view(view: UIView, container: UIView? = nil) -> FormationView {
+    /// - Returns: `ViewFormation` instance for the target view.
+    public func view(view: UIView, container: UIView? = nil) -> ViewFormation {
         if let container = container where view.superview != container {
             container.addSubview(view)
         }
         if view.superview == nil {
             rootView.addSubview(view)
         }
-        return FormationView(layout: self, view: view)
+        return ViewFormation(layout: self, view: view)
     }
 }
