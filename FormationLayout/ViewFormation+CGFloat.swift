@@ -53,3 +53,26 @@ extension ViewFormation {
         return self
     }
 }
+
+extension ViewFormation {
+    public func size(constant: CGFloat, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> ViewFormation {
+        attribute(.Width, relatedBy: .Equal, constant: constant, priority: priority, handler: handler)
+        attribute(.Height, relatedBy: .Equal, constant: constant, priority: priority, handler: handler)
+        return self
+    }
+    public func sizeEqual(constant: CGFloat, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> ViewFormation {
+        attribute(.Width, relatedBy: .Equal, constant: constant, priority: priority, handler: handler)
+        attribute(.Height, relatedBy: .Equal, constant: constant, priority: priority, handler: handler)
+        return self
+    }
+    public func sizeLessThanOrEqual(constant: CGFloat, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> ViewFormation {
+        attribute(.Width, relatedBy: .LessThanOrEqual, constant: constant, priority: priority, handler: handler)
+        attribute(.Height, relatedBy: .LessThanOrEqual, constant: constant, priority: priority, handler: handler)
+        return self
+    }
+    public func sizeGreaterThanOrEqual(constant: CGFloat, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> ViewFormation {
+        attribute(.Width, relatedBy: .GreaterThanOrEqual, constant: constant, priority: priority, handler: handler)
+        attribute(.Height, relatedBy: .GreaterThanOrEqual, constant: constant, priority: priority, handler: handler)
+        return self
+    }
+}
