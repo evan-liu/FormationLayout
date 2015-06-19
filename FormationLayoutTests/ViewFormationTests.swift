@@ -148,6 +148,15 @@ class ViewFormationTests: XCTestCase {
             .heightGreaterThanOrEqual(5.5) { checkAttribute($0, .Height, .GreaterThanOrEqual, 5.5) }
         
         XCTAssertEqual(checked, 4 * 13)
+        
+        // Size
+        checked = 0
+        formation
+            .size(10) { checkAttribute($0, $0.firstAttribute, .Equal, 10) }
+            .sizeEqual(10) { checkAttribute($0, $0.firstAttribute, .Equal, 10) }
+            .sizeLessThanOrEqual(5.5) { checkAttribute($0, $0.firstAttribute, .LessThanOrEqual, 5.5) }
+            .sizeGreaterThanOrEqual(5.5) { checkAttribute($0, $0.firstAttribute, .GreaterThanOrEqual, 5.5) }
+        XCTAssertEqual(checked, 2 * 4)
     }
     
     // +UIView
