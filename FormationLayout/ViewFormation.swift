@@ -61,15 +61,9 @@ public final class ViewFormation {
     }
 }
 
-// MARK: - SizeClassHandler
-extension ViewFormation : SizeClassHandler {
-    func activate(hSizeClass: UIUserInterfaceSizeClass, _ vSizeClass: UIUserInterfaceSizeClass) {
-        if activeForSizeClass(hSizeClass, vSizeClass) != active {
-            active = !active
-        }
-    }
-    
-    func activeForSizeClass(hSizeClass: UIUserInterfaceSizeClass, _ vSizeClass: UIUserInterfaceSizeClass) -> Bool {
+// MARK: - Formation
+extension ViewFormation : Formation {
+    func checkSizeClass(hSizeClass: UIUserInterfaceSizeClass, _ vSizeClass: UIUserInterfaceSizeClass) -> Bool {
         for exceptSizeClass in exceptSizeClasses {
             if exceptSizeClass.match(hSizeClass, vSizeClass) {
                 return false

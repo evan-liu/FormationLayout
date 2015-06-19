@@ -8,15 +8,10 @@
 
 import UIKit
 
-/// Protocal for sizeClass handlers which respond to sizeClass changes.
-internal protocol SizeClassHandler {
-    func activate(hSizeClass: UIUserInterfaceSizeClass, _ vSizeClass: UIUserInterfaceSizeClass)
-}
-
 /// Top level layout class for one root view.
 public final class FormationLayout {
     public let rootView: UIView
-    private var formations = [SizeClassHandler]()
+    private var formations = [Formation]()
     
     public init(rootView: UIView) {
         self.rootView = rootView
@@ -43,8 +38,24 @@ public final class FormationLayout {
     
     /// Activate a size class.
     public func activate(hSizeClass: UIUserInterfaceSizeClass = .Unspecified, _ vSizeClass: UIUserInterfaceSizeClass = .Unspecified) {
+        // Xcode will complain will activate new constraints before deactivate old ones. 
+        // So make sure deactivate old constraints first.
+        var formationsToActivate = [Formation]()
+        var formationsToDeactivate = [Formation]()
         for formation in formations {
-            formation.activate(hSizeClass, vSizeClass)
+            if formation.checkSizeClass(hSizeClass, vSizeClass) != formation.active {
+                if formation.active {
+                    formationsToDeactivate.append(formation)
+                } else {
+                    formationsToActivate.append(formation)
+                }
+            }
+        }
+        for formationToDeactivate in formationsToDeactivate {
+            formationToDeactivate.active = false
+        }
+        for formationToActivate in formationsToActivate {
+            formationToActivate.active = true
         }
     }
     

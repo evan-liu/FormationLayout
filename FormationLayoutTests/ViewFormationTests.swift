@@ -168,61 +168,47 @@ class ViewFormationTests: XCTestCase {
         XCTAssertFalse(formation.constraints[1].active)
     }
     
-    // activeForSizeClass()
-    func testActiveForSizeClass() {
+    // checkSizeClass()
+    func testcheckSizeClass() {
         
         // should return true if no size classes installed
-        XCTAssertTrue(formation.activeForSizeClass(.Unspecified, .Unspecified))
-        XCTAssertTrue(formation.activeForSizeClass(.Unspecified, .Compact))
-        XCTAssertTrue(formation.activeForSizeClass(.Unspecified, .Regular))
-        XCTAssertTrue(formation.activeForSizeClass(.Compact, .Unspecified))
-        XCTAssertTrue(formation.activeForSizeClass(.Compact, .Compact))
-        XCTAssertTrue(formation.activeForSizeClass(.Compact, .Regular))
-        XCTAssertTrue(formation.activeForSizeClass(.Regular, .Unspecified))
-        XCTAssertTrue(formation.activeForSizeClass(.Regular, .Compact))
-        XCTAssertTrue(formation.activeForSizeClass(.Regular, .Regular))
+        XCTAssertTrue(formation.checkSizeClass(.Unspecified, .Unspecified))
+        XCTAssertTrue(formation.checkSizeClass(.Unspecified, .Compact))
+        XCTAssertTrue(formation.checkSizeClass(.Unspecified, .Regular))
+        XCTAssertTrue(formation.checkSizeClass(.Compact, .Unspecified))
+        XCTAssertTrue(formation.checkSizeClass(.Compact, .Compact))
+        XCTAssertTrue(formation.checkSizeClass(.Compact, .Regular))
+        XCTAssertTrue(formation.checkSizeClass(.Regular, .Unspecified))
+        XCTAssertTrue(formation.checkSizeClass(.Regular, .Compact))
+        XCTAssertTrue(formation.checkSizeClass(.Regular, .Regular))
         
         // should return true only for installed size classes
         formation.install(.WRegular)
         formation.install(.BothCompact)
         
-        XCTAssertFalse(formation.activeForSizeClass(.Unspecified, .Unspecified))
-        XCTAssertFalse(formation.activeForSizeClass(.Unspecified, .Compact))
-        XCTAssertFalse(formation.activeForSizeClass(.Unspecified, .Regular))
-        XCTAssertFalse(formation.activeForSizeClass(.Compact, .Unspecified))
-        XCTAssertTrue(formation.activeForSizeClass(.Compact, .Compact))
-        XCTAssertFalse(formation.activeForSizeClass(.Compact, .Regular))
-        XCTAssertTrue(formation.activeForSizeClass(.Regular, .Unspecified))
-        XCTAssertTrue(formation.activeForSizeClass(.Regular, .Compact))
-        XCTAssertTrue(formation.activeForSizeClass(.Regular, .Regular))
+        XCTAssertFalse(formation.checkSizeClass(.Unspecified, .Unspecified))
+        XCTAssertFalse(formation.checkSizeClass(.Unspecified, .Compact))
+        XCTAssertFalse(formation.checkSizeClass(.Unspecified, .Regular))
+        XCTAssertFalse(formation.checkSizeClass(.Compact, .Unspecified))
+        XCTAssertTrue(formation.checkSizeClass(.Compact, .Compact))
+        XCTAssertFalse(formation.checkSizeClass(.Compact, .Regular))
+        XCTAssertTrue(formation.checkSizeClass(.Regular, .Unspecified))
+        XCTAssertTrue(formation.checkSizeClass(.Regular, .Compact))
+        XCTAssertTrue(formation.checkSizeClass(.Regular, .Regular))
         
         // should return false for excepted size classes
         formation.except(.HRegular)
         formation.except(.WRegularHCompact)
         
-        XCTAssertFalse(formation.activeForSizeClass(.Unspecified, .Unspecified))
-        XCTAssertFalse(formation.activeForSizeClass(.Unspecified, .Compact))
-        XCTAssertFalse(formation.activeForSizeClass(.Unspecified, .Regular))
-        XCTAssertFalse(formation.activeForSizeClass(.Compact, .Unspecified))
-        XCTAssertTrue(formation.activeForSizeClass(.Compact, .Compact))
-        XCTAssertFalse(formation.activeForSizeClass(.Compact, .Regular))
-        XCTAssertTrue(formation.activeForSizeClass(.Regular, .Unspecified))
-        XCTAssertFalse(formation.activeForSizeClass(.Regular, .Compact))
-        XCTAssertFalse(formation.activeForSizeClass(.Regular, .Regular))
-    }
-    
-    // activate()
-    func testActivate() {
-        // should set active property
-        XCTAssertFalse(formation.active)
-        
-        formation.except(.BothCompact)
-        
-        formation.activate(.Regular, .Regular)
-        XCTAssertTrue(formation.active)
-        
-        formation.activate(.Compact, .Compact)
-        XCTAssertFalse(formation.active)
+        XCTAssertFalse(formation.checkSizeClass(.Unspecified, .Unspecified))
+        XCTAssertFalse(formation.checkSizeClass(.Unspecified, .Compact))
+        XCTAssertFalse(formation.checkSizeClass(.Unspecified, .Regular))
+        XCTAssertFalse(formation.checkSizeClass(.Compact, .Unspecified))
+        XCTAssertTrue(formation.checkSizeClass(.Compact, .Compact))
+        XCTAssertFalse(formation.checkSizeClass(.Compact, .Regular))
+        XCTAssertTrue(formation.checkSizeClass(.Regular, .Unspecified))
+        XCTAssertFalse(formation.checkSizeClass(.Regular, .Compact))
+        XCTAssertFalse(formation.checkSizeClass(.Regular, .Regular))
     }
     
 }
