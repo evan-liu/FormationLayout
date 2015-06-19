@@ -10,7 +10,7 @@ import UIKit
 
 /// Top level layout class for one root view.
 public final class FormationLayout {
-    private var formations = [Formation]()
+    internal var formations = [Formation]()
     
     public let rootView: UIView
     public init(rootView: UIView) {
