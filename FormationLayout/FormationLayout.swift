@@ -8,9 +8,15 @@
 
 import UIKit
 
+/// Protocal for sizeClass handlers which respond to sizeClass changes.
+internal protocol SizeClassHandler {
+    func activate(hSizeClass: UIUserInterfaceSizeClass, _ vSizeClass: UIUserInterfaceSizeClass)
+}
+
 /// Top level layout class for one root view.
 public final class FormationLayout {
     public let rootView: UIView
+    private var formations = [SizeClassHandler]()
     
     public init(rootView: UIView) {
         self.rootView = rootView
@@ -30,6 +36,15 @@ public final class FormationLayout {
         if view.superview == nil {
             rootView.addSubview(view)
         }
-        return ViewFormation(view: view)
+        let formation = ViewFormation(view: view)
+        formations.append(formation)
+        return formation
+    }
+    
+    /// Activate a size class.
+    public func activate(hSizeClass: UIUserInterfaceSizeClass = .Unspecified, _ vSizeClass: UIUserInterfaceSizeClass = .Unspecified) {
+        for formation in formations {
+            formation.activate(hSizeClass, vSizeClass)
+        }
     }
 }
