@@ -17,40 +17,27 @@ public enum SizeClass {
 
 internal extension SizeClass {
     internal func match(hSizeClass: UIUserInterfaceSizeClass, _ vSizeClass: UIUserInterfaceSizeClass) -> Bool {
-        switch (hSizeClass, vSizeClass) {
-            
-        case (.Unspecified, .Unspecified):
+        switch self {
+        case .wAny_hAny:
             return true
-        case (.Unspecified, .Compact):
-            switch self {
-            case .wAny_hCompact, .wCompact_hCompact, .wRegular_hCompact: return true
-            default: return false
-            }
-        case (.Unspecified, .Regular):
-            switch self {
-            case .wAny_hRegular, .wCompact_hRegular, .wRegular_hRegular: return true
-            default: return false
-            }
+        case .wAny_hCompact:
+            return vSizeClass == .Compact
+        case .wAny_hRegular:
+            return vSizeClass == .Regular
             
-        case (.Compact, .Unspecified):
-            switch self {
-            case .wCompact_hAny, .wCompact_hCompact, .wCompact_hRegular : return true
-            default: return false
-            }
-        case (.Compact, .Compact):
-            return self == .wCompact_hCompact
-        case (.Compact, .Regular):
-            return self == .wCompact_hRegular
+        case .wCompact_hAny:
+            return hSizeClass == .Compact
+        case .wCompact_hCompact:
+            return hSizeClass == .Compact && vSizeClass == .Compact
+        case .wCompact_hRegular:
+            return hSizeClass == .Compact && vSizeClass == .Regular
             
-        case (.Regular, .Unspecified):
-            switch self {
-            case .wRegular_hAny, .wRegular_hCompact, .wRegular_hRegular : return true
-            default: return false
-            }
-        case (.Regular, .Compact):
-            return self == .wRegular_hCompact
-        case (.Regular, .Regular):
-            return self == .wRegular_hRegular
+        case .wRegular_hAny:
+            return hSizeClass == .Regular
+        case .wRegular_hCompact:
+            return hSizeClass == .Regular && vSizeClass == .Compact
+        case .wRegular_hRegular:
+            return hSizeClass == .Regular && vSizeClass == .Regular
         }
     }
 }
