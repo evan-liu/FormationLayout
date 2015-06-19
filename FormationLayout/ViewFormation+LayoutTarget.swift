@@ -243,3 +243,26 @@ extension ViewFormation {
         return self
     }
 }
+
+extension ViewFormation {
+    public func size(target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> ViewFormation {
+        attribute(.Width, relatedBy: .Equal, target: target, priority: priority, handler: handler)
+        attribute(.Height, relatedBy: .Equal, target: target, priority: priority, handler: handler)
+        return self
+    }
+    public func sizeEqual(target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> ViewFormation {
+        attribute(.Width, relatedBy: .Equal, target: target, priority: priority, handler: handler)
+        attribute(.Height, relatedBy: .Equal, target: target, priority: priority, handler: handler)
+        return self
+    }
+    public func sizeLessThanOrEqual(target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> ViewFormation {
+        attribute(.Width, relatedBy: .LessThanOrEqual, target: target, priority: priority, handler: handler)
+        attribute(.Height, relatedBy: .LessThanOrEqual, target: target, priority: priority, handler: handler)
+        return self
+    }
+    public func sizeGreaterThanOrEqual(target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> ViewFormation {
+        attribute(.Width, relatedBy: .GreaterThanOrEqual, target: target, priority: priority, handler: handler)
+        attribute(.Height, relatedBy: .GreaterThanOrEqual, target: target, priority: priority, handler: handler)
+        return self
+    }
+}
