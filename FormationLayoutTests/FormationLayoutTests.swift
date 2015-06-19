@@ -32,6 +32,11 @@ class FormationLayoutTests: XCTestCase {
     // view()
     func testViewFactoryMethod() {
         let uiView = UIView()
+        
+        // should add to rootView if no container passed in
+        layout.view(uiView)
+        XCTAssertEqual(uiView.superview!, rootView)
+        
         let container = UIView()
         let fView = layout.view(uiView, container: container)
 
