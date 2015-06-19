@@ -49,7 +49,7 @@ class ViewFormationTests: XCTestCase {
     }
     
     // attribute helper extentions
-    func testAttributeHelperExtentions() {
+    func testAttributeHelperExtensions() {
         let view2 = UIView()
         
         // should set up constraint and call handler
@@ -148,6 +148,30 @@ class ViewFormationTests: XCTestCase {
             .heightGreaterThanOrEqual(5.5) { checkAttribute($0, .Height, .GreaterThanOrEqual, 5.5) }
         
         XCTAssertEqual(checked, 4 * 13)
+    }
+    
+    // +UIView
+    func testUIViewExtensions() {
+        var checked = 0
+        func checkAttribute(constraint: NSLayoutConstraint, _ attribute: NSLayoutAttribute, _ secondView: UIView, _ relation: NSLayoutRelation = .Equal) {
+            XCTAssertEqual(constraint.firstAttribute, attribute)
+            XCTAssertEqual(constraint.secondAttribute, attribute)
+            XCTAssertEqual(constraint.secondItem as! UIView, secondView)
+            XCTAssertEqual(constraint.relation, relation)
+            checked++
+        }
+        
+        func test(checkCount: Int, @noescape block: (view2: UIView) -> Void) {
+            checked = 0
+            block(view2: UIView(frame: CGRectMake(100, 100, 100, 200)))
+            XCTAssertEqual(checked, checkCount)
+        }
+        
+        test(4) { view2 in
+            formation.centerX(view2) { checkAttribute($0, .CenterX, view2) }
+            formation.centerY(view2) { checkAttribute($0, .CenterY, view2) }
+            formation.center(view2) { checkAttribute($0, $0.firstAttribute, view2) }
+        }
     }
     
     // active property
