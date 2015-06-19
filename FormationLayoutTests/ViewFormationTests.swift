@@ -10,17 +10,14 @@ import XCTest
 @testable import FormationLayout
 
 class ViewFormationTests: XCTestCase {
-    var layout: FormationLayout!
     var view: UIView!
     var formation: ViewFormation!
 
     override func setUp() {
         super.setUp()
-        
-        layout = FormationLayout(rootView: UIView())
-        
+
         view = UIView()
-        formation = layout.view(view)
+        formation = ViewFormation(view: view)
     }
     
     // init()

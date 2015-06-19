@@ -10,12 +10,10 @@ import UIKit
 
 /// Formation layout helper class to create and manager a group of constraints of one view.
 public final class ViewFormation {
-    public let layout: FormationLayout
     public let view: UIView
     private(set) public var constraints = [NSLayoutConstraint]()
     
-    public init(layout: FormationLayout, view:UIView) {
-        self.layout = layout
+    public init(view:UIView) {
         self.view = view
         view.translatesAutoresizingMaskIntoConstraints = false
     }

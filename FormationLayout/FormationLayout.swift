@@ -30,6 +30,6 @@ public final class FormationLayout {
         if view.superview == nil {
             rootView.addSubview(view)
         }
-        return ViewFormation(layout: self, view: view)
+        return ViewFormation(view: view)
     }
 }
