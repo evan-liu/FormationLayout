@@ -16,7 +16,7 @@ extension ViewFormation {
     }
 }
 
-public extension ViewFormation {
+extension ViewFormation {
     public func width(constant: CGFloat, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> ViewFormation {
         self.attribute(.Width, relatedBy: .Equal, constant: constant, priority: priority, handler: handler)
         return self
@@ -35,7 +35,7 @@ public extension ViewFormation {
     }
 }
 
-public extension ViewFormation {
+extension ViewFormation {
     public func height(constant: CGFloat, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> ViewFormation {
         self.attribute(.Height, relatedBy: .Equal, constant: constant, priority: priority, handler: handler)
         return self

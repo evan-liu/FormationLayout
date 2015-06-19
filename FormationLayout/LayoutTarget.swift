@@ -51,7 +51,7 @@ public func / (var lhs: LayoutTarget, rhs: CGFloat) -> LayoutTarget {
 
 // MARK: - UIView extension
 
-public extension UIView {
+extension UIView {
     public func layoutTarget(attribute: NSLayoutAttribute) -> LayoutTarget {
         return LayoutTarget(view: self, attribute: attribute)
     }

@@ -21,7 +21,7 @@ public protocol Formation : class {
 }
 
 /// Helper methods to install and except size classes.
-public extension Formation {
+extension Formation {
     /// Install to a size class. Constraints will only be active on installed size classes.
     /// If no size classes are installed `Any`(`wAnyhAny`) will be installed by default.
     public func install(sizeClass: SizeClass) -> Self {

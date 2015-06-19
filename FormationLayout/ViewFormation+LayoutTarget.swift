@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension ViewFormation {
+extension ViewFormation {
     /// `NSLayoutConstraint` factory method with `LayoutTarget`.
     public func attribute(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> ViewFormation {
         addConstraint(NSLayoutConstraint(item: view, attribute: attribute, relatedBy: relation, toItem: target.view, attribute: target.attribute, multiplier: target.multiplier, constant: target.constant), priority: priority, handler: handler)
@@ -16,7 +16,7 @@ public extension ViewFormation {
     }
 }
 
-public extension ViewFormation {
+extension ViewFormation {
     public func left(target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> ViewFormation {
         self.attribute(.Left, relatedBy: .Equal, target: target, priority: priority, handler: handler)
         return self
@@ -35,7 +35,7 @@ public extension ViewFormation {
     }
 }
 
-public extension ViewFormation {
+extension ViewFormation {
     public func right(target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> ViewFormation {
         self.attribute(.Right, relatedBy: .Equal, target: target, priority: priority, handler: handler)
         return self
@@ -54,7 +54,7 @@ public extension ViewFormation {
     }
 }
 
-public extension ViewFormation {
+extension ViewFormation {
     public func top(target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> ViewFormation {
         self.attribute(.Top, relatedBy: .Equal, target: target, priority: priority, handler: handler)
         return self
@@ -73,7 +73,7 @@ public extension ViewFormation {
     }
 }
 
-public extension ViewFormation {
+extension ViewFormation {
     public func bottom(target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> ViewFormation {
         self.attribute(.Bottom, relatedBy: .Equal, target: target, priority: priority, handler: handler)
         return self
@@ -92,7 +92,7 @@ public extension ViewFormation {
     }
 }
 
-public extension ViewFormation {
+extension ViewFormation {
     public func leading(target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> ViewFormation {
         self.attribute(.Leading, relatedBy: .Equal, target: target, priority: priority, handler: handler)
         return self
@@ -111,7 +111,7 @@ public extension ViewFormation {
     }
 }
 
-public extension ViewFormation {
+extension ViewFormation {
     public func trailing(target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> ViewFormation {
         self.attribute(.Trailing, relatedBy: .Equal, target: target, priority: priority, handler: handler)
         return self
@@ -130,7 +130,7 @@ public extension ViewFormation {
     }
 }
 
-public extension ViewFormation {
+extension ViewFormation {
     public func centerX(target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> ViewFormation {
         self.attribute(.CenterX, relatedBy: .Equal, target: target, priority: priority, handler: handler)
         return self
@@ -149,7 +149,7 @@ public extension ViewFormation {
     }
 }
 
-public extension ViewFormation {
+extension ViewFormation {
     public func centerY(target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> ViewFormation {
         self.attribute(.CenterY, relatedBy: .Equal, target: target, priority: priority, handler: handler)
         return self
@@ -168,7 +168,7 @@ public extension ViewFormation {
     }
 }
 
-public extension ViewFormation {
+extension ViewFormation {
     public func baseline(target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> ViewFormation {
         self.attribute(.Baseline, relatedBy: .Equal, target: target, priority: priority, handler: handler)
         return self
@@ -187,7 +187,7 @@ public extension ViewFormation {
     }
 }
 
-public extension ViewFormation {
+extension ViewFormation {
     public func firstBaseline(target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> ViewFormation {
         self.attribute(.FirstBaseline, relatedBy: .Equal, target: target, priority: priority, handler: handler)
         return self
@@ -206,7 +206,7 @@ public extension ViewFormation {
     }
 }
 
-public extension ViewFormation {
+extension ViewFormation {
     public func width(target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> ViewFormation {
         self.attribute(.Width, relatedBy: .Equal, target: target, priority: priority, handler: handler)
         return self
@@ -225,7 +225,7 @@ public extension ViewFormation {
     }
 }
 
-public extension ViewFormation {
+extension ViewFormation {
     public func height(target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> ViewFormation {
         self.attribute(.Height, relatedBy: .Equal, target: target, priority: priority, handler: handler)
         return self

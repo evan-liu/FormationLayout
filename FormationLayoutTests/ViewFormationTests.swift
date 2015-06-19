@@ -169,7 +169,7 @@ class ViewFormationTests: XCTestCase {
     }
     
     // checkSizeClass()
-    func testcheckSizeClass() {
+    func testCheckSizeClass() {
         
         // should return true if no size classes installed
         XCTAssertTrue(formation.checkSizeClass(.Unspecified, .Unspecified))
