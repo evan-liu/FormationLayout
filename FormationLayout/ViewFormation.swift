@@ -19,8 +19,8 @@ public final class ViewFormation {
         }
     }
     
-    private var installSizeClasses = Set<SizeClass>()
-    private var exceptSizeClasses = Set<SizeClass>()
+    public var installSizeClasses = Set<SizeClass>()
+    public var exceptSizeClasses = Set<SizeClass>()
     
     public init(view:UIView) {
         self.view = view
@@ -39,19 +39,6 @@ public final class ViewFormation {
         return self
     }
     
-    /// Install to a size class. Constraints will only be active on installed size classes.
-    /// If no size classes are installed `Any`(`wAnyhAny`) will be installed by default.
-    public func install(sizeClass: SizeClass) -> ViewFormation {
-        installSizeClasses.insert(sizeClass)
-        return self
-    }
-    
-    /// Constraints will not be active on the excepted size classes even if the size class is installed.
-    public func except(sizeClass: SizeClass) -> ViewFormation {
-        exceptSizeClasses.insert(sizeClass)
-        return self
-    }
-    
     private func addConstraint(constraint: NSLayoutConstraint, priority: UILayoutPriority, handler: ((NSLayoutConstraint) -> Void)?) -> Void {
         constraint.priority = priority
         if let handler = handler {
@@ -63,7 +50,7 @@ public final class ViewFormation {
 
 // MARK: - Formation
 extension ViewFormation : Formation {
-    func checkSizeClass(hSizeClass: UIUserInterfaceSizeClass, _ vSizeClass: UIUserInterfaceSizeClass) -> Bool {
+    public func checkSizeClass(hSizeClass: UIUserInterfaceSizeClass, _ vSizeClass: UIUserInterfaceSizeClass) -> Bool {
         for exceptSizeClass in exceptSizeClasses {
             if exceptSizeClass.match(hSizeClass, vSizeClass) {
                 return false
