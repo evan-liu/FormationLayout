@@ -52,8 +52,8 @@ class FormationLayoutTests: XCTestCase {
     func testActivate() {
         // should call activate() of all formations
         
-        let f1 = layout.view(UIView()).install(.wAny_hCompact)
-        let f2 = layout.view(UIView()).install(.wAny_hRegular)
+        let f1 = layout.view(UIView()).install(.HCompact)
+        let f2 = layout.view(UIView()).install(.HRegular)
         
         layout.activate(.Compact, .Compact)
         XCTAssertTrue(f1.active)

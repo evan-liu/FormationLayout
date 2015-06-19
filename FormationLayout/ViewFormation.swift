@@ -40,7 +40,7 @@ public final class ViewFormation {
     }
     
     /// Install to a size class. Constraints will only be active on installed size classes.
-    /// If no size classes are installed wAny_hAny will be installed by default.
+    /// If no size classes are installed `Any`(`wAnyhAny`) will be installed by default.
     public func install(sizeClass: SizeClass) -> ViewFormation {
         installSizeClasses.insert(sizeClass)
         return self

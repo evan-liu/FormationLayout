@@ -13,122 +13,122 @@ class SizeClassTests: XCTestCase {
     
     func testMatch() {
         
-        // wAny_hAny
-        XCTAssertTrue(SizeClass.wAny_hAny.match(.Unspecified, .Unspecified))
-        XCTAssertTrue(SizeClass.wAny_hAny.match(.Unspecified, .Compact))
-        XCTAssertTrue(SizeClass.wAny_hAny.match(.Unspecified, .Regular))
+        // Any
+        XCTAssertTrue(SizeClass.Any.match(.Unspecified, .Unspecified))
+        XCTAssertTrue(SizeClass.Any.match(.Unspecified, .Compact))
+        XCTAssertTrue(SizeClass.Any.match(.Unspecified, .Regular))
         
-        XCTAssertTrue(SizeClass.wAny_hAny.match(.Compact, .Unspecified))
-        XCTAssertTrue(SizeClass.wAny_hAny.match(.Compact, .Compact))
-        XCTAssertTrue(SizeClass.wAny_hAny.match(.Compact, .Regular))
+        XCTAssertTrue(SizeClass.Any.match(.Compact, .Unspecified))
+        XCTAssertTrue(SizeClass.Any.match(.Compact, .Compact))
+        XCTAssertTrue(SizeClass.Any.match(.Compact, .Regular))
         
-        XCTAssertTrue(SizeClass.wAny_hAny.match(.Regular, .Unspecified))
-        XCTAssertTrue(SizeClass.wAny_hAny.match(.Regular, .Compact))
-        XCTAssertTrue(SizeClass.wAny_hAny.match(.Regular, .Regular))
+        XCTAssertTrue(SizeClass.Any.match(.Regular, .Unspecified))
+        XCTAssertTrue(SizeClass.Any.match(.Regular, .Compact))
+        XCTAssertTrue(SizeClass.Any.match(.Regular, .Regular))
         
-        // wAny_hCompact
-        XCTAssertFalse(SizeClass.wAny_hCompact.match(.Unspecified, .Unspecified))
-        XCTAssertTrue(SizeClass.wAny_hCompact.match(.Unspecified, .Compact))
-        XCTAssertFalse(SizeClass.wAny_hCompact.match(.Unspecified, .Regular))
+        // HCompact
+        XCTAssertFalse(SizeClass.HCompact.match(.Unspecified, .Unspecified))
+        XCTAssertTrue(SizeClass.HCompact.match(.Unspecified, .Compact))
+        XCTAssertFalse(SizeClass.HCompact.match(.Unspecified, .Regular))
         
-        XCTAssertFalse(SizeClass.wAny_hCompact.match(.Compact, .Unspecified))
-        XCTAssertTrue(SizeClass.wAny_hCompact.match(.Compact, .Compact))
-        XCTAssertFalse(SizeClass.wAny_hCompact.match(.Compact, .Regular))
+        XCTAssertFalse(SizeClass.HCompact.match(.Compact, .Unspecified))
+        XCTAssertTrue(SizeClass.HCompact.match(.Compact, .Compact))
+        XCTAssertFalse(SizeClass.HCompact.match(.Compact, .Regular))
         
-        XCTAssertFalse(SizeClass.wAny_hCompact.match(.Regular, .Unspecified))
-        XCTAssertTrue(SizeClass.wAny_hCompact.match(.Regular, .Compact))
-        XCTAssertFalse(SizeClass.wAny_hCompact.match(.Regular, .Regular))
+        XCTAssertFalse(SizeClass.HCompact.match(.Regular, .Unspecified))
+        XCTAssertTrue(SizeClass.HCompact.match(.Regular, .Compact))
+        XCTAssertFalse(SizeClass.HCompact.match(.Regular, .Regular))
         
-        // wAny_hRegular
-        XCTAssertFalse(SizeClass.wAny_hRegular.match(.Unspecified, .Unspecified))
-        XCTAssertFalse(SizeClass.wAny_hRegular.match(.Unspecified, .Compact))
-        XCTAssertTrue(SizeClass.wAny_hRegular.match(.Unspecified, .Regular))
+        // HRegular
+        XCTAssertFalse(SizeClass.HRegular.match(.Unspecified, .Unspecified))
+        XCTAssertFalse(SizeClass.HRegular.match(.Unspecified, .Compact))
+        XCTAssertTrue(SizeClass.HRegular.match(.Unspecified, .Regular))
         
-        XCTAssertFalse(SizeClass.wAny_hRegular.match(.Compact, .Unspecified))
-        XCTAssertFalse(SizeClass.wAny_hRegular.match(.Compact, .Compact))
-        XCTAssertTrue(SizeClass.wAny_hRegular.match(.Compact, .Regular))
+        XCTAssertFalse(SizeClass.HRegular.match(.Compact, .Unspecified))
+        XCTAssertFalse(SizeClass.HRegular.match(.Compact, .Compact))
+        XCTAssertTrue(SizeClass.HRegular.match(.Compact, .Regular))
         
-        XCTAssertFalse(SizeClass.wAny_hRegular.match(.Regular, .Unspecified))
-        XCTAssertFalse(SizeClass.wAny_hRegular.match(.Regular, .Compact))
-        XCTAssertTrue(SizeClass.wAny_hRegular.match(.Regular, .Regular))
+        XCTAssertFalse(SizeClass.HRegular.match(.Regular, .Unspecified))
+        XCTAssertFalse(SizeClass.HRegular.match(.Regular, .Compact))
+        XCTAssertTrue(SizeClass.HRegular.match(.Regular, .Regular))
         
-        // wCompact_hAny
-        XCTAssertFalse(SizeClass.wCompact_hAny.match(.Unspecified, .Unspecified))
-        XCTAssertFalse(SizeClass.wCompact_hAny.match(.Unspecified, .Compact))
-        XCTAssertFalse(SizeClass.wCompact_hAny.match(.Unspecified, .Regular))
+        // WCompact
+        XCTAssertFalse(SizeClass.WCompact.match(.Unspecified, .Unspecified))
+        XCTAssertFalse(SizeClass.WCompact.match(.Unspecified, .Compact))
+        XCTAssertFalse(SizeClass.WCompact.match(.Unspecified, .Regular))
         
-        XCTAssertTrue(SizeClass.wCompact_hAny.match(.Compact, .Unspecified))
-        XCTAssertTrue(SizeClass.wCompact_hAny.match(.Compact, .Compact))
-        XCTAssertTrue(SizeClass.wCompact_hAny.match(.Compact, .Regular))
+        XCTAssertTrue(SizeClass.WCompact.match(.Compact, .Unspecified))
+        XCTAssertTrue(SizeClass.WCompact.match(.Compact, .Compact))
+        XCTAssertTrue(SizeClass.WCompact.match(.Compact, .Regular))
         
-        XCTAssertFalse(SizeClass.wCompact_hAny.match(.Regular, .Unspecified))
-        XCTAssertFalse(SizeClass.wCompact_hAny.match(.Regular, .Compact))
-        XCTAssertFalse(SizeClass.wCompact_hAny.match(.Regular, .Regular))
+        XCTAssertFalse(SizeClass.WCompact.match(.Regular, .Unspecified))
+        XCTAssertFalse(SizeClass.WCompact.match(.Regular, .Compact))
+        XCTAssertFalse(SizeClass.WCompact.match(.Regular, .Regular))
         
-        // wCompact_hCompact
-        XCTAssertFalse(SizeClass.wCompact_hCompact.match(.Unspecified, .Unspecified))
-        XCTAssertFalse(SizeClass.wCompact_hCompact.match(.Unspecified, .Compact))
-        XCTAssertFalse(SizeClass.wCompact_hCompact.match(.Unspecified, .Regular))
+        // BothCompact
+        XCTAssertFalse(SizeClass.BothCompact.match(.Unspecified, .Unspecified))
+        XCTAssertFalse(SizeClass.BothCompact.match(.Unspecified, .Compact))
+        XCTAssertFalse(SizeClass.BothCompact.match(.Unspecified, .Regular))
         
-        XCTAssertFalse(SizeClass.wCompact_hCompact.match(.Compact, .Unspecified))
-        XCTAssertTrue(SizeClass.wCompact_hCompact.match(.Compact, .Compact))
-        XCTAssertFalse(SizeClass.wCompact_hCompact.match(.Compact, .Regular))
+        XCTAssertFalse(SizeClass.BothCompact.match(.Compact, .Unspecified))
+        XCTAssertTrue(SizeClass.BothCompact.match(.Compact, .Compact))
+        XCTAssertFalse(SizeClass.BothCompact.match(.Compact, .Regular))
         
-        XCTAssertFalse(SizeClass.wCompact_hCompact.match(.Regular, .Unspecified))
-        XCTAssertFalse(SizeClass.wCompact_hCompact.match(.Regular, .Compact))
-        XCTAssertFalse(SizeClass.wCompact_hCompact.match(.Regular, .Regular))
+        XCTAssertFalse(SizeClass.BothCompact.match(.Regular, .Unspecified))
+        XCTAssertFalse(SizeClass.BothCompact.match(.Regular, .Compact))
+        XCTAssertFalse(SizeClass.BothCompact.match(.Regular, .Regular))
         
-        // wCompact_hRegular
-        XCTAssertFalse(SizeClass.wCompact_hRegular.match(.Unspecified, .Unspecified))
-        XCTAssertFalse(SizeClass.wCompact_hRegular.match(.Unspecified, .Compact))
-        XCTAssertFalse(SizeClass.wCompact_hRegular.match(.Unspecified, .Regular))
+        // WCompactHRegular
+        XCTAssertFalse(SizeClass.WCompactHRegular.match(.Unspecified, .Unspecified))
+        XCTAssertFalse(SizeClass.WCompactHRegular.match(.Unspecified, .Compact))
+        XCTAssertFalse(SizeClass.WCompactHRegular.match(.Unspecified, .Regular))
         
-        XCTAssertFalse(SizeClass.wCompact_hRegular.match(.Compact, .Unspecified))
-        XCTAssertFalse(SizeClass.wCompact_hRegular.match(.Compact, .Compact))
-        XCTAssertTrue(SizeClass.wCompact_hRegular.match(.Compact, .Regular))
+        XCTAssertFalse(SizeClass.WCompactHRegular.match(.Compact, .Unspecified))
+        XCTAssertFalse(SizeClass.WCompactHRegular.match(.Compact, .Compact))
+        XCTAssertTrue(SizeClass.WCompactHRegular.match(.Compact, .Regular))
         
-        XCTAssertFalse(SizeClass.wCompact_hRegular.match(.Regular, .Unspecified))
-        XCTAssertFalse(SizeClass.wCompact_hRegular.match(.Regular, .Compact))
-        XCTAssertFalse(SizeClass.wCompact_hRegular.match(.Regular, .Regular))
+        XCTAssertFalse(SizeClass.WCompactHRegular.match(.Regular, .Unspecified))
+        XCTAssertFalse(SizeClass.WCompactHRegular.match(.Regular, .Compact))
+        XCTAssertFalse(SizeClass.WCompactHRegular.match(.Regular, .Regular))
         
-        // wRegular_hAny
-        XCTAssertFalse(SizeClass.wRegular_hAny.match(.Unspecified, .Unspecified))
-        XCTAssertFalse(SizeClass.wRegular_hAny.match(.Unspecified, .Compact))
-        XCTAssertFalse(SizeClass.wRegular_hAny.match(.Unspecified, .Regular))
+        // WRegular
+        XCTAssertFalse(SizeClass.WRegular.match(.Unspecified, .Unspecified))
+        XCTAssertFalse(SizeClass.WRegular.match(.Unspecified, .Compact))
+        XCTAssertFalse(SizeClass.WRegular.match(.Unspecified, .Regular))
         
-        XCTAssertFalse(SizeClass.wRegular_hAny.match(.Compact, .Unspecified))
-        XCTAssertFalse(SizeClass.wRegular_hAny.match(.Compact, .Compact))
-        XCTAssertFalse(SizeClass.wRegular_hAny.match(.Compact, .Regular))
+        XCTAssertFalse(SizeClass.WRegular.match(.Compact, .Unspecified))
+        XCTAssertFalse(SizeClass.WRegular.match(.Compact, .Compact))
+        XCTAssertFalse(SizeClass.WRegular.match(.Compact, .Regular))
         
-        XCTAssertTrue(SizeClass.wRegular_hAny.match(.Regular, .Unspecified))
-        XCTAssertTrue(SizeClass.wRegular_hAny.match(.Regular, .Compact))
-        XCTAssertTrue(SizeClass.wRegular_hAny.match(.Regular, .Regular))
+        XCTAssertTrue(SizeClass.WRegular.match(.Regular, .Unspecified))
+        XCTAssertTrue(SizeClass.WRegular.match(.Regular, .Compact))
+        XCTAssertTrue(SizeClass.WRegular.match(.Regular, .Regular))
         
-        // wRegular_hCompact
-        XCTAssertFalse(SizeClass.wRegular_hCompact.match(.Unspecified, .Unspecified))
-        XCTAssertFalse(SizeClass.wRegular_hCompact.match(.Unspecified, .Compact))
-        XCTAssertFalse(SizeClass.wRegular_hCompact.match(.Unspecified, .Regular))
+        // WRegularHCompact
+        XCTAssertFalse(SizeClass.WRegularHCompact.match(.Unspecified, .Unspecified))
+        XCTAssertFalse(SizeClass.WRegularHCompact.match(.Unspecified, .Compact))
+        XCTAssertFalse(SizeClass.WRegularHCompact.match(.Unspecified, .Regular))
         
-        XCTAssertFalse(SizeClass.wRegular_hCompact.match(.Compact, .Unspecified))
-        XCTAssertFalse(SizeClass.wRegular_hCompact.match(.Compact, .Compact))
-        XCTAssertFalse(SizeClass.wRegular_hCompact.match(.Compact, .Regular))
+        XCTAssertFalse(SizeClass.WRegularHCompact.match(.Compact, .Unspecified))
+        XCTAssertFalse(SizeClass.WRegularHCompact.match(.Compact, .Compact))
+        XCTAssertFalse(SizeClass.WRegularHCompact.match(.Compact, .Regular))
         
-        XCTAssertFalse(SizeClass.wRegular_hCompact.match(.Regular, .Unspecified))
-        XCTAssertTrue(SizeClass.wRegular_hCompact.match(.Regular, .Compact))
-        XCTAssertFalse(SizeClass.wRegular_hCompact.match(.Regular, .Regular))
+        XCTAssertFalse(SizeClass.WRegularHCompact.match(.Regular, .Unspecified))
+        XCTAssertTrue(SizeClass.WRegularHCompact.match(.Regular, .Compact))
+        XCTAssertFalse(SizeClass.WRegularHCompact.match(.Regular, .Regular))
         
-        // wRegular_hRegular
-        XCTAssertFalse(SizeClass.wRegular_hRegular.match(.Unspecified, .Unspecified))
-        XCTAssertFalse(SizeClass.wRegular_hRegular.match(.Unspecified, .Compact))
-        XCTAssertFalse(SizeClass.wRegular_hRegular.match(.Unspecified, .Regular))
+        // BothRegular
+        XCTAssertFalse(SizeClass.BothRegular.match(.Unspecified, .Unspecified))
+        XCTAssertFalse(SizeClass.BothRegular.match(.Unspecified, .Compact))
+        XCTAssertFalse(SizeClass.BothRegular.match(.Unspecified, .Regular))
         
-        XCTAssertFalse(SizeClass.wRegular_hRegular.match(.Compact, .Unspecified))
-        XCTAssertFalse(SizeClass.wRegular_hRegular.match(.Compact, .Compact))
-        XCTAssertFalse(SizeClass.wRegular_hRegular.match(.Compact, .Regular))
+        XCTAssertFalse(SizeClass.BothRegular.match(.Compact, .Unspecified))
+        XCTAssertFalse(SizeClass.BothRegular.match(.Compact, .Compact))
+        XCTAssertFalse(SizeClass.BothRegular.match(.Compact, .Regular))
         
-        XCTAssertFalse(SizeClass.wRegular_hRegular.match(.Regular, .Unspecified))
-        XCTAssertFalse(SizeClass.wRegular_hRegular.match(.Regular, .Compact))
-        XCTAssertTrue(SizeClass.wRegular_hRegular.match(.Regular, .Regular))
+        XCTAssertFalse(SizeClass.BothRegular.match(.Regular, .Unspecified))
+        XCTAssertFalse(SizeClass.BothRegular.match(.Regular, .Compact))
+        XCTAssertTrue(SizeClass.BothRegular.match(.Regular, .Regular))
         
     }
     

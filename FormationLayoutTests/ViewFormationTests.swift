@@ -183,8 +183,8 @@ class ViewFormationTests: XCTestCase {
         XCTAssertTrue(formation.activeForSizeClass(.Regular, .Regular))
         
         // should return true only for installed size classes
-        formation.install(.wRegular_hAny)
-        formation.install(.wCompact_hCompact)
+        formation.install(.WRegular)
+        formation.install(.BothCompact)
         
         XCTAssertFalse(formation.activeForSizeClass(.Unspecified, .Unspecified))
         XCTAssertFalse(formation.activeForSizeClass(.Unspecified, .Compact))
@@ -197,8 +197,8 @@ class ViewFormationTests: XCTestCase {
         XCTAssertTrue(formation.activeForSizeClass(.Regular, .Regular))
         
         // should return false for excepted size classes
-        formation.except(.wAny_hRegular)
-        formation.except(.wRegular_hCompact)
+        formation.except(.HRegular)
+        formation.except(.WRegularHCompact)
         
         XCTAssertFalse(formation.activeForSizeClass(.Unspecified, .Unspecified))
         XCTAssertFalse(formation.activeForSizeClass(.Unspecified, .Compact))
@@ -216,7 +216,7 @@ class ViewFormationTests: XCTestCase {
         // should set active property
         XCTAssertFalse(formation.active)
         
-        formation.except(.wCompact_hCompact)
+        formation.except(.BothCompact)
         
         formation.activate(.Regular, .Regular)
         XCTAssertTrue(formation.active)
