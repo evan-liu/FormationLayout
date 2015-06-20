@@ -8,7 +8,7 @@ Work with auto layout and size class easily.
 
 ## Features
 
-- Chainable syntax
+- Chaining methods
 - Group layout
 - Size class support
 
@@ -58,10 +58,10 @@ override func viewDidLoad() {
 
 ```swift
 layout.group(btn1, btn2, btn3)
-	.width(100)
-	.top(view.top + 50)
-	.first { $0.leading(view.leading + 8) }
-	.hSpace(10)
+	.width(100) // Width of all buttons will be 100
+	.top(view.top + 50)	// Will call the same method on each button
+	.first { $0.leading(view.leading + 8) } // Place the first button
+	.hSpace(10)	// The others will follow with space of 10
 ```
 
 ### Size class
@@ -74,8 +74,8 @@ class ViewController: UIViewController {
         layout = FormationLayout(rootView: view)
         
         layout.view(btn).centerX(view)
-        layout.view(btn).top(view).install(.HRegular)
-        layout.view(btn).bottom(view).install(.HCompact)
+        layout.view(btn).top(view).install(.WRegular)
+        layout.view(btn).bottom(view).install(.WCompact)
         
         layout.activate(traitCollection)
     }
@@ -85,9 +85,9 @@ class ViewController: UIViewController {
 }
 ```
 
-Use `layout.block {}` to install constaints together.
+Use `layout.block {}` to install constaints to size class together.
 
-```swfit
+```swift
 class ViewController: UIViewController {
 	var layout: FormationLayout!
     override func viewDidLoad() {
@@ -98,14 +98,14 @@ class ViewController: UIViewController {
         layout.view()
         //...
         
-        //-- wCompact hCompact
+        //-- wCompact_hCompact
         layout.block {
             layout.view()
             layout.group()
             //...
         }.install(.BothCompact)
         
-        //-- not wCompact hCompact
+        //-- not wCompact_hCompact
         layout.block {
             //...
         }.except(.BothCompact)
