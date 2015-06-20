@@ -14,6 +14,8 @@
 		201205B81B34B7A5006C47D5 /* ViewFormation+CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201205B71B34B7A5006C47D5 /* ViewFormation+CGFloat.swift */; };
 		201205BA1B34BBE0006C47D5 /* ViewFormation+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201205B91B34BBE0006C47D5 /* ViewFormation+UIView.swift */; };
 		201205BC1B34C862006C47D5 /* LayoutBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201205BB1B34C862006C47D5 /* LayoutBlock.swift */; };
+		201205BE1B34F25A006C47D5 /* GroupFormation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201205BD1B34F25A006C47D5 /* GroupFormation.swift */; };
+		201205C01B34F32D006C47D5 /* GroupFormationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201205BF1B34F32D006C47D5 /* GroupFormationTests.swift */; };
 		20506DD01B323CE100B6B14A /* FormationLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 20506DCF1B323CE100B6B14A /* FormationLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20506DD71B323CE100B6B14A /* FormationLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20506DCC1B323CE100B6B14A /* FormationLayout.framework */; };
 		20506DF31B3267B300B6B14A /* LayoutTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20506DF21B3267B300B6B14A /* LayoutTarget.swift */; };
@@ -42,6 +44,8 @@
 		201205B71B34B7A5006C47D5 /* ViewFormation+CGFloat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewFormation+CGFloat.swift"; sourceTree = "<group>"; };
 		201205B91B34BBE0006C47D5 /* ViewFormation+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewFormation+UIView.swift"; sourceTree = "<group>"; };
 		201205BB1B34C862006C47D5 /* LayoutBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutBlock.swift; sourceTree = "<group>"; };
+		201205BD1B34F25A006C47D5 /* GroupFormation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupFormation.swift; sourceTree = "<group>"; };
+		201205BF1B34F32D006C47D5 /* GroupFormationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupFormationTests.swift; sourceTree = "<group>"; };
 		20506DCC1B323CE100B6B14A /* FormationLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FormationLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20506DCF1B323CE100B6B14A /* FormationLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FormationLayout.h; sourceTree = "<group>"; };
 		20506DD11B323CE100B6B14A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 				201205B51B34B756006C47D5 /* ViewFormation+LayoutTarget.swift */,
 				201205B71B34B7A5006C47D5 /* ViewFormation+CGFloat.swift */,
 				201205B91B34BBE0006C47D5 /* ViewFormation+UIView.swift */,
+				201205BD1B34F25A006C47D5 /* GroupFormation.swift */,
 				201205BB1B34C862006C47D5 /* LayoutBlock.swift */,
 				20506DF21B3267B300B6B14A /* LayoutTarget.swift */,
 				201205AD1B33DFE2006C47D5 /* SizeClass.swift */,
@@ -116,6 +121,7 @@
 				20506DDD1B323CE100B6B14A /* Info.plist */,
 				209D27F01B32B59D004771BF /* FormationLayoutTests.swift */,
 				209D27EC1B32B3D4004771BF /* ViewFormationTests.swift */,
+				201205BF1B34F32D006C47D5 /* GroupFormationTests.swift */,
 				20506DF41B326CAB00B6B14A /* LayoutTargetTests.swift */,
 				201205AF1B33E572006C47D5 /* SizeClassTests.swift */,
 			);
@@ -235,6 +241,7 @@
 				201205B81B34B7A5006C47D5 /* ViewFormation+CGFloat.swift in Sources */,
 				201205BA1B34BBE0006C47D5 /* ViewFormation+UIView.swift in Sources */,
 				20506DF31B3267B300B6B14A /* LayoutTarget.swift in Sources */,
+				201205BE1B34F25A006C47D5 /* GroupFormation.swift in Sources */,
 				201205BC1B34C862006C47D5 /* LayoutBlock.swift in Sources */,
 				209D27E91B32A900004771BF /* FormationLayout.swift in Sources */,
 				201205AE1B33DFE2006C47D5 /* SizeClass.swift in Sources */,
@@ -246,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				201205C01B34F32D006C47D5 /* GroupFormationTests.swift in Sources */,
 				20506DF51B326CAB00B6B14A /* LayoutTargetTests.swift in Sources */,
 				209D27ED1B32B3D4004771BF /* ViewFormationTests.swift in Sources */,
 				209D27F11B32B59D004771BF /* FormationLayoutTests.swift in Sources */,

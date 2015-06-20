@@ -39,6 +39,37 @@ public final class FormationLayout {
         return formation
     }
     
+    /// Factory method to create a 'GroupFormation' for multiple views.
+    /// Views will be added to `rootView` if they have no `superView`.
+    public func group(views: UIView...) -> GroupFormation {
+        return group(container: rootView, views: views, moveView: false)
+    }
+    
+    /// Factory method to create a 'GroupFormation' for multiple views.
+    /// Views will be added or moved to the container.
+    public func group(container container: UIView, views: UIView...) -> GroupFormation {
+        return group(container: container, views: views, moveView: true)
+    }
+    
+    /// Factory method to create a 'GroupFormation' for multiple views.
+    ///
+    /// - Parameter container: The container to add the views to if they have no `superView' yet.
+    /// - Parameter views: Views to be added to the group.
+    /// - Parameter moveView: If move a view to the container if it already has a `superView`.
+    ///
+    /// - Returns: A `GroupFormation` for the views.
+    public func group(container container: UIView, views: [UIView], moveView: Bool = false) -> GroupFormation {
+        for view in views {
+            if view.superview == nil || (moveView && view.superview != container) {
+                container.addSubview(view)
+            }
+        }
+        let formation = GroupFormation(views: views)
+        formations.append(formation)
+        return formation
+    }
+    
+    
     /// Activate a size class by a `UIUserInterfaceSizeClass` pair.
     public func activate(hSizeClass: UIUserInterfaceSizeClass = .Unspecified, _ vSizeClass: UIUserInterfaceSizeClass = .Unspecified) {
         // Xcode will complain will activate new constraints before deactivate old ones. 
