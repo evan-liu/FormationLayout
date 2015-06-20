@@ -46,6 +46,12 @@ public final class FormationLayout {
     }
     
     /// Factory method to create a 'GroupFormation' for multiple views.
+    /// Views will be added to `rootView` if they have no `superView`.
+    public func group(views: [UIView]) -> GroupFormation {
+        return group(container: rootView, views: views, moveView: false)
+    }
+    
+    /// Factory method to create a 'GroupFormation' for multiple views.
     /// Views will be added or moved to the container.
     public func group(container container: UIView, views: UIView...) -> GroupFormation {
         return group(container: container, views: views, moveView: true)
