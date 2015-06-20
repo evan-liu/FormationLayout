@@ -17,7 +17,8 @@ public enum SizeClass {
     case WCompactHRegular, WRegularHCompact
 }
 
-internal extension SizeClass {
+extension SizeClass {
+    /// Check if a `UIUserInterfaceSizeClass` pair match the enum.
     internal func match(hSizeClass: UIUserInterfaceSizeClass, _ vSizeClass: UIUserInterfaceSizeClass) -> Bool {
         switch self {
         case .Any:

@@ -12,6 +12,7 @@ import UIKit
 public final class FormationLayout {
     internal var formations = [Formation]()
     
+    /// Root view of the layout. Default container of added views.
     public let rootView: UIView
     public init(rootView: UIView) {
         self.rootView = rootView
@@ -38,7 +39,7 @@ public final class FormationLayout {
         return formation
     }
     
-    /// Activate a size class.
+    /// Activate a size class by a `UIUserInterfaceSizeClass` pair.
     public func activate(hSizeClass: UIUserInterfaceSizeClass = .Unspecified, _ vSizeClass: UIUserInterfaceSizeClass = .Unspecified) {
         // Xcode will complain will activate new constraints before deactivate old ones. 
         // So make sure deactivate old constraints first.

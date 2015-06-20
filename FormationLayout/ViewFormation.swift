@@ -8,20 +8,20 @@
 
 import UIKit
 
-/// Formation layout helper class to create and manager a group of constraints of one view.
+/// Formation class to create and manager a group of constraints of one view.
 public final class ViewFormation : Formation {
-    public let view: UIView
-    private(set) public var constraints = [NSLayoutConstraint]()
-    
+    public var installSizeClasses = Set<SizeClass>()
+    public var exceptSizeClasses = Set<SizeClass>()
     public var active = false {
         didSet {
             active ? NSLayoutConstraint.activateConstraints(constraints) : NSLayoutConstraint.deactivateConstraints(constraints)
         }
     }
     
-    public var installSizeClasses = Set<SizeClass>()
-    public var exceptSizeClasses = Set<SizeClass>()
+    private(set) public var constraints = [NSLayoutConstraint]()
     
+    /// Target view of the formation. Will be `firstItem` of all constraints.
+    public let view: UIView
     public init(view:UIView) {
         self.view = view
         view.translatesAutoresizingMaskIntoConstraints = false

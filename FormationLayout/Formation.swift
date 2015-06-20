@@ -37,24 +37,28 @@ extension Formation {
 }
 
 extension Formation {
-    /// If constraints are active on one size class.
+    /// Check if constraints are active on one size class by a `UIUserInterfaceSizeClass` pair.
     func checkSizeClass(hSizeClass: UIUserInterfaceSizeClass, _ vSizeClass: UIUserInterfaceSizeClass) -> Bool {
+        // Not active on except size classes.
         for exceptSizeClass in exceptSizeClasses {
             if exceptSizeClass.match(hSizeClass, vSizeClass) {
                 return false
             }
         }
         
+        // Install to Any size class and always active by default
         if installSizeClasses.count == 0 {
             return true
         }
         
+        // Active on installed size clasess.
         for installSizeClass in installSizeClasses {
             if installSizeClass.match(hSizeClass, vSizeClass) {
                 return true
             }
         }
         
+        // Not active on uninstalled size classes if any size classes are installed.
         return false
     }
 }
