@@ -12,12 +12,16 @@ import XCTest
 class ViewFormationTests: XCTestCase {
     var view: UIView!
     var formation: ViewFormation!
+    
+    var view2: UIView!
 
     override func setUp() {
         super.setUp()
 
         view = UIView()
         formation = ViewFormation(view: view)
+        
+        view2 = UIView()
     }
     
     // init()
@@ -28,20 +32,18 @@ class ViewFormationTests: XCTestCase {
     
     // constraint factory methods
     func testConstraintFactoryMethods() {
-        let uiView2 = UIView()
-        
         // should create constraint and add to constraints
-        formation.attribute(.Left, relatedBy: .Equal, target: uiView2.left)
+        formation.attribute(.Left, relatedBy: .Equal, target: view2.left)
         XCTAssertEqual(formation.constraints.count, 1)
         
         // should set up constraint and call handler
-        formation.attribute(.Left, relatedBy: .Equal, target: uiView2.centerX, priority: 10) { constraint in
+        formation.attribute(.Left, relatedBy: .Equal, target: view2.centerX, priority: 10) { constraint in
             XCTAssertEqual(constraint.firstItem as! UIView, self.view)
             XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.Left)
             
             XCTAssertEqual(constraint.relation, NSLayoutRelation.Equal)
             
-            XCTAssertEqual(constraint.secondItem as! UIView, uiView2)
+            XCTAssertEqual(constraint.secondItem as! UIView, self.view2)
             XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.CenterX)
             
             XCTAssertEqual(constraint.priority, 10)
@@ -50,8 +52,6 @@ class ViewFormationTests: XCTestCase {
     
     // attribute helper extentions
     func testAttributeHelperExtensions() {
-        let view2 = UIView()
-        
         // should set up constraint and call handler
         formation
             .left(view2.centerX, priority: 10) { constraint in
@@ -60,7 +60,7 @@ class ViewFormationTests: XCTestCase {
                 
                 XCTAssertEqual(constraint.relation, NSLayoutRelation.Equal)
                 
-                XCTAssertEqual(constraint.secondItem as! UIView, view2)
+                XCTAssertEqual(constraint.secondItem as! UIView, self.view2)
                 XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.CenterX)
                 
                 XCTAssertEqual(constraint.priority, 10)
@@ -149,24 +149,6 @@ class ViewFormationTests: XCTestCase {
         
         XCTAssertEqual(checked, 4 * 13)
         
-        //-- LayoutTarget with NSLayoutAttribute.NotAnAttribute
-        
-        // should set secondAttribute to firstAttrubute
-        formation.width(view2 * 2) {
-            XCTAssertEqual($0.secondAttribute, .Width)
-            XCTAssertEqual($0.multiplier, 2)
-        }
-        
-        var sizeSet: Set<NSLayoutAttribute> = [.Width, .Height]
-        formation.size(view2 * 1.5) {
-            XCTAssertEqual($0.secondAttribute, $0.firstAttribute)
-            XCTAssertEqual($0.multiplier, 1.5)
-            
-            XCTAssert(sizeSet.contains($0.secondAttribute))
-            sizeSet.remove($0.secondAttribute)
-        }
-        XCTAssertEqual(sizeSet.count, 0)
-        
         // Size
         checked = 0
         formation
@@ -184,6 +166,32 @@ class ViewFormationTests: XCTestCase {
             .sizeGreaterThanOrEqual(view2.width) { checkAttribute($0, $0.firstAttribute, .GreaterThanOrEqual) }
         XCTAssertEqual(checked, 2 * 4)
 
+    }
+    
+    // LayoutTarget with NSLayoutAttribute.NotAnAttribute
+    func testNotAnAttribute() {
+        // should set secondAttribute to firstAttrubute
+        formation.width(view2 * 2) {
+            XCTAssertEqual($0.secondAttribute, .Width)
+            XCTAssertEqual($0.multiplier, 2)
+        }
+        
+        var sizeSet: Set<NSLayoutAttribute> = [.Width, .Height]
+        formation.size(view2 * 1.5) {
+            XCTAssertEqual($0.secondAttribute, $0.firstAttribute)
+            XCTAssertEqual($0.multiplier, 1.5)
+            
+            XCTAssert(sizeSet.contains($0.secondAttribute))
+            sizeSet.remove($0.secondAttribute)
+        }
+        XCTAssertEqual(sizeSet.count, 0)
+    }
+    
+    // Layout target with same view and attribute
+    func testLayoutTargetWithSameViewAndAttribute() {
+        // should not create constraints
+        formation.width(view + 10)
+        XCTAssertEqual(formation.constraints.count, 0)
     }
     
     // +UIView
