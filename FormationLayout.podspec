@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
                    DESC
 
   s.homepage     = "https://github.com/evan-liu/FormationLayout"
-  s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author       = { "Evan Liu" => "evancoding@gmail.com" }
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/evan-liu/FormationLayout.git", :tag => "#{s.version}" }
