@@ -9,7 +9,7 @@
 import UIKit
 
 /// Formation class to create and manager a group of constraints of one view.
-public final class GroupFormation : Formation {
+public final class GroupFormation: Formation {
     public var installSizeClasses = Set<SizeClass>()
     public var exceptSizeClasses = Set<SizeClass>()
     public var active = false {

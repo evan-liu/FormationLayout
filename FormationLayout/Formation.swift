@@ -9,7 +9,7 @@
 import Foundation
 
 /// Protocol for formations.
-public protocol Formation : class {
+public protocol Formation: class {
     /// If constraints are active.
     var active: Bool { get set }
     

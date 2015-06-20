@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: - LayoutTarget
 
-public struct LayoutTarget : Equatable {
+public struct LayoutTarget: Equatable {
     public let view: UIView
     public let attribute: NSLayoutAttribute
     
