@@ -22,7 +22,82 @@ public final class GroupFormation: Formation {
     
     internal var viewFormations: [ViewFormation]
     init(views: [UIView]) {
+        guard views.count > 1 else { fatalError("Group Formation need more than one view") }
         viewFormations = views.map { ViewFormation(view: $0) }
+    }
+    
+    /// Get the `ViewFormation` at index.
+    public subscript(index:Int) -> ViewFormation {
+        return viewFormations[index]
+    }
+    
+    // MARK: Helper properties
+    
+    /// Count of the views in the group.
+    public var count: Int {
+        return viewFormations.count
+    }
+    
+    /// The first `UIView` in the group
+    public var firstView: UIView {
+        return viewFormations.first!.view
+    }
+    
+    /// The last `UIView` in the group
+    public var lastView: UIView {
+        return viewFormations.last!.view
+    }
+    
+    // MARK: Code block runners
+    
+    /// Execute a code block with the `GroupFormation` passed in.
+    public func execute(@noescape block: (GroupFormation) -> Void) -> Self {
+        block(self)
+        return self
+    }
+    
+    /// Execute a code block with the `GroupFormation` at an index.
+    public func executeAt(index: Int, @noescape block: (ViewFormation) -> Void) -> Self {
+        block(viewFormations[index])
+        return self
+    }
+    
+    /// Execute a code block with the first `ViewFormation` in the group.
+    public func first(@noescape block: (ViewFormation) -> Void) -> Self {
+        block(viewFormations.first!)
+        return self
+    }
+
+    /// Execute a code block with the last `ViewFormation` in the group.
+    public func last(@noescape block: (ViewFormation) -> Void) -> Self {
+        block(viewFormations.last!)
+        return self
+    }
+    
+    /// Execute a code block for each `ViewFormation` in the group.
+    ///
+    /// The block takes three arguments:
+    ///   - current: The current `ViewFormation` being processed in the group.
+    ///   - index: The index of the current `ViewFormation` being processed in the group.
+    ///   - group: The `GroupFormation` itself.
+    public func forEach(@noescape block: (ViewFormation, Int, GroupFormation) -> Void) -> Self {
+        for i in 0 ..< viewFormations.count {
+            block(viewFormations[i], i, self)
+        }
+        return self
+    }
+    
+    /// Execute a code block for each `ViewFormation` in the group.
+    ///
+    /// The block takes three arguments:
+    ///   - current: The current `ViewFormation` being processed in the group.
+    ///   - index: The index of the current `ViewFormation` being processed in the group.
+    ///   - group: The `GroupFormation` itself.
+    public func forEachReverse(@noescape block: (ViewFormation, Int, GroupFormation) -> Void) -> Self {
+        for var i = viewFormations.count - 1; i >= 0; i-- {
+            block(viewFormations[i], i, self)
+        }
+        return self
     }
 }
 

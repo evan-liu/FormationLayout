@@ -110,4 +110,54 @@ class GroupFormationTests: XCTestCase {
         XCTAssertEqual(group.viewFormations[1].constraints.count, 1)
         XCTAssertEqual(group.viewFormations[2].constraints.count, 3)
     }
+    
+    func testExecutionMethods() {
+        var checked = 0
+        
+        // execute()
+        // should call the code block with the group itself
+        group
+            .execute { group in
+                XCTAssertEqual(group.count, 3)
+                checked++
+            }
+            .execute {
+                XCTAssertEqual($0.firstView, view1)
+                checked++
+            }
+        XCTAssertEqual(checked, 2)
+        
+        // forEach()
+        // should call the code block with each `ViewFormation`
+        var checking = 0
+        group
+            .forEach { _, index, _ in
+                XCTAssertEqual(index, checking)
+                checking++
+            }
+        XCTAssertEqual(checking, 3)
+        
+        // forEachReverse()
+        // shoudl call from back
+        checking = 2
+        group
+            .forEachReverse { _, index, _ in
+                XCTAssertEqual(index, checking)
+                checking--
+        }
+        XCTAssertEqual(checking, -1)
+        
+        // executeAt() / first() / last()
+        group
+            .executeAt(1) { XCTAssertEqual($0.view, view2) }
+            .first { XCTAssertEqual($0.view, view1) }
+            .last { XCTAssertEqual($0.view, view3) }
+    }
+    
+    func testHelperProperties() {
+        XCTAssertEqual(group.count, 3)
+        XCTAssertEqual(group.firstView, view1)
+        XCTAssertEqual(group.lastView, view3)
+        XCTAssertEqual(group[1].view, view2)
+    }
 }
