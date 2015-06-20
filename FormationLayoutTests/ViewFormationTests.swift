@@ -179,17 +179,25 @@ class ViewFormationTests: XCTestCase {
             checked++
         }
         
-        func test(checkCount: Int, @noescape block: (view2: UIView) -> Void) {
-            checked = 0
-            block(view2: UIView(frame: CGRectMake(100, 100, 100, 200)))
-            XCTAssertEqual(checked, checkCount)
-        }
+        let view2 = UIView(frame: CGRectMake(100, 100, 100, 200))
+        formation
+            .center(view2) { checkAttribute($0, $0.firstAttribute, view2) } // * 2
+            
+            .centerX(view2) { checkAttribute($0, .CenterX, view2) }
+            .centerY(view2) { checkAttribute($0, .CenterY, view2) }
+            
+            .top(view2) { checkAttribute($0, .Top, view2) }
+            .bottom(view2) { checkAttribute($0, .Bottom, view2) }
+            .leading(view2) { checkAttribute($0, .Leading, view2) }
+            .trailing(view2) { checkAttribute($0, .Trailing, view2) }
+            .baseline(view2) { checkAttribute($0, .Baseline, view2) }
+
+        XCTAssertEqual(checked, 9)
         
-        test(4) { view2 in
-            formation.centerX(view2) { checkAttribute($0, .CenterX, view2) }
-            formation.centerY(view2) { checkAttribute($0, .CenterY, view2) }
-            formation.center(view2) { checkAttribute($0, $0.firstAttribute, view2) }
-        }
+        // should not add to the same view
+        formation
+            .centerX(view) { _ in XCTFail() }
+            .center(view) { _ in XCTFail() }
     }
     
     // active property

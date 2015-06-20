@@ -30,3 +30,26 @@ extension FormationTakesUIView {
         return self
     }
 }
+
+extension FormationTakesUIView {
+    public func top(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        attribute(.Top, relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
+        return self
+    }
+    public func bottom(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        attribute(.Bottom, relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
+        return self
+    }
+    public func leading(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        attribute(.Leading, relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
+        return self
+    }
+    public func trailing(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        attribute(.Trailing, relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
+        return self
+    }
+    public func baseline(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        attribute(.Baseline, relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
+        return self
+    }
+}

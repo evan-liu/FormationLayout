@@ -52,13 +52,17 @@ extension ViewFormation: FormationTakesCGFloat {
 
 extension ViewFormation: FormationTakesUIView {
     public func attribute(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, toView secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
-        addConstraint(NSLayoutConstraint(item: view, attribute: attribute, relatedBy: relation, toItem: secondView, attribute: attribute, multiplier: 1, constant: 0), priority: priority, handler: handler)
+        if secondView != view {
+            addConstraint(NSLayoutConstraint(item: view, attribute: attribute, relatedBy: relation, toItem: secondView, attribute: attribute, multiplier: 1, constant: 0), priority: priority, handler: handler)
+        }
         return self
     }
     
     public func attributes(attributes: [NSLayoutAttribute], relatedBy relation: NSLayoutRelation, toView secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
-        for attribute in attributes {
-            addConstraint(NSLayoutConstraint(item: view, attribute: attribute, relatedBy: relation, toItem: secondView, attribute: attribute, multiplier: 1, constant: 0), priority: priority, handler: handler)
+        if secondView != view {
+            for attribute in attributes {
+                addConstraint(NSLayoutConstraint(item: view, attribute: attribute, relatedBy: relation, toItem: secondView, attribute: attribute, multiplier: 1, constant: 0), priority: priority, handler: handler)
+            }
         }
         return self
     }
