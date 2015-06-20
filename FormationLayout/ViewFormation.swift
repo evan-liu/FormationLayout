@@ -38,7 +38,8 @@ public final class ViewFormation: Formation {
 
 extension ViewFormation: FormationTakesLayoutTarget {
     public func attribute(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
-        addConstraint(NSLayoutConstraint(item: view, attribute: attribute, relatedBy: relation, toItem: target.view, attribute: target.attribute, multiplier: target.multiplier, constant: target.constant), priority: priority, handler: handler)
+        let secondAttribute = target.attribute == .NotAnAttribute ? attribute : target.attribute
+        addConstraint(NSLayoutConstraint(item: view, attribute: attribute, relatedBy: relation, toItem: target.view, attribute: secondAttribute, multiplier: target.multiplier, constant: target.constant), priority: priority, handler: handler)
         return self
     }
 }

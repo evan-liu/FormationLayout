@@ -12,7 +12,7 @@ import UIKit
 
 public struct LayoutTarget: Equatable {
     public let view: UIView
-    public let attribute: NSLayoutAttribute
+    public var attribute: NSLayoutAttribute
     
     public var multiplier: CGFloat = 1
     public var constant: CGFloat = 0
@@ -23,7 +23,7 @@ public struct LayoutTarget: Equatable {
     }
 }
 
-// MARK: - Operators
+// MARK: - LayoutTarget Operators
 
 public func == (lhs: LayoutTarget, rhs: LayoutTarget) -> Bool {
     return lhs.view == rhs.view && lhs.attribute == rhs.attribute && lhs.multiplier == rhs.multiplier && lhs.constant == rhs.constant
@@ -47,6 +47,32 @@ public func * (var lhs: LayoutTarget, rhs: CGFloat) -> LayoutTarget {
 public func / (var lhs: LayoutTarget, rhs: CGFloat) -> LayoutTarget {
     lhs.multiplier /= rhs
     return lhs
+}
+
+// MARK: - UIView Operators
+
+public func + (lhs: UIView, rhs: CGFloat) -> LayoutTarget {
+    var target = LayoutTarget(view: lhs, attribute: .NotAnAttribute)
+    target.constant = rhs
+    return target
+}
+
+public func - (lhs: UIView, rhs: CGFloat) -> LayoutTarget {
+    var target = LayoutTarget(view: lhs, attribute: .NotAnAttribute)
+    target.constant = -rhs
+    return target
+}
+
+public func * (lhs: UIView, rhs: CGFloat) -> LayoutTarget {
+    var target = LayoutTarget(view: lhs, attribute: .NotAnAttribute)
+    target.multiplier = rhs
+    return target
+}
+
+public func / (lhs: UIView, rhs: CGFloat) -> LayoutTarget {
+    var target = LayoutTarget(view: lhs, attribute: .NotAnAttribute)
+    target.multiplier = 1 / rhs
+    return target
 }
 
 // MARK: - UIView extension

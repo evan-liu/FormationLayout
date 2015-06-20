@@ -149,6 +149,24 @@ class ViewFormationTests: XCTestCase {
         
         XCTAssertEqual(checked, 4 * 13)
         
+        //-- LayoutTarget with NSLayoutAttribute.NotAnAttribute
+        
+        // should set secondAttribute to firstAttrubute
+        formation.width(view2 * 2) {
+            XCTAssertEqual($0.secondAttribute, .Width)
+            XCTAssertEqual($0.multiplier, 2)
+        }
+        
+        var sizeSet: Set<NSLayoutAttribute> = [.Width, .Height]
+        formation.size(view2 * 1.5) {
+            XCTAssertEqual($0.secondAttribute, $0.firstAttribute)
+            XCTAssertEqual($0.multiplier, 1.5)
+            
+            XCTAssert(sizeSet.contains($0.secondAttribute))
+            sizeSet.remove($0.secondAttribute)
+        }
+        XCTAssertEqual(sizeSet.count, 0)
+        
         // Size
         checked = 0
         formation

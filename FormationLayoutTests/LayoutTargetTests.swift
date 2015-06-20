@@ -98,4 +98,18 @@ class LayoutTargetTests: XCTestCase {
         
         XCTAssertEqual((view.left / 2 / 2.5).multiplier, 0.2)
     }
+    
+    // + - * / UIView operators
+    func testUIViewOperators() {
+        func check(target: LayoutTarget, _ constant: CGFloat, _ multiplier: CGFloat = 1) {
+            XCTAssertEqual(target.attribute, .NotAnAttribute)
+            XCTAssertEqual(target.multiplier, multiplier)
+            XCTAssertEqual(target.constant, constant)
+        }
+        
+        check(view + 10, 10)
+        check(view - 5.5, -5.5)
+        check(view * 10, 0, 10)
+        check(view / 2, 0, 0.5)
+    }
 }
