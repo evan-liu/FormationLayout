@@ -13,13 +13,6 @@ public protocol FormationTakesLayoutTarget {
     func attribute(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, target: LayoutTarget, priority: UILayoutPriority, handler: ((NSLayoutConstraint) -> Void)?) -> Self
 }
 
-extension ViewFormation: FormationTakesLayoutTarget {
-    public func attribute(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
-        addConstraint(NSLayoutConstraint(item: view, attribute: attribute, relatedBy: relation, toItem: target.view, attribute: target.attribute, multiplier: target.multiplier, constant: target.constant), priority: priority, handler: handler)
-        return self
-    }
-}
-
 extension FormationTakesLayoutTarget {
     public func left(target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
         attribute(.Left, relatedBy: .Equal, target: target, priority: priority, handler: handler)
