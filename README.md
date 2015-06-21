@@ -26,6 +26,8 @@ Work with auto layout and size class easily.
     - [Priority](#priority)
   - [GroupFormation](#groupformation)
     - [View spaces](#view-spaces)
+    - [forEach](#foreach)
+    - [first and last](#first-and-last)
 - [Capturing constraints](#capturing-constraints)
 - [Activate constraints](#activate-constraints)
   - [active property](#active-property)
@@ -207,6 +209,7 @@ layout.group(v1, v2, v3).width(v1).center(v2)
 ```
 
 will create 6 constraints: 
+
 - `.centerX(v1)`
   - v2.width = v1.width
   - v3.width = v1.width
@@ -218,18 +221,145 @@ will create 6 constraints:
 
 ##### View spaces
 
+Use `hSpace()` and `vSpace()` methods to set spaces between views in a group.
+
+```swift
+layout.group(v1, v2, v3).hSpace(10).vSpace(10)
+```
+
+##### first and last
+
+```swift
+layout.group(v1, v2, v3)
+    .first { $0.after(v4) }
+    .hSpace(10)
+```
+
+##### forEach
+
+```swift
+layout.view(icon3).center(view)
+
+layout.group(icon1, icon2, icon3, icon4, icon5)
+    .vSpace(10)
+    .forEach { icon, index, group in
+        icon.size(CGFloat(20 + 5 * index))
+        if index > 0 {
+            icon.trailing(group[index - 1].view.trailing + 20)
+        }
+    }
+    .install(.HRegular)    
+
+layout.group(icon1, icon2, icon3, icon4, icon5)
+    .hSpace(10)
+    .top(icon3)
+    .forEach { icon, index, _ in
+        icon.size(CGFloat(50 - 5 * abs(2 - index)))
+    }  
+    .install(.HCompact)    
+```
+
+![foreach](https://raw.githubusercontent.com/evan-liu/FormationLayoutDemo/master/images/foreach.png)
+
+(left: `.HRegular`; right: `.HCompact`)
+
 ### Capturing constraints
+
+Use a trailing block to capture constraints
+
+```swift
+var v1HConstraint: NSLayoutConstraint
+var v1VConstraints = [NSLayoutConstraint]()
+layout.view(v1)
+	.centerX(v2) { v1HConstraint = $0 }
+	.top(v3) { v1VConstraints.append($0) }
+	.bottom(v4) { v1VConstraints.append($0) }
+```
 
 ### Activate constraints
 
+Constraints are not active when they are created. Activate them using `active` property of `ViewFormation` and `GropuFormation` or `activate()` method of `FormationLayout`
+
 #### active property
+
+If you have only one or two view/group you can set `active` property to true.
+
+```swift
+layout.view(v2).center(panel).active = true
+layout.group(v1, v2, v3).centerY(v2).hSpace(10).active = true
+```
 
 #### activate method
 
+If you have more views/groups use `activate()` method of `FormationLayout` instead after you setup all constraints.
+
+```swift
+layout.view()...
+layout.group()...
+...
+layout.activate()
+```
+
 #### Size classes
+
+Use size classes if you need different layouts on different sizes. Use `FormationLayout.activate()` method to switch constraints.
+
+```swift
+class ViewController: UIViewController {
+	var layout: FormationLayout!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        layout = FormationLayout(rootView: view)
+        // ... Create constraints
+        layout.activate(traitCollection)
+    }
+    override func willTransitionToTraitCollection(newCollection: UITraitCollection, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        layout.activate(newCollection)
+    }    
+}
+```
 
 ##### SizeClass
 
+```swift
+public enum SizeClass {
+    case Any	// wAny_hAny
+    case WCompact, WRegular // wCompact_hAny & wRegular_hAny
+    case HCompact, HRegular // wAny_hCompact & wAny_hRegular
+    case BothCompact, BothRegular // wCompact_hCompact & wRegular_hRegular
+    case WCompactHRegular, WRegularHCompact // wCompact_hRegular & wRegular_hCompact
+}
+```
+
 ##### Install and Except
 
+By default all constraints will be installed on `.Any`(wAny_hAny). `install()` method make the constraints only active on some sizes and `except()` methods make the constraints not active on some sizes.
+
+Make sure your install/except methods cover all sizes.
+
+```swift
+layout.view(v1).width(100).install(.WCompact)
+layout.view(v1).width(200).install(.WRegular)
+
+layout.group(v1, v2, v3).vSpace(5).install(.BothCompact)
+layout.group(v1, v2, v3).vSpace(10).except(.BothCompact)
+```
+
 ##### LayoutBlock
+
+Use `layout.block {}` to install constaints to size classes together.
+
+```swift
+//-- wAny hAny
+// ... Create constraints
+   
+//-- wCompact_hCompact
+layout.block {
+    // ... Create constraints
+}.install(.BothCompact)
+   
+//-- not wCompact_hCompact
+layout.block {
+    // ... Create constraints
+}.except(.BothCompact)
+```
