@@ -12,6 +12,14 @@ Work with auto layout and size class easily.
 - Group layout
 - Size class support
 
+## Install 
+
+Cocoapods: 
+
+```
+pod 'FormationLayout', :git => 'https://github.com/evan-liu/FormationLayout.git', :tag => '0.2.0'
+```
+
 ## Usage
 
 - [FormationLayout](#formationlayout)
@@ -252,14 +260,14 @@ layout.group(icon1, icon2, icon3, icon4, icon5)
 
 layout.group(icon1, icon2, icon3, icon4, icon5)
     .hSpace(10)
-    .forEach { icon, index, group in
+    .forEach { icon, index, _ in
         let distance = CGFloat(abs(2 - index))
         icon.size(50 - 10 * distance)
-        if (index != 2) {
+        if index != 2 {
             icon.top(icon3.top - 5 * distance)
         }
     }
-    .install(.HCompact)   
+    .install(.HCompact)
 ```
 
 ![foreach](https://raw.githubusercontent.com/evan-liu/FormationLayoutDemo/master/images/foreach.png)
