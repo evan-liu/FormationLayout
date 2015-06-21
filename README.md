@@ -264,8 +264,6 @@ layout.group(icon1, icon2, icon3, icon4, icon5)
 
 ![foreach](https://raw.githubusercontent.com/evan-liu/FormationLayoutDemo/master/images/foreach.png)
 
-(left: `.HRegular`; right: `.HCompact`)
-
 ### Capturing constraints
 
 Use a trailing block to capture constraints
