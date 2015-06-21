@@ -26,8 +26,8 @@ Work with auto layout and size class easily.
     - [Priority](#priority)
   - [GroupFormation](#groupformation)
     - [View spaces](#view-spaces)
-    - [forEach](#foreach)
     - [first and last](#first-and-last)
+    - [forEach](#foreach)
 - [Capturing constraints](#capturing-constraints)
 - [Activate constraints](#activate-constraints)
   - [active property](#active-property)
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
 
 ### Create constraints
 
-`NSLayoutConstraint` can be created by [ViewFormation](#ViewFormation) or [GroupFormation](#GroupFormation)
+`NSLayoutConstraint` can be created by [ViewFormation](#viewformation) or [GroupFormation](#groupformation)
 
 #### ViewFormation
 
