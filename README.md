@@ -243,20 +243,23 @@ layout.view(icon3).center(view)
 layout.group(icon1, icon2, icon3, icon4, icon5)
     .vSpace(10)
     .forEach { icon, index, group in
-        icon.size(CGFloat(20 + 5 * index))
+        icon.size(CGFloat(25 + 5 * index))
         if index > 0 {
             icon.trailing(group[index - 1].view.trailing + 20)
         }
     }
-    .install(.HRegular)    
+    .install(.HRegular)
 
 layout.group(icon1, icon2, icon3, icon4, icon5)
     .hSpace(10)
-    .top(icon3)
-    .forEach { icon, index, _ in
-        icon.size(CGFloat(50 - 5 * abs(2 - index)))
-    }  
-    .install(.HCompact)    
+    .forEach { icon, index, group in
+        let distance = CGFloat(abs(2 - index))
+        icon.size(50 - 10 * distance)
+        if (index != 2) {
+            icon.top(icon3.top - 5 * distance)
+        }
+    }
+    .install(.HCompact)   
 ```
 
 ![foreach](https://raw.githubusercontent.com/evan-liu/FormationLayoutDemo/master/images/foreach.png)
