@@ -57,7 +57,7 @@ public final class GroupFormation: Formation {
     }
     
     /// Execute a code block with the `GroupFormation` at an index.
-    public func executeAt(index: Int, @noescape block: (ViewFormation) -> Void) -> Self {
+    public func at(index: Int, @noescape block: (ViewFormation) -> Void) -> Self {
         block(viewFormations[index])
         return self
     }

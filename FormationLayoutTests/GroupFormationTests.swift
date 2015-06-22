@@ -51,12 +51,12 @@ class GroupFormationTests: XCTestCase {
         XCTAssertTrue(group.viewFormations[1].active)
         XCTAssertTrue(group.viewFormations[2].active)
     }
-    
-    func testExecutionMethods() {
-        var checked = 0
-        
-        // execute()
+
+    // execute()
+    func textExecute() {
         // should call the code block with the group itself
+
+        var checked = 0
         group
             .execute { group in
                 XCTAssertEqual(group.count, 3)
@@ -67,30 +67,39 @@ class GroupFormationTests: XCTestCase {
                 checked++
             }
         XCTAssertEqual(checked, 2)
-        
-        // forEach()
+    }
+    
+    // forEach()
+    func testForEach() {
         // should call the code block with each `ViewFormation`
+        
         var checking = 0
         group
             .forEach { _, index, _ in
                 XCTAssertEqual(index, checking)
                 checking++
-            }
+        }
         XCTAssertEqual(checking, 3)
-        
-        // forEachReverse()
+
+    }
+    
+    // forEachReverse()
+    func testForEachReverse() {
         // shoudl call from back
-        checking = 2
+        
+        var checking = 2
         group
             .forEachReverse { _, index, _ in
                 XCTAssertEqual(index, checking)
                 checking--
         }
         XCTAssertEqual(checking, -1)
-        
-        // executeAt() / first() / last()
+    }
+    
+    // at() / first() / last()
+    func testAt() {
         group
-            .executeAt(1) { XCTAssertEqual($0.view, view2) }
+            .at(1) { XCTAssertEqual($0.view, view2) }
             .first { XCTAssertEqual($0.view, view1) }
             .last { XCTAssertEqual($0.view, view3) }
     }
