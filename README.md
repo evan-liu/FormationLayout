@@ -36,7 +36,7 @@ pod 'FormationLayout', :git => 'https://github.com/evan-liu/FormationLayout.git'
     - [Priority](#priority)
   - [GroupFormation](#groupformation)
     - [View spaces](#view-spaces)
-    - [first and last](#first-and-last)
+    - [first, last and at](#first-last-and-at)
     - [forEach](#foreach)
 - [Capturing constraints](#capturing-constraints)
 - [Activate constraints](#activate-constraints)
@@ -237,12 +237,14 @@ Use `hSpace()` and `vSpace()` methods to set spaces between views in a group.
 layout.group(v1, v2, v3).hSpace(10).vSpace(10)
 ```
 
-##### first and last
+##### first, last and at
 
 ```swift
 layout.group(v1, v2, v3)
-    .first { $0.after(v4) }
-    .hSpace(10)
+    .centerY(view)
+    .first { $0.leading(view) }
+    .last { $0.trailing(view) }
+    .at(1) { $0.centerX(view) }
 ```
 
 ##### forEach
