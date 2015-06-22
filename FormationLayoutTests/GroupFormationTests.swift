@@ -91,25 +91,6 @@ class GroupFormationTests: XCTestCase {
         XCTAssertEqual(group.viewFormations[1].constraints.count, 1)
         XCTAssertEqual(group.viewFormations[2].constraints.count, 1)
     }
-
-    // FormationTakesUIView
-    func testFormationTakesUIView() {
-        // should call each view formation but not the target view itself
-        
-        var checked = 0
-        func check(constraint: NSLayoutConstraint, _ secondView: UIView) {
-            XCTAssertEqual(constraint.secondItem as! UIView, secondView)
-            checked++
-        }
-        
-        group.centerX(view1) { check($0, self.view1) }
-        group.center(view2) { check($0, self.view2) }
-        
-        XCTAssertEqual(checked, 6)
-        XCTAssertEqual(group.viewFormations[0].constraints.count, 2)
-        XCTAssertEqual(group.viewFormations[1].constraints.count, 1)
-        XCTAssertEqual(group.viewFormations[2].constraints.count, 3)
-    }
     
     func testExecutionMethods() {
         var checked = 0

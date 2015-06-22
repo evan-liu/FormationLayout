@@ -26,6 +26,7 @@
 		203806DD1B37AC1A006D9FAD /* GroupFormation+CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203806DC1B37AC1A006D9FAD /* GroupFormation+CGFloat.swift */; };
 		203806DF1B37AC30006D9FAD /* GroupFormation+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203806DE1B37AC30006D9FAD /* GroupFormation+UIView.swift */; };
 		203806E11B37B01F006D9FAD /* GroupFormation+SpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203806E01B37B01F006D9FAD /* GroupFormation+SpaceTests.swift */; };
+		203806E31B37B1EE006D9FAD /* GroupFormation+UIViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203806E21B37B1EE006D9FAD /* GroupFormation+UIViewTests.swift */; };
 		20506DD01B323CE100B6B14A /* FormationLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 20506DCF1B323CE100B6B14A /* FormationLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20506DD71B323CE100B6B14A /* FormationLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20506DCC1B323CE100B6B14A /* FormationLayout.framework */; };
 		20506DF31B3267B300B6B14A /* LayoutTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20506DF21B3267B300B6B14A /* LayoutTarget.swift */; };
@@ -66,6 +67,7 @@
 		203806DC1B37AC1A006D9FAD /* GroupFormation+CGFloat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GroupFormation+CGFloat.swift"; sourceTree = "<group>"; };
 		203806DE1B37AC30006D9FAD /* GroupFormation+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GroupFormation+UIView.swift"; sourceTree = "<group>"; };
 		203806E01B37B01F006D9FAD /* GroupFormation+SpaceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GroupFormation+SpaceTests.swift"; sourceTree = "<group>"; };
+		203806E21B37B1EE006D9FAD /* GroupFormation+UIViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GroupFormation+UIViewTests.swift"; sourceTree = "<group>"; };
 		20506DCC1B323CE100B6B14A /* FormationLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FormationLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20506DCF1B323CE100B6B14A /* FormationLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FormationLayout.h; sourceTree = "<group>"; };
 		20506DD11B323CE100B6B14A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				203806D21B36169A006D9FAD /* Formation+PositionTests.swift */,
 				209D27EC1B32B3D4004771BF /* ViewFormationTests.swift */,
 				201205BF1B34F32D006C47D5 /* GroupFormationTests.swift */,
+				203806E21B37B1EE006D9FAD /* GroupFormation+UIViewTests.swift */,
 				203806E01B37B01F006D9FAD /* GroupFormation+SpaceTests.swift */,
 				20506DF41B326CAB00B6B14A /* LayoutTargetTests.swift */,
 				201205AF1B33E572006C47D5 /* SizeClassTests.swift */,
@@ -295,6 +298,7 @@
 				203806E11B37B01F006D9FAD /* GroupFormation+SpaceTests.swift in Sources */,
 				20506DF51B326CAB00B6B14A /* LayoutTargetTests.swift in Sources */,
 				209D27ED1B32B3D4004771BF /* ViewFormationTests.swift in Sources */,
+				203806E31B37B1EE006D9FAD /* GroupFormation+UIViewTests.swift in Sources */,
 				209D27F11B32B59D004771BF /* FormationLayoutTests.swift in Sources */,
 				203806D31B36169A006D9FAD /* Formation+PositionTests.swift in Sources */,
 				201205B01B33E572006C47D5 /* SizeClassTests.swift in Sources */,
