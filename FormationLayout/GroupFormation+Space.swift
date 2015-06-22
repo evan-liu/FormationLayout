@@ -8,8 +8,10 @@
 
 import UIKit
 
+/// GroupFormation extension that make spaces between views.
 extension GroupFormation {
-    /// Make horizontal space between views.
+    
+    /// Make horizontal spaces between views.
     public func hSpace(space: CGFloat, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
         return forEach { current, index, group in
             if index > 0 {
@@ -18,7 +20,7 @@ extension GroupFormation {
         }
     }
 
-    /// Make vertical space between views.    
+    /// Make vertical spaces between views.
     public func vSpace(space: CGFloat, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
         return forEach { current, index, group in
             if index > 0 {

@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Protocol for fomrations that take `CGFloat` constant to create constraints.
 public protocol FormationTakesCGFloat {
     /// `NSLayoutConstraint` factory method with `CGFloat' constant.
     func attribute(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, constant: CGFloat, priority: UILayoutPriority, handler: ((NSLayoutConstraint) -> Void)?) -> Self

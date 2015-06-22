@@ -10,6 +10,7 @@ import UIKit
 
 // MARK: - LayoutTarget
 
+/// A struct holds secondItem, secondAttribute, multiplier and constant of a NSLayoutConstraint.
 public struct LayoutTarget: Equatable {
     public let view: UIView
     public var attribute: NSLayoutAttribute

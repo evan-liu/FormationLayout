@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Protocol for fomrations that take `UIView` to create constraints.
 public protocol FormationTakesUIView {
     /// `NSLayoutConstraint` factory method with another `UIView' to match an attribute.
     func attribute(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, toView secondView: UIView, priority: UILayoutPriority, handler: ((NSLayoutConstraint) -> Void)?) -> Self

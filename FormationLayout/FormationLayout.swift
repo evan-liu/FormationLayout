@@ -78,7 +78,7 @@ public final class FormationLayout {
     
     /// Activate a size class by a `UIUserInterfaceSizeClass` pair.
     public func activate(hSizeClass: UIUserInterfaceSizeClass = .Unspecified, _ vSizeClass: UIUserInterfaceSizeClass = .Unspecified) {
-        // Xcode will complain will activate new constraints before deactivate old ones. 
+        // Xcode will complain if activate new constraints before deactivate old ones.
         // So make sure deactivate old constraints first.
         var formationsToActivate = [Formation]()
         var formationsToDeactivate = [Formation]()

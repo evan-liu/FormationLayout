@@ -18,6 +18,7 @@ public final class ViewFormation: Formation {
         }
     }
     
+    /// Created constraints for the target view.
     private(set) public var constraints = [NSLayoutConstraint]()
     
     /// Target view of the formation. Will be `firstItem` of all constraints.
@@ -27,46 +28,12 @@ public final class ViewFormation: Formation {
         view.translatesAutoresizingMaskIntoConstraints = false
     }
     
+    /// Add one `NSLayoutConstraint` to the view formations.
     public func addConstraint(constraint: NSLayoutConstraint, priority: UILayoutPriority, handler: ((NSLayoutConstraint) -> Void)?) -> Void {
         constraint.priority = priority
         if let handler = handler {
             handler(constraint)
         }
         constraints.append(constraint)
-    }
-}
-
-extension ViewFormation: FormationTakesLayoutTarget {
-    public func attribute(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
-        let secondAttribute = target.attribute == .NotAnAttribute ? attribute : target.attribute
-        if target.view != view || secondAttribute != attribute {
-            addConstraint(NSLayoutConstraint(item: view, attribute: attribute, relatedBy: relation, toItem: target.view, attribute: secondAttribute, multiplier: target.multiplier, constant: target.constant), priority: priority, handler: handler)
-        }
-        return self
-    }
-}
-
-extension ViewFormation: FormationTakesCGFloat {
-    public func attribute(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, constant: CGFloat, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
-        addConstraint(NSLayoutConstraint(item: view, attribute: attribute, relatedBy: relation, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: constant), priority: priority, handler: handler)
-        return self
-    }
-}
-
-extension ViewFormation: FormationTakesUIView {
-    public func attribute(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, toView secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
-        if secondView != view {
-            addConstraint(NSLayoutConstraint(item: view, attribute: attribute, relatedBy: relation, toItem: secondView, attribute: attribute, multiplier: 1, constant: 0), priority: priority, handler: handler)
-        }
-        return self
-    }
-    
-    public func attributes(attributes: [NSLayoutAttribute], relatedBy relation: NSLayoutRelation, toView secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
-        if secondView != view {
-            for attribute in attributes {
-                addConstraint(NSLayoutConstraint(item: view, attribute: attribute, relatedBy: relation, toItem: secondView, attribute: attribute, multiplier: 1, constant: 0), priority: priority, handler: handler)
-            }
-        }
-        return self
     }
 }

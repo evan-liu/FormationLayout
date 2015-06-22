@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Protocol for fomrations that take `LayoutTarget` to create constraints.
 public protocol FormationTakesLayoutTarget {
     /// `NSLayoutConstraint` factory method with `LayoutTarget`.
     func attribute(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, target: LayoutTarget, priority: UILayoutPriority, handler: ((NSLayoutConstraint) -> Void)?) -> Self
