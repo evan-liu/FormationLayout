@@ -160,26 +160,4 @@ class GroupFormationTests: XCTestCase {
         XCTAssertEqual(group.lastView, view3)
         XCTAssertEqual(group[1].view, view2)
     }
-    
-    func testSpace() {
-        var index = 1
-        group.hSpace(10) {
-            XCTAssertEqual($0.firstItem as! UIView, self.group[index].view)
-            XCTAssertEqual($0.firstAttribute, .Leading)
-            XCTAssertEqual($0.secondItem as! UIView, self.group[index - 1].view)
-            XCTAssertEqual($0.secondAttribute, .Trailing)
-            XCTAssertEqual($0.constant, 10)
-            index++
-        }
-        
-        index = 1
-        group.vSpace(10) {
-            XCTAssertEqual($0.firstItem as! UIView, self.group[index].view)
-            XCTAssertEqual($0.firstAttribute, .Top)
-            XCTAssertEqual($0.secondItem as! UIView, self.group[index - 1].view)
-            XCTAssertEqual($0.secondAttribute, .Bottom)
-            XCTAssertEqual($0.constant, 10)
-            index++
-        }
-    }
 }
