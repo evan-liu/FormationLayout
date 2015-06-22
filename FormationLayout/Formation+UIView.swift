@@ -11,6 +11,9 @@ import Foundation
 // See tests in ViewFormation+UIViewTests.swift
 
 /// Protocol for fomrations that take `UIView` to create constraints.
+///
+/// Helper methods are all `relatedBy: .Equal`.
+/// Use full defined `attribute()` method instead to have more control.
 public protocol FormationTakesUIView {
     /// `NSLayoutConstraint` factory method with another `UIView' to match an attribute.
     func attribute(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, toView secondView: UIView, priority: UILayoutPriority, handler: ((NSLayoutConstraint) -> Void)?) -> Self
@@ -29,7 +32,22 @@ extension FormationTakesUIView {
         return self
     }
     public func center(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
-        attributes([NSLayoutAttribute.CenterX, NSLayoutAttribute.CenterY], relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
+        attributes([.CenterX, .CenterY], relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
+        return self
+    }
+}
+
+extension FormationTakesUIView {
+    public func width(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        attribute(.Width, relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
+        return self
+    }
+    public func height(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        attribute(.Height, relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
+        return self
+    }
+    public func size(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        attributes([.Width, .Height], relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
         return self
     }
 }

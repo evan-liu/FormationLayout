@@ -43,13 +43,18 @@ class ViewFormation_UIViewTests: XCTestCase {
             .centerX(view2) { checkAttribute($0, .CenterX, view2) }
             .centerY(view2) { checkAttribute($0, .CenterY, view2) }
             
+            .size(view2) { checkAttribute($0, $0.firstAttribute, view2) } // * 2
+            
+            .width(view2) { checkAttribute($0, .Width, view2) }
+            .height(view2) { checkAttribute($0, .Height, view2) }
+            
             .top(view2) { checkAttribute($0, .Top, view2) }
             .bottom(view2) { checkAttribute($0, .Bottom, view2) }
             .leading(view2) { checkAttribute($0, .Leading, view2) }
             .trailing(view2) { checkAttribute($0, .Trailing, view2) }
             .baseline(view2) { checkAttribute($0, .Baseline, view2) }
         
-        XCTAssertEqual(checked, 9)
+        XCTAssertEqual(checked, 13)
         
         // should not add to the same view
         formation
