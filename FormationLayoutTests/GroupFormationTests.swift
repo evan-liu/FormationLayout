@@ -73,25 +73,6 @@ class GroupFormationTests: XCTestCase {
         XCTAssertEqual(group.viewFormations[2].constraints.count, 2)
     }
     
-    // FormationTakesCGFloat
-    func testFormationTakesCGFloat() {
-        // should call each view formation
-        
-        var checked = 0
-        func check(constraint: NSLayoutConstraint, _ attribute: NSLayoutAttribute, _ constant: CGFloat) {
-            XCTAssertEqual(constraint.firstAttribute, attribute)
-            XCTAssertEqual(constraint.constant, constant)
-            checked++
-        }
-        
-        group.width(100) { check($0, .Width, 100) }
-        
-        XCTAssertEqual(checked, 3)
-        XCTAssertEqual(group.viewFormations[0].constraints.count, 1)
-        XCTAssertEqual(group.viewFormations[1].constraints.count, 1)
-        XCTAssertEqual(group.viewFormations[2].constraints.count, 1)
-    }
-    
     func testExecutionMethods() {
         var checked = 0
         
