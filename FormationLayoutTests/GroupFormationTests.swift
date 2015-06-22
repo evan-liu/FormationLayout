@@ -53,7 +53,7 @@ class GroupFormationTests: XCTestCase {
     }
 
     // execute()
-    func textExecute() {
+    func testExecute() {
         // should call the code block with the group itself
 
         var checked = 0
