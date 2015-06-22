@@ -10,15 +10,14 @@ import Foundation
 
 /// Formation extension methods to create constraints by position to some other `UIView`
 extension FormationTakesLayoutTarget {
+    
     /// layout.view(v1).above(v2)
     /// - == layout.view(v1).bottom(v2.top)
     /// - == v1.Bottom = v2.Top
     public func above(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
         
         let target = LayoutTarget(view: secondView, attribute: .Top)
-        attribute(.Bottom, relatedBy: .Equal, target:target, priority: priority, handler: handler)
-        
-        return self
+        return attribute(.Bottom, relatedBy: .Equal, target:target, priority: priority, handler: handler)
     }
     /// layout.view(v1).below(v2)
     /// - == layout.view(v1).top(v2.bottom)
@@ -26,52 +25,42 @@ extension FormationTakesLayoutTarget {
     public func below(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
         
         let target = LayoutTarget(view: secondView, attribute: .Bottom)
-        attribute(.Top, relatedBy: .Equal, target:target, priority: priority, handler: handler)
-        
-        return self
+        return attribute(.Top, relatedBy: .Equal, target:target, priority: priority, handler: handler)
     }
-    /// layout.view(v1).before(v2) 
+    /// layout.view(v1).before(v2)
     /// - == layout.view(v1).trailing(v2.leading)
     /// - == v1.Trailing = v2.Leading
     public func before(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
         
         let target = LayoutTarget(view: secondView, attribute: .Leading)
-        attribute(.Trailing, relatedBy: .Equal, target:target, priority: priority, handler: handler)
-        
-        return self
+        return attribute(.Trailing, relatedBy: .Equal, target:target, priority: priority, handler: handler)
     }
-    /// layout.view(v1).after(v2) 
+    /// layout.view(v1).after(v2)
     /// - == layout.view(v1).leading(v2.trailing)
     /// - == v1.Leading = v2.Trailing
     public func after(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
         
         let target = LayoutTarget(view: secondView, attribute: .Trailing)
-        attribute(.Leading, relatedBy: .Equal, target:target, priority: priority, handler: handler)
-        
-        return self
+        return attribute(.Leading, relatedBy: .Equal, target:target, priority: priority, handler: handler)
     }
 }
 
 extension FormationTakesLayoutTarget {
-    /// layout.view(v1).above(v2 - 10) 
+    /// layout.view(v1).above(v2 - 10)
     /// - == layout.view(v1).bottom(v2.top - 10)
     /// - == v1.Bottom = v2.Top - 10
     public func above(var target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
         
         target.attribute = .Top
-        attribute(.Bottom, relatedBy: .Equal, target: target, priority: priority, handler: handler)
-        
-        return self
+        return attribute(.Bottom, relatedBy: .Equal, target: target, priority: priority, handler: handler)
     }
     /// layout.view(v1).below(v2 + 10)
-    /// - == layout.view(v1).top(v2.bottom + 10)    
+    /// - == layout.view(v1).top(v2.bottom + 10)
     /// - == v1.Top = v2.Bottom + 10
     public func below(var target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
         
         target.attribute = .Bottom
-        attribute(.Top, relatedBy: .Equal, target: target, priority: priority, handler: handler)
-        
-        return self
+        return attribute(.Top, relatedBy: .Equal, target: target, priority: priority, handler: handler)
     }
     /// layout.view(v1).before(v2 - 10)
     /// - == layout.view(v1).trailing(v2.leading - 10)
@@ -79,18 +68,14 @@ extension FormationTakesLayoutTarget {
     public func before(var target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
         
         target.attribute = .Leading
-        attribute(.Trailing, relatedBy: .Equal, target: target, priority: priority, handler: handler)
-        
-        return self
+        return attribute(.Trailing, relatedBy: .Equal, target: target, priority: priority, handler: handler)
     }
-    /// layout.view(v1).after(v2 + 10) 
+    /// layout.view(v1).after(v2 + 10)
     /// - == layout.view(v1).leading(v2.trailing + 10)
     /// - == v1.Leading = v2.Trailing + 10
     public func after(var target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
         
         target.attribute = .Trailing
-        attribute(.Leading, relatedBy: .Equal, target: target, priority: priority, handler: handler)
-        
-        return self
+        return attribute(.Leading, relatedBy: .Equal, target: target, priority: priority, handler: handler)
     }
 }

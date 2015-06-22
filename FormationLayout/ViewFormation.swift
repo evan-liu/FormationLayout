@@ -29,12 +29,14 @@ public final class ViewFormation: Formation {
     }
     
     /// Add one `NSLayoutConstraint` to the view formations.
-    public func addConstraint(constraint: NSLayoutConstraint, priority: UILayoutPriority, handler: ((NSLayoutConstraint) -> Void)?) -> Void {
+    public func addConstraint(constraint: NSLayoutConstraint, priority: UILayoutPriority, handler: ((NSLayoutConstraint) -> Void)?) -> Self {
         
         constraint.priority = priority
         if let handler = handler {
             handler(constraint)
         }
         constraints.append(constraint)
+        
+        return self
     }
 }
