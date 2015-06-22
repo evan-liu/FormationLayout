@@ -1,5 +1,7 @@
 # Formation Layout
 
+![banner](https://raw.githubusercontent.com/evan-liu/FormationLayout/master/images/banner.png)
+
 Work with auto layout and size class easily.
 
 **Requires**: Swift 2, Xcode 7, iOS 8
@@ -14,7 +16,7 @@ Work with auto layout and size class easily.
 
 ## Install 
 
-Cocoapods: 
+Cocoapods (need to use git url as it doesn't support Swift 2 yet):
 
 ```
 pod 'FormationLayout', :git => 'https://github.com/evan-liu/FormationLayout.git', :tag => '0.2.0'
@@ -270,7 +272,7 @@ layout.group(icon1, icon2, icon3, icon4, icon5)
     .install(.HCompact)
 ```
 
-![foreach](https://raw.githubusercontent.com/evan-liu/FormationLayoutDemo/master/images/foreach.png)
+![foreach](https://raw.githubusercontent.com/evan-liu/FormationLayout/master/images/foreach.png)
 
 ### Capturing constraints
 
