@@ -8,6 +8,8 @@
 
 import UIKit
 
+// See helper extension methods in Formation+LayoutTarget.swift
+
 /// GroupFormation extension that takes `LayoutTarget` to create constraints.
 extension GroupFormation: FormationTakesLayoutTarget {
     

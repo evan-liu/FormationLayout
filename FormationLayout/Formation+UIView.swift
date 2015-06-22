@@ -8,6 +8,8 @@
 
 import Foundation
 
+// See tests in ViewFormation+UIViewTests.swift
+
 /// Protocol for fomrations that take `UIView` to create constraints.
 public protocol FormationTakesUIView {
     /// `NSLayoutConstraint` factory method with another `UIView' to match an attribute.

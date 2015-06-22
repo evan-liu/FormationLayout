@@ -8,6 +8,8 @@
 
 import UIKit
 
+// See tests in ViewFormation+CGFloatTests.swift
+
 /// Protocol for fomrations that take `CGFloat` constant to create constraints.
 public protocol FormationTakesCGFloat {
     /// `NSLayoutConstraint` factory method with `CGFloat' constant.

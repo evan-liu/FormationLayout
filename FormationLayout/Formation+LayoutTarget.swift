@@ -8,6 +8,8 @@
 
 import UIKit
 
+// See tests in ViewFormation+LayoutTargetTests.swift
+
 /// Protocol for fomrations that take `LayoutTarget` to create constraints.
 public protocol FormationTakesLayoutTarget {
     /// `NSLayoutConstraint` factory method with `LayoutTarget`.

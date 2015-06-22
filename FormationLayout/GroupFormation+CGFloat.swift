@@ -8,6 +8,8 @@
 
 import UIKit
 
+// See helper extension methods in Formation+CGFloat.swift
+
 /// GroupFormation extension that takes `CGFloat' constant to create constraints.
 extension GroupFormation: FormationTakesCGFloat {
     

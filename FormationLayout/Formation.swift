@@ -36,6 +36,8 @@ extension Formation {
     }
 }
 
+// See tests in ViewFormationTests.swift
+
 extension Formation {
     /// Check if constraints are active on one size class by a `UIUserInterfaceSizeClass` pair.
     func checkSizeClass(hSizeClass: UIUserInterfaceSizeClass, _ vSizeClass: UIUserInterfaceSizeClass) -> Bool {

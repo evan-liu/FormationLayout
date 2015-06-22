@@ -8,6 +8,8 @@
 
 import UIKit
 
+// See helper extension methods in Formation+UIView.swift
+
 /// ViewFormation extension that takes another `UIView' to create constraints.
 extension ViewFormation: FormationTakesUIView {
     
