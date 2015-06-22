@@ -26,33 +26,6 @@ public final class GroupFormation: Formation {
         viewFormations = views.map { ViewFormation(view: $0) }
     }
     
-    /// Get the `ViewFormation` at index.
-    public subscript(index:Int) -> ViewFormation {
-        return viewFormations[index]
-    }
-    
-    // MARK: Helper properties
-    
-    /// Count of the views in the group.
-    public var count: Int {
-        return viewFormations.count
-    }
-    
-    /// The first `UIView` in the group
-    public var firstView: UIView {
-        return viewFormations.first!.view
-    }
-    
-    /// The last `UIView` in the group
-    public var lastView: UIView {
-        return viewFormations.last!.view
-    }
-    
-    /// Get view at index
-    public func viewAt(index: Int) -> UIView {
-        return viewFormations[index].view
-    }
-    
     // MARK: Code block runners
     
     /// Execute a code block with the `GroupFormation` passed in.
