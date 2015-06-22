@@ -110,4 +110,10 @@ class GroupFormationTests: XCTestCase {
         XCTAssertEqual(group.lastView, view3)
         XCTAssertEqual(group[1].view, view2)
     }
+    
+    func testViewAt() {
+        XCTAssertEqual(group.viewAt(0), view1)
+        XCTAssertEqual(group.viewAt(1), view2)
+        XCTAssertEqual(group.viewAt(2), view3)
+    }
 }

@@ -48,17 +48,16 @@ public final class GroupFormation: Formation {
         return viewFormations.last!.view
     }
     
+    /// Get view at index
+    public func viewAt(index: Int) -> UIView {
+        return viewFormations[index].view
+    }
+    
     // MARK: Code block runners
     
     /// Execute a code block with the `GroupFormation` passed in.
     public func execute(@noescape block: (GroupFormation) -> Void) -> Self {
         block(self)
-        return self
-    }
-    
-    /// Execute a code block with the `GroupFormation` at an index.
-    public func at(index: Int, @noescape block: (ViewFormation) -> Void) -> Self {
-        block(viewFormations[index])
         return self
     }
     
@@ -71,6 +70,12 @@ public final class GroupFormation: Formation {
     /// Execute a code block with the last `ViewFormation` in the group.
     public func last(@noescape block: (ViewFormation) -> Void) -> Self {
         block(viewFormations.last!)
+        return self
+    }
+    
+    /// Execute a code block with the `GroupFormation` at an index.
+    public func at(index: Int, @noescape block: (ViewFormation) -> Void) -> Self {
+        block(viewFormations[index])
         return self
     }
     
