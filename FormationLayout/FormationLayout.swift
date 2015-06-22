@@ -28,14 +28,18 @@ public final class FormationLayout {
     ///
     /// - Returns: `ViewFormation` instance for the target view.
     public func view(view: UIView, container: UIView? = nil) -> ViewFormation {
+        
         if let container = container where view.superview != container {
             container.addSubview(view)
         }
+        
         if view.superview == nil {
             rootView.addSubview(view)
         }
+        
         let formation = ViewFormation(view: view)
         formations.append(formation)
+        
         return formation
     }
     
@@ -65,19 +69,23 @@ public final class FormationLayout {
     ///
     /// - Returns: A `GroupFormation` for the views.
     public func group(container container: UIView, views: [UIView], moveView: Bool = false) -> GroupFormation {
+
         for view in views {
             if view.superview == nil || (moveView && view.superview != container) {
                 container.addSubview(view)
             }
         }
+        
         let formation = GroupFormation(views: views)
         formations.append(formation)
+        
         return formation
     }
     
     
     /// Activate a size class by a `UIUserInterfaceSizeClass` pair.
     public func activate(hSizeClass: UIUserInterfaceSizeClass = .Unspecified, _ vSizeClass: UIUserInterfaceSizeClass = .Unspecified) {
+
         // Xcode will complain if activate new constraints before deactivate old ones.
         // So make sure deactivate old constraints first.
         var formationsToActivate = [Formation]()
@@ -91,9 +99,11 @@ public final class FormationLayout {
                 }
             }
         }
+        
         for formationToDeactivate in formationsToDeactivate {
             formationToDeactivate.active = false
         }
+        
         for formationToActivate in formationsToActivate {
             formationToActivate.active = true
         }

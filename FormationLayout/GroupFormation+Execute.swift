@@ -42,9 +42,11 @@ extension GroupFormation {
     ///   - index: The index of the current `ViewFormation` being processed in the group.
     ///   - group: The `GroupFormation` itself.
     public func forEach(@noescape block: (ViewFormation, Int, GroupFormation) -> Void) -> Self {
+        
         for i in 0 ..< viewFormations.count {
             block(viewFormations[i], i, self)
         }
+        
         return self
     }
     
@@ -55,9 +57,11 @@ extension GroupFormation {
     ///   - index: The index of the current `ViewFormation` being processed in the group.
     ///   - group: The `GroupFormation` itself.
     public func forEachReverse(@noescape block: (ViewFormation, Int, GroupFormation) -> Void) -> Self {
+        
         for var i = viewFormations.count - 1; i >= 0; i-- {
             block(viewFormations[i], i, self)
         }
+        
         return self
     }
 }

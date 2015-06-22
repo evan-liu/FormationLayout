@@ -24,14 +24,17 @@ public protocol FormationTakesUIView {
 
 extension FormationTakesUIView {
     public func centerX(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+
         attribute(.CenterX, relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
         return self
     }
     public func centerY(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        
         attribute(.CenterY, relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
         return self
     }
     public func center(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        
         attributes([.CenterX, .CenterY], relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
         return self
     }
@@ -39,14 +42,17 @@ extension FormationTakesUIView {
 
 extension FormationTakesUIView {
     public func width(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        
         attribute(.Width, relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
         return self
     }
     public func height(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        
         attribute(.Height, relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
         return self
     }
     public func size(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        
         attributes([.Width, .Height], relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
         return self
     }
@@ -54,22 +60,27 @@ extension FormationTakesUIView {
 
 extension FormationTakesUIView {
     public func top(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        
         attribute(.Top, relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
         return self
     }
     public func bottom(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        
         attribute(.Bottom, relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
         return self
     }
     public func leading(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        
         attribute(.Leading, relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
         return self
     }
     public func trailing(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        
         attribute(.Trailing, relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
         return self
     }
     public func baseline(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        
         attribute(.Baseline, relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
         return self
     }

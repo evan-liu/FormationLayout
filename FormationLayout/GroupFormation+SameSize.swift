@@ -14,26 +14,32 @@ extension GroupFormation {
     
     /// Make all views have the same width.
     public func sameWidth(priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+
         for i in 1 ..< viewFormations.count {
             viewFormations[i].width(viewFormations[i - 1].view, priority: priority, handler: handler)
         }
+        
         return self
     }
 
     /// Make all views have the same height.
     public func sameHeight(priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        
         for i in 1 ..< viewFormations.count {
             viewFormations[i].height(viewFormations[i - 1].view, priority: priority, handler: handler)
         }
+        
         return self
     }
     
     /// Make all views have both the same width and the same height.
     public func sameSize(priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        
         for i in 1 ..< viewFormations.count {
             viewFormations[i].width(viewFormations[i - 1].view, priority: priority, handler: handler)
             viewFormations[i].height(viewFormations[i - 1].view, priority: priority, handler: handler)
         }
+        
         return self
     }
 }

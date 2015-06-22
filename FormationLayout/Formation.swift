@@ -25,13 +25,17 @@ extension Formation {
     /// Install to a size class. Constraints will only be active on installed size classes.
     /// If no size classes are installed `Any`(`wAnyhAny`) will be installed by default.
     public func install(sizeClass: SizeClass) -> Self {
+
         installSizeClasses.insert(sizeClass)
+        
         return self
     }
     
     /// Constraints will not be active on the excepted size classes even if the size class is installed.
     public func except(sizeClass: SizeClass) -> Self {
+        
         exceptSizeClasses.insert(sizeClass)
+        
         return self
     }
 }
@@ -39,8 +43,10 @@ extension Formation {
 // See tests in ViewFormationTests.swift
 
 extension Formation {
+
     /// Check if constraints are active on one size class by a `UIUserInterfaceSizeClass` pair.
     func checkSizeClass(hSizeClass: UIUserInterfaceSizeClass, _ vSizeClass: UIUserInterfaceSizeClass) -> Bool {
+
         // Not active on except size classes.
         for exceptSizeClass in exceptSizeClasses {
             if exceptSizeClass.match(hSizeClass, vSizeClass) {

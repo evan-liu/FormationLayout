@@ -31,48 +31,64 @@ public func == (lhs: LayoutTarget, rhs: LayoutTarget) -> Bool {
 }
 
 public func + (var lhs: LayoutTarget, rhs: CGFloat) -> LayoutTarget {
+ 
     lhs.constant += rhs
+    
     return lhs
 }
 
 public func - (var lhs: LayoutTarget, rhs: CGFloat) -> LayoutTarget {
+    
     lhs.constant -= rhs
+    
     return lhs
 }
 
 public func * (var lhs: LayoutTarget, rhs: CGFloat) -> LayoutTarget {
+    
     lhs.multiplier *= rhs
+    
     return lhs
 }
 
 public func / (var lhs: LayoutTarget, rhs: CGFloat) -> LayoutTarget {
+    
     lhs.multiplier /= rhs
+    
     return lhs
 }
 
 // MARK: - UIView Operators
 
 public func + (lhs: UIView, rhs: CGFloat) -> LayoutTarget {
+    
     var target = LayoutTarget(view: lhs, attribute: .NotAnAttribute)
     target.constant = rhs
+    
     return target
 }
 
 public func - (lhs: UIView, rhs: CGFloat) -> LayoutTarget {
+    
     var target = LayoutTarget(view: lhs, attribute: .NotAnAttribute)
     target.constant = -rhs
+    
     return target
 }
 
 public func * (lhs: UIView, rhs: CGFloat) -> LayoutTarget {
+    
     var target = LayoutTarget(view: lhs, attribute: .NotAnAttribute)
     target.multiplier = rhs
+    
     return target
 }
 
 public func / (lhs: UIView, rhs: CGFloat) -> LayoutTarget {
+    
     var target = LayoutTarget(view: lhs, attribute: .NotAnAttribute)
     target.multiplier = 1 / rhs
+    
     return target
 }
 

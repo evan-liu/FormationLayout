@@ -41,37 +41,45 @@ extension GroupFormation {
 extension GroupFormation {
     
     public func firstTop(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+
         viewFormations.first!.attribute(.Top, relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
         return self
     }
     public func firstTop(target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        
         viewFormations.first!.attribute(.Top, relatedBy: .Equal, target: target, priority: priority, handler: handler)
         return self
     }
     
     public func firstLeading(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        
         viewFormations.first!.attribute(.Leading, relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
         return self
     }
     public func firstLeading(target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        
         viewFormations.first!.attribute(.Leading, relatedBy: .Equal, target: target, priority: priority, handler: handler)
         return self
     }
     
     public func lastBottom(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        
         viewFormations.last!.attribute(.Bottom, relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
         return self
     }
     public func lastBottom(target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        
         viewFormations.last!.attribute(.Bottom, relatedBy: .Equal, target: target, priority: priority, handler: handler)
         return self
     }
     
     public func lastTrailing(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        
         viewFormations.last!.attribute(.Trailing, relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
         return self
     }
     public func lastTrailing(target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        
         viewFormations.last!.attribute(.Trailing, relatedBy: .Equal, target: target, priority: priority, handler: handler)
         return self
     }

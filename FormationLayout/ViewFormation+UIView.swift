@@ -15,19 +15,23 @@ extension ViewFormation: FormationTakesUIView {
     
     /// `NSLayoutConstraint` factory method with another `UIView' to match an attribute.
     public func attribute(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, toView secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        
         if secondView != view {
             addConstraint(NSLayoutConstraint(item: view, attribute: attribute, relatedBy: relation, toItem: secondView, attribute: attribute, multiplier: 1, constant: 0), priority: priority, handler: handler)
         }
+        
         return self
     }
     
     /// `NSLayoutConstraint` factory method with another `UIView' to match attributes.
     public func attributes(attributes: [NSLayoutAttribute], relatedBy relation: NSLayoutRelation, toView secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+        
         if secondView != view {
             for attribute in attributes {
                 addConstraint(NSLayoutConstraint(item: view, attribute: attribute, relatedBy: relation, toItem: secondView, attribute: attribute, multiplier: 1, constant: 0), priority: priority, handler: handler)
             }
         }
+        
         return self
     }
 }
