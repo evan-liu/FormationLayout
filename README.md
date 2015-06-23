@@ -33,7 +33,7 @@ layout.group(v1, v2, v3, v4, v5)
     .forEach { icon, index, group in
         let distance = CGFloat(abs(2 - index))
         icon.size(50 - 10 * distance)
-        if (index != 2) {
+        if index != 2 {
             icon.top(v3.top - 5 * distance)
         }
     }
