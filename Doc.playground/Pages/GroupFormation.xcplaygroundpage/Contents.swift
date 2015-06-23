@@ -64,4 +64,24 @@ demo3 { view, v1, v2, v3 in // Show Result of this line
     layout.activate()
 }
 
+/*: 
+### sameSize
+
+Use `sameWidth()`, `sameHeight()` or `sameSize()` to make views in the group have the same size.
+*/
+
+demo3 { view, v1, v2, v3 in // Show Result of this line
+    var layout = FormationLayout(rootView: view)
+    
+    layout.group(v1, v2, v3)
+        .centerY(view)
+        .first { $0.leading(view) }
+        .last { $0.trailing(view) }
+        .height(10)
+        .hSpace(5)
+        .sameWidth()
+    
+    layout.activate()
+}
+
 //: [Home](Home) | [Previous](@previous) | [Next](@next)
