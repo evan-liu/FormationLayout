@@ -2,7 +2,7 @@
 # FormationLayout
 ----
 
-![banner](https://raw.githubusercontent.com/evan-liu/FormationLayout/master/images/banner.png)
+![banner](banner.png)
 
 ## Table of Content
 
