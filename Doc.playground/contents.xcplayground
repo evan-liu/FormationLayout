@@ -4,5 +4,6 @@
         <page name='Home'/>
         <page name='FormationLayout'/>
         <page name='LayoutTarget'/>
+        <page name='FactoryMethods'/>
     </pages>
 </playground>
