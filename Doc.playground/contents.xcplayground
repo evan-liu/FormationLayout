@@ -6,5 +6,6 @@
         <page name='LayoutTarget'/>
         <page name='FactoryMethods'/>
         <page name='Constraints'/>
+        <page name='GroupFormation'/>
     </pages>
 </playground>
