@@ -5,5 +5,6 @@
         <page name='FormationLayout'/>
         <page name='LayoutTarget'/>
         <page name='FactoryMethods'/>
+        <page name='Constraints'/>
     </pages>
 </playground>
