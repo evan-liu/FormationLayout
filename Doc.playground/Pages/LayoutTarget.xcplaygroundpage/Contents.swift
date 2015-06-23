@@ -28,7 +28,7 @@ demo2 { view, v1, v2 in // Show Result of this line
 
 /*:
 
-v1.width * 1.5 + 20
+    v1.width * 1.5 + 20
 
 Creates a `LayoutTarget` as:
 
@@ -37,13 +37,13 @@ Creates a `LayoutTarget` as:
 - multiplier: 1.5
 - constant: 20
 
-The 'secondAttribute' can be emitted if it is the same as 'firstAttribute'.
+The `secondAttribute` can be emitted if it is the same as `firstAttribute`.
 
-layout.view(v2).height(v1 * 2.5)
+    layout.view(v2).height(v1 * 2.5)
 
 is the same as
 
-layout.view(v2).height(v1.height * 2.5)
+    layout.view(v2).height(v1.height * 2.5)
 
 */
 
