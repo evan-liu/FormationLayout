@@ -7,5 +7,6 @@
         <page name='FactoryMethods'/>
         <page name='Constraints'/>
         <page name='GroupFormation'/>
+        <page name='SizeClass'/>
     </pages>
 </playground>
