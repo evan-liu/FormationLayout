@@ -17,7 +17,7 @@ Work with auto layout and size class easily.
 Cocoapods (need to use git url as it doesn't support Swift 2 yet):
 
 ```
-pod 'FormationLayout', :git => 'https://github.com/evan-liu/FormationLayout.git', :tag => '0.2.1'
+pod 'FormationLayout', :git => 'https://github.com/evan-liu/FormationLayout.git', :tag => '0.3.0'
 ```
 
 ## Documentation
