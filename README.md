@@ -1,8 +1,9 @@
-# Formation Layout
+# FormationLayout
 
 ![banner](https://raw.githubusercontent.com/evan-liu/FormationLayout/master/Doc.playground/Resources/banner.png)
 
-Work with auto layout and size class easily.
+- [Protocol-Oriented](http://evancoding.com/2015/06/24/FormationLayout-and-Protocol-Oriented-Programming-in-Swift/)
+- [100% Test Coverage](https://github.com/evan-liu/FormationLayout/tree/master/FormationLayoutTests)
 
 **Requires**: Swift 2, Xcode 7, iOS 8
 
@@ -10,7 +11,7 @@ Work with auto layout and size class easily.
 
 - Chaining methods
 - Group layout
-- Size class support
+- Size classes support
 
 
 ```swift
