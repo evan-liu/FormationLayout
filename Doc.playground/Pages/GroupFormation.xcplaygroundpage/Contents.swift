@@ -38,7 +38,7 @@ Use `hSpace()` and `vSpace()` methods to set spaces between views in a group.
 */
 
 demo3 { view, v1, v2, v3 in // Show Result of this line
-    var layout = FormationLayout(rootView: view)
+    let layout = FormationLayout(rootView: view)
     
     layout.group(v1, v2, v3)
         .size(20)
@@ -52,7 +52,7 @@ demo3 { view, v1, v2, v3 in // Show Result of this line
 //: ### forEach
 
 demo3 { view, v1, v2, v3 in // Show Result of this line
-    var layout = FormationLayout(rootView: view)
+    let layout = FormationLayout(rootView: view)
     
     layout.group(v1, v2, v3)
         .forEach { v, index, _ in
@@ -71,7 +71,7 @@ Use `sameWidth()`, `sameHeight()` or `sameSize()` to make views in the group hav
 */
 
 demo3 { view, v1, v2, v3 in // Show Result of this line
-    var layout = FormationLayout(rootView: view)
+    let layout = FormationLayout(rootView: view)
     
     layout.group(v1, v2, v3)
         .centerY(view)

@@ -14,7 +14,7 @@ Use extension methods of `UIView` to create `LayoutTarget` and `+ - * /` operato
 */
 
 demo2 { view, v1, v2 in // Show Result of this line
-    var layout = FormationLayout(rootView: view)
+    let layout = FormationLayout(rootView: view)
     layout.view(v1).size(20).centerX(view).top(view)
     layout.view(v2).centerX(view).bottom(view)
     

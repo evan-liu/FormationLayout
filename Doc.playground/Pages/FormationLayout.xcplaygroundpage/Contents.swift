@@ -15,7 +15,7 @@ import FormationLayout
 */
 
 demo { view, icon in    // Show Result of this line
-    var layout = FormationLayout(rootView: view)
+    let layout = FormationLayout(rootView: view)
     layout.view(icon).center(view).active = true
 }
 
@@ -40,7 +40,7 @@ Or you can use `activate()` method of `FormationLayout` instead after you setup 
 */
 
 demo2 { view, v1, v2 in // Show Result of this line
-    var layout = FormationLayout(rootView: view)
+    let layout = FormationLayout(rootView: view)
     
     layout.view(v1).centerY(view).leading(view)
     layout.view(v2).centerY(view).trailing(view)

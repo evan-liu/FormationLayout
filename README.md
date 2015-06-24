@@ -14,7 +14,7 @@ Work with auto layout and size class easily.
 
 
 ```swift
-var layout = FormationLayout(rootView: view)
+let layout = FormationLayout(rootView: view)
 
 layout.view(v3).center(view)
 
