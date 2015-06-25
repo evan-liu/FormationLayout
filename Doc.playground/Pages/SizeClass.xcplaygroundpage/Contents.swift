@@ -43,7 +43,7 @@ demo5(size: 300) { view, v1, v2, v3, v4, v5 in // Show Result of this line
             let distance = CGFloat(abs(2 - index))
             icon.size(50 - 10 * distance)
             if index != 2 {
-                icon.top(v3.top - 5 * distance)
+                icon.top(v3 - 5 * distance)
             }
         }
         .install(.HCompact)
