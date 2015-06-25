@@ -24,7 +24,7 @@ layout.group(v1, v2, v3, v4, v5)
     .forEach { icon, index, group in
         icon.size(CGFloat(25 + 5 * index))
         if index > 0 {
-            icon.trailing(group[index - 1].view.trailing + 20)
+            icon.trailing(group.viewAt(index - 1) + 20)
         }
     }
     .install(.HRegular)
