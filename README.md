@@ -62,6 +62,13 @@ Clone the project then open Doc.xcworkspace (**not** Doc.playground). Play with 
 
 The [Wiki pages](https://github.com/evan-liu/FormationLayout/wiki) have the same content as the Doc Playground. Go for Playground if you have Xcode 7 **Beta 1** installed and have fun playing with the code.
 
+- [FormationLayout](https://github.com/evan-liu/FormationLayout/wiki/FormationLayout)
+- [LayoutTarget](https://github.com/evan-liu/FormationLayout/wiki/LayoutTarget)
+- [FactoryMethods](https://github.com/evan-liu/FormationLayout/wiki/FactoryMethods)
+- [Constraints](https://github.com/evan-liu/FormationLayout/wiki/Constraints)
+- [GroupFormation](https://github.com/evan-liu/FormationLayout/wiki/GroupFormation)
+- [SizeClass](https://github.com/evan-liu/FormationLayout/wiki/SizeClass)
+
 ## Install 
 
 Cocoapods (need to use git url as it doesn't support Swift 2 yet):
