@@ -16,6 +16,6 @@ extension ViewFormation: FormationTakesCGFloat {
     /// `NSLayoutConstraint` factory method with `CGFloat' constant.
     public func attribute(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, constant: CGFloat, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
 
-        return addConstraint(NSLayoutConstraint(item: view, attribute: attribute, relatedBy: relation, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: constant), priority: priority, handler: handler)
+        return addConstraint(NSLayoutConstraint(item: view as! AnyObject, attribute: attribute, relatedBy: relation, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: constant), priority: priority, handler: handler)
     }
 }

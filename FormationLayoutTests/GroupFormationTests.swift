@@ -32,9 +32,9 @@ class GroupFormationTests: XCTestCase {
         // should create an array of `ViewFormation` from the views.
         
         XCTAssertEqual(group.viewFormations.count, 3)
-        XCTAssertEqual(group.viewFormations[0].view, view1)
-        XCTAssertEqual(group.viewFormations[1].view, view2)
-        XCTAssertEqual(group.viewFormations[2].view, view3)
+        XCTAssert(group.viewFormations[0].view.isEqualTo(view1))
+        XCTAssert(group.viewFormations[1].view.isEqualTo(view2))
+        XCTAssert(group.viewFormations[2].view.isEqualTo(view3))
     }
     
     // active

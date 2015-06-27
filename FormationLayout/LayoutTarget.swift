@@ -12,13 +12,13 @@ import UIKit
 
 /// A struct holds secondItem, secondAttribute, multiplier and constant of a NSLayoutConstraint.
 public struct LayoutTarget: Equatable {
-    public let view: UIView
+    public let view: View
     public var attribute: NSLayoutAttribute
     
     public var multiplier: CGFloat = 1
     public var constant: CGFloat = 0
     
-    public init(view: UIView, attribute: NSLayoutAttribute) {
+    public init(view: View, attribute: NSLayoutAttribute) {
         self.view = view
         self.attribute = attribute
     }
@@ -27,7 +27,7 @@ public struct LayoutTarget: Equatable {
 // MARK: - LayoutTarget Operators
 
 public func == (lhs: LayoutTarget, rhs: LayoutTarget) -> Bool {
-    return lhs.view == rhs.view && lhs.attribute == rhs.attribute && lhs.multiplier == rhs.multiplier && lhs.constant == rhs.constant
+    return lhs.view.isEqualTo(rhs.view) && lhs.attribute == rhs.attribute && lhs.multiplier == rhs.multiplier && lhs.constant == rhs.constant
 }
 
 public func + (var lhs: LayoutTarget, rhs: CGFloat) -> LayoutTarget {
@@ -92,9 +92,9 @@ public func / (lhs: UIView, rhs: CGFloat) -> LayoutTarget {
     return target
 }
 
-// MARK: - UIView extension
+// MARK: - View extension
 
-extension UIView {
+extension View {
     public func layoutTarget(attribute: NSLayoutAttribute) -> LayoutTarget {
         return LayoutTarget(view: self, attribute: attribute)
     }

@@ -22,17 +22,17 @@ extension GroupFormation {
     }
     
     /// The first `UIView` in the group
-    public var firstView: UIView {
+    public var firstView: View {
         return viewFormations.first!.view
     }
     
     /// The last `UIView` in the group
-    public var lastView: UIView {
+    public var lastView: View {
         return viewFormations.last!.view
     }
     
     /// Get view at index
-    public func viewAt(index: Int) -> UIView {
+    public func viewAt(index: Int) -> View {
         return viewFormations[index].view
     }
 }

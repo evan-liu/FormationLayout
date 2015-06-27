@@ -22,10 +22,10 @@ public final class ViewFormation: Formation {
     private(set) public var constraints = [NSLayoutConstraint]()
     
     /// Target view of the formation. Will be `firstItem` of all constraints.
-    public let view: UIView
-    public init(view:UIView) {
+    public let view: View
+    public init(view:View) {
         self.view = view
-        view.translatesAutoresizingMaskIntoConstraints = false
+        view.prepareForLayout()
     }
     
     /// Add one `NSLayoutConstraint` to the view formations.

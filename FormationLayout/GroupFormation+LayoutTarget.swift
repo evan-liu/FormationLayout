@@ -17,7 +17,7 @@ extension GroupFormation: FormationTakesLayoutTarget {
     public func attribute(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, target: LayoutTarget, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
 
         for viewFormation in viewFormations {
-            if viewFormation.view != target.view || attribute != target.attribute {
+            if !viewFormation.view.isEqualTo(target.view) || attribute != target.attribute {
                 viewFormation.attribute(attribute, relatedBy: relation, target: target, priority: priority, handler: handler)
             }
         }

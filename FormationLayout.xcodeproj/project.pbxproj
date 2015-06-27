@@ -12,7 +12,7 @@
 		201205B41B34AE9C006C47D5 /* Formation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201205B31B34AE9C006C47D5 /* Formation.swift */; };
 		201205B61B34B756006C47D5 /* Formation+LayoutTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201205B51B34B756006C47D5 /* Formation+LayoutTarget.swift */; };
 		201205B81B34B7A5006C47D5 /* Formation+CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201205B71B34B7A5006C47D5 /* Formation+CGFloat.swift */; };
-		201205BA1B34BBE0006C47D5 /* Formation+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201205B91B34BBE0006C47D5 /* Formation+UIView.swift */; };
+		201205BA1B34BBE0006C47D5 /* Formation+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201205B91B34BBE0006C47D5 /* Formation+View.swift */; };
 		201205BC1B34C862006C47D5 /* LayoutBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201205BB1B34C862006C47D5 /* LayoutBlock.swift */; };
 		201205BE1B34F25A006C47D5 /* GroupFormation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201205BD1B34F25A006C47D5 /* GroupFormation.swift */; };
 		201205C01B34F32D006C47D5 /* GroupFormationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201205BF1B34F32D006C47D5 /* GroupFormationTests.swift */; };
@@ -21,10 +21,10 @@
 		203806D31B36169A006D9FAD /* Formation+PositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203806D21B36169A006D9FAD /* Formation+PositionTests.swift */; };
 		203806D51B37A3BB006D9FAD /* ViewFormation+LayoutTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203806D41B37A3BB006D9FAD /* ViewFormation+LayoutTarget.swift */; };
 		203806D71B37A5C1006D9FAD /* ViewFormation+CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203806D61B37A5C1006D9FAD /* ViewFormation+CGFloat.swift */; };
-		203806D91B37A8CB006D9FAD /* ViewFormation+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203806D81B37A8CB006D9FAD /* ViewFormation+UIView.swift */; };
+		203806D91B37A8CB006D9FAD /* ViewFormation+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203806D81B37A8CB006D9FAD /* ViewFormation+View.swift */; };
 		203806DB1B37AB77006D9FAD /* GroupFormation+LayoutTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203806DA1B37AB77006D9FAD /* GroupFormation+LayoutTarget.swift */; };
 		203806DD1B37AC1A006D9FAD /* GroupFormation+CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203806DC1B37AC1A006D9FAD /* GroupFormation+CGFloat.swift */; };
-		203806DF1B37AC30006D9FAD /* GroupFormation+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203806DE1B37AC30006D9FAD /* GroupFormation+UIView.swift */; };
+		203806DF1B37AC30006D9FAD /* GroupFormation+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203806DE1B37AC30006D9FAD /* GroupFormation+View.swift */; };
 		203806E11B37B01F006D9FAD /* GroupFormation+SpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203806E01B37B01F006D9FAD /* GroupFormation+SpaceTests.swift */; };
 		203806E31B37B1EE006D9FAD /* GroupFormation+UIViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203806E21B37B1EE006D9FAD /* GroupFormation+UIViewTests.swift */; };
 		203806E71B37B39A006D9FAD /* GroupFormation+CGFloatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203806E61B37B39A006D9FAD /* GroupFormation+CGFloatTests.swift */; };
@@ -47,6 +47,11 @@
 		20506DD71B323CE100B6B14A /* FormationLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20506DCC1B323CE100B6B14A /* FormationLayout.framework */; };
 		20506DF31B3267B300B6B14A /* LayoutTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20506DF21B3267B300B6B14A /* LayoutTarget.swift */; };
 		20506DF51B326CAB00B6B14A /* LayoutTargetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20506DF41B326CAB00B6B14A /* LayoutTargetTests.swift */; };
+		206078671B3EB3E300448F13 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206078661B3EB3E300448F13 /* View.swift */; };
+		206078691B3EB3EF00448F13 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206078681B3EB3EF00448F13 /* Container.swift */; };
+		2060786B1B3EB47300448F13 /* View+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2060786A1B3EB47300448F13 /* View+UIView.swift */; };
+		2060786D1B3EB54F00448F13 /* Container+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2060786C1B3EB54F00448F13 /* Container+UIView.swift */; };
+		2060786F1B3EBBD300448F13 /* ViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2060786E1B3EBBD300448F13 /* ViewTests.swift */; };
 		2074CB7A1B38C35400C32EF0 /* GroupFormation+SelfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2074CB791B38C35400C32EF0 /* GroupFormation+SelfTests.swift */; };
 		209D27E91B32A900004771BF /* FormationLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D27E81B32A900004771BF /* FormationLayout.swift */; };
 		209D27EB1B32B3BD004771BF /* ViewFormation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D27EA1B32B3BD004771BF /* ViewFormation.swift */; };
@@ -70,7 +75,7 @@
 		201205B31B34AE9C006C47D5 /* Formation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formation.swift; sourceTree = "<group>"; };
 		201205B51B34B756006C47D5 /* Formation+LayoutTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Formation+LayoutTarget.swift"; sourceTree = "<group>"; };
 		201205B71B34B7A5006C47D5 /* Formation+CGFloat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Formation+CGFloat.swift"; sourceTree = "<group>"; };
-		201205B91B34BBE0006C47D5 /* Formation+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Formation+UIView.swift"; sourceTree = "<group>"; };
+		201205B91B34BBE0006C47D5 /* Formation+View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Formation+View.swift"; sourceTree = "<group>"; };
 		201205BB1B34C862006C47D5 /* LayoutBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutBlock.swift; sourceTree = "<group>"; };
 		201205BD1B34F25A006C47D5 /* GroupFormation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupFormation.swift; sourceTree = "<group>"; };
 		201205BF1B34F32D006C47D5 /* GroupFormationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupFormationTests.swift; sourceTree = "<group>"; };
@@ -79,10 +84,10 @@
 		203806D21B36169A006D9FAD /* Formation+PositionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Formation+PositionTests.swift"; sourceTree = "<group>"; };
 		203806D41B37A3BB006D9FAD /* ViewFormation+LayoutTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewFormation+LayoutTarget.swift"; sourceTree = "<group>"; };
 		203806D61B37A5C1006D9FAD /* ViewFormation+CGFloat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewFormation+CGFloat.swift"; sourceTree = "<group>"; };
-		203806D81B37A8CB006D9FAD /* ViewFormation+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewFormation+UIView.swift"; sourceTree = "<group>"; };
+		203806D81B37A8CB006D9FAD /* ViewFormation+View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewFormation+View.swift"; sourceTree = "<group>"; };
 		203806DA1B37AB77006D9FAD /* GroupFormation+LayoutTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GroupFormation+LayoutTarget.swift"; sourceTree = "<group>"; };
 		203806DC1B37AC1A006D9FAD /* GroupFormation+CGFloat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GroupFormation+CGFloat.swift"; sourceTree = "<group>"; };
-		203806DE1B37AC30006D9FAD /* GroupFormation+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GroupFormation+UIView.swift"; sourceTree = "<group>"; };
+		203806DE1B37AC30006D9FAD /* GroupFormation+View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GroupFormation+View.swift"; sourceTree = "<group>"; };
 		203806E01B37B01F006D9FAD /* GroupFormation+SpaceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GroupFormation+SpaceTests.swift"; sourceTree = "<group>"; };
 		203806E21B37B1EE006D9FAD /* GroupFormation+UIViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GroupFormation+UIViewTests.swift"; sourceTree = "<group>"; };
 		203806E61B37B39A006D9FAD /* GroupFormation+CGFloatTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GroupFormation+CGFloatTests.swift"; sourceTree = "<group>"; };
@@ -108,6 +113,11 @@
 		20506DDD1B323CE100B6B14A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20506DF21B3267B300B6B14A /* LayoutTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutTarget.swift; sourceTree = "<group>"; };
 		20506DF41B326CAB00B6B14A /* LayoutTargetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutTargetTests.swift; sourceTree = "<group>"; };
+		206078661B3EB3E300448F13 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		206078681B3EB3EF00448F13 /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		2060786A1B3EB47300448F13 /* View+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+UIView.swift"; sourceTree = "<group>"; };
+		2060786C1B3EB54F00448F13 /* Container+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Container+UIView.swift"; sourceTree = "<group>"; };
+		2060786E1B3EBBD300448F13 /* ViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewTests.swift; sourceTree = "<group>"; };
 		2074CB791B38C35400C32EF0 /* GroupFormation+SelfTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GroupFormation+SelfTests.swift"; sourceTree = "<group>"; };
 		209D27E81B32A900004771BF /* FormationLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormationLayout.swift; sourceTree = "<group>"; };
 		209D27EA1B32B3BD004771BF /* ViewFormation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFormation.swift; sourceTree = "<group>"; };
@@ -161,6 +171,8 @@
 				20506DF21B3267B300B6B14A /* LayoutTarget.swift */,
 				201205AD1B33DFE2006C47D5 /* SizeClass.swift */,
 				201205BB1B34C862006C47D5 /* LayoutBlock.swift */,
+				206078641B3EB3CA00448F13 /* View */,
+				206078651B3EB3D000448F13 /* Container */,
 				206078601B3EB37C00448F13 /* Formation */,
 				206078621B3EB39A00448F13 /* ViewFormation */,
 				206078631B3EB3A300448F13 /* GroupFormation */,
@@ -176,6 +188,7 @@
 				20506DF41B326CAB00B6B14A /* LayoutTargetTests.swift */,
 				201205AF1B33E572006C47D5 /* SizeClassTests.swift */,
 				203806FE1B3810C1006D9FAD /* LayoutBlockTests.swift */,
+				2060786E1B3EBBD300448F13 /* ViewTests.swift */,
 				203806D21B36169A006D9FAD /* Formation+PositionTests.swift */,
 				209D27EC1B32B3D4004771BF /* ViewFormationTests.swift */,
 				203806EC1B37C5AE006D9FAD /* ViewFormation+LayoutTargetTests.swift */,
@@ -201,7 +214,7 @@
 				201205B31B34AE9C006C47D5 /* Formation.swift */,
 				201205B51B34B756006C47D5 /* Formation+LayoutTarget.swift */,
 				201205B71B34B7A5006C47D5 /* Formation+CGFloat.swift */,
-				201205B91B34BBE0006C47D5 /* Formation+UIView.swift */,
+				201205B91B34BBE0006C47D5 /* Formation+View.swift */,
 				203806D01B3613A4006D9FAD /* Formation+Position.swift */,
 				203807001B38B151006D9FAD /* Formation+Self.swift */,
 			);
@@ -214,7 +227,7 @@
 				209D27EA1B32B3BD004771BF /* ViewFormation.swift */,
 				203806D41B37A3BB006D9FAD /* ViewFormation+LayoutTarget.swift */,
 				203806D61B37A5C1006D9FAD /* ViewFormation+CGFloat.swift */,
-				203806D81B37A8CB006D9FAD /* ViewFormation+UIView.swift */,
+				203806D81B37A8CB006D9FAD /* ViewFormation+View.swift */,
 				203807021B38B7FB006D9FAD /* ViewFormation+Self.swift */,
 			);
 			name = ViewFormation;
@@ -228,12 +241,30 @@
 				203806FA1B38083C006D9FAD /* GroupFormation+Execute.swift */,
 				203806DA1B37AB77006D9FAD /* GroupFormation+LayoutTarget.swift */,
 				203806DC1B37AC1A006D9FAD /* GroupFormation+CGFloat.swift */,
-				203806DE1B37AC30006D9FAD /* GroupFormation+UIView.swift */,
+				203806DE1B37AC30006D9FAD /* GroupFormation+View.swift */,
 				201205C51B3551F8006C47D5 /* GroupFormation+Space.swift */,
 				203806F21B37EEBB006D9FAD /* GroupFormation+SameSize.swift */,
 				203807041B38BC4A006D9FAD /* GroupFormation+Self.swift */,
 			);
 			name = GroupFormation;
+			sourceTree = "<group>";
+		};
+		206078641B3EB3CA00448F13 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				206078661B3EB3E300448F13 /* View.swift */,
+				2060786A1B3EB47300448F13 /* View+UIView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		206078651B3EB3D000448F13 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				206078681B3EB3EF00448F13 /* Container.swift */,
+				2060786C1B3EB54F00448F13 /* Container+UIView.swift */,
+			);
+			name = Container;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,11 +375,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2060786D1B3EB54F00448F13 /* Container+UIView.swift in Sources */,
 				201205B61B34B756006C47D5 /* Formation+LayoutTarget.swift in Sources */,
 				209D27EB1B32B3BD004771BF /* ViewFormation.swift in Sources */,
 				201205B81B34B7A5006C47D5 /* Formation+CGFloat.swift in Sources */,
 				201205C61B3551F8006C47D5 /* GroupFormation+Space.swift in Sources */,
-				201205BA1B34BBE0006C47D5 /* Formation+UIView.swift in Sources */,
+				201205BA1B34BBE0006C47D5 /* Formation+View.swift in Sources */,
 				203807051B38BC4A006D9FAD /* GroupFormation+Self.swift in Sources */,
 				203807011B38B151006D9FAD /* Formation+Self.swift in Sources */,
 				20506DF31B3267B300B6B14A /* LayoutTarget.swift in Sources */,
@@ -356,6 +388,7 @@
 				201205BC1B34C862006C47D5 /* LayoutBlock.swift in Sources */,
 				203806DB1B37AB77006D9FAD /* GroupFormation+LayoutTarget.swift in Sources */,
 				209D27E91B32A900004771BF /* FormationLayout.swift in Sources */,
+				2060786B1B3EB47300448F13 /* View+UIView.swift in Sources */,
 				203806F31B37EEBB006D9FAD /* GroupFormation+SameSize.swift in Sources */,
 				203806D71B37A5C1006D9FAD /* ViewFormation+CGFloat.swift in Sources */,
 				203806F71B3800EB006D9FAD /* GroupFormation+Elements.swift in Sources */,
@@ -363,10 +396,12 @@
 				203806DD1B37AC1A006D9FAD /* GroupFormation+CGFloat.swift in Sources */,
 				203806FB1B38083C006D9FAD /* GroupFormation+Execute.swift in Sources */,
 				203806D11B3613A4006D9FAD /* Formation+Position.swift in Sources */,
-				203806D91B37A8CB006D9FAD /* ViewFormation+UIView.swift in Sources */,
+				203806D91B37A8CB006D9FAD /* ViewFormation+View.swift in Sources */,
 				203807031B38B7FB006D9FAD /* ViewFormation+Self.swift in Sources */,
 				203806D51B37A3BB006D9FAD /* ViewFormation+LayoutTarget.swift in Sources */,
-				203806DF1B37AC30006D9FAD /* GroupFormation+UIView.swift in Sources */,
+				206078671B3EB3E300448F13 /* View.swift in Sources */,
+				206078691B3EB3EF00448F13 /* Container.swift in Sources */,
+				203806DF1B37AC30006D9FAD /* GroupFormation+View.swift in Sources */,
 				201205B41B34AE9C006C47D5 /* Formation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,6 +418,7 @@
 				203806EB1B37C4DC006D9FAD /* ViewFormation+UIViewTests.swift in Sources */,
 				203806FF1B3810C1006D9FAD /* LayoutBlockTests.swift in Sources */,
 				2074CB7A1B38C35400C32EF0 /* GroupFormation+SelfTests.swift in Sources */,
+				2060786F1B3EBBD300448F13 /* ViewTests.swift in Sources */,
 				203806E71B37B39A006D9FAD /* GroupFormation+CGFloatTests.swift in Sources */,
 				20506DF51B326CAB00B6B14A /* LayoutTargetTests.swift in Sources */,
 				209D27ED1B32B3D4004771BF /* ViewFormationTests.swift in Sources */,
