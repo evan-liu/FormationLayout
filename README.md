@@ -2,9 +2,6 @@
 
 ![banner](https://raw.githubusercontent.com/evan-liu/FormationLayout/master/Doc.playground/Resources/banner.png)
 
-- [Protocol-Oriented](http://evancoding.com/2015/06/24/FormationLayout-and-Protocol-Oriented-Programming-in-Swift/)
-- [100% Test Coverage](https://github.com/evan-liu/FormationLayout/tree/master/FormationLayoutTests)
-
 **Requires**: Swift 2, Xcode 7, iOS 8
 
 ## Features

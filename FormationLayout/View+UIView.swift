@@ -15,10 +15,8 @@ extension UIView: View {
     }
     
     public func isEqualTo(other: View) -> Bool {
-        if let other = other as? UIView {
-            return other == self
-        }
-        return false
+        guard let other = other as? UIView else { return false }
+        return other == self
     }
     
     public var container: Container? {
