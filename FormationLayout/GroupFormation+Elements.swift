@@ -21,12 +21,12 @@ extension GroupFormation {
         return viewFormations.count
     }
     
-    /// The first `UIView` in the group
+    /// The first `View` in the group
     public var firstView: View {
         return viewFormations.first!.view
     }
     
-    /// The last `UIView` in the group
+    /// The last `View` in the group
     public var lastView: View {
         return viewFormations.last!.view
     }
@@ -40,7 +40,7 @@ extension GroupFormation {
 /// Extension helper methods to add constraints to some especial elements
 extension GroupFormation {
     
-    public func firstTop(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+    public func firstTop(secondView: View, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
 
         viewFormations.first!.attribute(.Top, relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
         return self
@@ -51,7 +51,7 @@ extension GroupFormation {
         return self
     }
     
-    public func firstLeading(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+    public func firstLeading(secondView: View, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
         
         viewFormations.first!.attribute(.Leading, relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
         return self
@@ -62,7 +62,7 @@ extension GroupFormation {
         return self
     }
     
-    public func lastBottom(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+    public func lastBottom(secondView: View, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
         
         viewFormations.last!.attribute(.Bottom, relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
         return self
@@ -73,7 +73,7 @@ extension GroupFormation {
         return self
     }
     
-    public func lastTrailing(secondView: UIView, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
+    public func lastTrailing(secondView: View, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
         
         viewFormations.last!.attribute(.Trailing, relatedBy: .Equal, toView: secondView, priority: priority, handler: handler)
         return self

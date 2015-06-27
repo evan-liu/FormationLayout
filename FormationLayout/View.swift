@@ -15,6 +15,8 @@ public protocol View {
     
     func isEqualTo(other: View) -> Bool
     
+    var container: Container? { get }
+    
     func addToContainer(container: Container, forceMove: Bool)
     
 }

@@ -58,9 +58,9 @@ public func / (var lhs: LayoutTarget, rhs: CGFloat) -> LayoutTarget {
     return lhs
 }
 
-// MARK: - UIView Operators
+// MARK: - View Operators
 
-public func + (lhs: UIView, rhs: CGFloat) -> LayoutTarget {
+public func + (lhs: View, rhs: CGFloat) -> LayoutTarget {
     
     var target = LayoutTarget(view: lhs, attribute: .NotAnAttribute)
     target.constant = rhs
@@ -68,7 +68,7 @@ public func + (lhs: UIView, rhs: CGFloat) -> LayoutTarget {
     return target
 }
 
-public func - (lhs: UIView, rhs: CGFloat) -> LayoutTarget {
+public func - (lhs: View, rhs: CGFloat) -> LayoutTarget {
     
     var target = LayoutTarget(view: lhs, attribute: .NotAnAttribute)
     target.constant = -rhs
@@ -76,7 +76,7 @@ public func - (lhs: UIView, rhs: CGFloat) -> LayoutTarget {
     return target
 }
 
-public func * (lhs: UIView, rhs: CGFloat) -> LayoutTarget {
+public func * (lhs: View, rhs: CGFloat) -> LayoutTarget {
     
     var target = LayoutTarget(view: lhs, attribute: .NotAnAttribute)
     target.multiplier = rhs
@@ -84,7 +84,7 @@ public func * (lhs: UIView, rhs: CGFloat) -> LayoutTarget {
     return target
 }
 
-public func / (lhs: UIView, rhs: CGFloat) -> LayoutTarget {
+public func / (lhs: View, rhs: CGFloat) -> LayoutTarget {
     
     var target = LayoutTarget(view: lhs, attribute: .NotAnAttribute)
     target.multiplier = 1 / rhs

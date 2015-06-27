@@ -13,10 +13,10 @@ public final class FormationLayout {
     internal var formations = [Formation]()
     
     /// Root view of the layout. Default container of added views.
-    public let rootView: UIView
-    public init(rootView: UIView) {
+    public let rootView: Container
+    public init(rootView: Container) {
         self.rootView = rootView
-        rootView.translatesAutoresizingMaskIntoConstraints = false
+        rootView.prepareForLayout()
     }
     
     /// Factory method to create a `ViewFormation` for one view.
@@ -27,14 +27,13 @@ public final class FormationLayout {
     ///     and the view has no superview.
     ///
     /// - Returns: `ViewFormation` instance for the target view.
-    public func view(view: UIView, container: UIView? = nil) -> ViewFormation {
-        
-        if let container = container where view.superview != container {
-            container.addSubview(view)
+    public func view(view: View, container: Container? = nil) -> ViewFormation {
+        if let container = container {
+            view.addToContainer(container, forceMove: true)
         }
         
-        if view.superview == nil {
-            rootView.addSubview(view)
+        if view.container == nil {
+            view.addToContainer(rootView, forceMove: false)
         }
         
         let formation = ViewFormation(view: view)
@@ -45,19 +44,19 @@ public final class FormationLayout {
     
     /// Factory method to create a 'GroupFormation' for multiple views.
     /// Views will be added to `rootView` if they have no `superView`.
-    public func group(views: UIView...) -> GroupFormation {
+    public func group(views: View...) -> GroupFormation {
         return group(container: rootView, views: views, moveView: false)
     }
     
     /// Factory method to create a 'GroupFormation' for multiple views.
     /// Views will be added to `rootView` if they have no `superView`.
-    public func group(views: [UIView]) -> GroupFormation {
+    public func group(views: [View]) -> GroupFormation {
         return group(container: rootView, views: views, moveView: false)
     }
     
     /// Factory method to create a 'GroupFormation' for multiple views.
     /// Views will be added or moved to the container.
-    public func group(container container: UIView, views: UIView...) -> GroupFormation {
+    public func group(container container: Container, views: View...) -> GroupFormation {
         return group(container: container, views: views, moveView: true)
     }
     
@@ -68,12 +67,10 @@ public final class FormationLayout {
     /// - Parameter moveView: If move a view to the container if it already has a `superView`.
     ///
     /// - Returns: A `GroupFormation` for the views.
-    public func group(container container: UIView, views: [UIView], moveView: Bool = false) -> GroupFormation {
+    public func group(container container: Container, views: [View], moveView: Bool = false) -> GroupFormation {
 
         for view in views {
-            if view.superview == nil || (moveView && view.superview != container) {
-                container.addSubview(view)
-            }
+            view.addToContainer(container, forceMove: moveView)
         }
         
         let formation = GroupFormation(views: views)

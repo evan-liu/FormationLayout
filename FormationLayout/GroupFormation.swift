@@ -21,7 +21,7 @@ public final class GroupFormation: Formation {
     }
     
     internal var viewFormations: [ViewFormation]
-    init(views: [UIView]) {
+    init(views: [View]) {
         guard views.count > 1 else { fatalError("Group Formation need more than one view") }
         viewFormations = views.map { ViewFormation(view: $0) }
     }

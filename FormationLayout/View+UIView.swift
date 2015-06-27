@@ -21,8 +21,12 @@ extension UIView: View {
         return false
     }
     
+    public var container: Container? {
+        return superview
+    }
+    
     public func addToContainer(container: Container, forceMove: Bool = false) {
-        guard let container = container as? UIView else { return }
+        guard let container = container as? UIView where container != superview else { return }
         if superview == nil || forceMove {
             container.addSubview(self)
         }
