@@ -61,6 +61,7 @@
 		20AFF9C21B3F61AA00CB12E7 /* FormationLayout+Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFF9C11B3F61AA00CB12E7 /* FormationLayout+Group.swift */; };
 		20AFF9C91B40A82C00CB12E7 /* View+UILayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFF9C81B40A82C00CB12E7 /* View+UILayoutGuide.swift */; };
 		20AFF9CD1B40AB2100CB12E7 /* View+UILayoutGuideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFF9CC1B40AB2100CB12E7 /* View+UILayoutGuideTests.swift */; };
+		20AFF9CF1B40B57100CB12E7 /* View+UIViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFF9CE1B40B57100CB12E7 /* View+UIViewTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		20AFF9C11B3F61AA00CB12E7 /* FormationLayout+Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FormationLayout+Group.swift"; sourceTree = "<group>"; };
 		20AFF9C81B40A82C00CB12E7 /* View+UILayoutGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+UILayoutGuide.swift"; sourceTree = "<group>"; };
 		20AFF9CC1B40AB2100CB12E7 /* View+UILayoutGuideTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+UILayoutGuideTests.swift"; sourceTree = "<group>"; };
+		20AFF9CE1B40B57100CB12E7 /* View+UIViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+UIViewTests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				2060786E1B3EBBD300448F13 /* ViewTests.swift */,
+				20AFF9CE1B40B57100CB12E7 /* View+UIViewTests.swift */,
 				20AFF9CC1B40AB2100CB12E7 /* View+UILayoutGuideTests.swift */,
 			);
 			name = View;
@@ -488,6 +491,7 @@
 				209D27ED1B32B3D4004771BF /* ViewFormationTests.swift in Sources */,
 				203806E31B37B1EE006D9FAD /* GroupFormation+UIViewTests.swift in Sources */,
 				209D27F11B32B59D004771BF /* FormationLayoutTests.swift in Sources */,
+				20AFF9CF1B40B57100CB12E7 /* View+UIViewTests.swift in Sources */,
 				203807071B38BEE9006D9FAD /* ViewFormation+SelfTests.swift in Sources */,
 				203806FD1B3808A9006D9FAD /* GroupFormation+ExecuteTests.swift in Sources */,
 				203806D31B36169A006D9FAD /* Formation+PositionTests.swift in Sources */,
