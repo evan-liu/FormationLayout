@@ -59,6 +59,8 @@
 		209D27F11B32B59D004771BF /* FormationLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D27F01B32B59D004771BF /* FormationLayoutTests.swift */; };
 		20AFF9C01B3F616B00CB12E7 /* FormationLayout+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFF9BF1B3F616B00CB12E7 /* FormationLayout+View.swift */; };
 		20AFF9C21B3F61AA00CB12E7 /* FormationLayout+Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFF9C11B3F61AA00CB12E7 /* FormationLayout+Group.swift */; };
+		20AFF9C91B40A82C00CB12E7 /* View+UILayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFF9C81B40A82C00CB12E7 /* View+UILayoutGuide.swift */; };
+		20AFF9CD1B40AB2100CB12E7 /* View+UILayoutGuideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFF9CC1B40AB2100CB12E7 /* View+UILayoutGuideTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +129,8 @@
 		209D27F01B32B59D004771BF /* FormationLayoutTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormationLayoutTests.swift; sourceTree = "<group>"; };
 		20AFF9BF1B3F616B00CB12E7 /* FormationLayout+View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FormationLayout+View.swift"; sourceTree = "<group>"; };
 		20AFF9C11B3F61AA00CB12E7 /* FormationLayout+Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FormationLayout+Group.swift"; sourceTree = "<group>"; };
+		20AFF9C81B40A82C00CB12E7 /* View+UILayoutGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+UILayoutGuide.swift"; sourceTree = "<group>"; };
+		20AFF9CC1B40AB2100CB12E7 /* View+UILayoutGuideTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+UILayoutGuideTests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +250,7 @@
 			children = (
 				206078661B3EB3E300448F13 /* View.swift */,
 				2060786A1B3EB47300448F13 /* View+UIView.swift */,
+				20AFF9C81B40A82C00CB12E7 /* View+UILayoutGuide.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				2060786E1B3EBBD300448F13 /* ViewTests.swift */,
+				20AFF9CC1B40AB2100CB12E7 /* View+UILayoutGuideTests.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -439,6 +445,7 @@
 				203807011B38B151006D9FAD /* Formation+Self.swift in Sources */,
 				20506DF31B3267B300B6B14A /* LayoutTarget.swift in Sources */,
 				201205BE1B34F25A006C47D5 /* GroupFormation.swift in Sources */,
+				20AFF9C91B40A82C00CB12E7 /* View+UILayoutGuide.swift in Sources */,
 				201205BC1B34C862006C47D5 /* LayoutBlock.swift in Sources */,
 				203806DB1B37AB77006D9FAD /* GroupFormation+LayoutTarget.swift in Sources */,
 				209D27E91B32A900004771BF /* FormationLayout.swift in Sources */,
@@ -473,6 +480,7 @@
 				203806E11B37B01F006D9FAD /* GroupFormation+SpaceTests.swift in Sources */,
 				203806EB1B37C4DC006D9FAD /* ViewFormation+UIViewTests.swift in Sources */,
 				203806FF1B3810C1006D9FAD /* LayoutBlockTests.swift in Sources */,
+				20AFF9CD1B40AB2100CB12E7 /* View+UILayoutGuideTests.swift in Sources */,
 				2074CB7A1B38C35400C32EF0 /* GroupFormation+SelfTests.swift in Sources */,
 				2060786F1B3EBBD300448F13 /* ViewTests.swift in Sources */,
 				203806E71B37B39A006D9FAD /* GroupFormation+CGFloatTests.swift in Sources */,
