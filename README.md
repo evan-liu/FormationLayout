@@ -4,6 +4,11 @@
 
 **Requires**: Swift 2, Xcode 7, iOS 8
 
+## TODO
+
+- StackView (`UIStackView` in iOS 9, `UIView` + group layout in iOS 8)
+- OS X support
+
 ## Features
 
 - Chaining methods
@@ -11,11 +16,6 @@
 - Size classes support
 - LayoutGuide (`UILayoutGuide` in iOS 9, `UIView` in iOS 8)
   - Doc coming
-
-## TODO
-
-- StackView (`UIStackView` in iOS 9, `UIView` + group layout in iOS 8)
-- OS X support
 
 ```swift
 let layout = FormationLayout(rootView: view)
