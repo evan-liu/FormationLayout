@@ -26,10 +26,10 @@
 		203806DD1B37AC1A006D9FAD /* GroupFormation+CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203806DC1B37AC1A006D9FAD /* GroupFormation+CGFloat.swift */; };
 		203806DF1B37AC30006D9FAD /* GroupFormation+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203806DE1B37AC30006D9FAD /* GroupFormation+View.swift */; };
 		203806E11B37B01F006D9FAD /* GroupFormation+SpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203806E01B37B01F006D9FAD /* GroupFormation+SpaceTests.swift */; };
-		203806E31B37B1EE006D9FAD /* GroupFormation+UIViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203806E21B37B1EE006D9FAD /* GroupFormation+UIViewTests.swift */; };
+		203806E31B37B1EE006D9FAD /* GroupFormation+ViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203806E21B37B1EE006D9FAD /* GroupFormation+ViewTests.swift */; };
 		203806E71B37B39A006D9FAD /* GroupFormation+CGFloatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203806E61B37B39A006D9FAD /* GroupFormation+CGFloatTests.swift */; };
 		203806E91B37B79C006D9FAD /* GroupFormation+LayoutTargetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203806E81B37B79C006D9FAD /* GroupFormation+LayoutTargetTests.swift */; };
-		203806EB1B37C4DC006D9FAD /* ViewFormation+UIViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203806EA1B37C4DC006D9FAD /* ViewFormation+UIViewTests.swift */; };
+		203806EB1B37C4DC006D9FAD /* ViewFormation+ViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203806EA1B37C4DC006D9FAD /* ViewFormation+ViewTests.swift */; };
 		203806ED1B37C5AE006D9FAD /* ViewFormation+LayoutTargetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203806EC1B37C5AE006D9FAD /* ViewFormation+LayoutTargetTests.swift */; };
 		203806EF1B37C6BE006D9FAD /* ViewFormation+CGFloatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203806EE1B37C6BE006D9FAD /* ViewFormation+CGFloatTests.swift */; };
 		203806F31B37EEBB006D9FAD /* GroupFormation+SameSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203806F21B37EEBB006D9FAD /* GroupFormation+SameSize.swift */; };
@@ -94,10 +94,10 @@
 		203806DC1B37AC1A006D9FAD /* GroupFormation+CGFloat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GroupFormation+CGFloat.swift"; sourceTree = "<group>"; };
 		203806DE1B37AC30006D9FAD /* GroupFormation+View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GroupFormation+View.swift"; sourceTree = "<group>"; };
 		203806E01B37B01F006D9FAD /* GroupFormation+SpaceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GroupFormation+SpaceTests.swift"; sourceTree = "<group>"; };
-		203806E21B37B1EE006D9FAD /* GroupFormation+UIViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GroupFormation+UIViewTests.swift"; sourceTree = "<group>"; };
+		203806E21B37B1EE006D9FAD /* GroupFormation+ViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GroupFormation+ViewTests.swift"; sourceTree = "<group>"; };
 		203806E61B37B39A006D9FAD /* GroupFormation+CGFloatTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GroupFormation+CGFloatTests.swift"; sourceTree = "<group>"; };
 		203806E81B37B79C006D9FAD /* GroupFormation+LayoutTargetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GroupFormation+LayoutTargetTests.swift"; sourceTree = "<group>"; };
-		203806EA1B37C4DC006D9FAD /* ViewFormation+UIViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewFormation+UIViewTests.swift"; sourceTree = "<group>"; };
+		203806EA1B37C4DC006D9FAD /* ViewFormation+ViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewFormation+ViewTests.swift"; sourceTree = "<group>"; };
 		203806EC1B37C5AE006D9FAD /* ViewFormation+LayoutTargetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewFormation+LayoutTargetTests.swift"; sourceTree = "<group>"; };
 		203806EE1B37C6BE006D9FAD /* ViewFormation+CGFloatTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewFormation+CGFloatTests.swift"; sourceTree = "<group>"; };
 		203806F21B37EEBB006D9FAD /* GroupFormation+SameSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GroupFormation+SameSize.swift"; sourceTree = "<group>"; };
@@ -292,7 +292,7 @@
 				209D27EC1B32B3D4004771BF /* ViewFormationTests.swift */,
 				203806EC1B37C5AE006D9FAD /* ViewFormation+LayoutTargetTests.swift */,
 				203806EE1B37C6BE006D9FAD /* ViewFormation+CGFloatTests.swift */,
-				203806EA1B37C4DC006D9FAD /* ViewFormation+UIViewTests.swift */,
+				203806EA1B37C4DC006D9FAD /* ViewFormation+ViewTests.swift */,
 				203807061B38BEE9006D9FAD /* ViewFormation+SelfTests.swift */,
 			);
 			name = ViewFormation;
@@ -306,7 +306,7 @@
 				203806FC1B3808A9006D9FAD /* GroupFormation+ExecuteTests.swift */,
 				203806E81B37B79C006D9FAD /* GroupFormation+LayoutTargetTests.swift */,
 				203806E61B37B39A006D9FAD /* GroupFormation+CGFloatTests.swift */,
-				203806E21B37B1EE006D9FAD /* GroupFormation+UIViewTests.swift */,
+				203806E21B37B1EE006D9FAD /* GroupFormation+ViewTests.swift */,
 				203806E01B37B01F006D9FAD /* GroupFormation+SpaceTests.swift */,
 				203806F41B37F379006D9FAD /* GroupFormation+SameSizeTests.swift */,
 				2074CB791B38C35400C32EF0 /* GroupFormation+SelfTests.swift */,
@@ -481,7 +481,7 @@
 				203806EF1B37C6BE006D9FAD /* ViewFormation+CGFloatTests.swift in Sources */,
 				203806ED1B37C5AE006D9FAD /* ViewFormation+LayoutTargetTests.swift in Sources */,
 				203806E11B37B01F006D9FAD /* GroupFormation+SpaceTests.swift in Sources */,
-				203806EB1B37C4DC006D9FAD /* ViewFormation+UIViewTests.swift in Sources */,
+				203806EB1B37C4DC006D9FAD /* ViewFormation+ViewTests.swift in Sources */,
 				203806FF1B3810C1006D9FAD /* LayoutBlockTests.swift in Sources */,
 				20AFF9CD1B40AB2100CB12E7 /* View+UILayoutGuideTests.swift in Sources */,
 				2074CB7A1B38C35400C32EF0 /* GroupFormation+SelfTests.swift in Sources */,
@@ -489,7 +489,7 @@
 				203806E71B37B39A006D9FAD /* GroupFormation+CGFloatTests.swift in Sources */,
 				20506DF51B326CAB00B6B14A /* LayoutTargetTests.swift in Sources */,
 				209D27ED1B32B3D4004771BF /* ViewFormationTests.swift in Sources */,
-				203806E31B37B1EE006D9FAD /* GroupFormation+UIViewTests.swift in Sources */,
+				203806E31B37B1EE006D9FAD /* GroupFormation+ViewTests.swift in Sources */,
 				209D27F11B32B59D004771BF /* FormationLayoutTests.swift in Sources */,
 				20AFF9CF1B40B57100CB12E7 /* View+UIViewTests.swift in Sources */,
 				203807071B38BEE9006D9FAD /* ViewFormation+SelfTests.swift in Sources */,

@@ -9,7 +9,7 @@
 import XCTest
 @testable import FormationLayout
 
-class ViewFormation_UIViewTests: XCTestCase {
+class ViewFormation_ViewTests: XCTestCase {
 
     var view: UIView!
     var formation: ViewFormation!
@@ -25,8 +25,8 @@ class ViewFormation_UIViewTests: XCTestCase {
         view2 = UIView()
     }
 
-    // +UIView
-    func testUIViewExtensions() {
+    // +View
+    func testViewExtensions() {
         var checked = 0
         func checkAttribute(constraint: NSLayoutConstraint, _ attribute: NSLayoutAttribute, _ secondView: UIView, _ relation: NSLayoutRelation = .Equal) {
             XCTAssertEqual(constraint.firstAttribute, attribute)

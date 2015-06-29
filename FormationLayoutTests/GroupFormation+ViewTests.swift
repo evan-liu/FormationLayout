@@ -1,5 +1,5 @@
 //
-//  GroupFormation+UIViewTests.swift
+//  GroupFormation+ViewTests.swift
 //  FormationLayout
 //
 //  Created by Evan on 22/06/15.
@@ -28,7 +28,7 @@ class GroupFormation_UIViewTests: XCTestCase {
     }
     
     // FormationTakesUIView
-    func testFormationTakesUIView() {
+    func testFormationTakesView() {
         // should call each view formation but not the target view itself
         
         var checked = 0
