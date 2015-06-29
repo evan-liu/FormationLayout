@@ -36,6 +36,7 @@ extension FormationLayout {
     ///
     /// - Returns: A `GroupFormation` for the views.
     public func group(container container: Container, views: [View], moveView: Bool = false) -> GroupFormation {
+        container.addToContainer(rootView, forceMove: false)
         
         for view in views {
             view.addToContainer(container, forceMove: moveView)

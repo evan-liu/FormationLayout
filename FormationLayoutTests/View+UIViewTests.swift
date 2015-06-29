@@ -53,6 +53,11 @@ class View_UIViewTests: XCTestCase {
             }
         }
         
+        do { // should not add the view to itself
+            view.addToContainer(view, forceMove: true)
+            XCTAssert(view.superview == nil)
+        }
+        
         do { // when the view has no container
             do { // it should add the view to container
                 view.addToContainer(container1, forceMove: false)

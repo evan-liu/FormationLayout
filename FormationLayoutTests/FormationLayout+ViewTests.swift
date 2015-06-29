@@ -27,6 +27,9 @@ class FormationLayout_ViewTests: XCTestCase {
         // should add view to container
         XCTAssertEqual(uiView.superview!, container)
         
+        // should add container to rootView
+        XCTAssertEqual(container.superview!, rootView)
+        
         // should pass uiView
         XCTAssertEqual(fView.view, uiView)
         XCTAssertEqual(layout.view(uiView).view, uiView)

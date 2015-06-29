@@ -46,6 +46,11 @@ class FormationLayout_GroupTests: XCTestCase {
         layout.group(container: container2, views: [view4, view5], moveView: false)
         XCTAssertEqual(view4.superview!, container1)
         XCTAssertEqual(view5.superview!, container2)
+        
+        // should add containers to rootView
+        
+        XCTAssertEqual(container1.superview!, rootView)
+        XCTAssertEqual(container2.superview!, rootView)
     }
 
 }

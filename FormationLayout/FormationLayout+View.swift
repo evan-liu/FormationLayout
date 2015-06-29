@@ -20,6 +20,7 @@ extension FormationLayout {
     /// - Returns: `ViewFormation` instance for the target view.
     public func view(view: View, container: Container? = nil) -> ViewFormation {
         if let container = container {
+            container.addToContainer(rootView, forceMove: false)
             view.addToContainer(container, forceMove: true)
         }
         
