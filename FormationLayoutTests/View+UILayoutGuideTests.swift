@@ -9,8 +9,9 @@
 import XCTest
 @testable import FormationLayout
 
+@available(iOS 9.0, *)
 class View_UILayoutGuideTests: XCTestCase {
-    
+
     // isEqualTo()
     func testIsEqualTo() {
         let guide = LayoutGuide()
@@ -22,13 +23,10 @@ class View_UILayoutGuideTests: XCTestCase {
         XCTAssertFalse(guide.isEqualTo(LayoutGuide()))
         
         // should return false for different type
-        if #available(iOS 9.0, *) {
-            XCTAssertFalse(guide.isEqualTo(UIView()))
-        }
+        XCTAssertFalse(guide.isEqualTo(UIView()))
     }
-
+    
     // addToContainer()
-    @available(iOS 9.0, *)
     func testAddToContainer() {
         let guide = LayoutGuide()
         
@@ -72,29 +70,5 @@ class View_UILayoutGuideTests: XCTestCase {
         }
     }
 
-    // LayoutGuide()
-    func testCreation() {
-        // should return UILayoutGuide in iOS 9 and UIView in iOS 8
-        
-        let guide = LayoutGuide()
-        
-        if #available(iOS 9.0, *) {
-            XCTAssert(guide is UILayoutGuide)
-        } else {
-            XCTAssert(guide is UIView)
-        }
-    }
-    
-    // LayoutGuide()
-    func testContainer() {
-        // should add to container
-        
-        let view = UIView()
-        
-        let guide = LayoutGuide(container: view)
-        
-        XCTAssert(guide.container!.isEqualTo(view))
-        
-    }
-    
+
 }
