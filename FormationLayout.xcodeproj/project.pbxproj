@@ -64,8 +64,8 @@
 		20AFF9CF1B40B57100CB12E7 /* View+UIViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFF9CE1B40B57100CB12E7 /* View+UIViewTests.swift */; };
 		20AFF9D11B40E1B300CB12E7 /* FormationLayout+ViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFF9D01B40E1B300CB12E7 /* FormationLayout+ViewTests.swift */; };
 		20AFF9D31B40E22600CB12E7 /* FormationLayout+GroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFF9D21B40E22600CB12E7 /* FormationLayout+GroupTests.swift */; };
-		20AFF9DE1B40EEB400CB12E7 /* View+UILayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFF9DD1B40EEB400CB12E7 /* View+UILayoutGuide.swift */; };
-		20AFF9E11B40EEFD00CB12E7 /* View+UILayoutGuideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFF9E01B40EEFD00CB12E7 /* View+UILayoutGuideTests.swift */; };
+		20AFF9DE1B40EEB400CB12E7 /* UILayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFF9DD1B40EEB400CB12E7 /* UILayoutGuide.swift */; };
+		20AFF9E11B40EEFD00CB12E7 /* UILayoutGuideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFF9E01B40EEFD00CB12E7 /* UILayoutGuideTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,8 +139,8 @@
 		20AFF9CE1B40B57100CB12E7 /* View+UIViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+UIViewTests.swift"; sourceTree = "<group>"; };
 		20AFF9D01B40E1B300CB12E7 /* FormationLayout+ViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FormationLayout+ViewTests.swift"; sourceTree = "<group>"; };
 		20AFF9D21B40E22600CB12E7 /* FormationLayout+GroupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FormationLayout+GroupTests.swift"; sourceTree = "<group>"; };
-		20AFF9DD1B40EEB400CB12E7 /* View+UILayoutGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+UILayoutGuide.swift"; sourceTree = "<group>"; };
-		20AFF9E01B40EEFD00CB12E7 /* View+UILayoutGuideTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+UILayoutGuideTests.swift"; sourceTree = "<group>"; };
+		20AFF9DD1B40EEB400CB12E7 /* UILayoutGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILayoutGuide.swift; sourceTree = "<group>"; };
+		20AFF9E01B40EEFD00CB12E7 /* UILayoutGuideTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILayoutGuideTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,7 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				20AFF9C81B40A82C00CB12E7 /* LayoutGuide.swift */,
-				20AFF9DD1B40EEB400CB12E7 /* View+UILayoutGuide.swift */,
+				20AFF9DD1B40EEB400CB12E7 /* UILayoutGuide.swift */,
 			);
 			name = LayoutGuide;
 			sourceTree = "<group>";
@@ -353,7 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				20AFF9CC1B40AB2100CB12E7 /* LayoutGuideTests.swift */,
-				20AFF9E01B40EEFD00CB12E7 /* View+UILayoutGuideTests.swift */,
+				20AFF9E01B40EEFD00CB12E7 /* UILayoutGuideTests.swift */,
 			);
 			name = LayoutGuide;
 			sourceTree = "<group>";
@@ -490,7 +490,7 @@
 				203806D11B3613A4006D9FAD /* Formation+Position.swift in Sources */,
 				203806D91B37A8CB006D9FAD /* ViewFormation+View.swift in Sources */,
 				20AFF9C01B3F616B00CB12E7 /* FormationLayout+View.swift in Sources */,
-				20AFF9DE1B40EEB400CB12E7 /* View+UILayoutGuide.swift in Sources */,
+				20AFF9DE1B40EEB400CB12E7 /* UILayoutGuide.swift in Sources */,
 				20AFF9C21B3F61AA00CB12E7 /* FormationLayout+Group.swift in Sources */,
 				203807031B38B7FB006D9FAD /* ViewFormation+Self.swift in Sources */,
 				203806D51B37A3BB006D9FAD /* ViewFormation+LayoutTarget.swift in Sources */,
@@ -519,7 +519,7 @@
 				203806E71B37B39A006D9FAD /* GroupFormation+CGFloatTests.swift in Sources */,
 				20506DF51B326CAB00B6B14A /* LayoutTargetTests.swift in Sources */,
 				209D27ED1B32B3D4004771BF /* ViewFormationTests.swift in Sources */,
-				20AFF9E11B40EEFD00CB12E7 /* View+UILayoutGuideTests.swift in Sources */,
+				20AFF9E11B40EEFD00CB12E7 /* UILayoutGuideTests.swift in Sources */,
 				203806E31B37B1EE006D9FAD /* GroupFormation+ViewTests.swift in Sources */,
 				209D27F11B32B59D004771BF /* FormationLayoutTests.swift in Sources */,
 				20AFF9CF1B40B57100CB12E7 /* View+UIViewTests.swift in Sources */,

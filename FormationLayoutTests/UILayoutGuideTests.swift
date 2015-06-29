@@ -1,5 +1,5 @@
 //
-//  View+UILayoutGuideTests.swift
+//  UILayoutGuideTests.swift
 //  FormationLayout
 //
 //  Created by Evan on 29/06/15.
@@ -10,7 +10,7 @@ import XCTest
 @testable import FormationLayout
 
 @available(iOS 9.0, *)
-class View_UILayoutGuideTests: XCTestCase {
+class UILayoutGuideTests: XCTestCase {
 
     // isEqualTo()
     func testIsEqualTo() {

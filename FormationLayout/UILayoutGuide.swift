@@ -1,5 +1,5 @@
 //
-//  View+UILayoutGuide.swift
+//  UILayoutGuide.swift
 //  FormationLayout
 //
 //  Created by Evan on 29/06/15.
