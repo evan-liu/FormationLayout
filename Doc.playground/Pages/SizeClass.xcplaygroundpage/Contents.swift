@@ -1,4 +1,4 @@
-//: [Home](Home) | [Previous](@previous)
+//: [Home](Home) | [Previous](@previous) | [Next](@next)
 
 import FormationLayout
 
@@ -95,4 +95,4 @@ Use `layout.block {}` to install constaints to size classes together.
 */
 
 
-//: [Home](Home) | [Previous](@previous)
+//: [Home](Home) | [Previous](@previous) | [Next](@next)

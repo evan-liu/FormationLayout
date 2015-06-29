@@ -14,8 +14,7 @@
 - Chaining methods
 - Group layout
 - Size classes support
-- LayoutGuide (`UILayoutGuide` in iOS 9, `UIView` in iOS 8)
-  - Doc coming
+- LayoutGuide (`UILayoutGuide` on iOS 9, `UIView` on iOS 8)
 
 ```swift
 let layout = FormationLayout(rootView: view)
@@ -71,6 +70,7 @@ The [Wiki pages](https://github.com/evan-liu/FormationLayout/wiki) have the same
 - [Constraints](https://github.com/evan-liu/FormationLayout/wiki/Constraints)
 - [GroupFormation](https://github.com/evan-liu/FormationLayout/wiki/GroupFormation)
 - [SizeClass](https://github.com/evan-liu/FormationLayout/wiki/SizeClass)
+- [LayoutGuide](https://github.com/evan-liu/FormationLayout/wiki/LayoutGuide)
 
 ## Install 
 

@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Create a `LayoutGuide` as a `View`. Will create `UILayoutGuide` in iOS 9 and `UIView` in iOS 8.
+/// Create a `LayoutGuide` as a `View`. Will create `UILayoutGuide` on iOS 9 and `UIView` on iOS 8.
 /// - Parameter container: The container `UIView` to add the `LayoutGuide` to.
 /// - Returns: A `View` that can work with `view()` or `group()` methods of `FormationLayout`.
 public func LayoutGuide(container container: UIView? = nil) -> View {

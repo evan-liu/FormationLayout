@@ -14,6 +14,7 @@
 - [Constraints](Constraints)
 - [GroupFormation](GroupFormation)
 - [SizeClass](SizeClass)
+- [LayoutGuide](LayoutGuide)
 
 ----
 [Next](@next)
