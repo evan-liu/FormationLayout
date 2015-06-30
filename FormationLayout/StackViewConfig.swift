@@ -65,3 +65,14 @@ public struct StackViewConfig: StackViewConfigType, Equatable {
 public func ==(lhs: StackViewConfig, rhs: StackViewConfig) -> Bool {
     return lhs.spacing == rhs.spacing && lhs.baselineRelativeArrangement == rhs.baselineRelativeArrangement && lhs.layoutMarginsRelativeArrangement == rhs.layoutMarginsRelativeArrangement && lhs.axis == rhs.axis && lhs.stackDistribution == rhs.stackDistribution && lhs.stackAlignment == rhs.stackAlignment
 }
+
+extension StackViewConfig {
+    public init(source: StackViewConfig) {
+        spacing = source.spacing
+        baselineRelativeArrangement = source.baselineRelativeArrangement
+        layoutMarginsRelativeArrangement = source.layoutMarginsRelativeArrangement
+        axis = source.axis
+        stackDistribution = source.stackDistribution
+        stackAlignment = source.stackAlignment
+    }
+}

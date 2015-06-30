@@ -48,4 +48,16 @@ class StackViewConfigTests: XCTestCase {
         XCTAssert(c1 == c2)
     }
     
+    func testInitWithStackViewConfig() {
+        var c1 = StackViewConfig()
+        c1.baselineRelativeArrangement = true
+        c1.layoutMarginsRelativeArrangement = true
+        c1.axis = .Vertical
+        c1.stackDistribution = .EqualCentering
+        c1.stackAlignment = .LastBaseline
+
+        let c2 = StackViewConfig(source: c1)
+        XCTAssert(c1 == c2)
+    }
+    
 }
