@@ -14,13 +14,13 @@ final public class GroupStackView: UIView, StackViewType {
     //----------------------------------
     internal(set) public var arrangedSubviews = [UIView]()
     public func addArrangedSubview(view: UIView) {
-        guard arrangedSubviews.indexOf(view) == nil else { return }
+        guard !arrangedSubviews.contains(view) else { return }
         
         arrangedSubviews.append(view)
         setNeedsLayout()
     }
     public func insertArrangedSubview(view: UIView, atIndex stackIndex: Int) {
-        guard arrangedSubviews.indexOf(view) == nil else { return }
+        guard !arrangedSubviews.contains(view) else { return }
         
         arrangedSubviews.insert(view, atIndex: stackIndex)
         setNeedsLayout()
