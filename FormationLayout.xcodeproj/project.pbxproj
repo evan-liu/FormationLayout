@@ -57,6 +57,7 @@
 		2076FE531B41F0B6001AEBF2 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2076FE521B41F0B6001AEBF2 /* UIStackView.swift */; };
 		2076FE551B41FB27001AEBF2 /* GroupStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2076FE541B41FB27001AEBF2 /* GroupStackView.swift */; };
 		2076FE5A1B424419001AEBF2 /* UIStackViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2076FE591B424419001AEBF2 /* UIStackViewTests.swift */; };
+		2076FE5C1B433FFB001AEBF2 /* StackViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2076FE5B1B433FFB001AEBF2 /* StackViewConfig.swift */; };
 		209D27E91B32A900004771BF /* FormationLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D27E81B32A900004771BF /* FormationLayout.swift */; };
 		209D27EB1B32B3BD004771BF /* ViewFormation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D27EA1B32B3BD004771BF /* ViewFormation.swift */; };
 		209D27ED1B32B3D4004771BF /* ViewFormationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D27EC1B32B3D4004771BF /* ViewFormationTests.swift */; };
@@ -136,6 +137,7 @@
 		2076FE521B41F0B6001AEBF2 /* UIStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		2076FE541B41FB27001AEBF2 /* GroupStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupStackView.swift; sourceTree = "<group>"; };
 		2076FE591B424419001AEBF2 /* UIStackViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackViewTests.swift; sourceTree = "<group>"; };
+		2076FE5B1B433FFB001AEBF2 /* StackViewConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackViewConfig.swift; sourceTree = "<group>"; };
 		209D27E81B32A900004771BF /* FormationLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormationLayout.swift; sourceTree = "<group>"; };
 		209D27EA1B32B3BD004771BF /* ViewFormation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFormation.swift; sourceTree = "<group>"; };
 		209D27EC1B32B3D4004771BF /* ViewFormationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFormationTests.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				2076FE501B41F0A8001AEBF2 /* StackView.swift */,
+				2076FE5B1B433FFB001AEBF2 /* StackViewConfig.swift */,
 				2076FE521B41F0B6001AEBF2 /* UIStackView.swift */,
 				2076FE541B41FB27001AEBF2 /* GroupStackView.swift */,
 			);
@@ -505,6 +508,7 @@
 				20506DF31B3267B300B6B14A /* LayoutTarget.swift in Sources */,
 				201205BE1B34F25A006C47D5 /* GroupFormation.swift in Sources */,
 				20AFF9C91B40A82C00CB12E7 /* LayoutGuide.swift in Sources */,
+				2076FE5C1B433FFB001AEBF2 /* StackViewConfig.swift in Sources */,
 				201205BC1B34C862006C47D5 /* LayoutBlock.swift in Sources */,
 				203806DB1B37AB77006D9FAD /* GroupFormation+LayoutTarget.swift in Sources */,
 				209D27E91B32A900004771BF /* FormationLayout.swift in Sources */,
