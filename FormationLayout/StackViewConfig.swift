@@ -48,7 +48,7 @@ public protocol StackViewConfigType {
     var stackAlignment: StackViewAlignment { get set }
 }
 
-public struct StackViewConfig: StackViewConfigType {
+public struct StackViewConfig: StackViewConfigType, Equatable {
     public var spacing: CGFloat = 0
     
     public var baselineRelativeArrangement: Bool = false
@@ -60,4 +60,8 @@ public struct StackViewConfig: StackViewConfigType {
     public var stackDistribution: StackViewDistribution = .Fill
     
     public var stackAlignment: StackViewAlignment = .Fill
+}
+
+public func ==(lhs: StackViewConfig, rhs: StackViewConfig) -> Bool {
+    return lhs.spacing == rhs.spacing && lhs.baselineRelativeArrangement == rhs.baselineRelativeArrangement && lhs.layoutMarginsRelativeArrangement == rhs.layoutMarginsRelativeArrangement && lhs.axis == rhs.axis && lhs.stackDistribution == rhs.stackDistribution && lhs.stackAlignment == rhs.stackAlignment
 }

@@ -79,7 +79,7 @@ class GroupStackViewTests: XCTestCase {
         XCTAssertEqual(stack.arrangedSubviews, [v1, v3])
         
         stack.removeArrangedSubview(v1)
-        stack.removeArrangedSubview(v2)        
+        stack.removeArrangedSubview(v2)
         stack.removeArrangedSubview(v3)
         XCTAssertEqual(stack.arrangedSubviews, [])
     }

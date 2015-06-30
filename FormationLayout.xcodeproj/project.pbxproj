@@ -59,6 +59,7 @@
 		2076FE5A1B424419001AEBF2 /* UIStackViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2076FE591B424419001AEBF2 /* UIStackViewTests.swift */; };
 		2076FE5C1B433FFB001AEBF2 /* StackViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2076FE5B1B433FFB001AEBF2 /* StackViewConfig.swift */; };
 		2076FE601B434B11001AEBF2 /* GroupStackViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2076FE5F1B434B11001AEBF2 /* GroupStackViewTests.swift */; };
+		2076FE621B4357F6001AEBF2 /* StackViewConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2076FE611B4357F6001AEBF2 /* StackViewConfigTests.swift */; };
 		209D27E91B32A900004771BF /* FormationLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D27E81B32A900004771BF /* FormationLayout.swift */; };
 		209D27EB1B32B3BD004771BF /* ViewFormation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D27EA1B32B3BD004771BF /* ViewFormation.swift */; };
 		209D27ED1B32B3D4004771BF /* ViewFormationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D27EC1B32B3D4004771BF /* ViewFormationTests.swift */; };
@@ -140,6 +141,7 @@
 		2076FE591B424419001AEBF2 /* UIStackViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackViewTests.swift; sourceTree = "<group>"; };
 		2076FE5B1B433FFB001AEBF2 /* StackViewConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackViewConfig.swift; sourceTree = "<group>"; };
 		2076FE5F1B434B11001AEBF2 /* GroupStackViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupStackViewTests.swift; sourceTree = "<group>"; };
+		2076FE611B4357F6001AEBF2 /* StackViewConfigTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackViewConfigTests.swift; sourceTree = "<group>"; };
 		209D27E81B32A900004771BF /* FormationLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormationLayout.swift; sourceTree = "<group>"; };
 		209D27EA1B32B3BD004771BF /* ViewFormation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFormation.swift; sourceTree = "<group>"; };
 		209D27EC1B32B3D4004771BF /* ViewFormationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFormationTests.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 		2076FE561B4243DB001AEBF2 /* StackView */ = {
 			isa = PBXGroup;
 			children = (
+				2076FE611B4357F6001AEBF2 /* StackViewConfigTests.swift */,
 				2076FE591B424419001AEBF2 /* UIStackViewTests.swift */,
 				2076FE5F1B434B11001AEBF2 /* GroupStackViewTests.swift */,
 			);
@@ -554,6 +557,7 @@
 				20AFF9CD1B40AB2100CB12E7 /* LayoutGuideTests.swift in Sources */,
 				2076FE5A1B424419001AEBF2 /* UIStackViewTests.swift in Sources */,
 				2074CB7A1B38C35400C32EF0 /* GroupFormation+SelfTests.swift in Sources */,
+				2076FE621B4357F6001AEBF2 /* StackViewConfigTests.swift in Sources */,
 				2060786F1B3EBBD300448F13 /* ViewTests.swift in Sources */,
 				203806E71B37B39A006D9FAD /* GroupFormation+CGFloatTests.swift in Sources */,
 				20506DF51B326CAB00B6B14A /* LayoutTargetTests.swift in Sources */,
