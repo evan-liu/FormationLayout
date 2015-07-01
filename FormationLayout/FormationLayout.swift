@@ -49,4 +49,11 @@ public final class FormationLayout {
     public func activate(traitCollection: UITraitCollection) {
         activate(traitCollection.horizontalSizeClass, traitCollection.verticalSizeClass)
     }
+    
+    /// Deactivate all constraints.
+    public func deactivate() {
+        for formation in formations {
+            formation.active = false
+        }
+    }
 }

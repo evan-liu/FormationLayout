@@ -44,4 +44,17 @@ class FormationLayoutTests: XCTestCase {
         XCTAssertFalse(f1.active)
         XCTAssertTrue(f2.active)
     }
+    
+    func testDeactivate() {
+        let f1 = layout.view(UIView())
+        let f2 = layout.group(UIView(), UIView(), UIView())
+        
+        layout.activate()
+        XCTAssertTrue(f1.active)
+        XCTAssertTrue(f2.active)
+        
+        layout.deactivate()
+        XCTAssertFalse(f1.active)
+        XCTAssertFalse(f2.active)
+    }
 }
