@@ -60,6 +60,8 @@
 		2076FE5C1B433FFB001AEBF2 /* StackViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2076FE5B1B433FFB001AEBF2 /* StackViewConfig.swift */; };
 		2076FE601B434B11001AEBF2 /* GroupStackViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2076FE5F1B434B11001AEBF2 /* GroupStackViewTests.swift */; };
 		2076FE621B4357F6001AEBF2 /* StackViewConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2076FE611B4357F6001AEBF2 /* StackViewConfigTests.swift */; };
+		2076FE641B438D6A001AEBF2 /* StackViewFormation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2076FE631B438D6A001AEBF2 /* StackViewFormation.swift */; };
+		2076FE661B438EA7001AEBF2 /* FormationLayout+StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2076FE651B438EA7001AEBF2 /* FormationLayout+StackView.swift */; };
 		209D27E91B32A900004771BF /* FormationLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D27E81B32A900004771BF /* FormationLayout.swift */; };
 		209D27EB1B32B3BD004771BF /* ViewFormation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D27EA1B32B3BD004771BF /* ViewFormation.swift */; };
 		209D27ED1B32B3D4004771BF /* ViewFormationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D27EC1B32B3D4004771BF /* ViewFormationTests.swift */; };
@@ -142,6 +144,8 @@
 		2076FE5B1B433FFB001AEBF2 /* StackViewConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackViewConfig.swift; sourceTree = "<group>"; };
 		2076FE5F1B434B11001AEBF2 /* GroupStackViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupStackViewTests.swift; sourceTree = "<group>"; };
 		2076FE611B4357F6001AEBF2 /* StackViewConfigTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackViewConfigTests.swift; sourceTree = "<group>"; };
+		2076FE631B438D6A001AEBF2 /* StackViewFormation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackViewFormation.swift; sourceTree = "<group>"; };
+		2076FE651B438EA7001AEBF2 /* FormationLayout+StackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FormationLayout+StackView.swift"; sourceTree = "<group>"; };
 		209D27E81B32A900004771BF /* FormationLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormationLayout.swift; sourceTree = "<group>"; };
 		209D27EA1B32B3BD004771BF /* ViewFormation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFormation.swift; sourceTree = "<group>"; };
 		209D27EC1B32B3D4004771BF /* ViewFormationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFormationTests.swift; sourceTree = "<group>"; };
@@ -298,6 +302,7 @@
 				2076FE5B1B433FFB001AEBF2 /* StackViewConfig.swift */,
 				2076FE521B41F0B6001AEBF2 /* UIStackView.swift */,
 				2076FE541B41FB27001AEBF2 /* GroupStackView.swift */,
+				2076FE631B438D6A001AEBF2 /* StackViewFormation.swift */,
 			);
 			name = StackView;
 			sourceTree = "<group>";
@@ -318,6 +323,7 @@
 				209D27E81B32A900004771BF /* FormationLayout.swift */,
 				20AFF9BF1B3F616B00CB12E7 /* FormationLayout+View.swift */,
 				20AFF9C11B3F61AA00CB12E7 /* FormationLayout+Group.swift */,
+				2076FE651B438EA7001AEBF2 /* FormationLayout+StackView.swift */,
 			);
 			name = FormationLayout;
 			sourceTree = "<group>";
@@ -533,12 +539,14 @@
 				20AFF9DE1B40EEB400CB12E7 /* UILayoutGuide.swift in Sources */,
 				2076FE551B41FB27001AEBF2 /* GroupStackView.swift in Sources */,
 				20AFF9C21B3F61AA00CB12E7 /* FormationLayout+Group.swift in Sources */,
+				2076FE641B438D6A001AEBF2 /* StackViewFormation.swift in Sources */,
 				203807031B38B7FB006D9FAD /* ViewFormation+Self.swift in Sources */,
 				203806D51B37A3BB006D9FAD /* ViewFormation+LayoutTarget.swift in Sources */,
 				206078671B3EB3E300448F13 /* View.swift in Sources */,
 				206078691B3EB3EF00448F13 /* Container.swift in Sources */,
 				203806DF1B37AC30006D9FAD /* GroupFormation+View.swift in Sources */,
 				201205B41B34AE9C006C47D5 /* Formation.swift in Sources */,
+				2076FE661B438EA7001AEBF2 /* FormationLayout+StackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
