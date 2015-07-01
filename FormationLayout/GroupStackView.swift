@@ -37,37 +37,49 @@ final public class GroupStackView: UIView, StackViewType {
     //----------------------------------
     public var spacing: CGFloat = 0 {
         didSet {
-            setNeedsLayout()
+            if spacing != oldValue {
+                setNeedsLayout()
+            }
         }
     }
     
     public var baselineRelativeArrangement: Bool = false {
         didSet {
-            setNeedsLayout()
+            if baselineRelativeArrangement != oldValue {
+                setNeedsLayout()
+            }
         }
     }
     
     public var layoutMarginsRelativeArrangement: Bool = false {
         didSet {
-            setNeedsLayout()
+            if layoutMarginsRelativeArrangement != oldValue {
+                setNeedsLayout()
+            }
         }
     }
     
     public var axis: UILayoutConstraintAxis = .Horizontal {
         didSet {
-            setNeedsLayout()
+            if axis != oldValue {
+                setNeedsLayout()
+            }
         }
     }
     
     public var stackDistribution: StackViewDistribution = .Fill {
         didSet {
-            setNeedsLayout()
+            if stackDistribution != oldValue {
+                setNeedsLayout()
+            }
         }
     }
     
     public var stackAlignment: StackViewAlignment = .Fill {
         didSet {
-            setNeedsLayout()
+            if stackAlignment != oldValue {
+                setNeedsLayout()
+            }
         }
     }
     
