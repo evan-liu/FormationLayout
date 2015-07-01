@@ -67,7 +67,7 @@ public func ==(lhs: StackViewConfig, rhs: StackViewConfig) -> Bool {
 }
 
 extension StackViewConfig {
-    public init(source: StackViewConfig) {
+    public init(source: StackViewConfigType) {
         spacing = source.spacing
         baselineRelativeArrangement = source.baselineRelativeArrangement
         layoutMarginsRelativeArrangement = source.layoutMarginsRelativeArrangement

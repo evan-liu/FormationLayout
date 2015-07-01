@@ -83,4 +83,40 @@ final public class GroupStackView: UIView, StackViewType {
         }
     }
     
+    //----------------------------------
+    // MARK: - Layout
+    //----------------------------------
+    struct LayoutState {
+        var config: StackViewConfig
+        var views: [UIView]
+        
+        var layout: FormationLayout
+        var guides: [UIView]?
+        
+        func deactivate() {
+            layout.deactivate()
+            if let guides = guides {
+                for guide in guides {
+                    guide.removeFromSuperview()
+                }
+            }
+        }
+    }
+    var activeState: LayoutState?
+    public override func layoutSubviews() {
+        defer { super.layoutSubviews() }
+        
+        let config = StackViewConfig(source: self)
+        
+        if let activeState = activeState {
+            if activeState.config == config && activeState.views == arrangedSubviews {
+                return
+            } else {
+                activeState.deactivate()
+            }
+        }
+        
+        // TODO Create new layout
+    }
+    
 }
