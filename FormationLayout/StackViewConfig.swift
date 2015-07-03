@@ -25,6 +25,14 @@ public enum StackViewAlignment : Int {
     case Trailing
     case FirstBaseline
     case LastBaseline
+    
+    public static func Top() -> StackViewAlignment {
+        return .Leading
+    }
+    
+    public static func Bottom() -> StackViewAlignment {
+        return .Trailing
+    }
 }
 
 /// Protocol for `StackView` configurations.
