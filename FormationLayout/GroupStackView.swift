@@ -133,6 +133,8 @@ final public class GroupStackView: UIView, StackViewType {
             }
         }
         
+        guard arrangedSubviews.count > 0 else { return }
+        
         activeState = LayoutState(stack: self, config: config)
         
         // Pin the first and last view to the stack view.
@@ -151,6 +153,38 @@ final public class GroupStackView: UIView, StackViewType {
         case .EqualCentering, .EqualSpacing:
             distributeGuides(state: activeState!, config: config)
             forceViewSpaceing(state: activeState!, config: config)
+        }
+        
+        // Alignment
+        let viewGroup = activeState!.viewGroup
+        switch config.stackAlignment {
+        case .Fill:
+            viewGroup
+                .attribute(config.alignLeading, relatedBy: .Equal, toView: self)
+                .attribute(config.alignTrailing, relatedBy: .Equal, toView: self)
+        case .Center:
+            viewGroup
+                .attribute(config.alignCenter, relatedBy: .Equal, toView: self)
+                .attribute(config.alignLeading, relatedBy: .GreaterThanOrEqual, toView: self)
+                .attribute(config.alignTrailing, relatedBy: .LessThanOrEqual, toView: self)
+        case .Leading:
+            viewGroup
+                .attribute(config.alignLeading, relatedBy: .Equal, toView: self)
+                .attribute(config.alignTrailing, relatedBy: .LessThanOrEqual, toView: self)
+        case .Trailing:
+            viewGroup
+                .attribute(config.alignLeading, relatedBy: .GreaterThanOrEqual, toView: self)
+                .attribute(config.alignTrailing, relatedBy: .Equal, toView: self)
+        case .FirstBaseline:
+            viewGroup
+                .attribute(config.alignLeading, relatedBy: .GreaterThanOrEqual, toView: self)
+                .attribute(config.alignTrailing, relatedBy: .LessThanOrEqual, toView: self)
+                .attribute(.FirstBaseline, relatedBy: .Equal, toView: arrangedSubviews[0])
+        case .LastBaseline:
+            viewGroup
+                .attribute(config.alignLeading, relatedBy: .GreaterThanOrEqual, toView: self)
+                .attribute(config.alignTrailing, relatedBy: .LessThanOrEqual, toView: self)
+                .attribute(.Baseline, relatedBy: .Equal, toView: arrangedSubviews[0])
         }
         
         // Activate constraints
@@ -245,6 +279,10 @@ private extension StackViewConfig {
     /// View trailing attribute perpendicular to the stack view’s axis.
     var alignTrailing: NSLayoutAttribute {
         return axis == .Vertical ? .Trailing : .Bottom
+    }
+    /// View center attribute perpendicular to the stack view’s axis.
+    var alignCenter: NSLayoutAttribute {
+        return axis == .Vertical ? .CenterX : .CenterY
     }
     /// First view leading attribute to pin the view to stack view.
     var pinLeading: NSLayoutAttribute {
