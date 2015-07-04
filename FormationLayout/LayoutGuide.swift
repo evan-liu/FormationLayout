@@ -17,7 +17,7 @@ public func LayoutGuide(container container: UIView? = nil) -> View {
     if #available(iOS 9.0, *) {
         guide = UILayoutGuide()
     } else {
-        guide = UIView()
+        guide = UIView.dummyView()
     }
     
     if let container = container {
@@ -25,4 +25,13 @@ public func LayoutGuide(container container: UIView? = nil) -> View {
     }
     
     return guide
+}
+
+extension UIView {
+    /// Create a dummy `UIView` that ignore user events.
+    public static func dummyView() -> UIView {
+        let view = UIView()
+        view.userInteractionEnabled = false
+        return view
+    }
 }
