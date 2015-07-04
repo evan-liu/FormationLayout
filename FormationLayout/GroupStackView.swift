@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// `StackView` built on `GroupFormation`.
 final public class GroupStackView: UIView, StackViewType {
     //----------------------------------
     // MARK: - arrangedSubviews
@@ -86,40 +87,8 @@ final public class GroupStackView: UIView, StackViewType {
     //----------------------------------
     // MARK: - Layout
     //----------------------------------
-    private struct LayoutState {
-        var config: StackViewConfig
-        var views: [UIView]
-        
-        var layout: FormationLayout
-        var viewGroup: GroupFormation
-        
-        var guides: [UIView]?
-        
-        init(stack: GroupStackView, config: StackViewConfig) {
-            self.config = config
-            views = stack.arrangedSubviews
-            layout = FormationLayout(rootView: stack)
-            viewGroup = layout.group(stack.arrangedSubviews)
-            
-            // Need guides for .EqualSpacing/.EqualCentering if there are more than 1 views
-            if views.count > 2 && (config.stackDistribution == .EqualSpacing || config.stackDistribution == .EqualCentering) {
-                guides = [UIView]()
-                for _ in 0 ..< views.count - 1 {
-                    guides!.append(UIView.dummyView())
-                }
-            }
-        }
-        
-        func deactivate() {
-            layout.deactivate()
-            if let guides = guides {
-                for guide in guides {
-                    guide.removeFromSuperview()
-                }
-            }
-        }
-    }
     private var activeState: LayoutState?
+    
     public override func layoutSubviews() {
         defer { super.layoutSubviews() }
         
@@ -141,59 +110,68 @@ final public class GroupStackView: UIView, StackViewType {
         activeState!.viewGroup
             .first { pinView($0, to: config.pinLeading) }
             .last { pinView($0, to: config.pinTrailing) }
-
-        // Distribution
-        switch config.stackDistribution {
-        case .Fill:
-            distributeFill(state: activeState!, config: config)
-        case .FillEqually:
-            distributeFillEqually(state: activeState!, config: config)
-        case .FillProportionally:
-            distributeFillProportionally(state: activeState!, config: config)
-        case .EqualCentering, .EqualSpacing:
-            distributeGuides(state: activeState!, config: config)
-            forceViewSpaceing(state: activeState!, config: config)
-        }
         
         // Alignment
-        let viewGroup = activeState!.viewGroup
-        switch config.stackAlignment {
-        case .Fill:
-            viewGroup
-                .attribute(config.alignLeading, relatedBy: .Equal, toView: self)
-                .attribute(config.alignTrailing, relatedBy: .Equal, toView: self)
-        case .Center:
-            viewGroup
-                .attribute(config.alignCenter, relatedBy: .Equal, toView: self)
-                .attribute(config.alignLeading, relatedBy: .GreaterThanOrEqual, toView: self)
-                .attribute(config.alignTrailing, relatedBy: .LessThanOrEqual, toView: self)
-        case .Leading:
-            viewGroup
-                .attribute(config.alignLeading, relatedBy: .Equal, toView: self)
-                .attribute(config.alignTrailing, relatedBy: .LessThanOrEqual, toView: self)
-        case .Trailing:
-            viewGroup
-                .attribute(config.alignLeading, relatedBy: .GreaterThanOrEqual, toView: self)
-                .attribute(config.alignTrailing, relatedBy: .Equal, toView: self)
-        case .FirstBaseline:
-            viewGroup
-                .attribute(config.alignLeading, relatedBy: .GreaterThanOrEqual, toView: self)
-                .attribute(config.alignTrailing, relatedBy: .LessThanOrEqual, toView: self)
-                .attribute(.FirstBaseline, relatedBy: .Equal, toView: arrangedSubviews[0])
-        case .LastBaseline:
-            viewGroup
-                .attribute(config.alignLeading, relatedBy: .GreaterThanOrEqual, toView: self)
-                .attribute(config.alignTrailing, relatedBy: .LessThanOrEqual, toView: self)
-                .attribute(.Baseline, relatedBy: .Equal, toView: arrangedSubviews[0])
-        }
+        align(state: activeState!, config: config)
+
+        // Distribution
+        distribute(state: activeState!, config: config)
         
         // Activate constraints
         activeState!.layout.activate()
     }
     
     //----------------------------------
+    // MARK: Alignment
+    //----------------------------------
+    private func align(state state: LayoutState, config: StackViewConfig) {
+        switch config.stackAlignment {
+        case .Fill:
+            state.viewGroup
+                .attribute(config.alignLeading, relatedBy: .Equal, toView: self)
+                .attribute(config.alignTrailing, relatedBy: .Equal, toView: self)
+        case .Center:
+            state.viewGroup
+                .attribute(config.alignCenter, relatedBy: .Equal, toView: self)
+                .attribute(config.alignLeading, relatedBy: .GreaterThanOrEqual, toView: self)
+                .attribute(config.alignTrailing, relatedBy: .LessThanOrEqual, toView: self)
+        case .Leading:
+            state.viewGroup
+                .attribute(config.alignLeading, relatedBy: .Equal, toView: self)
+                .attribute(config.alignTrailing, relatedBy: .LessThanOrEqual, toView: self)
+        case .Trailing:
+            state.viewGroup
+                .attribute(config.alignLeading, relatedBy: .GreaterThanOrEqual, toView: self)
+                .attribute(config.alignTrailing, relatedBy: .Equal, toView: self)
+        case .FirstBaseline:
+            state.viewGroup
+                .attribute(config.alignLeading, relatedBy: .GreaterThanOrEqual, toView: self)
+                .attribute(config.alignTrailing, relatedBy: .LessThanOrEqual, toView: self)
+                .attribute(.FirstBaseline, relatedBy: .Equal, toView: arrangedSubviews[0])
+        case .LastBaseline:
+            state.viewGroup
+                .attribute(config.alignLeading, relatedBy: .GreaterThanOrEqual, toView: self)
+                .attribute(config.alignTrailing, relatedBy: .LessThanOrEqual, toView: self)
+                .attribute(.Baseline, relatedBy: .Equal, toView: arrangedSubviews[0])
+        }
+    }
+    
+    //----------------------------------
     // MARK: Distribution
     //----------------------------------
+    private func distribute(state state: LayoutState, config: StackViewConfig) {
+        switch config.stackDistribution {
+        case .Fill:
+            distributeFill(state: state, config: config)
+        case .FillEqually:
+            distributeFillEqually(state: state, config: config)
+        case .FillProportionally:
+            distributeFillProportionally(state: state, config: config)
+        case .EqualCentering, .EqualSpacing:
+            distributeGuides(state: state, config: config)
+            forceViewSpaceing(state: state, config: config)
+        }
+    }
     private func distributeFill(state state: LayoutState, config: StackViewConfig) {
         if config.axis == .Vertical {
             state.viewGroup.vSpace(config.spacing)
@@ -268,6 +246,40 @@ final public class GroupStackView: UIView, StackViewType {
     //----------------------------------
     private func pinView(view: ViewFormation, to attribute: NSLayoutAttribute) {
         view.attribute(attribute, relatedBy: .Equal, toView: self)
+    }
+}
+
+private struct LayoutState {
+    var config: StackViewConfig
+    var views: [UIView]
+    
+    var layout: FormationLayout
+    var viewGroup: GroupFormation
+    
+    var guides: [UIView]?
+    
+    init(stack: GroupStackView, config: StackViewConfig) {
+        self.config = config
+        views = stack.arrangedSubviews
+        layout = FormationLayout(rootView: stack)
+        viewGroup = layout.group(stack.arrangedSubviews)
+        
+        // Need guides for .EqualSpacing/.EqualCentering if there are more than 1 views
+        if views.count > 2 && (config.stackDistribution == .EqualSpacing || config.stackDistribution == .EqualCentering) {
+            guides = [UIView]()
+            for _ in 0 ..< views.count - 1 {
+                guides!.append(UIView.dummyView())
+            }
+        }
+    }
+    
+    func deactivate() {
+        layout.deactivate()
+        if let guides = guides {
+            for guide in guides {
+                guide.removeFromSuperview()
+            }
+        }
     }
 }
 
