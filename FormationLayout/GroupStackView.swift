@@ -94,7 +94,6 @@ final public class GroupStackView: UIView, StackViewType {
         var viewGroup: GroupFormation
         
         var guides: [UIView]?
-        var guideGroup: GroupFormation?
         
         init(stack: GroupStackView, config: StackViewConfig) {
             self.config = config
@@ -108,7 +107,6 @@ final public class GroupStackView: UIView, StackViewType {
                 for _ in 0 ..< views.count - 1 {
                     guides!.append(UIView.dummyView())
                 }
-                guideGroup = layout.group(guides!)
             }
         }
         
@@ -185,7 +183,7 @@ final public class GroupStackView: UIView, StackViewType {
                 let view = viewFormation.view as! UIView
                 let viewHeight = view.intrinsicContentSize().height
                 if viewHeight > 0 {
-                    viewFormation.height(self * (viewHeight / totalHeight))
+                    viewFormation.height(self * (viewHeight / totalHeight), priority: Float(999 - index))
                 }
             }
         } else {
@@ -196,28 +194,28 @@ final public class GroupStackView: UIView, StackViewType {
                 let view = viewFormation.view as! UIView
                 let viewWidth = view.intrinsicContentSize().width
                 if viewWidth > 0 {
-                    viewFormation.width(self * (viewWidth / totalWidth))
+                    viewFormation.width(self * (viewWidth / totalWidth), priority: Float(999 - index))
                 }
             }
         }
     }
     private func distributeGuides(state state: LayoutState, config: StackViewConfig) {
         
-        guard let guideGroup = state.guideGroup else { return }
+        guard let guides = state.guides else { return }
+        let views = state.views
         
-        if config.axis == .Vertical {
-            guideGroup.sameHeight()
-        } else {
-            guideGroup.sameWidth()
-        }
+        let sizeAttribute: NSLayoutAttribute = config.axis == .Vertical ? .Height : .Width
         
-        for i in 0 ..< guideGroup.count {
-            guideGroup.at(i) {
-                let leadingTarget = LayoutTarget(view: state.viewGroup.viewAt(i), attribute: config.viewAttributeForGuideLeading)
-                $0.attribute(config.distributeLeading, relatedBy: .Equal, target: leadingTarget)
-                
-                let trailingTarget = LayoutTarget(view: state.viewGroup.viewAt(i + 1), attribute: config.viewAttributeForGuideTrailing)
-                $0.attribute(config.distributeTrailing, relatedBy: .Equal, target: trailingTarget)
+        for i in 0 ..< guides.count {
+            let leadingTarget = LayoutTarget(view: views[i], attribute: config.viewAttributeForGuideLeading)
+            let trailingTarget = LayoutTarget(view: views[i + 1], attribute: config.viewAttributeForGuideTrailing)
+
+            let guideFormation = state.layout.view(guides[i])
+                .attribute(config.distributeLeading, relatedBy: .Equal, target: leadingTarget)
+                .attribute(config.distributeTrailing, relatedBy: .Equal, target: trailingTarget)
+
+            if i > 0 { // Equal size
+                guideFormation.attribute(sizeAttribute, relatedBy: .Equal, toView: guides[i - 1], priority: Float(150 - i))
             }
         }
         
