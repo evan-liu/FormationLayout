@@ -379,6 +379,207 @@ class GroupStackViewTests: XCTestCase {
             constraint(v2, .Bottom, .LessThanOrEqual, stack, .Bottom),
             constraint(v3, .Bottom, .LessThanOrEqual, stack, .Bottom),
         ]))
+        
+        // V_Fill_Fill_0_false
+        stack.axis = .Vertical
+        stack.stackDistribution = .Fill
+        stack.stackAlignment = .Fill
+        stack.layoutIfNeeded()
+        XCTAssert(checkConstraints(stack.constraints, [
+            //-- Pin first and last
+            constraint(v1, .Top, .Equal, stack, .Top),
+            constraint(v3, .Bottom, .Equal, stack, .Bottom),
+            //-- align
+            constraint(v1, .Leading, .Equal, stack, .Leading),
+            constraint(v2, .Leading, .Equal, stack, .Leading),
+            constraint(v3, .Leading, .Equal, stack, .Leading),
+            constraint(v1, .Trailing, .Equal, stack, .Trailing),
+            constraint(v2, .Trailing, .Equal, stack, .Trailing),
+            constraint(v3, .Trailing, .Equal, stack, .Trailing),
+            //-- distribute
+            constraint(v2, .Top, .Equal, v1, .Bottom),
+            constraint(v3, .Top, .Equal, v2, .Bottom),
+        ]))
+        
+        // V_Fill_Fill_10.0_false
+        stack.spacing = 10
+        stack.layoutIfNeeded()
+        XCTAssert(checkConstraints(stack.constraints, [
+            //-- Pin first and last
+            constraint(v1, .Top, .Equal, stack, .Top),
+            constraint(v3, .Bottom, .Equal, stack, .Bottom),
+            //-- align
+            constraint(v1, .Leading, .Equal, stack, .Leading),
+            constraint(v2, .Leading, .Equal, stack, .Leading),
+            constraint(v3, .Leading, .Equal, stack, .Leading),
+            constraint(v1, .Trailing, .Equal, stack, .Trailing),
+            constraint(v2, .Trailing, .Equal, stack, .Trailing),
+            constraint(v3, .Trailing, .Equal, stack, .Trailing),
+            //-- distribute
+            constraint(v2, .Top, .Equal, v1, .Bottom, 10),
+            constraint(v3, .Top, .Equal, v2, .Bottom, 10),
+        ]))
+        
+        // V_FillEqually_Fill_10.0_false
+        stack.stackDistribution = .FillEqually
+        stack.layoutIfNeeded()
+        XCTAssert(checkConstraints(stack.constraints, [
+            //-- Pin first and last
+            constraint(v1, .Top, .Equal, stack, .Top),
+            constraint(v3, .Bottom, .Equal, stack, .Bottom),
+            //-- align
+            constraint(v1, .Leading, .Equal, stack, .Leading),
+            constraint(v2, .Leading, .Equal, stack, .Leading),
+            constraint(v3, .Leading, .Equal, stack, .Leading),
+            constraint(v1, .Trailing, .Equal, stack, .Trailing),
+            constraint(v2, .Trailing, .Equal, stack, .Trailing),
+            constraint(v3, .Trailing, .Equal, stack, .Trailing),
+            //-- distribute
+            constraint(v2, .Top, .Equal, v1, .Bottom, 10),
+            constraint(v3, .Top, .Equal, v2, .Bottom, 10),
+            constraint(v2, .Height, .Equal, v1, .Height),
+            constraint(v3, .Height, .Equal, v1, .Height),
+        ]))
+        
+        // V_FillProportionally_Fill_10.0_false
+        stack.stackDistribution = .FillProportionally
+        stack.layoutIfNeeded()
+        XCTAssert(checkConstraints(stack.constraints, [
+            //-- Pin first and last
+            constraint(v1, .Top, .Equal, stack, .Top),
+            constraint(v3, .Bottom, .Equal, stack, .Bottom),
+            //-- align
+            constraint(v1, .Leading, .Equal, stack, .Leading),
+            constraint(v2, .Leading, .Equal, stack, .Leading),
+            constraint(v3, .Leading, .Equal, stack, .Leading),
+            constraint(v1, .Trailing, .Equal, stack, .Trailing),
+            constraint(v2, .Trailing, .Equal, stack, .Trailing),
+            constraint(v3, .Trailing, .Equal, stack, .Trailing),
+            //-- distribute
+            constraint(v2, .Top, .Equal, v1, .Bottom, 10),
+            constraint(v3, .Top, .Equal, v2, .Bottom, 10),
+            constraint(v1, .Height, .Equal, stack, .Height, 0, 0.2, 999),
+            constraint(v2, .Height, .Equal, stack, .Height, 0, 0.2, 998),
+            constraint(v3, .Height, .Equal, stack, .Height, 0, 0.2, 997),
+        ]))
+        
+        // V_EqualSpacing_Fill_10.0_false
+        stack.stackDistribution = .EqualSpacing
+        stack.layoutIfNeeded()
+        XCTAssertEqual(stack.subviews.count, 5)
+        g1 = stack.subviews[3]
+        g2 = stack.subviews[4]
+        XCTAssert(checkConstraints(stack.constraints, [
+            //-- Pin first and last
+            constraint(v1, .Top, .Equal, stack, .Top),
+            constraint(v3, .Bottom, .Equal, stack, .Bottom),
+            //-- align
+            constraint(v1, .Leading, .Equal, stack, .Leading),
+            constraint(v2, .Leading, .Equal, stack, .Leading),
+            constraint(v3, .Leading, .Equal, stack, .Leading),
+            constraint(v1, .Trailing, .Equal, stack, .Trailing),
+            constraint(v2, .Trailing, .Equal, stack, .Trailing),
+            constraint(v3, .Trailing, .Equal, stack, .Trailing),
+            //-- distribute
+            constraint(g1, .Top, .Equal, v1, .Bottom),
+            constraint(g1, .Bottom, .Equal, v2, .Top),
+            constraint(g2, .Top, .Equal, v2, .Bottom),
+            constraint(g2, .Bottom, .Equal, v3, .Top),
+            constraint(g2, .Height, .Equal, g1, .Height),
+            //-- force space
+            constraint(v2, .Top, .GreaterThanOrEqual, v1, .Bottom, 10),
+            constraint(v3, .Top, .GreaterThanOrEqual, v2, .Bottom, 10),
+        ]))
+        
+        // V_EqualCentering_Fill_10.0_false
+        stack.stackDistribution = .EqualCentering
+        stack.layoutIfNeeded()
+        XCTAssertEqual(stack.subviews.count, 5)
+        g1 = stack.subviews[3]
+        g2 = stack.subviews[4]
+        XCTAssert(checkConstraints(stack.constraints, [
+            //-- Pin first and last
+            constraint(v1, .Top, .Equal, stack, .Top),
+            constraint(v3, .Bottom, .Equal, stack, .Bottom),
+            //-- align
+            constraint(v1, .Leading, .Equal, stack, .Leading),
+            constraint(v2, .Leading, .Equal, stack, .Leading),
+            constraint(v3, .Leading, .Equal, stack, .Leading),
+            constraint(v1, .Trailing, .Equal, stack, .Trailing),
+            constraint(v2, .Trailing, .Equal, stack, .Trailing),
+            constraint(v3, .Trailing, .Equal, stack, .Trailing),
+            //-- distribute
+            constraint(g1, .Top, .Equal, v1, .CenterY),
+            constraint(g1, .Bottom, .Equal, v2, .CenterY),
+            constraint(g2, .Top, .Equal, v2, .CenterY),
+            constraint(g2, .Bottom, .Equal, v3, .CenterY),
+            constraint(g2, .Height, .Equal, g1, .Height, 0, 1, 149),
+            //-- force space
+            constraint(v2, .Top, .GreaterThanOrEqual, v1, .Bottom, 10),
+            constraint(v3, .Top, .GreaterThanOrEqual, v2, .Bottom, 10),
+        ]))
+        
+        // V_Fill_Leading_0.0_false
+        stack.spacing = 0
+        stack.stackDistribution = .Fill
+        stack.stackAlignment = .Leading
+        stack.layoutIfNeeded()
+        XCTAssert(checkConstraints(stack.constraints, [
+            //-- Pin first and last
+            constraint(v1, .Top, .Equal, stack, .Top),
+            constraint(v3, .Bottom, .Equal, stack, .Bottom),
+            //-- distribute
+            constraint(v2, .Top, .Equal, v1, .Bottom),
+            constraint(v3, .Top, .Equal, v2, .Bottom),
+            //-- align
+            constraint(v1, .Leading, .Equal, stack, .Leading),
+            constraint(v2, .Leading, .Equal, stack, .Leading),
+            constraint(v3, .Leading, .Equal, stack, .Leading),
+            constraint(v1, .Trailing, .LessThanOrEqual, stack, .Trailing),
+            constraint(v2, .Trailing, .LessThanOrEqual, stack, .Trailing),
+            constraint(v3, .Trailing, .LessThanOrEqual, stack, .Trailing),
+        ]))
+        
+        // V_Fill_Trailing_0.0_false
+        stack.stackAlignment = .Trailing
+        stack.layoutIfNeeded()
+        XCTAssert(checkConstraints(stack.constraints, [
+            //-- Pin first and last
+            constraint(v1, .Top, .Equal, stack, .Top),
+            constraint(v3, .Bottom, .Equal, stack, .Bottom),
+            //-- distribute
+            constraint(v2, .Top, .Equal, v1, .Bottom),
+            constraint(v3, .Top, .Equal, v2, .Bottom),
+            //-- align
+            constraint(v1, .Trailing, .Equal, stack, .Trailing),
+            constraint(v2, .Trailing, .Equal, stack, .Trailing),
+            constraint(v3, .Trailing, .Equal, stack, .Trailing),
+            constraint(v1, .Leading, .GreaterThanOrEqual, stack, .Leading),
+            constraint(v2, .Leading, .GreaterThanOrEqual, stack, .Leading),
+            constraint(v3, .Leading, .GreaterThanOrEqual, stack, .Leading),
+        ]))
+        
+        // V_Fill_Center_0.0_false
+        stack.stackAlignment = .Center
+        stack.layoutIfNeeded()
+        XCTAssert(checkConstraints(stack.constraints, [
+            //-- Pin first and last
+            constraint(v1, .Top, .Equal, stack, .Top),
+            constraint(v3, .Bottom, .Equal, stack, .Bottom),
+            //-- distribute
+            constraint(v2, .Top, .Equal, v1, .Bottom),
+            constraint(v3, .Top, .Equal, v2, .Bottom),
+            //-- align
+            constraint(v1, .CenterX, .Equal, stack, .CenterX),
+            constraint(v2, .CenterX, .Equal, stack, .CenterX),
+            constraint(v3, .CenterX, .Equal, stack, .CenterX),
+            constraint(v1, .Leading, .GreaterThanOrEqual, stack, .Leading),
+            constraint(v2, .Leading, .GreaterThanOrEqual, stack, .Leading),
+            constraint(v3, .Leading, .GreaterThanOrEqual, stack, .Leading),
+            constraint(v1, .Trailing, .LessThanOrEqual, stack, .Trailing),
+            constraint(v2, .Trailing, .LessThanOrEqual, stack, .Trailing),
+            constraint(v3, .Trailing, .LessThanOrEqual, stack, .Trailing),
+        ]))
     }
 }
 
