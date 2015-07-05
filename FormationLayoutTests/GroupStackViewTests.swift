@@ -28,6 +28,11 @@ class GroupStackViewTests: XCTestCase {
         v3 = InStackView()
     }
     
+    func testInitWithArrangedSubviews() {
+        let stack = GroupStackView(arrangedSubviews: [v1, v2, v3])
+        XCTAssertEqual(stack.arrangedSubviews, [v1, v2, v3])
+    }
+    
     func testArrangedSubviews() {
         stack.arrangedSubviews = [v1, v2, v3]
         XCTAssertEqual(stack.arrangedSubviews, [v1, v2, v3])

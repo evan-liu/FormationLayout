@@ -10,6 +10,19 @@ import Foundation
 
 /// `StackView` built on `GroupFormation`.
 final public class GroupStackView: UIView, StackViewType {
+    /// Returns a new stack view object that manages the provided views.
+    public init(arrangedSubviews: [UIView]) {
+        super.init(frame: CGRectZero)
+        self.arrangedSubviews = arrangedSubviews
+    }
+    /// Returns a new stack view object.
+    public init() {
+        super.init(frame: CGRectZero)
+    }
+    public required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     //----------------------------------
     // MARK: - arrangedSubviews
     //----------------------------------
