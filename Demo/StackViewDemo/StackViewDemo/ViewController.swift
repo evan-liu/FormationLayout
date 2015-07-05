@@ -7,19 +7,50 @@
 //
 
 import UIKit
+import FormationLayout
 
 class ViewController: UIViewController {
 
+    var layout: FormationLayout!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+        
+        layout = FormationLayout(rootView: view)
+        
+        let btn = UIButton(type: .System)
+        btn.setTitle("Button", forState: .Normal)
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.text = "This is a test label for stack view."
+        label.setContentCompressionResistancePriority(UILayoutPriorityDefaultLow, forAxis: .Horizontal)
+        
+        let textField = UITextField()
+        textField.text = "Text Field"
+        
+        let stack = GroupStackView(arrangedSubviews: [btn, label, textField])
+        stack.axis = .Vertical
+        stack.stackAlignment = .Center
+        stack.stackDistribution = .EqualSpacing
+        stack.spacing = 20
+        
+        layout.view(stack).center(view).size(300)
+        
+        var hCompactConfig = StackViewConfig(source: stack)
+        hCompactConfig.axis = .Horizontal
+        
+        var hRegularConfig = hCompactConfig
+        hRegularConfig.axis = .Vertical
+        
+        layout.stack(stack, config: hCompactConfig).install(.HCompact)
+        layout.stack(stack, config: hRegularConfig).install(.HRegular)
+        
+        layout.activate(traitCollection)
     }
-
+    
+    override func willTransitionToTraitCollection(newCollection: UITraitCollection, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        layout.activate(newCollection)
+    }
 
 }
-
