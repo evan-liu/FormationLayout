@@ -195,7 +195,7 @@ class GroupStackViewTests: XCTestCase {
             constraint(v2, .Leading, .Equal, v1, .Trailing, 10),
             constraint(v3, .Leading, .Equal, v2, .Trailing, 10),
             constraint(v2, .Width, .Equal, v1, .Width),
-            constraint(v3, .Width, .Equal, v2, .Width),
+            constraint(v3, .Width, .Equal, v1, .Width),
         ]))
         
         // H_FillProportionally_Fill_10.0_false

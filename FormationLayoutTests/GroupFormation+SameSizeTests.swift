@@ -38,7 +38,7 @@ class GroupFormation_SameSizeTests: XCTestCase {
         XCTAssertEqual(1, group[2].constraints.count)
         
         checkConstraint(group[1].constraints[0], .Width, view2, view1)
-        checkConstraint(group[2].constraints[0], .Width, view3, view2)
+        checkConstraint(group[2].constraints[0], .Width, view3, view1)
     }
     
     // sameHeight()
@@ -52,7 +52,7 @@ class GroupFormation_SameSizeTests: XCTestCase {
         XCTAssertEqual(1, group[2].constraints.count)
         
         checkConstraint(group[1].constraints[0], .Height, view2, view1)
-        checkConstraint(group[2].constraints[0], .Height, view3, view2)
+        checkConstraint(group[2].constraints[0], .Height, view3, view1)
     }
     
     // sameSize()
@@ -68,8 +68,8 @@ class GroupFormation_SameSizeTests: XCTestCase {
         checkConstraint(group[1].constraints[0], .Width, view2, view1)
         checkConstraint(group[1].constraints[1], .Height, view2, view1)
         
-        checkConstraint(group[2].constraints[0], .Width, view3, view2)
-        checkConstraint(group[2].constraints[1], .Height, view3, view2)
+        checkConstraint(group[2].constraints[0], .Width, view3, view1)
+        checkConstraint(group[2].constraints[1], .Height, view3, view1)
     }
     
     private func checkConstraint(constraint: NSLayoutConstraint, _ attribute: NSLayoutAttribute, _ firstView: UIView,  _ secondView: UIView) {
