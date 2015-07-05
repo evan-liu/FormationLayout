@@ -13,7 +13,11 @@ final public class GroupStackView: UIView, StackViewType {
     //----------------------------------
     // MARK: - arrangedSubviews
     //----------------------------------
-    internal(set) public var arrangedSubviews = [UIView]()
+    internal(set) public var arrangedSubviews = [UIView]() {
+        didSet {
+            setNeedsLayout()
+        }
+    }
     public func addArrangedSubview(view: UIView) {
         guard !arrangedSubviews.contains(view) else { return }
         
@@ -227,7 +231,8 @@ final public class GroupStackView: UIView, StackViewType {
                 .attribute(config.distributeTrailing, relatedBy: .Equal, target: trailingTarget)
 
             if i > 0 { // Equal size
-                guideFormation.attribute(sizeAttribute, relatedBy: .Equal, toView: guides[i - 1], priority: Float(150 - i))
+                let priority: Float = config.stackDistribution == .EqualCentering ? Float(150 - i) : 1000
+                guideFormation.attribute(sizeAttribute, relatedBy: .Equal, toView: guides[i - 1], priority: priority)
             }
         }
         
@@ -250,11 +255,11 @@ final public class GroupStackView: UIView, StackViewType {
 }
 
 private struct LayoutState {
-    var config: StackViewConfig
-    var views: [UIView]
+    let config: StackViewConfig
+    let views: [UIView]
     
-    var layout: FormationLayout
-    var viewGroup: GroupFormation
+    let layout: FormationLayout
+    let viewGroup: GroupFormation
     
     var guides: [UIView]?
     
