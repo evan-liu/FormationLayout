@@ -166,36 +166,39 @@ final public class GroupStackView: UIView, StackViewType {
     private func distribute(state state: LayoutState, config: StackViewConfig) {
         switch config.stackDistribution {
         case .Fill:
-            distributeFill(state: state, config: config)
+            lineUpViews(state: state, config: config)
         case .FillEqually:
-            distributeFillEqually(state: state, config: config)
+            lineUpViews(state: state, config: config)
+            resizeViewsEqually(state: state, config: config)
         case .FillProportionally:
-            distributeFillProportionally(state: state, config: config)
+            lineUpViews(state: state, config: config)
+            resizeViewsProportionally(state: state, config: config)
         case .EqualCentering, .EqualSpacing:
-            distributeGuides(state: state, config: config)
-            forceViewSpaceing(state: state, config: config)
+            lineUpViewsAndGuides(state: state, config: config)
+            lineUpViews(state: state, config: config, relatedBy: .GreaterThanOrEqual)
         }
     }
-    private func distributeFill(state state: LayoutState, config: StackViewConfig) {
+    private func lineUpViews(state state: LayoutState, config: StackViewConfig, relatedBy relation: NSLayoutRelation = .Equal) {
+        let viewGroup = state.viewGroup
+        for i in 1 ..< viewGroup.count {
+            var previousViewTarget = LayoutTarget(view: viewGroup.viewAt(i - 1), attribute: config.distributeTrailing)
+            previousViewTarget.constant = config.spacing
+            viewGroup[i].attribute(config.distributeLeading, relatedBy: relation, target: previousViewTarget)
+        }
+    }
+    private func resizeViewsEqually(state state: LayoutState, config: StackViewConfig) {
         if config.axis == .Vertical {
-            state.viewGroup.vSpace(config.spacing)
+            state.viewGroup.sameHeight()
         } else {
-            state.viewGroup.hSpace(config.spacing)
+            state.viewGroup.sameWidth()
         }
     }
-    private func distributeFillEqually(state state: LayoutState, config: StackViewConfig) {
-        if config.axis == .Vertical {
-            state.viewGroup.vSpace(config.spacing).sameHeight()
-        } else {
-            state.viewGroup.hSpace(config.spacing).sameWidth()
-        }
-    }
-    private func distributeFillProportionally(state state: LayoutState, config: StackViewConfig) {
+    private func resizeViewsProportionally(state state: LayoutState, config: StackViewConfig) {
         if config.axis == .Vertical {
             let totalHeight = arrangedSubviews.reduce(0, combine: { (height, view) -> CGFloat in
                 return height + view.intrinsicContentSize().height
             }) + config.spacing * CGFloat(arrangedSubviews.count - 1)
-            state.viewGroup.vSpace(config.spacing).forEach { viewFormation, index, group in
+            state.viewGroup.forEach { viewFormation, index, group in
                 let view = viewFormation.view as! UIView
                 let viewHeight = view.intrinsicContentSize().height
                 if viewHeight > 0 {
@@ -206,7 +209,7 @@ final public class GroupStackView: UIView, StackViewType {
             let totalWidth = arrangedSubviews.reduce(0, combine: { (width, view) -> CGFloat in
                 return width + view.intrinsicContentSize().width
             }) + config.spacing * CGFloat(arrangedSubviews.count - 1)
-            state.viewGroup.hSpace(config.spacing).forEach { viewFormation, index, group in
+            state.viewGroup.forEach { viewFormation, index, group in
                 let view = viewFormation.view as! UIView
                 let viewWidth = view.intrinsicContentSize().width
                 if viewWidth > 0 {
@@ -215,7 +218,7 @@ final public class GroupStackView: UIView, StackViewType {
             }
         }
     }
-    private func distributeGuides(state state: LayoutState, config: StackViewConfig) {
+    private func lineUpViewsAndGuides(state state: LayoutState, config: StackViewConfig) {
         
         guard let guides = state.guides else { return }
         let views = state.views
@@ -236,14 +239,6 @@ final public class GroupStackView: UIView, StackViewType {
             }
         }
         
-    }
-    private func forceViewSpaceing(state state: LayoutState, config: StackViewConfig) {
-        let viewGroup = state.viewGroup
-        for i in 1 ..< viewGroup.count {
-            var previousViewTarget = LayoutTarget(view: viewGroup.viewAt(i - 1), attribute: config.distributeTrailing)
-            previousViewTarget.constant = config.spacing
-            viewGroup[i].attribute(config.distributeLeading, relatedBy: .GreaterThanOrEqual, target: previousViewTarget)
-        }
     }
     
     //----------------------------------

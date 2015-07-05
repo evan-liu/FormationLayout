@@ -580,6 +580,26 @@ class GroupStackViewTests: XCTestCase {
             constraint(v2, .Trailing, .LessThanOrEqual, stack, .Trailing),
             constraint(v3, .Trailing, .LessThanOrEqual, stack, .Trailing),
         ]))
+        
+        // V_Fill_Fill_10.0_true
+        stack.stackAlignment = .Fill
+        stack.baselineRelativeArrangement = true
+        stack.layoutIfNeeded()
+        XCTAssert(checkConstraints(stack.constraints, [
+            //-- Pin first and last
+            constraint(v1, .Top, .Equal, stack, .Top),
+            constraint(v3, .Bottom, .Equal, stack, .Bottom),
+            //-- align
+            constraint(v1, .Leading, .Equal, stack, .Leading),
+            constraint(v2, .Leading, .Equal, stack, .Leading),
+            constraint(v3, .Leading, .Equal, stack, .Leading),
+            constraint(v1, .Trailing, .Equal, stack, .Trailing),
+            constraint(v2, .Trailing, .Equal, stack, .Trailing),
+            constraint(v3, .Trailing, .Equal, stack, .Trailing),
+            //-- distribute
+            constraint(v2, .FirstBaseline, .Equal, v1, .Baseline),
+            constraint(v3, .FirstBaseline, .Equal, v2, .Baseline),
+        ]))
     }
 }
 
