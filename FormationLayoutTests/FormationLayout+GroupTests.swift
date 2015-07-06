@@ -29,7 +29,8 @@ class FormationLayout_GroupTests: XCTestCase {
         
         // should add views to the root view is the view has no superView
         
-        layout.group([view1, view2])
+        let views: [View] = [view1, view2]
+        layout.group(views)
         layout.group(view2, view3)
         XCTAssertEqual(view1.superview!, container0)
         XCTAssertEqual(view2.superview!, rootView)
