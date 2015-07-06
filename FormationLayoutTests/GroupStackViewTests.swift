@@ -28,6 +28,25 @@ class GroupStackViewTests: XCTestCase {
         v3 = InStackView()
     }
     
+    func testConfig() {
+        // applyConfig() should set properties from config
+        stack.applyConfig(StackViewConfig(axis: .Vertical, distribution: .EqualSpacing, alignment: .Center, spacing: 10, baselineRelativeArrangement: true, layoutMarginsRelativeArrangement: true))
+        
+        XCTAssertEqual(stack.distribution, .EqualSpacing)
+        XCTAssertEqual(stack.alignment, .Center)
+        XCTAssertEqual(stack.spacing, 10)
+        XCTAssertEqual(stack.baselineRelativeArrangement, true)
+        XCTAssertEqual(stack.layoutMarginsRelativeArrangement, true)
+        
+        // currentConfig property should return current properties
+        let currentConfig = stack.currentConfig
+        XCTAssertEqual(currentConfig.distribution, .EqualSpacing)
+        XCTAssertEqual(currentConfig.alignment, .Center)
+        XCTAssertEqual(currentConfig.spacing, 10)
+        XCTAssertEqual(currentConfig.baselineRelativeArrangement, true)
+        XCTAssertEqual(currentConfig.layoutMarginsRelativeArrangement, true)
+    }
+    
     func testInitWithArrangedSubviews() {
         let stack = GroupStackView(arrangedSubviews: [v1, v2, v3])
         XCTAssertEqual(stack.arrangedSubviews, [v1, v2, v3])
@@ -183,7 +202,7 @@ class GroupStackViewTests: XCTestCase {
         ]))
         
         // H_FillEqually_Fill_10.0_false
-        stack.stackDistribution = .FillEqually
+        stack.distribution = .FillEqually
         stack.layoutIfNeeded()
         XCTAssert(checkConstraints(stack.constraints, [
             //-- Pin first and last
@@ -204,7 +223,7 @@ class GroupStackViewTests: XCTestCase {
         ]))
         
         // H_FillProportionally_Fill_10.0_false
-        stack.stackDistribution = .FillProportionally
+        stack.distribution = .FillProportionally
         stack.layoutIfNeeded()
         XCTAssert(checkConstraints(stack.constraints, [
             //-- Pin first and last
@@ -226,7 +245,7 @@ class GroupStackViewTests: XCTestCase {
         ]))
         
         // H_EqualSpacing_Fill_10.0_false
-        stack.stackDistribution = .EqualSpacing
+        stack.distribution = .EqualSpacing
         stack.layoutIfNeeded()
         XCTAssertEqual(stack.subviews.count, 5)
         var g1 = stack.subviews[3]
@@ -254,7 +273,7 @@ class GroupStackViewTests: XCTestCase {
         ]))
         
         // H_EqualCentering_Fill_10.0_false
-        stack.stackDistribution = .EqualCentering
+        stack.distribution = .EqualCentering
         stack.layoutIfNeeded()
         XCTAssertEqual(stack.subviews.count, 5)
         g1 = stack.subviews[3]
@@ -283,8 +302,8 @@ class GroupStackViewTests: XCTestCase {
         
         // H_Fill_Leading_0.0_false
         stack.spacing = 0
-        stack.stackDistribution = .Fill
-        stack.stackAlignment = .Leading
+        stack.distribution = .Fill
+        stack.alignment = .Leading
         stack.layoutIfNeeded()
         XCTAssert(checkConstraints(stack.constraints, [
             //-- Pin first and last
@@ -303,7 +322,7 @@ class GroupStackViewTests: XCTestCase {
         ]))
         
         // H_Fill_Trailing_0.0_false
-        stack.stackAlignment = .Trailing
+        stack.alignment = .Trailing
         stack.layoutIfNeeded()
         XCTAssert(checkConstraints(stack.constraints, [
             //-- Pin first and last
@@ -322,7 +341,7 @@ class GroupStackViewTests: XCTestCase {
             ]))
         
         // H_Fill_Center_0.0_false
-        stack.stackAlignment = .Center
+        stack.alignment = .Center
         stack.layoutIfNeeded()
         XCTAssert(checkConstraints(stack.constraints, [
             //-- Pin first and last
@@ -344,7 +363,7 @@ class GroupStackViewTests: XCTestCase {
         ]))
         
         // H_Fill_FirstBaseline_0.0_false
-        stack.stackAlignment = .FirstBaseline
+        stack.alignment = .FirstBaseline
         stack.layoutIfNeeded()
         XCTAssert(checkConstraints(stack.constraints, [
             //-- Pin first and last
@@ -365,7 +384,7 @@ class GroupStackViewTests: XCTestCase {
         ]))
         
         // H_Fill_LastBaseline_0.0_false
-        stack.stackAlignment = .LastBaseline
+        stack.alignment = .LastBaseline
         stack.layoutIfNeeded()
         XCTAssert(checkConstraints(stack.constraints, [
             //-- Pin first and last
@@ -387,8 +406,8 @@ class GroupStackViewTests: XCTestCase {
         
         // V_Fill_Fill_0_false
         stack.axis = .Vertical
-        stack.stackDistribution = .Fill
-        stack.stackAlignment = .Fill
+        stack.distribution = .Fill
+        stack.alignment = .Fill
         stack.layoutIfNeeded()
         XCTAssert(checkConstraints(stack.constraints, [
             //-- Pin first and last
@@ -426,7 +445,7 @@ class GroupStackViewTests: XCTestCase {
         ]))
         
         // V_FillEqually_Fill_10.0_false
-        stack.stackDistribution = .FillEqually
+        stack.distribution = .FillEqually
         stack.layoutIfNeeded()
         XCTAssert(checkConstraints(stack.constraints, [
             //-- Pin first and last
@@ -447,7 +466,7 @@ class GroupStackViewTests: XCTestCase {
         ]))
         
         // V_FillProportionally_Fill_10.0_false
-        stack.stackDistribution = .FillProportionally
+        stack.distribution = .FillProportionally
         stack.layoutIfNeeded()
         XCTAssert(checkConstraints(stack.constraints, [
             //-- Pin first and last
@@ -469,7 +488,7 @@ class GroupStackViewTests: XCTestCase {
         ]))
         
         // V_EqualSpacing_Fill_10.0_false
-        stack.stackDistribution = .EqualSpacing
+        stack.distribution = .EqualSpacing
         stack.layoutIfNeeded()
         XCTAssertEqual(stack.subviews.count, 5)
         g1 = stack.subviews[3]
@@ -497,7 +516,7 @@ class GroupStackViewTests: XCTestCase {
         ]))
         
         // V_EqualCentering_Fill_10.0_false
-        stack.stackDistribution = .EqualCentering
+        stack.distribution = .EqualCentering
         stack.layoutIfNeeded()
         XCTAssertEqual(stack.subviews.count, 5)
         g1 = stack.subviews[3]
@@ -526,8 +545,8 @@ class GroupStackViewTests: XCTestCase {
         
         // V_Fill_Leading_0.0_false
         stack.spacing = 0
-        stack.stackDistribution = .Fill
-        stack.stackAlignment = .Leading
+        stack.distribution = .Fill
+        stack.alignment = .Leading
         stack.layoutIfNeeded()
         XCTAssert(checkConstraints(stack.constraints, [
             //-- Pin first and last
@@ -546,7 +565,7 @@ class GroupStackViewTests: XCTestCase {
         ]))
         
         // V_Fill_Trailing_0.0_false
-        stack.stackAlignment = .Trailing
+        stack.alignment = .Trailing
         stack.layoutIfNeeded()
         XCTAssert(checkConstraints(stack.constraints, [
             //-- Pin first and last
@@ -565,7 +584,7 @@ class GroupStackViewTests: XCTestCase {
         ]))
         
         // V_Fill_Center_0.0_false
-        stack.stackAlignment = .Center
+        stack.alignment = .Center
         stack.layoutIfNeeded()
         XCTAssert(checkConstraints(stack.constraints, [
             //-- Pin first and last
@@ -587,7 +606,7 @@ class GroupStackViewTests: XCTestCase {
         ]))
         
         // V_Fill_Fill_10.0_true
-        stack.stackAlignment = .Fill
+        stack.alignment = .Fill
         stack.baselineRelativeArrangement = true
         stack.layoutIfNeeded()
         XCTAssert(checkConstraints(stack.constraints, [

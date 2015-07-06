@@ -11,22 +11,17 @@ import Foundation
 @available(iOS 9.0, *)
 extension UIStackView: StackViewType {
     
-    public var stackDistribution: StackViewDistribution {
-        get {
-            return StackViewDistribution.fromUIStackViewDistribution(distribution)
-        }
-        set {
-            distribution = newValue.toUIStackViewDistribution()
-        }
+    public var currentConfig: StackViewConfig {
+        return StackViewConfig(axis: axis, distribution: StackViewDistribution.fromUIStackViewDistribution(distribution), alignment: StackViewAlignment.fromUIStackViewAlignment(alignment), spacing: spacing, baselineRelativeArrangement: baselineRelativeArrangement, layoutMarginsRelativeArrangement: layoutMarginsRelativeArrangement)
     }
     
-    public var stackAlignment: StackViewAlignment {
-        get {
-            return StackViewAlignment.fromUIStackViewAlignment(alignment)
-        }
-        set {
-            alignment = newValue.toUIStackViewAlignment()
-        }
+    public func applyConfig(config: StackViewConfig) {
+        axis = config.axis
+        distribution = config.distribution.toUIStackViewDistribution()
+        alignment = config.alignment.toUIStackViewAlignment()
+        spacing = config.spacing
+        baselineRelativeArrangement = config.baselineRelativeArrangement
+        layoutMarginsRelativeArrangement = config.layoutMarginsRelativeArrangement
     }
 }
 

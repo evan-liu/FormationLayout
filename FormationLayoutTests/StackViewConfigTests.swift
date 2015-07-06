@@ -10,6 +10,25 @@ import XCTest
 @testable import FormationLayout
 
 class StackViewConfigTests: XCTestCase {
+    
+    // init()
+    func testInit() {
+        // should set default values
+        let c1 = StackViewConfig()
+        XCTAssertEqual(c1.distribution, .Fill)
+        XCTAssertEqual(c1.alignment, .Fill)
+        XCTAssertEqual(c1.spacing, 0)
+        XCTAssertEqual(c1.baselineRelativeArrangement, false)
+        XCTAssertEqual(c1.layoutMarginsRelativeArrangement, false)
+        
+        // should set by arguments
+        let c2 = StackViewConfig(axis: .Vertical, distribution: .EqualSpacing, alignment: .Center, spacing: 10, baselineRelativeArrangement: true, layoutMarginsRelativeArrangement: true)
+        XCTAssertEqual(c2.distribution, .EqualSpacing)
+        XCTAssertEqual(c2.alignment, .Center)
+        XCTAssertEqual(c2.spacing, 10)
+        XCTAssertEqual(c2.baselineRelativeArrangement, true)
+        XCTAssertEqual(c2.layoutMarginsRelativeArrangement, true)
+    }
 
     func testEquatable() {
         var c1 = StackViewConfig()
@@ -37,27 +56,22 @@ class StackViewConfigTests: XCTestCase {
         c2.axis = .Vertical
         XCTAssert(c1 == c2)
         
-        c1.stackDistribution = .EqualCentering
+        c1.distribution = .EqualCentering
         XCTAssert(c1 != c2)
-        c2.stackDistribution = .EqualCentering
+        c2.distribution = .EqualCentering
         XCTAssert(c1 == c2)
         
-        c1.stackAlignment = .LastBaseline
+        c1.alignment = .LastBaseline
         XCTAssert(c1 != c2)
-        c2.stackAlignment = .LastBaseline
+        c2.alignment = .LastBaseline
         XCTAssert(c1 == c2)
     }
     
-    func testInitWithStackViewConfig() {
-        var c1 = StackViewConfig()
-        c1.baselineRelativeArrangement = true
-        c1.layoutMarginsRelativeArrangement = true
-        c1.axis = .Vertical
-        c1.stackDistribution = .EqualCentering
-        c1.stackAlignment = .LastBaseline
-
-        let c2 = StackViewConfig(source: c1)
-        XCTAssert(c1 == c2)
+    // StackViewAlignment
+    func testStackViewAlignment() {
+        // .Top and .Bottom should return .Leading and .Trailing
+        XCTAssertEqual(StackViewAlignment.Top, .Leading)
+        XCTAssertEqual(StackViewAlignment.Bottom, .Trailing)
     }
     
 }

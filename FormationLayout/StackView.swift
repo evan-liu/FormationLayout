@@ -8,10 +8,27 @@
 
 import Foundation
 
+/// Create a `StackView`. Will create `UIStackView` on iOS 9 and `UIView` + `GroupFormation` on iOS 8.
+public func StackView(views: [UIView], config: StackViewConfig? = nil) -> StackViewType {
+    let stack: StackViewType
+    if #available(iOS 9.0, *) {
+        stack = UIStackView(arrangedSubviews: views)
+    } else {
+        stack = GroupStackView(arrangedSubviews: views)
+    }
+    if let config = config {
+        stack.applyConfig(config)
+    }
+    return stack
+}
+
 /// Protocol for `StackView` types. Will be `UIStackView` on iOS 9 and `UIView` + `GroupFormation` on iOS 8.
-/// Port of `UIStackView` APIs except `stackDistribution` for `distribution` and `stackAlignment` for `alignment`. 
-/// Because `UIStackViewDistribution` and `UIStackViewAlignment` are iOS 9 only.
-public protocol StackViewType: class, StackViewConfigType {
+public protocol StackViewType {
+    /// Change properties from a `StackViewConfig`.
+    func applyConfig(config: StackViewConfig)
+    
+    /// Format properteis to a `StackViewConfig`.
+    var currentConfig: StackViewConfig { get }
     
     /// The list of views arranged by the stack view. (read-only)
     var arrangedSubviews: [UIView] { get }
@@ -24,19 +41,5 @@ public protocol StackViewType: class, StackViewConfigType {
     
     /// Adds the provided view to the array of arranged subviews at the specified index.
     func insertArrangedSubview(view: UIView, atIndex stackIndex: Int)
-    
-}
-
-extension StackViewType {
-    
-    /// Apply config values.
-    public func applyConfig(config: StackViewConfigType) {
-        spacing = config.spacing
-        baselineRelativeArrangement = config.baselineRelativeArrangement
-        layoutMarginsRelativeArrangement = config.layoutMarginsRelativeArrangement
-        axis = config.axis
-        stackDistribution = config.stackDistribution
-        stackAlignment = config.stackAlignment
-    }
     
 }

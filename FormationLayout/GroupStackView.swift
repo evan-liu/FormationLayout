@@ -85,20 +85,33 @@ final public class GroupStackView: UIView, StackViewType {
         }
     }
     
-    public var stackDistribution: StackViewDistribution = .Fill {
+    public var distribution: StackViewDistribution = .Fill {
         didSet {
-            if stackDistribution != oldValue {
+            if distribution != oldValue {
                 setNeedsLayout()
             }
         }
     }
     
-    public var stackAlignment: StackViewAlignment = .Fill {
+    public var alignment: StackViewAlignment = .Fill {
         didSet {
-            if stackAlignment != oldValue {
+            if alignment != oldValue {
                 setNeedsLayout()
             }
         }
+    }
+    
+    public var currentConfig: StackViewConfig {
+        return StackViewConfig(axis: axis, distribution: distribution, alignment: alignment, spacing: spacing, baselineRelativeArrangement: baselineRelativeArrangement, layoutMarginsRelativeArrangement: layoutMarginsRelativeArrangement)
+    }
+    
+    public func applyConfig(config: StackViewConfig) {
+        axis = config.axis
+        distribution = config.distribution
+        alignment = config.alignment
+        spacing = config.spacing
+        baselineRelativeArrangement = config.baselineRelativeArrangement
+        layoutMarginsRelativeArrangement = config.layoutMarginsRelativeArrangement
     }
     
     //----------------------------------
@@ -109,7 +122,7 @@ final public class GroupStackView: UIView, StackViewType {
     public override func layoutSubviews() {
         defer { super.layoutSubviews() }
         
-        let config = StackViewConfig(source: self)
+        let config = currentConfig
         
         if let activeState = activeState {
             if activeState.config == config && activeState.views == arrangedSubviews {
@@ -142,7 +155,7 @@ final public class GroupStackView: UIView, StackViewType {
     // MARK: Alignment
     //----------------------------------
     private func align(state state: LayoutState, config: StackViewConfig) {
-        switch config.stackAlignment {
+        switch config.alignment {
         case .Fill:
             state.viewGroup
                 .attribute(config.alignLeading, relatedBy: .Equal, toView: self)
@@ -177,7 +190,7 @@ final public class GroupStackView: UIView, StackViewType {
     // MARK: Distribution
     //----------------------------------
     private func distribute(state state: LayoutState, config: StackViewConfig) {
-        switch config.stackDistribution {
+        switch config.distribution {
         case .Fill:
             lineUpViews(state: state, config: config)
         case .FillEqually:
@@ -247,7 +260,7 @@ final public class GroupStackView: UIView, StackViewType {
                 .attribute(config.distributeTrailing, relatedBy: .Equal, target: trailingTarget)
 
             if i > 0 { // Equal size
-                let priority: Float = config.stackDistribution == .EqualCentering ? Float(150 - i) : 1000
+                let priority: Float = config.distribution == .EqualCentering ? Float(150 - i) : 1000
                 guideFormation.attribute(sizeAttribute, relatedBy: .Equal, toView: guides[i - 1], priority: priority)
             }
         }
@@ -278,7 +291,7 @@ private struct LayoutState {
         viewGroup = layout.group(stack.arrangedSubviews)
         
         // Need guides for .EqualSpacing/.EqualCentering if there are more than 1 views
-        if views.count > 2 && (config.stackDistribution == .EqualSpacing || config.stackDistribution == .EqualCentering) {
+        if views.count > 2 && (config.distribution == .EqualSpacing || config.distribution == .EqualCentering) {
             guides = [UIView]()
             for _ in 0 ..< views.count - 1 {
                 guides!.append(UIView.dummyView())
@@ -333,14 +346,14 @@ private extension StackViewConfig {
     }
     /// View attribute for leading of layout guides between views.
     var viewAttributeForGuideLeading: NSLayoutAttribute {
-        if stackDistribution == .EqualCentering {
+        if distribution == .EqualCentering {
             return axis == .Vertical ? .CenterY : .CenterX
         }
         return distributeTrailing
     }
     /// View attribute for trailing of layout guides between views.
     var viewAttributeForGuideTrailing: NSLayoutAttribute {
-        if stackDistribution == .EqualCentering {
+        if distribution == .EqualCentering {
             return axis == .Vertical ? .CenterY : .CenterX
         }
         return distributeLeading
