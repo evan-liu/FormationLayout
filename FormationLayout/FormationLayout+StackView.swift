@@ -14,13 +14,14 @@ extension FormationLayout {
     /// `StackViewFormation` is used to manager configurations for subviews inside a `StackView` on size classes.
     /// Use `view()` method instead to create constraints to the `StackView` itself.
     ///
-    /// - Parameter view: The target `StackView`.    
+    /// - Parameter stack: The target `StackView`.
     /// - Parameter config: Configuration for the `StackView`.
+    /// - Parameter arrangedSubviews: `arrangedSubviews` in the `StackView`.
     ///
     /// - Returns: `ViewFormation` instance for the target `StackView`.
-    public func stack(view: StackViewType, config: StackViewConfig) -> StackViewFormation {
+    public func stack(stack: StackViewType, config: StackViewConfig, arrangedSubviews: [UIView]? = nil) -> StackViewFormation {
         
-        let formation = StackViewFormation(view: view, config: config)
+        let formation = StackViewFormation(stack: stack, config: config, arrangedSubviews: arrangedSubviews)
         formations.append(formation)
         
         return formation

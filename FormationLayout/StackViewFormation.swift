@@ -14,15 +14,32 @@ public final class StackViewFormation: Formation {
     public var exceptSizeClasses = Set<SizeClass>()
     public var active = false {
         didSet {
-            view.applyConfig(config)
+            if active {
+                applyArrangedSubviews()
+                stack.applyConfig(config)
+            }
         }
     }
     
-    private var view: StackViewType
+    private var stack: StackViewType
     private var config: StackViewConfig
+    private var arrangedSubviews: [UIView]?
     
-    public init(view: StackViewType, config: StackViewConfig) {
-        self.view = view
+    public init(stack: StackViewType, config: StackViewConfig, arrangedSubviews: [UIView]? = nil) {
+        self.stack = stack
         self.config = config
+        self.arrangedSubviews = arrangedSubviews
+    }
+    
+    private func applyArrangedSubviews() {
+        guard let arrangedSubviews = arrangedSubviews else { return }
+        
+        for oldView in stack.arrangedSubviews {
+            stack.removeArrangedSubview(oldView)
+        }
+        
+        for newView in arrangedSubviews {
+            stack.addArrangedSubview(newView)
+        }
     }
 }

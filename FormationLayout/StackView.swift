@@ -9,7 +9,7 @@
 import Foundation
 
 /// Create a `StackView`. Will create `UIStackView` on iOS 9 and `UIView` + `GroupFormation` on iOS 8.
-public func StackView(views: [UIView], config: StackViewConfig? = nil) -> StackViewType {
+public func StackView(views: [UIView] = [], config: StackViewConfig? = nil) -> StackViewType {
     let stack: StackViewType
     if #available(iOS 9.0, *) {
         stack = UIStackView(arrangedSubviews: views)
