@@ -67,6 +67,7 @@ The [Wiki pages](https://github.com/evan-liu/FormationLayout/wiki) have the same
 - [GroupFormation](https://github.com/evan-liu/FormationLayout/wiki/GroupFormation)
 - [SizeClass](https://github.com/evan-liu/FormationLayout/wiki/SizeClass)
 - [LayoutGuide](https://github.com/evan-liu/FormationLayout/wiki/LayoutGuide)
+- [StackView](https://github.com/evan-liu/FormationLayout/wiki/StackView)
 
 ## Install 
 
