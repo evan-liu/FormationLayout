@@ -28,17 +28,30 @@ final public class GroupStackView: UIView, StackViewType {
     //----------------------------------
     internal(set) public var arrangedSubviews = [UIView]() {
         didSet {
+            for view in arrangedSubviews {
+                if view.superview != self {
+                    addSubview(view)
+                }
+            }
             setNeedsLayout()
         }
     }
     public func addArrangedSubview(view: UIView) {
         guard !arrangedSubviews.contains(view) else { return }
         
+        if view.superview != self {
+            addSubview(view)
+        }
+        
         arrangedSubviews.append(view)
         setNeedsLayout()
     }
     public func insertArrangedSubview(view: UIView, atIndex stackIndex: Int) {
         guard !arrangedSubviews.contains(view) else { return }
+        
+        if view.superview != self {
+            addSubview(view)
+        }
         
         arrangedSubviews.insert(view, atIndex: stackIndex)
         setNeedsLayout()

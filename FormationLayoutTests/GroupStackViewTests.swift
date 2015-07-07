@@ -55,6 +55,11 @@ class GroupStackViewTests: XCTestCase {
     func testArrangedSubviews() {
         stack.arrangedSubviews = [v1, v2, v3]
         XCTAssertEqual(stack.arrangedSubviews, [v1, v2, v3])
+        
+        // should also add view as a subview
+        XCTAssertEqual(v1.superview!, stack)
+        XCTAssertEqual(v2.superview!, stack)
+        XCTAssertEqual(v3.superview!, stack)
     }
     
     // addArrangedSubview()
@@ -76,6 +81,11 @@ class GroupStackViewTests: XCTestCase {
         stack.addArrangedSubview(v2)
         stack.addArrangedSubview(v3)
         XCTAssertEqual(stack.arrangedSubviews, [v1, v2, v3])
+        
+        // should also add view as a subview
+        XCTAssertEqual(v1.superview!, stack)
+        XCTAssertEqual(v2.superview!, stack)
+        XCTAssertEqual(v3.superview!, stack)
     }
     
     // insertArrangedSubview()
@@ -96,6 +106,10 @@ class GroupStackViewTests: XCTestCase {
         stack.insertArrangedSubview(v3, atIndex: 1)
         XCTAssertEqual(stack.arrangedSubviews, [v2, v3, v1])
         
+        // should also add view as a subview
+        XCTAssertEqual(v1.superview!, stack)
+        XCTAssertEqual(v2.superview!, stack)
+        XCTAssertEqual(v3.superview!, stack)
     }
     
     // removeArrangedSubview()
