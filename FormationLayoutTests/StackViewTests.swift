@@ -14,7 +14,7 @@ class StackViewTests: XCTestCase {
     // StackView()
     func testCreation() {
         
-        let stack = StackView([UIView()], config: StackViewConfig(axis: .Vertical))
+        let stack = StackView(arrangedSubviews: [UIView()], config: StackViewConfig(axis: .Vertical))
 
         // should return UIStackView in iOS 9 and UIView in iOS 8
         if #available(iOS 9.0, *) {
