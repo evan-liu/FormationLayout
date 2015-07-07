@@ -1,5 +1,7 @@
-//: [Home](Home) | [Previous](@previous)
+//: [Home](Home) | [Previous](@previous) | [Next](@next)
+
 import FormationLayout
+
 /*:
 ## LayoutGuide
 ----
@@ -49,4 +51,4 @@ demo3 { view, v1, v2, v3 in // Show Result of this line
     layout.activate()
 }
 
-//: [Home](Home) | [Previous](@previous)
+//: [Home](Home) | [Previous](@previous) | [Next](@next)

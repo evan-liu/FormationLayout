@@ -9,5 +9,6 @@
         <page name='GroupFormation'/>
         <page name='SizeClass'/>
         <page name='LayoutGuide'/>
+        <page name='StackView'/>
     </pages>
 </playground>
