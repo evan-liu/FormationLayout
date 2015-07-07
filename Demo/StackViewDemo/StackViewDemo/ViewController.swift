@@ -29,16 +29,11 @@ class ViewController: UIViewController {
         let textField = UITextField()
         textField.text = "Text Field"
         
-        let stack = GroupStackView(arrangedSubviews: [btn, label, textField])
-        stack.axis = .Vertical
-        stack.stackAlignment = .Center
-        stack.stackDistribution = .EqualSpacing
-        stack.spacing = 20
         
+        let stack = GroupStackView(arrangedSubviews: [btn, label, textField])
         layout.view(stack).center(view).size(300)
         
-        var hCompactConfig = StackViewConfig(source: stack)
-        hCompactConfig.axis = .Horizontal
+        let hCompactConfig = StackViewConfig(axis: .Horizontal, distribution: .EqualSpacing, alignment: .Center, spacing: 20)
         
         var hRegularConfig = hCompactConfig
         hRegularConfig.axis = .Vertical
