@@ -154,49 +154,14 @@ final public class GroupStackView: UIView, StackViewType {
             .first { pinView($0, to: config.pinLeading) }
             .last { pinView($0, to: config.pinTrailing) }
         
-        // Alignment
-        align(state: activeState!, config: config)
-
         // Distribution
         distribute(state: activeState!, config: config)
         
+        // Alignment
+        align(state: activeState!, config: config)
+        
         // Activate constraints
         activeState!.layout.activate()
-    }
-    
-    //----------------------------------
-    // MARK: Alignment
-    //----------------------------------
-    private func align(state state: LayoutState, config: StackViewConfig) {
-        switch config.alignment {
-        case .Fill:
-            state.viewGroup
-                .attribute(config.alignLeading, relatedBy: .Equal, toView: self)
-                .attribute(config.alignTrailing, relatedBy: .Equal, toView: self)
-        case .Center:
-            state.viewGroup
-                .attribute(config.alignCenter, relatedBy: .Equal, toView: self)
-                .attribute(config.alignLeading, relatedBy: .GreaterThanOrEqual, toView: self)
-                .attribute(config.alignTrailing, relatedBy: .LessThanOrEqual, toView: self)
-        case .Leading:
-            state.viewGroup
-                .attribute(config.alignLeading, relatedBy: .Equal, toView: self)
-                .attribute(config.alignTrailing, relatedBy: .LessThanOrEqual, toView: self)
-        case .Trailing:
-            state.viewGroup
-                .attribute(config.alignLeading, relatedBy: .GreaterThanOrEqual, toView: self)
-                .attribute(config.alignTrailing, relatedBy: .Equal, toView: self)
-        case .FirstBaseline:
-            state.viewGroup
-                .attribute(config.alignLeading, relatedBy: .GreaterThanOrEqual, toView: self)
-                .attribute(config.alignTrailing, relatedBy: .LessThanOrEqual, toView: self)
-                .attribute(.FirstBaseline, relatedBy: .Equal, toView: arrangedSubviews[0])
-        case .LastBaseline:
-            state.viewGroup
-                .attribute(config.alignLeading, relatedBy: .GreaterThanOrEqual, toView: self)
-                .attribute(config.alignTrailing, relatedBy: .LessThanOrEqual, toView: self)
-                .attribute(.Baseline, relatedBy: .Equal, toView: arrangedSubviews[0])
-        }
     }
     
     //----------------------------------
@@ -278,6 +243,41 @@ final public class GroupStackView: UIView, StackViewType {
             }
         }
         
+    }
+    
+    //----------------------------------
+    // MARK: Alignment
+    //----------------------------------
+    private func align(state state: LayoutState, config: StackViewConfig) {
+        switch config.alignment {
+        case .Fill:
+            state.viewGroup
+                .attribute(config.alignLeading, relatedBy: .Equal, toView: self)
+                .attribute(config.alignTrailing, relatedBy: .Equal, toView: self)
+        case .Center:
+            state.viewGroup
+                .attribute(config.alignCenter, relatedBy: .Equal, toView: self)
+                .attribute(config.alignLeading, relatedBy: .GreaterThanOrEqual, toView: self)
+                .attribute(config.alignTrailing, relatedBy: .LessThanOrEqual, toView: self)
+        case .Leading:
+            state.viewGroup
+                .attribute(config.alignLeading, relatedBy: .Equal, toView: self)
+                .attribute(config.alignTrailing, relatedBy: .LessThanOrEqual, toView: self)
+        case .Trailing:
+            state.viewGroup
+                .attribute(config.alignTrailing, relatedBy: .Equal, toView: self)
+                .attribute(config.alignLeading, relatedBy: .GreaterThanOrEqual, toView: self)
+        case .FirstBaseline:
+            state.viewGroup
+                .attribute(.FirstBaseline, relatedBy: .Equal, toView: arrangedSubviews[0])
+                .attribute(config.alignLeading, relatedBy: .GreaterThanOrEqual, toView: self)
+                .attribute(config.alignTrailing, relatedBy: .LessThanOrEqual, toView: self)
+        case .LastBaseline:
+            state.viewGroup
+                .attribute(.Baseline, relatedBy: .Equal, toView: arrangedSubviews[0])
+                .attribute(config.alignLeading, relatedBy: .GreaterThanOrEqual, toView: self)
+                .attribute(config.alignTrailing, relatedBy: .LessThanOrEqual, toView: self)
+        }
     }
     
     //----------------------------------
