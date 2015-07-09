@@ -36,6 +36,7 @@ public final class StackViewFormation: Formation {
         
         for oldView in stack.arrangedSubviews {
             stack.removeArrangedSubview(oldView)
+            oldView.removeFromSuperview()
         }
         
         for newView in arrangedSubviews {

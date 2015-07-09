@@ -55,6 +55,11 @@ class StackViewFormationTests: XCTestCase {
         StackViewFormation(stack: stack, config: config, arrangedSubviews: [v5, v2, v4]).active = true
         
         XCTAssertEqual(stack.arrangedSubviews, [v5, v2, v4])
+        XCTAssert(v1.superview == nil)
+        XCTAssert(v2.superview == stack as? UIView)
+        XCTAssert(v3.superview == nil)
+        XCTAssert(v4.superview == stack as? UIView)
+        XCTAssert(v5.superview == stack as? UIView)
     }
     
     @available(iOS 9.0, *)
