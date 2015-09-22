@@ -48,18 +48,6 @@ layout.group(v1, v2, v3, v4, v5)
 
 ## Documentation
 
-### Playground
-
-Clone the project then open Doc.xcworkspace (**not** Doc.playground). Play with the code and see the changes lively with playground. 
-
-**Note:** Try to build the FormationLayout target if it cannot compile.
-
-**Note:** Xcode 7 Beta 2 will not show live views correctly. 
-
-### Wiki
-
-The [Wiki pages](https://github.com/evan-liu/FormationLayout/wiki) have the same content as the Doc Playground. Go for Playground if you have Xcode 7 **Beta 1** installed and have fun playing with the code.
-
 - [FormationLayout](https://github.com/evan-liu/FormationLayout/wiki/FormationLayout)
 - [LayoutTarget](https://github.com/evan-liu/FormationLayout/wiki/LayoutTarget)
 - [FactoryMethods](https://github.com/evan-liu/FormationLayout/wiki/FactoryMethods)
@@ -68,11 +56,3 @@ The [Wiki pages](https://github.com/evan-liu/FormationLayout/wiki) have the same
 - [SizeClass](https://github.com/evan-liu/FormationLayout/wiki/SizeClass)
 - [LayoutGuide](https://github.com/evan-liu/FormationLayout/wiki/LayoutGuide)
 - [StackView](https://github.com/evan-liu/FormationLayout/wiki/StackView)
-
-## Install 
-
-Cocoapods (need to use git url as it doesn't support Swift 2 yet):
-
-```
-pod 'FormationLayout', :git => 'https://github.com/evan-liu/FormationLayout.git', :tag => '0.3.0'
-```
