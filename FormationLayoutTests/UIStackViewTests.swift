@@ -17,16 +17,16 @@ class UIStackViewTests: XCTestCase {
         let stack = UIStackView()
         stack.applyConfig(StackViewConfig(axis: .Vertical, distribution: .EqualSpacing, alignment: .Center, spacing: 10, baselineRelativeArrangement: true, layoutMarginsRelativeArrangement: true))
         
-        XCTAssertEqual(stack.distribution, .EqualSpacing)
-        XCTAssertEqual(stack.alignment, .Center)
+        XCTAssertEqual(stack.distribution, UIStackViewDistribution.EqualSpacing)
+        XCTAssertEqual(stack.alignment, UIStackViewAlignment.Center)
         XCTAssertEqual(stack.spacing, 10)
         XCTAssertEqual(stack.baselineRelativeArrangement, true)
         XCTAssertEqual(stack.layoutMarginsRelativeArrangement, true)
         
         // currentConfig property should return current properties
         let currentConfig = stack.currentConfig
-        XCTAssertEqual(currentConfig.distribution, .EqualSpacing)
-        XCTAssertEqual(currentConfig.alignment, .Center)
+        XCTAssertEqual(currentConfig.distribution, StackViewDistribution.EqualSpacing)
+        XCTAssertEqual(currentConfig.alignment, StackViewAlignment.Center)
         XCTAssertEqual(currentConfig.spacing, 10)
         XCTAssertEqual(currentConfig.baselineRelativeArrangement, true)
         XCTAssertEqual(currentConfig.layoutMarginsRelativeArrangement, true)

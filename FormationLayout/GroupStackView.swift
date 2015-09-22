@@ -19,7 +19,8 @@ final public class GroupStackView: UIView, StackViewType {
     public init() {
         super.init(frame: CGRectZero)
     }
-    public required init(coder aDecoder: NSCoder) {
+
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     

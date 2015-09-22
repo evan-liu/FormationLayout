@@ -28,7 +28,7 @@ class StackViewTests: XCTestCase {
         XCTAssertEqual(stack.arrangedSubviews.count, 1)
         
         // should apply config
-        XCTAssertEqual(stack.currentConfig.axis, .Vertical)
+        XCTAssertEqual(stack.currentConfig.axis, UILayoutConstraintAxis.Vertical)
         
     }
 

@@ -36,8 +36,8 @@ class ViewFormation_SelfTests: XCTestCase {
         XCTAssertEqual(constraint.firstAttribute, firstAttribute)
         XCTAssertEqual(constraint.secondAttribute, secondAttribute)
         
-        XCTAssertEqual(constraint.firstItem as! UIView, view)
-        XCTAssertEqual(constraint.secondItem as! UIView, view)
+        XCTAssertEqual(constraint.firstItem as? UIView, view)
+        XCTAssertEqual(constraint.secondItem as? UIView, view)
         
         XCTAssertEqual(constraint.multiplier, multiplier)
         XCTAssertEqual(constraint.constant, constant)

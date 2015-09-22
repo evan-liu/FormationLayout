@@ -33,12 +33,12 @@ class ViewFormation_LayoutTargetTests: XCTestCase {
         
         // should set up constraint and call handler
         formation.attribute(.Left, relatedBy: .Equal, target: view2.centerX, priority: 10) { constraint in
-            XCTAssertEqual(constraint.firstItem as! UIView, self.view)
+            XCTAssertEqual(constraint.firstItem as? UIView, self.view)
             XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.Left)
             
             XCTAssertEqual(constraint.relation, NSLayoutRelation.Equal)
             
-            XCTAssertEqual(constraint.secondItem as! UIView, self.view2)
+            XCTAssertEqual(constraint.secondItem as? UIView, self.view2)
             XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.CenterX)
             
             XCTAssertEqual(constraint.priority, 10)
@@ -50,12 +50,12 @@ class ViewFormation_LayoutTargetTests: XCTestCase {
         // should set up constraint and call handler
         formation
             .left(view2.centerX, priority: 10) { constraint in
-                XCTAssertEqual(constraint.firstItem as! UIView, self.view)
+                XCTAssertEqual(constraint.firstItem as? UIView, self.view)
                 XCTAssertEqual(constraint.firstAttribute, NSLayoutAttribute.Left)
                 
                 XCTAssertEqual(constraint.relation, NSLayoutRelation.Equal)
                 
-                XCTAssertEqual(constraint.secondItem as! UIView, self.view2)
+                XCTAssertEqual(constraint.secondItem as? UIView, self.view2)
                 XCTAssertEqual(constraint.secondAttribute, NSLayoutAttribute.CenterX)
                 
                 XCTAssertEqual(constraint.priority, 10)
@@ -148,7 +148,7 @@ class ViewFormation_LayoutTargetTests: XCTestCase {
     func testNotAnAttribute() {
         // should set secondAttribute to firstAttrubute
         formation.width(view2 * 2) {
-            XCTAssertEqual($0.secondAttribute, .Width)
+            XCTAssertEqual($0.secondAttribute, NSLayoutAttribute.Width)
             XCTAssertEqual($0.multiplier, 2)
         }
         

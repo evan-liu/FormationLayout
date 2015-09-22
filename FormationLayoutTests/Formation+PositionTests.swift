@@ -48,13 +48,13 @@ class Formation_PositionTests: XCTestCase {
     
     private func check(constraint: NSLayoutConstraint, _ firstAttribute: NSLayoutAttribute, _ secondAttribute: NSLayoutAttribute, _ multiplier: CGFloat = 1, _ constant: CGFloat = 0) {
         
-        XCTAssertEqual(constraint.firstItem as! UIView, view)
-        XCTAssertEqual(constraint.secondItem as! UIView, view2)
+        XCTAssertEqual(constraint.firstItem as? UIView, view)
+        XCTAssertEqual(constraint.secondItem as? UIView, view2)
         
         XCTAssertEqual(constraint.firstAttribute, firstAttribute)
         XCTAssertEqual(constraint.secondAttribute, secondAttribute)
         
-        XCTAssertEqual(constraint.relation, .Equal)
+        XCTAssertEqual(constraint.relation, NSLayoutRelation.Equal)
         
         XCTAssertEqual(constraint.multiplier, multiplier)
         XCTAssertEqual(constraint.constant, constant)
