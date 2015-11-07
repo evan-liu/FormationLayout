@@ -37,7 +37,7 @@ Use `hSpace()` and `vSpace()` methods to set spaces between views in a group.
         .at(1) { $0.centerX(view) }
 */
 
-demo3 { view, v1, v2, v3 in // Show Result of this line
+demo3 { view, v1, v2, v3 in 
     let layout = FormationLayout(rootView: view)
     
     layout.group(v1, v2, v3)
@@ -51,7 +51,7 @@ demo3 { view, v1, v2, v3 in // Show Result of this line
 
 //: ### forEach
 
-demo3 { view, v1, v2, v3 in // Show Result of this line
+demo3 { view, v1, v2, v3 in 
     let layout = FormationLayout(rootView: view)
     
     layout.group(v1, v2, v3)
@@ -70,7 +70,7 @@ demo3 { view, v1, v2, v3 in // Show Result of this line
 Use `sameWidth()`, `sameHeight()` or `sameSize()` to make views in the group have the same size.
 */
 
-demo3 { view, v1, v2, v3 in // Show Result of this line
+demo3 { view, v1, v2, v3 in 
     let layout = FormationLayout(rootView: view)
     
     layout.group(v1, v2, v3)

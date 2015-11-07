@@ -14,7 +14,7 @@ import FormationLayout
 
 //: You can use `LayoutGuide`s to define the space between elements in your layout
 
-demo3 { view, v1, v2, v3 in // Show Result of this line
+demo3 { view, v1, v2, v3 in 
     let layout = FormationLayout(rootView: view)
     
     let space1 = LayoutGuide()
@@ -33,7 +33,7 @@ demo3 { view, v1, v2, v3 in // Show Result of this line
 
 //: `LayoutGuide`s can also act as a black box, containing a number of other views and controls. This lets you encapsulate part of your view, breaking your layout into modular chunks.
 
-demo3 { view, v1, v2, v3 in // Show Result of this line
+demo3 { view, v1, v2, v3 in 
     let layout = FormationLayout(rootView: view)
     
     let panel1 = LayoutGuide()

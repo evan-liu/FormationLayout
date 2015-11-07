@@ -14,7 +14,7 @@ import FormationLayout
 - Added view with no `superView` will be added to `rootView`.
 */
 
-demo { view, icon in    // Show Result of this line
+demo { view, icon in    
     let layout = FormationLayout(rootView: view)
     layout.view(icon).center(view).active = true
 }
@@ -39,7 +39,7 @@ If you have only one or two views you can set the `active` property to true.
 Or you can use `activate()` method of `FormationLayout` instead after you setup all constraints.
 */
 
-demo2 { view, v1, v2 in // Show Result of this line
+demo2 { view, v1, v2 in 
     let layout = FormationLayout(rootView: view)
     
     layout.view(v1).centerY(view).leading(view)

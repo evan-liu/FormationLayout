@@ -22,7 +22,7 @@ Use size classes if you need different layouts on different sizes. Use `Formatio
     }
 */
 
-demo5(size: 300) { view, v1, v2, v3, v4, v5 in // Show Result of this line
+demo5(size: 300) { view, v1, v2, v3, v4, v5 in 
     let layout = FormationLayout(rootView: view)
     
     layout.view(v3).center(view)

@@ -12,12 +12,18 @@ public func createView(size size: CGFloat = 100) -> UIView {
     return view
 }
 
+public func layoutView(view: UIView, size: CGFloat = 100) {
+    NSLayoutConstraint(item: view, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: size).active = true
+    NSLayoutConstraint(item: view, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: size).active = true
+    view.layoutIfNeeded()
+}
+
 public func demo(size size: CGFloat = 100, @noescape block: (UIView, UIView) -> Void) -> UIView {
     let view = createView(size: size)
     
     block(view, createIcon())
     
-    view.layoutIfNeeded()
+    layoutView(view, size: size)
     return view
 }
 
@@ -26,7 +32,7 @@ public func demo2(size size: CGFloat = 100, @noescape block: (UIView, UIView, UI
     
     block(view, createIcon(), createIcon())
     
-    view.layoutIfNeeded()
+    layoutView(view, size: size)
     return view
 }
 
@@ -35,7 +41,7 @@ public func demo3(size size: CGFloat = 100, @noescape block: (UIView, UIView, UI
 
     block(view, createIcon(), createIcon(), createIcon())
     
-    view.layoutIfNeeded()
+    layoutView(view, size: size)
     return view
 }
 
@@ -44,6 +50,6 @@ public func demo5(size size: CGFloat = 100, @noescape block: (UIView, UIView, UI
     
     block(view, createIcon(), createIcon(), createIcon(), createIcon(), createIcon())
     
-    view.layoutIfNeeded()
+    layoutView(view, size: size)
     return view
 }

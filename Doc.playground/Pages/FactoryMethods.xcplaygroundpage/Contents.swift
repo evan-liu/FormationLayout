@@ -11,7 +11,7 @@ import FormationLayout
 
 */
 
-demo3 { view, v1, v2, v3 in // Show Result of this line
+demo3 { view, v1, v2, v3 in 
     let layout = FormationLayout(rootView: view)
     
     layout.view(v1).width(view.width / 5).height(20).center(view)
@@ -76,7 +76,7 @@ Similarly
 
 //: ### To Self
 
-demo3 { view, v1, v2, v3 in // Show Result of this line
+demo3 { view, v1, v2, v3 in 
     let layout = FormationLayout(rootView: view)
     
     layout.view(v1).centerX(view).top(view).width(20).heightToWidth()

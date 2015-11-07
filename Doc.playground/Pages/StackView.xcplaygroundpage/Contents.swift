@@ -16,7 +16,7 @@ Use `StackViewConfig` to configuration distribution and alignment of its arrange
 
 */
 
-demo3 { view, v1, v2, v3 in // Show Result of this line
+demo3 { view, v1, v2, v3 in 
     let stack = StackView(arrangedSubviews: [v1, v2, v3], config: StackViewConfig(axis: .Vertical))
     FormationLayout(rootView: view).view(stack).center(view).active = true
 }
@@ -25,7 +25,7 @@ demo3 { view, v1, v2, v3 in // Show Result of this line
 Use `stack()` method to have different configuration and even different arrangedSubviews on different size classes.
 */
 
-demo3 { view, v1, v2, v3 in // Show Result of this line
+demo3 { view, v1, v2, v3 in 
     let layout = FormationLayout(rootView: view)
     
     let stack = StackView()
