@@ -2,8 +2,6 @@
 
 ![banner](https://raw.githubusercontent.com/evan-liu/FormationLayout/master/Doc.playground/Resources/banner.png)
 
-**Requires**: Swift 2, Xcode 7, iOS 8
-
 ## Features
 
 - Chaining methods
@@ -46,7 +44,31 @@ layout.group(v1, v2, v3, v4, v5)
 
 ![image](https://cloud.githubusercontent.com/assets/126383/8302394/2a59bab8-19ea-11e5-8b42-24a7c6a5a9b0.png)
 
+## Install 
+
+### Cocoapods 
+
+```
+pod 'FormationLayout', '~> 0.5.1'
+```
+
+### Carthage 
+
+```
+github "evan-liu/FormationLayout" >= 0.5.1
+```
+
 ## Documentation
+
+### Playground
+
+Open Doc.xcworkspace (**not** Doc.playground). Play with the code and see the changes lively with playground. 
+
+**Note:** Try to build the FormationLayout target if it cannot compile.
+
+### Wiki
+
+The [Wiki pages](https://github.com/evan-liu/FormationLayout/wiki) have the same content as the Doc Playground. 
 
 - [FormationLayout](https://github.com/evan-liu/FormationLayout/wiki/FormationLayout)
 - [LayoutTarget](https://github.com/evan-liu/FormationLayout/wiki/LayoutTarget)
