@@ -28,10 +28,7 @@ extension FormationLayout {
             view.addToContainer(rootView, forceMove: false)
         }
         
-        let formation = ViewFormation(view: view)
-        formations.append(formation)
-        
-        return formation
+        return addFormation(ViewFormation(view: view))
     }
     
 }

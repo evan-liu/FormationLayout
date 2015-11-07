@@ -56,4 +56,9 @@ public final class FormationLayout {
             formation.active = false
         }
     }
+    
+    internal func addFormation<T: Formation>(formation: T) -> T {
+        formations.append(formation)
+        return formation
+    }
 }

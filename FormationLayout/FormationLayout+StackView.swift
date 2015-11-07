@@ -20,10 +20,6 @@ extension FormationLayout {
     ///
     /// - Returns: `ViewFormation` instance for the target `StackView`.
     public func stack(stack: StackViewType, config: StackViewConfig, arrangedSubviews: [UIView]? = nil) -> StackViewFormation {
-        
-        let formation = StackViewFormation(stack: stack, config: config, arrangedSubviews: arrangedSubviews)
-        formations.append(formation)
-        
-        return formation
+        return addFormation(StackViewFormation(stack: stack, config: config, arrangedSubviews: arrangedSubviews))
     }
 }

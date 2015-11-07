@@ -42,10 +42,7 @@ extension FormationLayout {
             view.addToContainer(container, forceMove: moveView)
         }
         
-        let formation = GroupFormation(views: views)
-        formations.append(formation)
-        
-        return formation
+        return addFormation(GroupFormation(views: views))
     }
     
 }
