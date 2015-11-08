@@ -1,12 +1,12 @@
 language: objective-c
 osx_image: xcode7.1
-xcode_project: FormationLayout.xcodeproj
-xcode_scheme: FormationLayout
-xcode_sdk: iphonesimulator
+
+script:
+  - xcodebuild -project FormationLayout.xcodeproj -scheme FormationLayout -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6S,OS=9.1' test
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
 branches:
   only:
     - master
-
-install:
-  - gem install slather -N
-after_success: slather

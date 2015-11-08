@@ -2,7 +2,6 @@
 
 ![banner](https://raw.githubusercontent.com/evan-liu/FormationLayout/master/Doc.playground/Resources/banner.png)
 
-![GitHub license](https://img.shields.io/github/license/evan-liu/FormationLayout.svg)
 [![Cocoapods](https://img.shields.io/cocoapods/v/FormationLayout.svg)](https://cocoapods.org/)
 [![Carthage](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Build Status](https://travis-ci.org/evan-liu/FormationLayout.svg)](https://travis-ci.org/evan-liu/FormationLayout)
