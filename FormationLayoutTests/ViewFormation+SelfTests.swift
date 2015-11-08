@@ -23,6 +23,13 @@ class ViewFormation_SelfTests: XCTestCase {
         checked = 0
     }
     
+    func testSameAttribute() {
+        // should ignore same attributes
+        formation.attribute(.Width, relatedBy: .Equal, toAttribute: .Width, multiplier: 1.2, constant: 1, priority: 1) { _ in
+            XCTFail()
+        }
+    }
+    
     func testWidthAndHeight() {
         formation.widthToHeight(by: 2, plus: 10) { self.checkConstraint($0, .Width, .Height, 2, 10) }
         formation.heightToWidth(by: 2, plus: 10) { self.checkConstraint($0, .Height, .Width, 2, 10) }

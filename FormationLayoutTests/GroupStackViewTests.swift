@@ -28,6 +28,11 @@ class GroupStackViewTests: XCTestCase {
         v3 = InStackView()
     }
     
+    func testInitWithCoder() {
+        // should have required init method with NSCoder
+        XCTAssertNotNil(GroupStackView(coder: NSKeyedUnarchiver(forReadingWithData: NSData())))
+    }
+    
     func testConfig() {
         // applyConfig() should set properties from config
         stack.applyConfig(StackViewConfig(axis: .Vertical, distribution: .EqualSpacing, alignment: .Center, spacing: 10, baselineRelativeArrangement: true, layoutMarginsRelativeArrangement: true))
