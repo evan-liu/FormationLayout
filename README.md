@@ -54,13 +54,13 @@ layout.group(icon1, icon2, icon3, icon4, icon5)
 ### CocoaPods 
 
 ```
-pod 'FormationLayout', '~> 0.5.1'
+pod 'FormationLayout', '~> 0.6.0'
 ```
 
 ### Carthage 
 
 ```
-github "evan-liu/FormationLayout" >= 0.5.1
+github "evan-liu/FormationLayout" >= 0.6.0
 ```
 
 ## Documentation
