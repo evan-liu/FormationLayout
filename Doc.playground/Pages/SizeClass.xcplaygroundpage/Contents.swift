@@ -8,11 +8,13 @@ import FormationLayout
 
 Use size classes if you need different layouts on different sizes. Use `FormationLayout.activate()` method to switch constraints.
 
+Set `activateAddedFormations` to false when create the `FormationLayout` if you want to activate it later with size classes. 
+
     class ViewController: UIViewController {
         var layout: FormationLayout!
         override func viewDidLoad() {
             super.viewDidLoad()
-            layout = FormationLayout(rootView: view)
+            layout = FormationLayout(rootView: view, activateAddedFormations: false)
             // ... Create constraints
             layout.activate(traitCollection)
         }
@@ -22,12 +24,12 @@ Use size classes if you need different layouts on different sizes. Use `Formatio
     }
 */
 
-demo5(size: 300) { view, v1, v2, v3, v4, v5 in 
-    let layout = FormationLayout(rootView: view)
+demo(size: 300) { canvas, icon1, icon2, icon3, icon4, icon5 in
+    let layout = FormationLayout(rootView: canvas, activateAddedFormations: false)
     
-    layout.view(v3).center(view)
+    layout.view(icon3).center(canvas)
     
-    layout.group(v1, v2, v3, v4, v5)
+    layout.group(icon1, icon2, icon3, icon4, icon5)
         .vSpace(10)
         .forEach { icon, index, group in
             icon.size(CGFloat(25 + 5 * index))
@@ -37,13 +39,13 @@ demo5(size: 300) { view, v1, v2, v3, v4, v5 in
         }
         .install(.HRegular)
     
-    layout.group(v1, v2, v3, v4, v5)
+    layout.group(icon1, icon2, icon3, icon4, icon5)
         .hSpace(10)
         .forEach { icon, index, group in
             let distance = CGFloat(abs(2 - index))
             icon.size(50 - 10 * distance)
             if index != 2 {
-                icon.top(v3 - 5 * distance)
+                icon.top(icon3 - 5 * distance)
             }
         }
         .install(.HCompact)
@@ -70,11 +72,11 @@ By default all constraints will be installed on `.Any`(wAny_hAny). `install()` m
 
 Make sure your install/except methods cover all sizes.
 
-    layout.view(v1).width(100).install(.WCompact)
-    layout.view(v1).width(200).install(.WRegular)
+    layout.view(icon1).width(100).install(.WCompact)
+    layout.view(icon1).width(200).install(.WRegular)
 
-    layout.group(v1, v2, v3).vSpace(5).install(.BothCompact)
-    layout.group(v1, v2, v3).vSpace(10).except(.BothCompact)
+    layout.group(icon1, icon2, icon3).vSpace(5).install(.BothCompact)
+    layout.group(icon1, icon2, icon3).vSpace(10).except(.BothCompact)
 
 ### LayoutBlock
 
@@ -93,6 +95,5 @@ Use `layout.block {}` to install constaints to size classes together.
     // ... Create constraints
     }.except(.BothCompact)
 */
-
 
 //: [Home](Home) | [Previous](@previous) | [Next](@next)

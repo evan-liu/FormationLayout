@@ -13,39 +13,37 @@ import FormationLayout
 Use extension methods of `UIView` to create `LayoutTarget` and `+ - * /` operators for `multiplier` and `constant` calculation.
 */
 
-demo2 { view, v1, v2 in 
-    let layout = FormationLayout(rootView: view)
-    layout.view(v1).size(20).centerX(view).top(view)
-    layout.view(v2).centerX(view).bottom(view)
+demo { canvas, icon1, icon2 in
+    // Skip these 3 lines of code for now
+    let layout = FormationLayout(rootView: canvas)
+    layout.view(icon1).size(20).centerX(canvas).top(canvas)
+    layout.view(icon2).centerX(canvas).bottom(canvas)
     
-    // Look at these 3 lines of code only
-    layout.view(v2)
-        .width(v1.width * 1.5 + 20)
-        .height(v1 * 2.5)
-    
-    layout.activate()
+    // Look at only these 3 lines of code for now
+    layout.view(icon2)
+        .width(icon1.width * 1.5 + 20)
+        .height(icon1 * 2.5)
 }
 
 /*:
 
-    v1.width * 1.5 + 20
+    icon1.width * 1.5 + 20
 
 Creates a `LayoutTarget` as:
 
-- view: v1
+- view: icon1
 - attribute: .Width
 - multiplier: 1.5
 - constant: 20
 
 The `secondAttribute` can be emitted if it is the same as `firstAttribute`.
 
-    layout.view(v2).height(v1 * 2.5)
+    layout.view(icon2).height(icon1 * 2.5)
 
 is the same as
 
-    layout.view(v2).height(v1.height * 2.5)
+    layout.view(icon2).height(icon1.height * 2.5)
 
 */
-
 
 //: [Home](Home) | [Previous](@previous) | [Next](@next)

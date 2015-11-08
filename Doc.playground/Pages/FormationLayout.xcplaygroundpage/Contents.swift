@@ -14,9 +14,9 @@ import FormationLayout
 - Added view with no `superView` will be added to `rootView`.
 */
 
-demo { view, icon in    
-    let layout = FormationLayout(rootView: view)
-    layout.view(icon).center(view).active = true
+demo { canvas, icon in
+    FormationLayout(rootView: canvas)
+        .view(icon).center(canvas)
 }
 
 /*:
@@ -27,25 +27,13 @@ Use `ViewFormation` to create and manager a group of constraints of one view.
 Create `ViewFormation` use `FormationLayout.view()` method.
 
     layout.view(icon)
-
-### Activate constraints
-
-Constraints are not active when they are created. 
-
-If you have only one or two views you can set the `active` property to true. 
-
-    layout.view(icon).center(view).active = true
-
-Or you can use `activate()` method of `FormationLayout` instead after you setup all constraints.
 */
 
-demo2 { view, v1, v2 in 
-    let layout = FormationLayout(rootView: view)
+demo { canvas, icon1, icon2 in
+    let layout = FormationLayout(rootView: canvas)
     
-    layout.view(v1).centerY(view).leading(view)
-    layout.view(v2).centerY(view).trailing(view)
-    
-    layout.activate()
+    layout.view(icon1).centerY(canvas).leading(canvas)
+    layout.view(icon2).centerY(canvas).trailing(canvas) 
 }
 
 //: [Home](Home) | [Previous](@previous) | [Next](@next)

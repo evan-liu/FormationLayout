@@ -29,6 +29,24 @@ class FormationLayoutTests: XCTestCase {
         XCTAssertEqual(rootView.translatesAutoresizingMaskIntoConstraints, false)
     }
     
+    func testActivateAddedFormations() {
+        // should activate added formations by default
+        XCTAssertTrue(layout.view(UIView()).active)
+        
+        // when activateAddedFormations is set to false
+        // should not activate added formations
+        layout = FormationLayout(rootView: rootView, activateAddedFormations: false)
+        XCTAssertFalse(layout.view(UIView()).active)
+        
+        // when added formation is active
+        // should not deactive it
+        let f = ViewFormation(view: UIView())
+        f.active = true
+        
+        layout.addFormation(f)
+        XCTAssertTrue(f.active)
+    }
+    
     // activate() 
     func testActivate() {
         // should call activate() of all formations

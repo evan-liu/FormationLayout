@@ -11,22 +11,20 @@ import FormationLayout
 
 */
 
-demo3 { view, v1, v2, v3 in 
-    let layout = FormationLayout(rootView: view)
+demo { canvas, icon1, icon2, icon3 in
+    let layout = FormationLayout(rootView: canvas)
     
-    layout.view(v1).width(view.width / 5).height(20).center(view)
+    layout.view(icon1).width(canvas.width / 5).height(20).center(canvas)
     
-    layout.view(v2).width(v1.width).height(v1).centerX(view).above(v1 - 5)
+    layout.view(icon2).width(icon1.width).height(icon1).centerX(canvas).above(icon1 - 5)
     
-    layout.view(v3).size(20).centerX(v1).below(v1 + 5)
-    
-    layout.activate()
+    layout.view(icon3).size(20).centerX(icon1).below(icon1 + 5)
 }
 
 /*:
 ### LayoutTarget
 
-Width of both v1 and v2 are set by `LayoutTarget`.
+Width of both icon1 and icon2 are set by `LayoutTarget`.
 
 ### Constant Value
 
@@ -36,62 +34,60 @@ For now only width and height support constant values.
 
 You can use another view if you are setting the same attribute of two views.
 
-    layout.view(v2).width(v1.width).height(v1.height)
+    layout.view(icon2).width(icon1.width).height(icon1.height)
 
 is the same as 
 
-    layout.view(v2).width(v1).height(v1)
+    layout.view(icon2).width(icon1).height(icon1)
 
 ### Combined properties
 
 You can set width and height together by size. Also center as centerX and centerY. 
 
-    layout.view(v1).center(view)
-    //-> v1.centerX = view.centerX
-    //-> v1.centerY = view.centerY
+    layout.view(icon1).center(canvas)
+    //-> icon1.centerX = canvas.centerX
+    //-> icon1.centerY = canvas.centerY
 
 and 
 
-    layout.view(v3).size(20)
-    //-> v3.width = 20
-    //-> v3.height = 20
+    layout.view(icon3).size(20)
+    //-> icon3.width = 20
+    //-> icon3.height = 20
 
-The code above to set width and height of v2 can now be
+The code above to set width and height of icon2 can now be
     
-    layout.view(v2).size(v1)
+    layout.view(icon2).size(icon1)
 
 ### Positions
 
 There are 4 methods to set one view to some position of another view: 
 
-    layout.view(v2).above(v1 - 5) //-> v2.bottom = v1.top - 5
-    layout.view(v3).below(v1 + 5) //-> v3.top = v1.bottom + 5
+    layout.view(icon2).above(icon1 - 5) //-> icon2.bottom = icon1.top - 5
+    layout.view(icon3).below(icon1 + 5) //-> icon3.top = icon1.bottom + 5
 
 Similarly
 
-    layout.view(v1).before(v2) //-> v1.trailing = v2.leading
-    layout.view(v1).after(v2)  //-> v1.leading = v2.trailing
+    layout.view(icon1).before(icon2) //-> icon1.trailing = icon2.leading
+    layout.view(icon1).after(icon2)  //-> icon1.leading = icon2.trailing
 
 */
 
 //: ### To Self
 
-demo3 { view, v1, v2, v3 in 
-    let layout = FormationLayout(rootView: view)
+demo { canvas, icon1, icon2, icon3 in
+    let layout = FormationLayout(rootView: canvas)
     
-    layout.view(v1).centerX(view).top(view).width(20).heightToWidth()
-    layout.view(v2).center(view).height(20).widthToHeight(by: 1.2, plus: 6)
-    layout.view(v3).centerX(view).bottom(view).height(20).widthToHeight(by: 1.5)
-    
-    layout.activate()
+    layout.view(icon1).centerX(canvas).top(canvas).width(20).heightToWidth()
+    layout.view(icon2).center(canvas).height(20).widthToHeight(by: 1.2, plus: 6)
+    layout.view(icon3).centerX(canvas).bottom(canvas).height(20).widthToHeight(by: 1.5)
 }
 
 /*:
-    layout.view(v1).heightToWidth()
-    //-> v1.height = v1.width
+    layout.view(icon1).heightToWidth()
+    //-> icon1.height = icon1.width
 
-    layout.view(v2).widthToHeight(by: 1.2, plus: 6)
-    //-> v2.width = v2.height * 1.2 + 6
+    layout.view(icon2).widthToHeight(by: 1.2, plus: 6)
+    //-> icon2.width = icon2.height * 1.2 + 6
 */
 
 //: [Home](Home) | [Previous](@previous) | [Next](@next)

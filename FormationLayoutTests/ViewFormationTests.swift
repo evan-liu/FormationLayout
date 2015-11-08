@@ -91,4 +91,16 @@ class ViewFormationTests: XCTestCase {
         XCTAssertFalse(formation.checkSizeClass(.Regular, .Regular))
     }
     
+    func testAddConstraint() {
+        // should set constraint.active to formation.active
+        
+        formation.active = false
+        formation.width(10)
+        XCTAssertFalse(formation.constraints[0].active)
+        
+        formation.active = true
+        formation.height(10)
+        XCTAssertTrue(formation.constraints[1].active)
+    }
+    
 }

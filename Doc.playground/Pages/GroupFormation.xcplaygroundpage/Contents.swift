@@ -7,18 +7,18 @@ import FormationLayout
 
 All methods of `ViewFormation` are also avaliable in `GroupFormation`. The group will call the same method on each view but not the same view with the same attribute
 
-    layout.group(v1, v2, v3).width(v1).center(v2)
+    layout.group(icon1, icon2, icon3).width(icon1).center(icon2)
 
 will create 6 constraints:
 
-- `.centerX(v1)`
-    - v2.width = v1.width
-    - v3.width = v1.width
-- `.center(v2)`
-    - v1.centerX = v2.centerX
-    - v1.centerY = v2.centerY
-    - v3.centerX = v2.centerX
-    - v3.centerY = v2.centerY
+- `.centerX(icon1)`
+    - icon2.width = icon1.width
+    - icon3.width = icon1.width
+- `.center(icon2)`
+    - icon1.centerX = icon2.centerX
+    - icon1.centerY = icon2.centerY
+    - icon3.centerX = icon2.centerX
+    - icon3.centerY = icon2.centerY
 */
 
 /*:
@@ -26,42 +26,34 @@ will create 6 constraints:
 
 Use `hSpace()` and `vSpace()` methods to set spaces between views in a group.
 
-    layout.group(v1, v2, v3).hSpace(10).vSpace(10)
+    layout.group(icon1, icon2, icon3).hSpace(10).vSpace(10)
 
 ### first, last and at
 
-    layout.group(v1, v2, v3)
-        .centerY(view)
+    layout.group(icon1, icon2, icon3)
+        .centerY(canvas)
         .first { $0.leading(view) }
         .last { $0.trailing(view) }
         .at(1) { $0.centerX(view) }
 */
 
-demo3 { view, v1, v2, v3 in 
-    let layout = FormationLayout(rootView: view)
-    
-    layout.group(v1, v2, v3)
+demo { canvas, icon1, icon2, icon3 in
+    FormationLayout(rootView: canvas).group(icon1, icon2, icon3)
         .size(20)
-        .centerY(view)
-        .at(1) { $0.centerX(view) }
+        .centerY(canvas)
+        .at(1) { $0.centerX(canvas) }
         .hSpace(10)
-    
-    layout.activate()
 }
 
 //: ### forEach
 
-demo3 { view, v1, v2, v3 in 
-    let layout = FormationLayout(rootView: view)
-    
-    layout.group(v1, v2, v3)
+demo { canvas, icon1, icon2, icon3 in
+    FormationLayout(rootView: canvas).group(icon1, icon2, icon3)
         .forEach { v, index, _ in
             let distance = CGFloat(5 * index)
             let offset = 6 * distance
-            v.size(20 + distance).leading(view + offset).top(view + offset)
+            v.size(20 + distance).leading(canvas + offset).top(canvas + offset)
         }
-    
-    layout.activate()
 }
 
 /*: 
@@ -70,18 +62,14 @@ demo3 { view, v1, v2, v3 in
 Use `sameWidth()`, `sameHeight()` or `sameSize()` to make views in the group have the same size.
 */
 
-demo3 { view, v1, v2, v3 in 
-    let layout = FormationLayout(rootView: view)
-    
-    layout.group(v1, v2, v3)
-        .centerY(view)
-        .first { $0.leading(view) }
-        .last { $0.trailing(view) }
+demo { canvas, icon1, icon2, icon3 in
+    FormationLayout(rootView: canvas).group(icon1, icon2, icon3)
+        .centerY(canvas)
+        .first { $0.leading(canvas) }
+        .last { $0.trailing(canvas) }
         .height(10)
         .hSpace(5)
         .sameWidth()
-    
-    layout.activate()
 }
 
 //: [Home](Home) | [Previous](@previous) | [Next](@next)

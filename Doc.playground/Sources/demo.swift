@@ -27,7 +27,7 @@ public func demo(size size: CGFloat = 100, @noescape block: (UIView, UIView) -> 
     return view
 }
 
-public func demo2(size size: CGFloat = 100, @noescape block: (UIView, UIView, UIView) -> Void) -> UIView {
+public func demo(size size: CGFloat = 100, @noescape block: (UIView, UIView, UIView) -> Void) -> UIView {
     let view = createView(size: size)
     
     block(view, createIcon(), createIcon())
@@ -36,7 +36,7 @@ public func demo2(size size: CGFloat = 100, @noescape block: (UIView, UIView, UI
     return view
 }
 
-public func demo3(size size: CGFloat = 100, @noescape block: (UIView, UIView, UIView, UIView) -> Void) -> UIView {
+public func demo(size size: CGFloat = 100, @noescape block: (UIView, UIView, UIView, UIView) -> Void) -> UIView {
     let view = createView(size: size)
 
     block(view, createIcon(), createIcon(), createIcon())
@@ -45,7 +45,7 @@ public func demo3(size size: CGFloat = 100, @noescape block: (UIView, UIView, UI
     return view
 }
 
-public func demo5(size size: CGFloat = 100, @noescape block: (UIView, UIView, UIView, UIView, UIView, UIView) -> Void) -> UIView {
+public func demo(size size: CGFloat = 100, @noescape block: (UIView, UIView, UIView, UIView, UIView, UIView) -> Void) -> UIView {
     let view = createView(size: size)
     
     block(view, createIcon(), createIcon(), createIcon(), createIcon(), createIcon())

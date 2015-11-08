@@ -14,8 +14,12 @@ public final class FormationLayout {
     
     /// Root view of the layout. Default container of added views.
     public let rootView: Container
-    public init(rootView: Container) {
+    /// If activate added formations automaticly.
+    internal let activateAddedFormations: Bool
+    public init(rootView: Container, activateAddedFormations: Bool = true) {
         self.rootView = rootView
+        self.activateAddedFormations = activateAddedFormations
+        
         rootView.prepareForLayout()
     }
     
@@ -58,6 +62,9 @@ public final class FormationLayout {
     }
     
     internal func addFormation<T: Formation>(formation: T) -> T {
+        if !formation.active && activateAddedFormations {
+            formation.active = true
+        }
         formations.append(formation)
         return formation
     }

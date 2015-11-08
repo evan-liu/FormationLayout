@@ -301,7 +301,7 @@ private struct LayoutState {
     init(stack: GroupStackView, config: StackViewConfig) {
         self.config = config
         views = stack.arrangedSubviews
-        layout = FormationLayout(rootView: stack)
+        layout = FormationLayout(rootView: stack, activateAddedFormations: false)
         viewGroup = layout.group(stack.arrangedSubviews)
         
         // Need guides for .EqualSpacing/.EqualCentering if there are more than 1 views

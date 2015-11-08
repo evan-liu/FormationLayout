@@ -37,6 +37,8 @@ public final class ViewFormation: Formation {
         }
         constraints.append(constraint)
         
+        constraint.active = active
+        
         return self
     }
 }
