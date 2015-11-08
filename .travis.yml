@@ -6,3 +6,7 @@ xcode_sdk: iphonesimulator
 branches:
   only:
     - master
+
+install:
+  - gem install slather -N
+after_success: slather
