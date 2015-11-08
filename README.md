@@ -2,6 +2,11 @@
 
 ![banner](https://raw.githubusercontent.com/evan-liu/FormationLayout/master/Doc.playground/Resources/banner.png)
 
+![GitHub license](https://img.shields.io/github/license/evan-liu/FormationLayout.svg)
+[![Cocoapods](https://img.shields.io/cocoapods/v/FormationLayout.svg)](https://cocoapods.org/)
+[![Carthage](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Build Status](https://travis-ci.org/evan-liu/FormationLayout.svg)](https://travis-ci.org/evan-liu/FormationLayout)
+
 ## Features
 
 - Chaining methods
@@ -48,15 +53,11 @@ layout.group(icon1, icon2, icon3, icon4, icon5)
 
 ### CocoaPods 
 
-[![Cocoapods](https://img.shields.io/cocoapods/v/FormationLayout.svg)](https://cocoapods.org/)
-
 ```
 pod 'FormationLayout', '~> 0.5.1'
 ```
 
 ### Carthage 
-
-[![Carthage](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ```
 github "evan-liu/FormationLayout" >= 0.5.1
