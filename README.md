@@ -11,11 +11,11 @@
 - StackView (`UIStackView` on iOS 9, `UIView+FormationLayout` on iOS 8)
 
 ```swift
-let layout = FormationLayout(rootView: view)
+let layout = FormationLayout(rootView: canvas, activateAddedFormations: false)
 
-layout.view(v3).center(view)
+layout.view(icon3).center(canvas)
 
-layout.group(v1, v2, v3, v4, v5)
+layout.group(icon1, icon2, icon3, icon4, icon5)
     .vSpace(10)
     .forEach { icon, index, group in
         icon.size(CGFloat(25 + 5 * index))
@@ -25,13 +25,13 @@ layout.group(v1, v2, v3, v4, v5)
     }
     .install(.HRegular)
 
-layout.group(v1, v2, v3, v4, v5)
+layout.group(icon1, icon2, icon3, icon4, icon5)
     .hSpace(10)
     .forEach { icon, index, group in
         let distance = CGFloat(abs(2 - index))
         icon.size(50 - 10 * distance)
         if index != 2 {
-            icon.top(v3 - 5 * distance)
+            icon.top(icon3 - 5 * distance)
         }
     }
     .install(.HCompact)
@@ -46,13 +46,17 @@ layout.group(v1, v2, v3, v4, v5)
 
 ## Install 
 
-### Cocoapods 
+### CocoaPods 
+
+[![Cocoapods](https://img.shields.io/cocoapods/v/FormationLayout.svg)](https://cocoapods.org/)
 
 ```
 pod 'FormationLayout', '~> 0.5.1'
 ```
 
 ### Carthage 
+
+[![Carthage](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ```
 github "evan-liu/FormationLayout" >= 0.5.1
