@@ -47,6 +47,11 @@ class StackViewFormationTests: XCTestCase {
         formation.active = true
         XCTAssertEqual(stack.arrangedSubviews.count, 3)
         XCTAssertEqual(stack.currentConfig.spacing, 10)
+        
+        // when there is no arrangedSubviews
+        // it should do noing and no errors.
+        formation = StackViewFormation(stack: stack, config: config)
+        formation.active = true
     }
     
     func testArrangedSubviews() {

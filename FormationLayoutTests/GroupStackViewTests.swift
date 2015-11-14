@@ -132,6 +132,21 @@ class GroupStackViewTests: XCTestCase {
         XCTAssertEqual(stack.arrangedSubviews, [])
     }
     
+    // layoutSubviews
+    func testLayoutSubviews() {
+        // should do thing when there is no arrangedSubviews
+        stack.layoutSubviews()
+        XCTAssertEqual(0, stack.constraints.count)
+
+        // should do thing when nothing changed
+        stack.arrangedSubviews = [v1, v2, v3]
+        stack.layoutSubviews()
+        let constraints = stack.constraints
+
+        stack.layoutSubviews()
+        XCTAssertEqual(constraints, stack.constraints)
+    }
+    
     func testLayout() {
         func constraint(v1: AnyObject, _ attr1: NSLayoutAttribute, _ relation: NSLayoutRelation, _ v2: AnyObject, _ attr2: NSLayoutAttribute, _ c: CGFloat = 0, _ m: CGFloat = 1, _ p: Float = 1000) -> NSLayoutConstraint {
             let r = NSLayoutConstraint(item: v1, attribute: attr1, relatedBy: relation, toItem: v2, attribute: attr2, multiplier: m, constant: c)

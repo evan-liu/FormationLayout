@@ -41,6 +41,24 @@ class UILayoutGuideTests: XCTestCase {
         }
         
         do { // when the view has no container
+            do { // when add to other container but not UIView
+                do { // it should do thing
+                    struct MockContainer: Container {
+                        func prepareForLayout() {
+                        }
+                        func isEqualTo(other: View) -> Bool {
+                            return false
+                        }
+                        var container: Container? {
+                            return nil
+                        }
+                        func addToContainer(container: Container, forceMove: Bool) {
+                        }
+                    }
+                    guide.addToContainer(MockContainer(), forceMove: false)
+                }
+            }
+            
             do { // it should add the view to container
                 guide.addToContainer(view1, forceMove: false)
                 XCTAssert(guide.container!.isEqualTo(view1))
@@ -70,5 +88,8 @@ class UILayoutGuideTests: XCTestCase {
         }
     }
 
-
+    func testPrepareForLayout() {
+        // it should do nothing
+        LayoutGuide().prepareForLayout()
+    }
 }
