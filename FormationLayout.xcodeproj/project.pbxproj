@@ -78,6 +78,8 @@
 		20CFF70A1B4B3B610030137E /* StackViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CFF7091B4B3B610030137E /* StackViewTests.swift */; };
 		20CFF70C1B4B3D9E0030137E /* StackViewFormationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CFF70B1B4B3D9E0030137E /* StackViewFormationTests.swift */; };
 		20CFF70E1B4B45F90030137E /* FormationLayout+StackViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CFF70D1B4B45F90030137E /* FormationLayout+StackViewTests.swift */; };
+		20D6CDEE1C37DAF4004F7509 /* UIView+FormationLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D6CDED1C37DAF4004F7509 /* UIView+FormationLayout.swift */; };
+		20D6CDF21C37E0A0004F7509 /* UIView+FormationLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D6CDF11C37E0A0004F7509 /* UIView+FormationLayoutTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +167,8 @@
 		20CFF7091B4B3B610030137E /* StackViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackViewTests.swift; sourceTree = "<group>"; };
 		20CFF70B1B4B3D9E0030137E /* StackViewFormationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackViewFormationTests.swift; sourceTree = "<group>"; };
 		20CFF70D1B4B45F90030137E /* FormationLayout+StackViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FormationLayout+StackViewTests.swift"; sourceTree = "<group>"; };
+		20D6CDED1C37DAF4004F7509 /* UIView+FormationLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+FormationLayout.swift"; sourceTree = "<group>"; };
+		20D6CDF11C37E0A0004F7509 /* UIView+FormationLayoutTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+FormationLayoutTests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +224,7 @@
 				20506DF21B3267B300B6B14A /* LayoutTarget.swift */,
 				201205AD1B33DFE2006C47D5 /* SizeClass.swift */,
 				201205BB1B34C862006C47D5 /* LayoutBlock.swift */,
+				20D6CDED1C37DAF4004F7509 /* UIView+FormationLayout.swift */,
 			);
 			path = FormationLayout;
 			sourceTree = "<group>";
@@ -238,6 +243,7 @@
 				20506DF41B326CAB00B6B14A /* LayoutTargetTests.swift */,
 				201205AF1B33E572006C47D5 /* SizeClassTests.swift */,
 				203806FE1B3810C1006D9FAD /* LayoutBlockTests.swift */,
+				20D6CDF11C37E0A0004F7509 /* UIView+FormationLayoutTests.swift */,
 			);
 			path = FormationLayoutTests;
 			sourceTree = "<group>";
@@ -533,6 +539,7 @@
 				201205BC1B34C862006C47D5 /* LayoutBlock.swift in Sources */,
 				203806DB1B37AB77006D9FAD /* GroupFormation+LayoutTarget.swift in Sources */,
 				209D27E91B32A900004771BF /* FormationLayout.swift in Sources */,
+				20D6CDEE1C37DAF4004F7509 /* UIView+FormationLayout.swift in Sources */,
 				2060786B1B3EB47300448F13 /* View+UIView.swift in Sources */,
 				203806F31B37EEBB006D9FAD /* GroupFormation+SameSize.swift in Sources */,
 				203806D71B37A5C1006D9FAD /* ViewFormation+CGFloat.swift in Sources */,
@@ -563,6 +570,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20D6CDF21C37E0A0004F7509 /* UIView+FormationLayoutTests.swift in Sources */,
 				203806F51B37F379006D9FAD /* GroupFormation+SameSizeTests.swift in Sources */,
 				201205C01B34F32D006C47D5 /* GroupFormationTests.swift in Sources */,
 				203806EF1B37C6BE006D9FAD /* ViewFormation+CGFloatTests.swift in Sources */,

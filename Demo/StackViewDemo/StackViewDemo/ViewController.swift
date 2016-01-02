@@ -11,12 +11,10 @@ import FormationLayout
 
 class ViewController: UIViewController {
 
-    var layout: FormationLayout!
+    var layouter: FormationLayout!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        layout = FormationLayout(rootView: view)
         
         let btn = UIButton(type: .System)
         btn.setTitle("Button", forState: .Normal)
@@ -29,23 +27,24 @@ class ViewController: UIViewController {
         let textField = UITextField()
         textField.text = "Text Field"
         
-        
         let stack = GroupStackView(arrangedSubviews: [btn, label, textField])
-        layout.view(stack).center(view).size(300)
         
-        let hCompactConfig = StackViewConfig(axis: .Horizontal, distribution: .EqualSpacing, alignment: .Center, spacing: 20)
-        
-        var hRegularConfig = hCompactConfig
-        hRegularConfig.axis = .Vertical
-        
-        layout.stack(stack, config: hCompactConfig).install(.HCompact)
-        layout.stack(stack, config: hRegularConfig).install(.HRegular)
-        
-        layout.activate(traitCollection)
+        layouter = view.layout(activateAddedFormations: false) {
+            $0.view(stack).center(view).size(300)
+            
+            let hCompactConfig = StackViewConfig(axis: .Horizontal, distribution: .EqualSpacing, alignment: .Center, spacing: 20)
+            $0.stack(stack, config: hCompactConfig).install(.HCompact)
+            
+            var hRegularConfig = hCompactConfig
+            hRegularConfig.axis = .Vertical
+            $0.stack(stack, config: hRegularConfig).install(.HRegular)
+            
+            $0.activate(traitCollection)
+        }
     }
     
     override func willTransitionToTraitCollection(newCollection: UITraitCollection, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        layout.activate(newCollection)
+        layouter.activate(newCollection)
     }
 
 }
