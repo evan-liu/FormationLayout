@@ -10,15 +10,38 @@ import UIKit
 
 /// Sizeclas enum.
 public enum SizeClass {
+    /// wAny hAny
     case Any
-    case WCompact, WRegular
-    case HCompact, HRegular
-    case BothCompact, BothRegular
-    case WCompactHRegular, WRegularHCompact
+    
+    /// wCompact hAny
+    case WCompact
+    /// wRegular hAny
+    case WRegular
+    
+    /// wAny hCompact
+    case HCompact
+    /// wAny hRegular
+    case HRegular
+    
+    /// hCompact hCompact
+    case BothCompact
+    /// wRegular hRegular
+    case BothRegular
+    
+    /// wCompact hRegular
+    case WCompactHRegular
+    /// wRegular hCompact
+    case WRegularHCompact
 }
 
+/// SizeClass enum helper methods.
 extension SizeClass {
     /// Check if a `UIUserInterfaceSizeClass` pair match the enum.
+    /// 
+    /// - Parameter hSizeClass: Horizontal size class. 
+    /// - Parameter vSizeClass: Vertical size class. 
+    ///
+    /// - Returns: True if the `UIUserInterfaceSizeClass` pair match the `SizeClass` enum.
     internal func match(hSizeClass: UIUserInterfaceSizeClass, _ vSizeClass: UIUserInterfaceSizeClass) -> Bool {
 
         switch self {
