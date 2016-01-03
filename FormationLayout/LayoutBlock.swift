@@ -10,6 +10,13 @@ import UIKit
 
 /// A block of formations that can install to size classes together.
 public struct LayoutBlock {
+    public var active = false {
+        didSet {
+            for viewFormation in formations {
+                viewFormation.active = active
+            }
+        }
+    }
 
     let formations: [Formation]
     init(formations: [Formation]) {

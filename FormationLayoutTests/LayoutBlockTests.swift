@@ -61,4 +61,22 @@ class LayoutBlockTests: XCTestCase {
         XCTAssertEqual(f5.installSizeClasses.count, 0)
         XCTAssertEqual(f5.exceptSizeClasses.count, 1)
     }
+    
+    // active
+    func testActive() {
+        // should set active of all constraints
+        
+        let v1 = UIView()
+        let v2 = UIView()
+        var block = layout.block {
+            layout.view(v1).pinTop()
+            layout.view(v2).pinBottom()
+        }
+        
+        XCTAssertEqual(rootView.constraints.filter{ $0.active }.count, 2)
+        block.active = false
+        XCTAssertEqual(rootView.constraints.filter{ $0.active }.count, 0)
+        block.active = true
+        XCTAssertEqual(rootView.constraints.filter{ $0.active }.count, 2)
+    }
 }
