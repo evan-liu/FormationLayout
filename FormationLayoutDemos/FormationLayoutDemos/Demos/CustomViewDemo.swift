@@ -26,7 +26,7 @@ class CustomView: UIView {
         
         layout {
             $0.view(bg).fill()
-            $0.view(label).pinLeading(padding:50).pinCenterY()
+            $0.view(label).pinCenterY().pinLeading(padding:50)
             $0.view(textfield).centerY(label).after(label + 10)
             $0.view(button).pinCenterX().below(label + 20)
         }
