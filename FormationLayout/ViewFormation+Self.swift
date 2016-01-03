@@ -8,10 +8,10 @@
 
 import UIKit
 
-/// Create constraints to another attributes of itself.
+/// Create constraints by its other attributes.
 extension ViewFormation: FormationToSelf {
     
-    /// `NSLayoutConstraint` factory method to create a constraint to its another attribute.
+    /// `NSLayoutConstraint` factory method to create a constraint by its another attribute.
     public func attribute(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, toAttribute secondAttribute: NSLayoutAttribute, multiplier: CGFloat = 1, constant: CGFloat = 0, priority: UILayoutPriority, handler: ((NSLayoutConstraint) -> Void)?) -> Self {
         
         guard secondAttribute != attribute else { return self }

@@ -90,4 +90,14 @@ demo { canvas, icon1, icon2, icon3 in
     //-> icon2.width = icon2.height * 1.2 + 6
 */
 
+//: ### To Container (superview)
+
+demo { canvas, icon1, icon2, icon3 in
+    canvas.layout {
+        $0.view(icon1).pinLeading(padding: 10).pinTop(padding: 10)
+        $0.view(icon2).fillWidth(padding: 10).pinCenterY(offset: 5)
+        $0.view(icon3).pinTrailing().pinBottom()
+    }
+}
+
 //: [Home](Home) | [Previous](@previous) | [Next](@next)

@@ -10,13 +10,13 @@ import UIKit
 
 // See tests in ViewFormation+SelfTests.swift
 
-/// Protocol for fomrations that create constraints to another attributes of itself.
+/// Protocol for fomrations that create constraints by its other attributes.
 ///
 /// Helper methods are all `relatedBy: .Equal`.
 /// Use full defined `attribute()` method instead to have more control.
 public protocol FormationToSelf {
     
-    /// `NSLayoutConstraint` factory method to create a constraint to its another attribute.
+    /// `NSLayoutConstraint` factory method to create a constraint by its another attribute.
     func attribute(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, toAttribute secondAttribute: NSLayoutAttribute, multiplier: CGFloat, constant: CGFloat, priority: UILayoutPriority, handler: ((NSLayoutConstraint) -> Void)?) -> Self
 }
 
