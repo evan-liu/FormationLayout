@@ -78,19 +78,19 @@ class ViewFormation_ContainerTests: XCTestCase {
     func testFillWidth() {
         formation.fillWidth(padding: 10).active = true
         checkConstraint(superview.constraints.first!, .Leading, .Leading, 10)
-        checkConstraint(superview.constraints.last!, .Trailing, .Trailing, -10)
+        checkConstraint(superview.constraints.last!, .Width, .Width, -20)
     }
     func testFillHeight() {
         formation.fillHeight(padding: 10).active = true
         checkConstraint(superview.constraints.first!, .Top, .Top, 10)
-        checkConstraint(superview.constraints.last!, .Bottom, .Bottom, -10)
+        checkConstraint(superview.constraints.last!, .Height, .Height, -20)
     }
     func testFill() {
         formation.fill(padding: 10).active = true
         checkConstraint(superview.constraints[0], .Leading, .Leading, 10)
-        checkConstraint(superview.constraints[1], .Trailing, .Trailing, -10)
+        checkConstraint(superview.constraints[1], .Width, .Width, -20)
         checkConstraint(superview.constraints[2], .Top, .Top, 10)
-        checkConstraint(superview.constraints[3], .Bottom, .Bottom, -10)
+        checkConstraint(superview.constraints[3], .Height, .Height, -20)
     }
 
     private func checkConstraint(constraint: NSLayoutConstraint, _ firstAttribute: NSLayoutAttribute, _ secondAttribute: NSLayoutAttribute, _ constant: CGFloat = 0) {

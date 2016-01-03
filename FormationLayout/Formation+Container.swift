@@ -66,21 +66,19 @@ extension FormationToContainer {
     public func fillWidth(padding constant: CGFloat = 0, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
         
         pinLeading(padding: constant, priority: priority, handler: handler)
-        pinTrailing(padding: constant, priority: priority, handler: handler)
+        attribute(.Width, relatedBy: .Equal, toContainerAttribute: .Width, multiplier: 1, constant: -constant * 2, priority: priority, handler: handler)
         return self
     }
     public func fillHeight(padding constant: CGFloat = 0, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
         
         pinTop(padding: constant, priority: priority, handler: handler)
-        pinBottom(padding: constant, priority: priority, handler: handler)
+        attribute(.Height, relatedBy: .Equal, toContainerAttribute: .Height, multiplier: 1, constant: -constant * 2, priority: priority, handler: handler)
         return self
     }
     public func fill(padding constant: CGFloat = 0, priority: UILayoutPriority = UILayoutPriorityRequired, handler: ((NSLayoutConstraint) -> Void)? = nil) -> Self {
         
-        pinLeading(padding: constant, priority: priority, handler: handler)
-        pinTrailing(padding: constant, priority: priority, handler: handler)
-        pinTop(padding: constant, priority: priority, handler: handler)
-        pinBottom(padding: constant, priority: priority, handler: handler)
+        fillWidth(padding: constant, priority: priority, handler: handler)
+        fillHeight(padding: constant, priority: priority, handler: handler)
         return self
     }
     
