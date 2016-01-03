@@ -43,6 +43,8 @@
 		203807031B38B7FB006D9FAD /* ViewFormation+Self.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203807021B38B7FB006D9FAD /* ViewFormation+Self.swift */; };
 		203807051B38BC4A006D9FAD /* GroupFormation+Self.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203807041B38BC4A006D9FAD /* GroupFormation+Self.swift */; };
 		203807071B38BEE9006D9FAD /* ViewFormation+SelfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203807061B38BEE9006D9FAD /* ViewFormation+SelfTests.swift */; };
+		2048C09F1C3917CA00365D17 /* UIViewController+FormationLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2048C09E1C3917CA00365D17 /* UIViewController+FormationLayout.swift */; };
+		2048C0A11C39195D00365D17 /* UIViewController+FormationLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2048C0A01C39195D00365D17 /* UIViewController+FormationLayoutTests.swift */; };
 		20506DD01B323CE100B6B14A /* FormationLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 20506DCF1B323CE100B6B14A /* FormationLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20506DD71B323CE100B6B14A /* FormationLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20506DCC1B323CE100B6B14A /* FormationLayout.framework */; };
 		20506DF31B3267B300B6B14A /* LayoutTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20506DF21B3267B300B6B14A /* LayoutTarget.swift */; };
@@ -132,6 +134,8 @@
 		203807021B38B7FB006D9FAD /* ViewFormation+Self.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewFormation+Self.swift"; sourceTree = "<group>"; };
 		203807041B38BC4A006D9FAD /* GroupFormation+Self.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GroupFormation+Self.swift"; sourceTree = "<group>"; };
 		203807061B38BEE9006D9FAD /* ViewFormation+SelfTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewFormation+SelfTests.swift"; sourceTree = "<group>"; };
+		2048C09E1C3917CA00365D17 /* UIViewController+FormationLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+FormationLayout.swift"; sourceTree = "<group>"; };
+		2048C0A01C39195D00365D17 /* UIViewController+FormationLayoutTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+FormationLayoutTests.swift"; sourceTree = "<group>"; };
 		20506DCC1B323CE100B6B14A /* FormationLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FormationLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20506DCF1B323CE100B6B14A /* FormationLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FormationLayout.h; sourceTree = "<group>"; };
 		20506DD11B323CE100B6B14A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 				201205AD1B33DFE2006C47D5 /* SizeClass.swift */,
 				201205BB1B34C862006C47D5 /* LayoutBlock.swift */,
 				20D6CDED1C37DAF4004F7509 /* UIView+FormationLayout.swift */,
+				2048C09E1C3917CA00365D17 /* UIViewController+FormationLayout.swift */,
 			);
 			path = FormationLayout;
 			sourceTree = "<group>";
@@ -250,6 +255,7 @@
 				201205AF1B33E572006C47D5 /* SizeClassTests.swift */,
 				203806FE1B3810C1006D9FAD /* LayoutBlockTests.swift */,
 				20D6CDF11C37E0A0004F7509 /* UIView+FormationLayoutTests.swift */,
+				2048C0A01C39195D00365D17 /* UIViewController+FormationLayoutTests.swift */,
 			);
 			path = FormationLayoutTests;
 			sourceTree = "<group>";
@@ -565,6 +571,7 @@
 				20AFF9DE1B40EEB400CB12E7 /* UILayoutGuide.swift in Sources */,
 				2076FE551B41FB27001AEBF2 /* GroupStackView.swift in Sources */,
 				20AFF9C21B3F61AA00CB12E7 /* FormationLayout+Group.swift in Sources */,
+				2048C09F1C3917CA00365D17 /* UIViewController+FormationLayout.swift in Sources */,
 				2076FE641B438D6A001AEBF2 /* StackViewFormation.swift in Sources */,
 				20D6CDF41C38952D004F7509 /* Formation+Container.swift in Sources */,
 				203807031B38B7FB006D9FAD /* ViewFormation+Self.swift in Sources */,
@@ -603,6 +610,7 @@
 				20AFF9E11B40EEFD00CB12E7 /* UILayoutGuideTests.swift in Sources */,
 				203806E31B37B1EE006D9FAD /* GroupFormation+ViewTests.swift in Sources */,
 				209D27F11B32B59D004771BF /* FormationLayoutTests.swift in Sources */,
+				2048C0A11C39195D00365D17 /* UIViewController+FormationLayoutTests.swift in Sources */,
 				20AFF9CF1B40B57100CB12E7 /* View+UIViewTests.swift in Sources */,
 				203807071B38BEE9006D9FAD /* ViewFormation+SelfTests.swift in Sources */,
 				203806FD1B3808A9006D9FAD /* GroupFormation+ExecuteTests.swift in Sources */,
