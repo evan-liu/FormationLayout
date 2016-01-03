@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "FormationLayout"
-  s.version      = "0.6.0"
+  s.version      = "0.7.0"
   s.summary      = "Yet another auto layout library in Swift 2"
 
   s.description  = <<-DESC

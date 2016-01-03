@@ -134,13 +134,13 @@ class StackViewDemo: UIViewController {
 ### CocoaPods 
 
 ```
-pod 'FormationLayout', '~> 0.6.0'
+pod 'FormationLayout', '~> 0.7.0'
 ```
 
 ### Carthage 
 
 ```
-github "evan-liu/FormationLayout" >= 0.6.0
+github "evan-liu/FormationLayout" >= 0.7.0
 ```
 
 ## Documentation
