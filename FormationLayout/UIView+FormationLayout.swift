@@ -9,15 +9,18 @@
 import UIKit
 
 extension UIView {
-    
-    /// Create auto layout constraints with a `FormationLayout` taking `self` as `rootView`.
-    public func layout(activateAddedFormations active: Bool = true) -> FormationLayout {
-        return FormationLayout(rootView: self, activateAddedFormations: active)
-    }
-    
-    /// Create auto layout constraints with a `FormationLayout` taking `self` as `rootView`.
-    public func layout(activateAddedFormations active: Bool = true, @noescape block: (FormationLayout) -> Void) -> FormationLayout {
-        let formationLayout = FormationLayout(rootView: self, activateAddedFormations: active)
+
+    /**
+     Create a `FormationLayout` instance with `self` as `rootView`
+     
+     - parameters:
+        - activateAddedFormations: Automaticly activate added constraints (default: true)
+        - prepareForAutoLayout: Set `translatesAutoresizingMaskIntoConstraints` to false (default: false)
+        - block: Block to create auto layout constraints with the created `FormationLayout`
+     */
+    public func layout(activateAddedFormations active: Bool = true, prepareForAutoLayout prepare: Bool = false, @noescape block: (FormationLayout) -> Void = {_ in}) -> FormationLayout {
+        
+        let formationLayout = FormationLayout(rootView: self, activateAddedFormations: active, prepareRootView: prepare)
         block(formationLayout)
         return formationLayout
     }

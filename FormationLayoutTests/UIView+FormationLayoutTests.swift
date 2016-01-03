@@ -26,6 +26,14 @@ class UIView_FormationLayoutTests: XCTestCase {
             XCTAssertEqual(layouter.rootView, view)
             XCTAssertEqual(view.constraints.count, 2)
         }
+        
+        do { // should pass parameters
+            XCTAssertTrue(UIView().layout(activateAddedFormations: true).activateAddedFormations)
+            XCTAssertFalse(UIView().layout(activateAddedFormations: false).activateAddedFormations)
+            
+            XCTAssertFalse((UIView().layout(prepareForAutoLayout: true).rootView as! UIView).translatesAutoresizingMaskIntoConstraints)
+            XCTAssertTrue((UIView().layout(prepareForAutoLayout: false).rootView as! UIView).translatesAutoresizingMaskIntoConstraints)
+        }
     }
 
 }

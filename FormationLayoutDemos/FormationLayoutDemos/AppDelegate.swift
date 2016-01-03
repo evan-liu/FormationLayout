@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  StackViewDemo
+//  FormationLayoutDemos
 //
-//  Created by Evan on 5/07/15.
-//  Copyright © 2015 evancoding.com. All rights reserved.
+//  Created by Evan on 3/01/16.
+//  Copyright © 2016 evancoding.com. All rights reserved.
 //
 
 import UIKit

@@ -16,11 +16,13 @@ public final class FormationLayout {
     public let rootView: Container
     /// If activate added formations automaticly.
     internal let activateAddedFormations: Bool
-    public init(rootView: Container, activateAddedFormations: Bool = true) {
+    public init(rootView: Container, activateAddedFormations: Bool = true, prepareRootView: Bool = false) {
         self.rootView = rootView
         self.activateAddedFormations = activateAddedFormations
         
-        rootView.prepareForLayout()
+        if prepareRootView {
+            rootView.prepareForLayout()
+        }
     }
     
     /// Activate a size class by a `UIUserInterfaceSizeClass` pair.

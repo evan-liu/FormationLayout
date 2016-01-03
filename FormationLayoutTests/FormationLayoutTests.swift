@@ -25,8 +25,15 @@ class FormationLayoutTests: XCTestCase {
         // should save rootView
         XCTAssertEqual(layout.rootView, rootView)
         
-        // should set translatesAutoresizingMaskIntoConstraints to false
-        XCTAssertEqual(rootView.translatesAutoresizingMaskIntoConstraints, false)
+        // should not set translatesAutoresizingMaskIntoConstraints to false
+        XCTAssertTrue(rootView.translatesAutoresizingMaskIntoConstraints)
+        
+        do { // prepareRootView
+            // should set translatesAutoresizingMaskIntoConstraints to false
+            rootView = UIView()
+            layout = FormationLayout(rootView: rootView, prepareRootView: true)
+            XCTAssertFalse(rootView.translatesAutoresizingMaskIntoConstraints)
+        }
     }
     
     func testActivateAddedFormations() {

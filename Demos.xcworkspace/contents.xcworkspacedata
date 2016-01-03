@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "container:StackViewDemo/StackViewDemo.xcodeproj">
+      location = "group:FormationLayoutDemos/FormationLayoutDemos.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:../FormationLayout.xcodeproj">
+      location = "group:FormationLayout.xcodeproj">
    </FileRef>
 </Workspace>
