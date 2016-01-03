@@ -9,7 +9,7 @@
 import UIKit
 import FormationLayout
 
-class StackViewDemoViewController: UIViewController {
+class StackViewDemo: UIViewController {
     
     var layouter: FormationLayout?
     
