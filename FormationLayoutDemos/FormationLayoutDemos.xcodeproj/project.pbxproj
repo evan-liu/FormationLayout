@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		202885C61C39200E0096B70D /* FormationLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 202885C51C39200E0096B70D /* FormationLayout.framework */; };
+		2048C0971C3905FA00365D17 /* CustomViewDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2048C0961C3905FA00365D17 /* CustomViewDemo.swift */; };
+		2048C0991C39067B00365D17 /* DemoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2048C0981C39067B00365D17 /* DemoUtils.swift */; };
+		2048C09B1C3911F000365D17 /* SizeClassDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2048C09A1C3911F000365D17 /* SizeClassDemo.swift */; };
 		20EC92631C38CC7400FC5C0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EC92621C38CC7400FC5C0F /* AppDelegate.swift */; };
 		20EC92651C38CC7400FC5C0F /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EC92641C38CC7400FC5C0F /* DemoViewController.swift */; };
 		20EC92681C38CC7400FC5C0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20EC92661C38CC7400FC5C0F /* Main.storyboard */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		202885C51C39200E0096B70D /* FormationLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FormationLayout.framework; path = "../../build/Debug-iphoneos/FormationLayout.framework"; sourceTree = "<group>"; };
+		2048C0961C3905FA00365D17 /* CustomViewDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewDemo.swift; sourceTree = "<group>"; };
+		2048C0981C39067B00365D17 /* DemoUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoUtils.swift; sourceTree = "<group>"; };
+		2048C09A1C3911F000365D17 /* SizeClassDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeClassDemo.swift; sourceTree = "<group>"; };
 		20EC925F1C38CC7400FC5C0F /* FormationLayoutDemos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FormationLayoutDemos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20EC92621C38CC7400FC5C0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20EC92641C38CC7400FC5C0F /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
@@ -31,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				202885C61C39200E0096B70D /* FormationLayout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +50,8 @@
 			isa = PBXGroup;
 			children = (
 				20EC92761C38CD9900FC5C0F /* StackViewDemo.swift */,
+				2048C0961C3905FA00365D17 /* CustomViewDemo.swift */,
+				2048C09A1C3911F000365D17 /* SizeClassDemo.swift */,
 			);
 			path = Demos;
 			sourceTree = "<group>";
@@ -66,8 +77,10 @@
 			children = (
 				2048C0951C39052600365D17 /* Demos */,
 				20EC92641C38CC7400FC5C0F /* DemoViewController.swift */,
+				2048C0981C39067B00365D17 /* DemoUtils.swift */,
 				20EC92661C38CC7400FC5C0F /* Main.storyboard */,
 				20EC92741C38CC8200FC5C0F /* Resources */,
+				202885C51C39200E0096B70D /* FormationLayout.framework */,
 			);
 			path = FormationLayoutDemos;
 			sourceTree = "<group>";
@@ -155,7 +168,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				20EC92651C38CC7400FC5C0F /* DemoViewController.swift in Sources */,
+				2048C0991C39067B00365D17 /* DemoUtils.swift in Sources */,
+				2048C09B1C3911F000365D17 /* SizeClassDemo.swift in Sources */,
 				20EC92771C38CD9900FC5C0F /* StackViewDemo.swift in Sources */,
+				2048C0971C3905FA00365D17 /* CustomViewDemo.swift in Sources */,
 				20EC92631C38CC7400FC5C0F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

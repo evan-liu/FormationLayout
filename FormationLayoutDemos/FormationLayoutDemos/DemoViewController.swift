@@ -16,7 +16,9 @@ class DemoViewController: UITableViewController {
     }
     
     let demoItems = [
-        DemoItem(label: "Stack View") { StackViewDemo() }
+        DemoItem(label: "Stack View") { StackViewDemo() },
+        DemoItem(label: "Custom View") { CustomViewDemo() },
+        DemoItem(label: "Size Class") { SizeClassDemo() },
     ];
     
     override func viewDidLoad() {
