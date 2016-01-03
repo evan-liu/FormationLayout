@@ -33,3 +33,7 @@ func demoView(backgroundColor bgColor: UIColor) -> UIView {
     view.backgroundColor = bgColor
     return view
 }
+
+func demoBackgroundColor(white: CGFloat = 0.95) -> UIColor {
+    return UIColor(white: white, alpha: 1)
+}

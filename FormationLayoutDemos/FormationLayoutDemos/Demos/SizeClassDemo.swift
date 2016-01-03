@@ -12,12 +12,10 @@ import FormationLayout
 class SizeClassDemo: UIViewController {
     
     var layouter: FormationLayout!
-
-    override func loadView() {
-        view = demoView(backgroundColor: UIColor.whiteColor())
-    }
     
     override func viewDidLoad() {
+        view.backgroundColor = demoBackgroundColor()
+        
         let label = demoLabel("Email: ")
         let textfield = demoTextfield("Input here...")
         let button = demoButton("Submit")

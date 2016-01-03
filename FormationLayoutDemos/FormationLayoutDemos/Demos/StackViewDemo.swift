@@ -12,11 +12,9 @@ class StackViewDemo: UIViewController {
     
     var layouter: FormationLayout?
     
-    override func loadView() {
-        view = demoView(backgroundColor: UIColor.whiteColor())
-    }
-    
     override func viewDidLoad() {
+        view.backgroundColor = demoBackgroundColor()
+        
         let stack = GroupStackView(arrangedSubviews: [
             demoButton(),
             demoLabel("Try to rotate the device or simulator"),

@@ -19,7 +19,7 @@ class CustomView: UIView {
     init() {
         super.init(frame: CGRectZero)
         
-        let bg = demoView(backgroundColor: UIColor.whiteColor())
+        let bg = demoView(backgroundColor: demoBackgroundColor())
         let label = demoLabel("Email: ")
         let textfield = demoTextfield("Input here...")
         let button = demoButton("Submit")
