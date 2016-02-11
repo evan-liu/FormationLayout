@@ -4,7 +4,7 @@
 
 ![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-[![Cocoapods](https://img.shields.io/cocoapods/v/FormationLayout.svg)](https://cocoapods.org/)
+[![CocoaPods](https://img.shields.io/cocoapods/v/FormationLayout.svg)](https://cocoapods.org/)
 [![Carthage](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Build Status](https://travis-ci.org/evan-liu/FormationLayout.svg)](https://travis-ci.org/evan-liu/FormationLayout)
 [![Codecov](https://img.shields.io/codecov/c/github/evan-liu/FormationLayout.svg)](https://codecov.io/github/evan-liu/FormationLayout)
