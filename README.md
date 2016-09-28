@@ -9,6 +9,8 @@
 [![Codecov](https://img.shields.io/codecov/c/github/evan-liu/FormationLayout.svg)](https://codecov.io/github/evan-liu/FormationLayout)
 [![CocoaDocs](https://img.shields.io/cocoapods/metrics/doc-percent/FormationLayout.svg)](http://cocoadocs.org/docsets/FormationLayout)
 
+Swift 3 version is working in progress at [swift3](https://github.com/evan-liu/FormationLayout/tree/swift3) branch
+
 ## Features
 
 - Chaining methods
