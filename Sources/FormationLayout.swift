@@ -22,4 +22,48 @@
  *  SOFTWARE.
  */
 
-import Foundation
+import UIKit
+
+public final class FormationLayout {
+    
+    public let rootView: UIView
+    
+    public init(rootView: UIView, translatesAutoresizing: Bool = false, autoresizing: UIViewAutoresizing? = nil) {
+        rootView.translatesAutoresizingMaskIntoConstraints = translatesAutoresizing
+        if translatesAutoresizing, let autoresizingMask = autoresizing {
+            rootView.autoresizingMask = autoresizingMask
+        }
+        self.rootView = rootView
+    }
+    
+    public subscript(item: Item) -> ItemLayout {
+        if item !== rootView {
+            item.prepareAutoLayout(in: rootView)
+        }
+        return ItemLayout(item: item, manager: self)
+    }
+    
+}
+
+protocol ConstraintsManager {
+    
+    var rootView: UIView { get }
+    
+    @discardableResult
+    func add(_ constraint: NSLayoutConstraint) -> NSLayoutConstraint
+}
+
+extension FormationLayout: ConstraintsManager {
+    @discardableResult
+    func add(_ constraint: NSLayoutConstraint) -> NSLayoutConstraint {
+        constraint.isActive = true
+        return constraint
+    }
+}
+
+extension ConstraintsManager {
+    @discardableResult
+    func add(item: Any, attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation = .equal, multiplier: CGFloat = 1, constant: CGFloat = 0) -> NSLayoutConstraint {
+        return add(NSLayoutConstraint(item: item, attribute: attribute, relatedBy: relation, toItem: nil, attribute: .notAnAttribute, multiplier: multiplier, constant: constant))
+    }
+}
