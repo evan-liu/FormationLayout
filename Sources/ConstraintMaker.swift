@@ -24,30 +24,21 @@
 
 import UIKit
 
-public protocol Item: class {
+protocol ConstraintMaker {
     
-    var superview: UIView? { get }
+    @discardableResult
+    func makeConstraint(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, toItem item2: Any?, attribute attr2: NSLayoutAttribute, multiplier: CGFloat, constant c: CGFloat, priority: UILayoutPriority) -> Self
     
-    func prepareAutoLayout(in rootView: UIView)
+    @discardableResult
+    func pinConstraint(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, attribute attr2: NSLayoutAttribute, multiplier: CGFloat, constant c: CGFloat, priority: UILayoutPriority) -> Self
+    
 }
 
-extension UIView: Item {
-    public func prepareAutoLayout(in rootView: UIView) {
-        translatesAutoresizingMaskIntoConstraints = false
-        if superview == nil {
-            rootView.addSubview(self)
-        }
-    }
-}
-
-public final class ItemLayout {
+extension ConstraintMaker {
     
-    let item: Item
-    let manager: ConstraintsManager
-    
-    init(item: Item, manager: ConstraintsManager) {
-        self.item = item
-        self.manager = manager
+    @discardableResult
+    func makeConstraint(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, constant c: CGFloat, priority: UILayoutPriority) -> Self {
+        return makeConstraint(attribute: attribute, relatedBy: relation, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: c, priority: priority)
     }
     
 }

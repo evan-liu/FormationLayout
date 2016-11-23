@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2030A2811DE4BECF0035E9D8 /* ItemLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2030A2801DE4BECF0035E9D8 /* ItemLayout.swift */; };
-		2030A2831DE4C6830035E9D8 /* ItemLayout+Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2030A2821DE4C6830035E9D8 /* ItemLayout+Equal.swift */; };
-		2030A2851DE4C7410035E9D8 /* ItemLayout+Superview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2030A2841DE4C7410035E9D8 /* ItemLayout+Superview.swift */; };
+		2030A2811DE4BECF0035E9D8 /* ItemConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2030A2801DE4BECF0035E9D8 /* ItemConstraintMaker.swift */; };
+		2030A2831DE4C6830035E9D8 /* ConstraintMaker+Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2030A2821DE4C6830035E9D8 /* ConstraintMaker+Equal.swift */; };
+		2030A2851DE4C7410035E9D8 /* ConstraintMaker+Superview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2030A2841DE4C7410035E9D8 /* ConstraintMaker+Superview.swift */; };
+		20DA6CFF1DE610AD00D40F93 /* ConstraintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DA6CFE1DE610AD00D40F93 /* ConstraintManager.swift */; };
+		20DA6D011DE610F100D40F93 /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DA6D001DE610F100D40F93 /* ConstraintMaker.swift */; };
 		52D6D9871BEFF229002C0205 /* FormationLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* FormationLayout.framework */; };
 		52D6D9981BEFF375002C0205 /* FormationLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D9961BEFF375002C0205 /* FormationLayout.swift */; };
 		52D6D99B1BEFF375002C0205 /* FormationLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D9971BEFF375002C0205 /* FormationLayoutTests.swift */; };
@@ -42,9 +44,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2030A2801DE4BECF0035E9D8 /* ItemLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemLayout.swift; path = Sources/ItemLayout.swift; sourceTree = "<group>"; };
-		2030A2821DE4C6830035E9D8 /* ItemLayout+Equal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ItemLayout+Equal.swift"; path = "Sources/ItemLayout+Equal.swift"; sourceTree = "<group>"; };
-		2030A2841DE4C7410035E9D8 /* ItemLayout+Superview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ItemLayout+Superview.swift"; path = "Sources/ItemLayout+Superview.swift"; sourceTree = "<group>"; };
+		2030A2801DE4BECF0035E9D8 /* ItemConstraintMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemConstraintMaker.swift; path = Sources/ItemConstraintMaker.swift; sourceTree = "<group>"; };
+		2030A2821DE4C6830035E9D8 /* ConstraintMaker+Equal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ConstraintMaker+Equal.swift"; path = "Sources/ConstraintMaker+Equal.swift"; sourceTree = "<group>"; };
+		2030A2841DE4C7410035E9D8 /* ConstraintMaker+Superview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ConstraintMaker+Superview.swift"; path = "Sources/ConstraintMaker+Superview.swift"; sourceTree = "<group>"; };
+		20DA6CFE1DE610AD00D40F93 /* ConstraintManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConstraintManager.swift; path = Sources/ConstraintManager.swift; sourceTree = "<group>"; };
+		20DA6D001DE610F100D40F93 /* ConstraintMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Sources/ConstraintMaker.swift; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* FormationLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FormationLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* FormationLayout-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FormationLayout-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9961BEFF375002C0205 /* FormationLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormationLayout.swift; path = Sources/FormationLayout.swift; sourceTree = "<group>"; };
@@ -119,9 +123,11 @@
 			children = (
 				52D6D9961BEFF375002C0205 /* FormationLayout.swift */,
 				52D6D9971BEFF375002C0205 /* FormationLayoutTests.swift */,
-				2030A2801DE4BECF0035E9D8 /* ItemLayout.swift */,
-				2030A2821DE4C6830035E9D8 /* ItemLayout+Equal.swift */,
-				2030A2841DE4C7410035E9D8 /* ItemLayout+Superview.swift */,
+				20DA6CFE1DE610AD00D40F93 /* ConstraintManager.swift */,
+				20DA6D001DE610F100D40F93 /* ConstraintMaker.swift */,
+				2030A2821DE4C6830035E9D8 /* ConstraintMaker+Equal.swift */,
+				2030A2841DE4C7410035E9D8 /* ConstraintMaker+Superview.swift */,
+				2030A2801DE4BECF0035E9D8 /* ItemConstraintMaker.swift */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
 				52D6D97D1BEFF229002C0205 /* Products */,
 			);
@@ -446,10 +452,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2030A2811DE4BECF0035E9D8 /* ItemLayout.swift in Sources */,
+				2030A2811DE4BECF0035E9D8 /* ItemConstraintMaker.swift in Sources */,
 				52D6D9981BEFF375002C0205 /* FormationLayout.swift in Sources */,
-				2030A2851DE4C7410035E9D8 /* ItemLayout+Superview.swift in Sources */,
-				2030A2831DE4C6830035E9D8 /* ItemLayout+Equal.swift in Sources */,
+				20DA6CFF1DE610AD00D40F93 /* ConstraintManager.swift in Sources */,
+				2030A2851DE4C7410035E9D8 /* ConstraintMaker+Superview.swift in Sources */,
+				2030A2831DE4C6830035E9D8 /* ConstraintMaker+Equal.swift in Sources */,
+				20DA6D011DE610F100D40F93 /* ConstraintMaker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

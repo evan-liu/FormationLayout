@@ -24,31 +24,10 @@
 
 import UIKit
 
-public final class FormationLayout {
+protocol ConstraintManager {
     
-    public let rootView: UIView
+    var rootView: UIView { get }
     
-    public init(rootView: UIView, translatesAutoresizing: Bool = false, autoresizing: UIViewAutoresizing? = nil) {
-        rootView.translatesAutoresizingMaskIntoConstraints = translatesAutoresizing
-        if translatesAutoresizing, let autoresizingMask = autoresizing {
-            rootView.autoresizingMask = autoresizingMask
-        }
-        self.rootView = rootView
-    }
-    
-    public subscript(item: Item) -> ItemConstraintMaker {
-        if item !== rootView {
-            item.prepareAutoLayout(in: rootView)
-        }
-        return ItemConstraintMaker(item: item, manager: self)
-    }
-    
-}
-
-extension FormationLayout: ConstraintManager {
     @discardableResult
-    func add(_ constraint: NSLayoutConstraint) -> NSLayoutConstraint {
-        constraint.isActive = true
-        return constraint
-    }
+    func add(_ constraint: NSLayoutConstraint) -> NSLayoutConstraint
 }
