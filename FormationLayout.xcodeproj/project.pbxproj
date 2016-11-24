@@ -10,6 +10,8 @@
 		2030A2811DE4BECF0035E9D8 /* ItemConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2030A2801DE4BECF0035E9D8 /* ItemConstraintMaker.swift */; };
 		2030A2831DE4C6830035E9D8 /* ConstraintMaker+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2030A2821DE4C6830035E9D8 /* ConstraintMaker+Anchors.swift */; };
 		2030A2851DE4C7410035E9D8 /* ConstraintMaker+Superview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2030A2841DE4C7410035E9D8 /* ConstraintMaker+Superview.swift */; };
+		20BB2DA21DE6D836007455B9 /* ConstraintMaker+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BB2DA11DE6D836007455B9 /* ConstraintMaker+Helpers.swift */; };
+		20BB2DA41DE6DB7D007455B9 /* helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BB2DA31DE6DB7D007455B9 /* helpers.swift */; };
 		20DA6CFF1DE610AD00D40F93 /* ConstraintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DA6CFE1DE610AD00D40F93 /* ConstraintManager.swift */; };
 		20DA6D011DE610F100D40F93 /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DA6D001DE610F100D40F93 /* ConstraintMaker.swift */; };
 		52D6D9871BEFF229002C0205 /* FormationLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* FormationLayout.framework */; };
@@ -48,6 +50,8 @@
 		2030A2821DE4C6830035E9D8 /* ConstraintMaker+Anchors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ConstraintMaker+Anchors.swift"; path = "Sources/ConstraintMaker+Anchors.swift"; sourceTree = "<group>"; };
 		2030A2841DE4C7410035E9D8 /* ConstraintMaker+Superview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ConstraintMaker+Superview.swift"; path = "Sources/ConstraintMaker+Superview.swift"; sourceTree = "<group>"; };
 		20BB2D9F1DE6BAAC007455B9 /* anchors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = anchors.swift; sourceTree = "<group>"; };
+		20BB2DA11DE6D836007455B9 /* ConstraintMaker+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ConstraintMaker+Helpers.swift"; path = "Sources/ConstraintMaker+Helpers.swift"; sourceTree = "<group>"; };
+		20BB2DA31DE6DB7D007455B9 /* helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = helpers.swift; sourceTree = "<group>"; };
 		20DA6CFE1DE610AD00D40F93 /* ConstraintManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConstraintManager.swift; path = Sources/ConstraintManager.swift; sourceTree = "<group>"; };
 		20DA6D001DE610F100D40F93 /* ConstraintMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Sources/ConstraintMaker.swift; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* FormationLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FormationLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				20BB2D9F1DE6BAAC007455B9 /* anchors.swift */,
+				20BB2DA31DE6DB7D007455B9 /* helpers.swift */,
 			);
 			path = Scripts;
 			sourceTree = "<group>";
@@ -136,6 +141,7 @@
 				20DA6D001DE610F100D40F93 /* ConstraintMaker.swift */,
 				2030A2821DE4C6830035E9D8 /* ConstraintMaker+Anchors.swift */,
 				2030A2841DE4C7410035E9D8 /* ConstraintMaker+Superview.swift */,
+				20BB2DA11DE6D836007455B9 /* ConstraintMaker+Helpers.swift */,
 				2030A2801DE4BECF0035E9D8 /* ItemConstraintMaker.swift */,
 				20BB2D9E1DE6BA88007455B9 /* Scripts */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
@@ -370,7 +376,7 @@
 					};
 					52D6DA0E1BF000BD002C0205 = {
 						CreatedOnToolsVersion = 7.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 					};
 					DD7502791C68FCFC006590AF = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -466,6 +472,7 @@
 				52D6D9981BEFF375002C0205 /* FormationLayout.swift in Sources */,
 				20DA6CFF1DE610AD00D40F93 /* ConstraintManager.swift in Sources */,
 				2030A2851DE4C7410035E9D8 /* ConstraintMaker+Superview.swift in Sources */,
+				20BB2DA21DE6D836007455B9 /* ConstraintMaker+Helpers.swift in Sources */,
 				2030A2831DE4C6830035E9D8 /* ConstraintMaker+Anchors.swift in Sources */,
 				20DA6D011DE610F100D40F93 /* ConstraintMaker.swift in Sources */,
 			);
@@ -497,6 +504,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20BB2DA41DE6DB7D007455B9 /* helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -795,6 +803,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -810,6 +819,7 @@
 				PRODUCT_NAME = FormationLayout;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -818,6 +828,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -841,6 +852,7 @@
 		DD7502831C68FCFC006590AF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Configs/FormationLayoutTests.plist;
@@ -856,6 +868,7 @@
 		DD7502841C68FCFC006590AF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Configs/FormationLayoutTests.plist;

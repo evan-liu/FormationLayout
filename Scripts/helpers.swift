@@ -31,7 +31,7 @@ extension String {
             .flatMap { $0.firstMatch(in: self, options: [], range: NSRange(location: 0, length: utf16.count)) }
             .flatMap { match in
                 return (0..<match.numberOfRanges).map { ns.substring(with: match.rangeAt($0)) }
-            }
+        }
     }
 }
 
@@ -43,45 +43,21 @@ func main() {
     let pwdURL = URL(fileURLWithPath: fileManager.currentDirectoryPath)
     let scriptURL = URL(fileURLWithPath: #file, relativeTo: pwdURL)
     let sourcesURL = scriptURL.deletingLastPathComponent().deletingLastPathComponent().appendingPathComponent("Sources")
-    let codeFileURL = sourcesURL.appendingPathComponent("ConstraintMaker+Anchors.swift")
+    let codeFileURL = sourcesURL.appendingPathComponent("ConstraintMaker+Helpers.swift")
     let code = try! String(contentsOf: codeFileURL)
     
     guard let match = code.search(regExp: "(.*?)(extension ConstraintMaker \\{.*?^\\})", options: [.dotMatchesLineSeparators, .anchorsMatchLines]) else {
         print("Wrong code format")
         return
     }
-
+    
     let header = match[1]
     let seedCode = match[2]
-    guard let seedAnchor = seedCode.search(regExp: "func (.*?)\\(")?.last else {
-        print("Wrong code format")
-        return
-    }
-    
-    let anchors = [
-        "left",
-        "right",
-        "top",
-        "bottom",
-        "leading",
-        "trailing",
-        "width",
-        "height",
-        "centerX",
-        "centerY",
-        "lastBaseline",
-        "firstBaseline",
-        "centerXWithinMargins", 
-        "centerYWithinMargins",
-    ]
-    let equals = anchors
-        .map { seedCode.replacingOccurrences(of: seedAnchor, with: $0) }
-        .joined(separator: "\n\n")
     
     let relations = ["greaterThanOrEqualTo", "lessThanOrEqualTo"]
-        .map { equals.replacingOccurrences(of: "equalTo", with: $0) }
+        .map { seedCode.replacingOccurrences(of: "equalTo", with: $0) }
     
-    let finalCode = header + ([equals] + relations).joined(separator: "\n\n")
+    let finalCode = header + ([seedCode] + relations).joined(separator: "\n\n")
     
     do {
         try finalCode.write(to: codeFileURL, atomically: true, encoding: .utf8)
