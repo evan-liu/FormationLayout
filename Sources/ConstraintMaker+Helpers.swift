@@ -26,44 +26,52 @@ import UIKit
 
 extension ConstraintMaker {
     
+    /// Make item.size (with & height) equalTo one value
     @discardableResult
     public func size(equalTo value: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return width(equalTo: value, at: priority).height(equalTo: value, at: priority)
     }
     
+    /// Make item.size (with & height) equalTo a `CGSize`
     @discardableResult
     public func size(equalTo value: CGSize, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return width(equalTo: value.width, at: priority).height(equalTo: value.height, at: priority)
     }
     
+    /// Make item.size (with & height) equalTo item2.attribute
     @discardableResult
     public func size(equalTo attribute: NSLayoutAttribute, of item2: Item, multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return width(equalTo: attribute, of: item2, multiplier: multiplier, constant: constant, at: priority)
             .height(equalTo: attribute, of: item2, multiplier: multiplier, constant: constant, at: priority)
     }
     
+    /// Make item.size (with & height) equalTo item2.size
     @discardableResult
     public func size(equalTo item2: Item, multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return width(equalTo: .width, of: item2, multiplier: multiplier, constant: constant, at: priority)
             .height(equalTo: .height, of: item2, multiplier: multiplier, constant: constant, at: priority)
     }
     
+    /// Make center (centerX & centerY) equalTo one value
     @discardableResult
     public func center(equalTo value: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return centerX(equalTo: value, at: priority).centerY(equalTo: value, at: priority)
     }
     
+    /// Make center (centerX & centerY) equalTo a `CGPoint`
     @discardableResult
     public func center(equalTo value: CGPoint, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return centerX(equalTo: value.x, at: priority).centerY(equalTo: value.y, at: priority)
     }
     
+    /// Make center (centerX & centerY) equalTo a item2.attribute
     @discardableResult
     public func center(equalTo attribute: NSLayoutAttribute, of item2: Item, multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return centerX(equalTo: attribute, of: item2, multiplier: multiplier, constant: constant, at: priority)
             .centerY(equalTo: attribute, of: item2, multiplier: multiplier, constant: constant, at: priority)
     }
     
+    /// Make center (centerX & centerY) equalTo item2.center
     @discardableResult
     public func center(equalTo item2: Item, multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return centerX(equalTo: .centerX, of: item2, multiplier: multiplier, constant: constant, at: priority)
@@ -74,44 +82,52 @@ extension ConstraintMaker {
 
 extension ConstraintMaker {
     
+    /// Make item.size (with & height) greaterThanOrEqualTo one value
     @discardableResult
     public func size(greaterThanOrEqualTo value: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return width(greaterThanOrEqualTo: value, at: priority).height(greaterThanOrEqualTo: value, at: priority)
     }
     
+    /// Make item.size (with & height) greaterThanOrEqualTo a `CGSize`
     @discardableResult
     public func size(greaterThanOrEqualTo value: CGSize, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return width(greaterThanOrEqualTo: value.width, at: priority).height(greaterThanOrEqualTo: value.height, at: priority)
     }
     
+    /// Make item.size (with & height) greaterThanOrEqualTo item2.attribute
     @discardableResult
     public func size(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return width(greaterThanOrEqualTo: attribute, of: item2, multiplier: multiplier, constant: constant, at: priority)
             .height(greaterThanOrEqualTo: attribute, of: item2, multiplier: multiplier, constant: constant, at: priority)
     }
     
+    /// Make item.size (with & height) greaterThanOrEqualTo item2.size
     @discardableResult
     public func size(greaterThanOrEqualTo item2: Item, multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return width(greaterThanOrEqualTo: .width, of: item2, multiplier: multiplier, constant: constant, at: priority)
             .height(greaterThanOrEqualTo: .height, of: item2, multiplier: multiplier, constant: constant, at: priority)
     }
     
+    /// Make center (centerX & centerY) greaterThanOrEqualTo one value
     @discardableResult
     public func center(greaterThanOrEqualTo value: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return centerX(greaterThanOrEqualTo: value, at: priority).centerY(greaterThanOrEqualTo: value, at: priority)
     }
     
+    /// Make center (centerX & centerY) greaterThanOrEqualTo a `CGPoint`
     @discardableResult
     public func center(greaterThanOrEqualTo value: CGPoint, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return centerX(greaterThanOrEqualTo: value.x, at: priority).centerY(greaterThanOrEqualTo: value.y, at: priority)
     }
     
+    /// Make center (centerX & centerY) greaterThanOrEqualTo a item2.attribute
     @discardableResult
     public func center(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return centerX(greaterThanOrEqualTo: attribute, of: item2, multiplier: multiplier, constant: constant, at: priority)
             .centerY(greaterThanOrEqualTo: attribute, of: item2, multiplier: multiplier, constant: constant, at: priority)
     }
     
+    /// Make center (centerX & centerY) greaterThanOrEqualTo item2.center
     @discardableResult
     public func center(greaterThanOrEqualTo item2: Item, multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return centerX(greaterThanOrEqualTo: .centerX, of: item2, multiplier: multiplier, constant: constant, at: priority)
@@ -122,44 +138,52 @@ extension ConstraintMaker {
 
 extension ConstraintMaker {
     
+    /// Make item.size (with & height) lessThanOrEqualTo one value
     @discardableResult
     public func size(lessThanOrEqualTo value: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return width(lessThanOrEqualTo: value, at: priority).height(lessThanOrEqualTo: value, at: priority)
     }
     
+    /// Make item.size (with & height) lessThanOrEqualTo a `CGSize`
     @discardableResult
     public func size(lessThanOrEqualTo value: CGSize, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return width(lessThanOrEqualTo: value.width, at: priority).height(lessThanOrEqualTo: value.height, at: priority)
     }
     
+    /// Make item.size (with & height) lessThanOrEqualTo item2.attribute
     @discardableResult
     public func size(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return width(lessThanOrEqualTo: attribute, of: item2, multiplier: multiplier, constant: constant, at: priority)
             .height(lessThanOrEqualTo: attribute, of: item2, multiplier: multiplier, constant: constant, at: priority)
     }
     
+    /// Make item.size (with & height) lessThanOrEqualTo item2.size
     @discardableResult
     public func size(lessThanOrEqualTo item2: Item, multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return width(lessThanOrEqualTo: .width, of: item2, multiplier: multiplier, constant: constant, at: priority)
             .height(lessThanOrEqualTo: .height, of: item2, multiplier: multiplier, constant: constant, at: priority)
     }
     
+    /// Make center (centerX & centerY) lessThanOrEqualTo one value
     @discardableResult
     public func center(lessThanOrEqualTo value: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return centerX(lessThanOrEqualTo: value, at: priority).centerY(lessThanOrEqualTo: value, at: priority)
     }
     
+    /// Make center (centerX & centerY) lessThanOrEqualTo a `CGPoint`
     @discardableResult
     public func center(lessThanOrEqualTo value: CGPoint, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return centerX(lessThanOrEqualTo: value.x, at: priority).centerY(lessThanOrEqualTo: value.y, at: priority)
     }
     
+    /// Make center (centerX & centerY) lessThanOrEqualTo a item2.attribute
     @discardableResult
     public func center(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return centerX(lessThanOrEqualTo: attribute, of: item2, multiplier: multiplier, constant: constant, at: priority)
             .centerY(lessThanOrEqualTo: attribute, of: item2, multiplier: multiplier, constant: constant, at: priority)
     }
     
+    /// Make center (centerX & centerY) lessThanOrEqualTo item2.center
     @discardableResult
     public func center(lessThanOrEqualTo item2: Item, multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return centerX(lessThanOrEqualTo: .centerX, of: item2, multiplier: multiplier, constant: constant, at: priority)
