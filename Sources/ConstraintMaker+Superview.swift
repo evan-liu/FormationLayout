@@ -27,33 +27,33 @@ import UIKit
 extension ConstraintMaker {
     
     @discardableResult
-    public func pinLeading(plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return pinConstraint(attribute: .leading, relatedBy: .equal, attribute: .leading, multiplier: 1, constant: constant, priority: priority)
+    public func pinLeading(multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return pinConstraint(attribute: .leading, relatedBy: .equal, attribute: .leading, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     @discardableResult
-    public func pinTrailing(plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return pinConstraint(attribute: .trailing, relatedBy: .equal, attribute: .trailing, multiplier: 1, constant: constant, priority: priority)
+    public func pinTrailing(multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return pinConstraint(attribute: .trailing, relatedBy: .equal, attribute: .trailing, multiplier:multiplier, constant: constant, priority: priority)
     }
     
     @discardableResult
-    public func pinTop(plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return pinConstraint(attribute: .top, relatedBy: .equal, attribute: .top, multiplier: 1, constant: constant, priority: priority)
+    public func pinTop(multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return pinConstraint(attribute: .top, relatedBy: .equal, attribute: .top, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     @discardableResult
-    public func pinBottom(plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return pinConstraint(attribute: .bottom, relatedBy: .equal, attribute: .bottom, multiplier: 1, constant: constant, priority: priority)
+    public func pinBottom(multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return pinConstraint(attribute: .bottom, relatedBy: .equal, attribute: .bottom, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     @discardableResult
-    public func fillWidth(multiplyBy multiplier: CGFloat = 1, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return pinConstraint(attribute: .width, relatedBy: .equal, attribute: .width, multiplier: multiplier, constant: 0, priority: priority)
+    public func fillWidth(multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return pinConstraint(attribute: .width, relatedBy: .equal, attribute: .width, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     @discardableResult
-    public func fillHeight(multiplyBy multiplier: CGFloat = 1, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return pinConstraint(attribute: .height, relatedBy: .equal, attribute: .height, multiplier: multiplier, constant: 0, priority: priority)
+    public func fillHeight(multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return pinConstraint(attribute: .height, relatedBy: .equal, attribute: .height, multiplier: multiplier, constant: constant, priority: priority)
     }
     
 }
