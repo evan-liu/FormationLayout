@@ -24,18 +24,22 @@
 
 import UIKit
 
-public protocol ConstraintMaker {
-    
-    @discardableResult
-    func makeConstraint(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, toItem item2: Any?, attribute attr2: NSLayoutAttribute, multiplier: CGFloat, constant c: CGFloat, priority: UILayoutPriority) -> Self
-    
-}
-
 extension ConstraintMaker {
     
     @discardableResult
-    func makeConstraint(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, constant c: CGFloat, priority: UILayoutPriority) -> Self {
-        return makeConstraint(attribute: attribute, relatedBy: relation, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: c, priority: priority)
+    public func pin(to item2: UIView, margin: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return left(equalTo: item2, constant: margin, at: priority)
+            .right(equalTo: item2, constant: margin, at: priority)
+            .top(equalTo: item2, constant: margin, at: priority)
+            .bottom(equalTo: item2, constant: margin, at: priority)
+    }
+    
+    @discardableResult
+    public func pin(to item2: UIView, margin: UIEdgeInsets, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return left(equalTo: item2, constant: margin.left, at: priority)
+            .top(equalTo: item2, constant: margin.top, at: priority)
+            .right(equalTo: item2, constant: -margin.right, at: priority)
+            .bottom(equalTo: item2, constant: -margin.bottom, at: priority)
     }
     
 }

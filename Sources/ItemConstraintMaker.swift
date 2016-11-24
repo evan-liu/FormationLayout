@@ -26,15 +26,13 @@ import UIKit
 
 public protocol Item: class {
     
-    var superview: UIView? { get }
-    
     func prepareAutoLayout(in rootView: UIView)
 }
 
 extension UIView: Item {
     public func prepareAutoLayout(in rootView: UIView) {
         translatesAutoresizingMaskIntoConstraints = false
-        if superview == nil {
+        if superview == nil && rootView !== self {
             rootView.addSubview(self)
         }
     }
@@ -45,23 +43,14 @@ public final class ItemConstraintMaker: ConstraintMaker {
     let item: Item
     let manager: ConstraintManager
     
-    var superview: UIView {
-        return item.superview ?? manager.rootView
-    }
-    
     init(item: Item, manager: ConstraintManager) {
         self.item = item
         self.manager = manager
     }
     
-    func makeConstraint(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, toItem item2: Any? = nil, attribute attr2: NSLayoutAttribute = .notAnAttribute, multiplier: CGFloat = 1, constant c: CGFloat = 0, priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+    public func makeConstraint(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, toItem item2: Any? = nil, attribute attr2: NSLayoutAttribute = .notAnAttribute, multiplier: CGFloat = 1, constant c: CGFloat = 0, priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         manager.add(NSLayoutConstraint(item: item, attribute: attribute, relatedBy: relation, toItem: item2, attribute: attr2, multiplier: multiplier, constant: c)).priority = priority
         return self
-    }
-    
-    /// Make constraint pin to superview
-    func pinConstraint(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, attribute attr2: NSLayoutAttribute, multiplier: CGFloat, constant c: CGFloat, priority: UILayoutPriority) -> Self {
-        return makeConstraint(attribute: attribute, relatedBy: relation, toItem: superview, attribute: attr2, multiplier: multiplier, constant: c, priority: priority)
     }
     
 }

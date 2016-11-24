@@ -26,8 +26,7 @@ import UIKit
 
 protocol ConstraintManager {
     
-    var rootView: UIView { get }
-    
     @discardableResult
     func add(_ constraint: NSLayoutConstraint) -> NSLayoutConstraint
+    
 }
