@@ -24,11 +24,13 @@
 
 import UIKit
 
+public typealias View = UIView
+
 public final class FormationLayout {
     
-    public let rootView: UIView
+    public let rootView: View
     
-    public init(rootView: UIView, translatesAutoresizing: Bool = false, autoresizing: UIViewAutoresizing? = nil) {
+    public init(rootView: View, translatesAutoresizing: Bool = false, autoresizing: UIViewAutoresizing? = nil) {
         rootView.translatesAutoresizingMaskIntoConstraints = translatesAutoresizing
         if translatesAutoresizing, let autoresizingMask = autoresizing {
             rootView.autoresizingMask = autoresizingMask

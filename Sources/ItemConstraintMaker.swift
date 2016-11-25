@@ -29,8 +29,8 @@ public protocol Item: class {
     func prepareAutoLayout(in rootView: UIView)
 }
 
-extension UIView: Item {
-    public func prepareAutoLayout(in rootView: UIView) {
+extension View: Item {
+    public func prepareAutoLayout(in rootView: View) {
         translatesAutoresizingMaskIntoConstraints = false
         if superview == nil && rootView !== self {
             rootView.addSubview(self)

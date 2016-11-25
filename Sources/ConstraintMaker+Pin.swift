@@ -27,7 +27,7 @@ import UIKit
 extension ConstraintMaker {
     
     @discardableResult
-    public func pin(to item2: UIView, margin: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+    public func pin(to item2: Item, margin: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return left(equalTo: item2, constant: margin, at: priority)
             .right(equalTo: item2, constant: margin, at: priority)
             .top(equalTo: item2, constant: margin, at: priority)
@@ -35,11 +35,29 @@ extension ConstraintMaker {
     }
     
     @discardableResult
-    public func pin(to item2: UIView, margin: UIEdgeInsets, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+    public func pin(to item2: Item, margin: UIEdgeInsets, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return left(equalTo: item2, constant: margin.left, at: priority)
             .top(equalTo: item2, constant: margin.top, at: priority)
             .right(equalTo: item2, constant: -margin.right, at: priority)
             .bottom(equalTo: item2, constant: -margin.bottom, at: priority)
+    }
+    
+    @discardableResult
+    public func pin(to item2: Item, by attributes: NSLayoutAttribute..., margin: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        for attribute in attributes {
+            makeConstraint(attribute: attribute, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: 1, constant: margin, priority: priority)
+        }
+        return self
+    }
+    
+    @discardableResult
+    public func pin(to item2: Item, byMargins margins: [NSLayoutAttribute: CGFloat], at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        let negativeAttributes: [NSLayoutAttribute] = [.bottom, .right, .trailing]
+        for (attribute, margin) in margins {
+            let constant = negativeAttributes.contains(attribute) ? -margin : margin
+            makeConstraint(attribute: attribute, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: 1, constant: constant, priority: priority)
+        }
+        return self
     }
     
 }
