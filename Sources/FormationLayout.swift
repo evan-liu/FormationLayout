@@ -26,7 +26,13 @@ import UIKit
 
 public typealias View = UIView
 
-public final class FormationLayout {
+public protocol LayoutManager {
+    subscript(item: Item) -> ItemConstraintMaker { get }
+}
+
+public final class FormationLayout: LayoutManager {
+    
+    lazy var conditions = [ConstraintCondition]()
     
     public let rootView: View
     
@@ -39,11 +45,32 @@ public final class FormationLayout {
     }
     
     public subscript(item: Item) -> ItemConstraintMaker {
+        return constraintMaker(for: item)
+    }
+    
+    public func when(block: @escaping () -> Bool) -> ConstraintCondition {
+        let condition = ConstraintCondition(layout: self, condition: block)
+        conditions.append(condition)
+        return condition
+    }
+    
+    public func update() {
+        conditions.forEach { $0.update() }
+    }
+    
+    func constraintMaker(for item: Item, manager: ConstraintManager? = nil) -> ItemConstraintMaker {
         if item !== rootView {
             item.prepareAutoLayout(in: rootView)
         }
-        return ItemConstraintMaker(item: item, manager: self)
+        return ItemConstraintMaker(item: item, manager: manager ?? self)
     }
+    
+}
+
+protocol ConstraintManager {
+    
+    @discardableResult
+    func add(_ constraint: NSLayoutConstraint) -> NSLayoutConstraint
     
 }
 
