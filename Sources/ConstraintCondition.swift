@@ -30,15 +30,16 @@ public final class ConstraintCondition: LayoutManager, ConstraintManager {
     public var not: LayoutManager {
         if let _not = _not { return _not }
         _not = ConstraintCondition(layout: self.layout, condition: { [unowned self] in
-            return !self.isActive
+            return self.isMatched == false
         })
         return _not!
     }
     
     private var constraints = [NSLayoutConstraint]()
-    private var isActive = false {
+    private var isMatched: Bool? {
         didSet {
-            if isActive {
+            guard isMatched != oldValue else { return }
+            if isMatched == true {
                 _not?.update()
                 NSLayoutConstraint.activate(constraints)
             } else {
@@ -65,7 +66,7 @@ public final class ConstraintCondition: LayoutManager, ConstraintManager {
     }
     
     func update() {
-        isActive = condition()
+        isMatched = condition()
     }
     
 }
