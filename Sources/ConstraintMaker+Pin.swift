@@ -54,39 +54,39 @@ extension ConstraintMaker {
     
     @discardableResult
     public func pin(to item2: Item, margin: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return left(equalTo: item2, constant: margin, at: priority)
-            .right(equalTo: item2, constant: -margin, at: priority)
-            .top(equalTo: item2, constant: margin, at: priority)
-            .bottom(equalTo: item2, constant: -margin, at: priority)
+        return left(equalTo: item2, plus: margin, at: priority)
+            .right(equalTo: item2, minus: margin, at: priority)
+            .top(equalTo: item2, plus: margin, at: priority)
+            .bottom(equalTo: item2, minus: -margin, at: priority)
     }
     
     @discardableResult
     public func pin(to item2: Item, margin: UIEdgeInsets, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return left(equalTo: item2, constant: margin.left, at: priority)
-            .right(equalTo: item2, constant: -margin.right, at: priority)
-            .top(equalTo: item2, constant: margin.top, at: priority)
-            .bottom(equalTo: item2, constant: -margin.bottom, at: priority)
+        return left(equalTo: item2, plus: margin.left, at: priority)
+            .right(equalTo: item2, minus: margin.right, at: priority)
+            .top(equalTo: item2, plus: margin.top, at: priority)
+            .bottom(equalTo: item2, minus: margin.bottom, at: priority)
     }
     
     @discardableResult
     public func pin(to item2: Item, edges: PinEdges, margin: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         if edges.contains(.left) {
-            left(equalTo: item2, constant: margin, at: priority)
+            left(equalTo: item2, plus: margin, at: priority)
         }
         if edges.contains(.right) {
-            right(equalTo: item2, constant: -margin, at: priority)
+            right(equalTo: item2, minus: margin, at: priority)
         }
         if edges.contains(.top) {
-            top(equalTo: item2, constant: margin, at: priority)
+            top(equalTo: item2, plus: margin, at: priority)
         }
         if edges.contains(.bottom) {
-            bottom(equalTo: item2, constant: -margin, at: priority)
+            bottom(equalTo: item2, minus: margin, at: priority)
         }
         if edges.contains(.leading) {
-            leading(equalTo: item2, constant: margin, at: priority)
+            leading(equalTo: item2, plus: margin, at: priority)
         }
         if edges.contains(.trailing) {
-            trailing(equalTo: item2, constant: -margin, at: priority)
+            trailing(equalTo: item2, minus: margin, at: priority)
         }
         return self
     }

@@ -38,19 +38,35 @@ extension ConstraintMaker {
         return width(equalTo: value.width, at: priority).height(equalTo: value.height, at: priority)
     }
     
-    /// Make item.size (with & height) equalTo item2.attribute
+    /// Make item.size (with & height) equalTo item2.attribute * multiplier + constant
     @discardableResult
-    public func size(equalTo attribute: NSLayoutAttribute, of item2: Item, multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return width(equalTo: attribute, of: item2, multiplier: multiplier, constant: constant, at: priority)
-            .height(equalTo: attribute, of: item2, multiplier: multiplier, constant: constant, at: priority)
+    public func size(equalTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return width(equalTo: attribute, of: item2, multiplyBy: multiplier, plus: constant, at: priority)
+            .height(equalTo: attribute, of: item2, multiplyBy: multiplier, plus: constant, at: priority)
     }
     
-    /// Make item.size (with & height) equalTo item2.size
+    /// Make item.size (with & height) equalTo item2.size * multiplier + constant
     @discardableResult
-    public func size(equalTo item2: Item, multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return width(equalTo: .width, of: item2, multiplier: multiplier, constant: constant, at: priority)
-            .height(equalTo: .height, of: item2, multiplier: multiplier, constant: constant, at: priority)
+    public func size(equalTo item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return width(equalTo: .width, of: item2, multiplyBy: multiplier, plus: constant, at: priority)
+            .height(equalTo: .height, of: item2, multiplyBy: multiplier, plus: constant, at: priority)
     }
+    
+    /// Make item.size (with & height) equalTo item2.attribute * multiplier - constant
+    @discardableResult
+    public func size(equalTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return width(equalTo: attribute, of: item2, multiplyBy: multiplier, minus: constant, at: priority)
+            .height(equalTo: attribute, of: item2, multiplyBy: multiplier, minus: constant, at: priority)
+    }
+    
+    /// Make item.size (with & height) equalTo item2.size * multiplier - constant
+    @discardableResult
+    public func size(equalTo item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return width(equalTo: .width, of: item2, multiplyBy: multiplier, minus: constant, at: priority)
+            .height(equalTo: .height, of: item2, multiplyBy: multiplier, minus: constant, at: priority)
+    }
+    
+    
     
     /// Make center (centerX & centerY) equalTo one value
     @discardableResult
@@ -64,18 +80,32 @@ extension ConstraintMaker {
         return centerX(equalTo: value.x, at: priority).centerY(equalTo: value.y, at: priority)
     }
     
-    /// Make center (centerX & centerY) equalTo a item2.attribute
+    /// Make center (centerX & centerY) equalTo item2.attribute * multiplier + constant
     @discardableResult
-    public func center(equalTo attribute: NSLayoutAttribute, of item2: Item, multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return centerX(equalTo: attribute, of: item2, multiplier: multiplier, constant: constant, at: priority)
-            .centerY(equalTo: attribute, of: item2, multiplier: multiplier, constant: constant, at: priority)
+    public func center(equalTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return centerX(equalTo: attribute, of: item2, multiplyBy: multiplier, plus: constant, at: priority)
+            .centerY(equalTo: attribute, of: item2, multiplyBy: multiplier, plus: constant, at: priority)
     }
     
-    /// Make center (centerX & centerY) equalTo item2.center
+    /// Make center (centerX & centerY) equalTo item2.center * multiplier + constant
     @discardableResult
-    public func center(equalTo item2: Item, multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return centerX(equalTo: .centerX, of: item2, multiplier: multiplier, constant: constant, at: priority)
-            .centerY(equalTo: .centerY, of: item2, multiplier: multiplier, constant: constant, at: priority)
+    public func center(equalTo item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return centerX(equalTo: .centerX, of: item2, multiplyBy: multiplier, plus: constant, at: priority)
+            .centerY(equalTo: .centerY, of: item2, multiplyBy: multiplier, plus: constant, at: priority)
+    }
+    
+    /// Make center (centerX & centerY) equalTo item2.attribute * multiplier - constant
+    @discardableResult
+    public func center(equalTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return centerX(equalTo: attribute, of: item2, multiplyBy: multiplier, minus: constant, at: priority)
+            .centerY(equalTo: attribute, of: item2, multiplyBy: multiplier, minus: constant, at: priority)
+    }
+    
+    /// Make center (centerX & centerY) equalTo item2.center * multiplier - constant
+    @discardableResult
+    public func center(equalTo item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return centerX(equalTo: .centerX, of: item2, multiplyBy: multiplier, minus: constant, at: priority)
+            .centerY(equalTo: .centerY, of: item2, multiplyBy: multiplier, minus: constant, at: priority)
     }
     
 }
@@ -94,19 +124,35 @@ extension ConstraintMaker {
         return width(greaterThanOrEqualTo: value.width, at: priority).height(greaterThanOrEqualTo: value.height, at: priority)
     }
     
-    /// Make item.size (with & height) greaterThanOrEqualTo item2.attribute
+    /// Make item.size (with & height) greaterThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
-    public func size(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return width(greaterThanOrEqualTo: attribute, of: item2, multiplier: multiplier, constant: constant, at: priority)
-            .height(greaterThanOrEqualTo: attribute, of: item2, multiplier: multiplier, constant: constant, at: priority)
+    public func size(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return width(greaterThanOrEqualTo: attribute, of: item2, multiplyBy: multiplier, plus: constant, at: priority)
+            .height(greaterThanOrEqualTo: attribute, of: item2, multiplyBy: multiplier, plus: constant, at: priority)
     }
     
-    /// Make item.size (with & height) greaterThanOrEqualTo item2.size
+    /// Make item.size (with & height) greaterThanOrEqualTo item2.size * multiplier + constant
     @discardableResult
-    public func size(greaterThanOrEqualTo item2: Item, multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return width(greaterThanOrEqualTo: .width, of: item2, multiplier: multiplier, constant: constant, at: priority)
-            .height(greaterThanOrEqualTo: .height, of: item2, multiplier: multiplier, constant: constant, at: priority)
+    public func size(greaterThanOrEqualTo item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return width(greaterThanOrEqualTo: .width, of: item2, multiplyBy: multiplier, plus: constant, at: priority)
+            .height(greaterThanOrEqualTo: .height, of: item2, multiplyBy: multiplier, plus: constant, at: priority)
     }
+    
+    /// Make item.size (with & height) greaterThanOrEqualTo item2.attribute * multiplier - constant
+    @discardableResult
+    public func size(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return width(greaterThanOrEqualTo: attribute, of: item2, multiplyBy: multiplier, minus: constant, at: priority)
+            .height(greaterThanOrEqualTo: attribute, of: item2, multiplyBy: multiplier, minus: constant, at: priority)
+    }
+    
+    /// Make item.size (with & height) greaterThanOrEqualTo item2.size * multiplier - constant
+    @discardableResult
+    public func size(greaterThanOrEqualTo item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return width(greaterThanOrEqualTo: .width, of: item2, multiplyBy: multiplier, minus: constant, at: priority)
+            .height(greaterThanOrEqualTo: .height, of: item2, multiplyBy: multiplier, minus: constant, at: priority)
+    }
+    
+    
     
     /// Make center (centerX & centerY) greaterThanOrEqualTo one value
     @discardableResult
@@ -120,18 +166,32 @@ extension ConstraintMaker {
         return centerX(greaterThanOrEqualTo: value.x, at: priority).centerY(greaterThanOrEqualTo: value.y, at: priority)
     }
     
-    /// Make center (centerX & centerY) greaterThanOrEqualTo a item2.attribute
+    /// Make center (centerX & centerY) greaterThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
-    public func center(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return centerX(greaterThanOrEqualTo: attribute, of: item2, multiplier: multiplier, constant: constant, at: priority)
-            .centerY(greaterThanOrEqualTo: attribute, of: item2, multiplier: multiplier, constant: constant, at: priority)
+    public func center(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return centerX(greaterThanOrEqualTo: attribute, of: item2, multiplyBy: multiplier, plus: constant, at: priority)
+            .centerY(greaterThanOrEqualTo: attribute, of: item2, multiplyBy: multiplier, plus: constant, at: priority)
     }
     
-    /// Make center (centerX & centerY) greaterThanOrEqualTo item2.center
+    /// Make center (centerX & centerY) greaterThanOrEqualTo item2.center * multiplier + constant
     @discardableResult
-    public func center(greaterThanOrEqualTo item2: Item, multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return centerX(greaterThanOrEqualTo: .centerX, of: item2, multiplier: multiplier, constant: constant, at: priority)
-            .centerY(greaterThanOrEqualTo: .centerY, of: item2, multiplier: multiplier, constant: constant, at: priority)
+    public func center(greaterThanOrEqualTo item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return centerX(greaterThanOrEqualTo: .centerX, of: item2, multiplyBy: multiplier, plus: constant, at: priority)
+            .centerY(greaterThanOrEqualTo: .centerY, of: item2, multiplyBy: multiplier, plus: constant, at: priority)
+    }
+    
+    /// Make center (centerX & centerY) greaterThanOrEqualTo item2.attribute * multiplier - constant
+    @discardableResult
+    public func center(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return centerX(greaterThanOrEqualTo: attribute, of: item2, multiplyBy: multiplier, minus: constant, at: priority)
+            .centerY(greaterThanOrEqualTo: attribute, of: item2, multiplyBy: multiplier, minus: constant, at: priority)
+    }
+    
+    /// Make center (centerX & centerY) greaterThanOrEqualTo item2.center * multiplier - constant
+    @discardableResult
+    public func center(greaterThanOrEqualTo item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return centerX(greaterThanOrEqualTo: .centerX, of: item2, multiplyBy: multiplier, minus: constant, at: priority)
+            .centerY(greaterThanOrEqualTo: .centerY, of: item2, multiplyBy: multiplier, minus: constant, at: priority)
     }
     
 }
@@ -150,19 +210,35 @@ extension ConstraintMaker {
         return width(lessThanOrEqualTo: value.width, at: priority).height(lessThanOrEqualTo: value.height, at: priority)
     }
     
-    /// Make item.size (with & height) lessThanOrEqualTo item2.attribute
+    /// Make item.size (with & height) lessThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
-    public func size(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return width(lessThanOrEqualTo: attribute, of: item2, multiplier: multiplier, constant: constant, at: priority)
-            .height(lessThanOrEqualTo: attribute, of: item2, multiplier: multiplier, constant: constant, at: priority)
+    public func size(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return width(lessThanOrEqualTo: attribute, of: item2, multiplyBy: multiplier, plus: constant, at: priority)
+            .height(lessThanOrEqualTo: attribute, of: item2, multiplyBy: multiplier, plus: constant, at: priority)
     }
     
-    /// Make item.size (with & height) lessThanOrEqualTo item2.size
+    /// Make item.size (with & height) lessThanOrEqualTo item2.size * multiplier + constant
     @discardableResult
-    public func size(lessThanOrEqualTo item2: Item, multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return width(lessThanOrEqualTo: .width, of: item2, multiplier: multiplier, constant: constant, at: priority)
-            .height(lessThanOrEqualTo: .height, of: item2, multiplier: multiplier, constant: constant, at: priority)
+    public func size(lessThanOrEqualTo item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return width(lessThanOrEqualTo: .width, of: item2, multiplyBy: multiplier, plus: constant, at: priority)
+            .height(lessThanOrEqualTo: .height, of: item2, multiplyBy: multiplier, plus: constant, at: priority)
     }
+    
+    /// Make item.size (with & height) lessThanOrEqualTo item2.attribute * multiplier - constant
+    @discardableResult
+    public func size(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return width(lessThanOrEqualTo: attribute, of: item2, multiplyBy: multiplier, minus: constant, at: priority)
+            .height(lessThanOrEqualTo: attribute, of: item2, multiplyBy: multiplier, minus: constant, at: priority)
+    }
+    
+    /// Make item.size (with & height) lessThanOrEqualTo item2.size * multiplier - constant
+    @discardableResult
+    public func size(lessThanOrEqualTo item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return width(lessThanOrEqualTo: .width, of: item2, multiplyBy: multiplier, minus: constant, at: priority)
+            .height(lessThanOrEqualTo: .height, of: item2, multiplyBy: multiplier, minus: constant, at: priority)
+    }
+    
+    
     
     /// Make center (centerX & centerY) lessThanOrEqualTo one value
     @discardableResult
@@ -176,18 +252,32 @@ extension ConstraintMaker {
         return centerX(lessThanOrEqualTo: value.x, at: priority).centerY(lessThanOrEqualTo: value.y, at: priority)
     }
     
-    /// Make center (centerX & centerY) lessThanOrEqualTo a item2.attribute
+    /// Make center (centerX & centerY) lessThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
-    public func center(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return centerX(lessThanOrEqualTo: attribute, of: item2, multiplier: multiplier, constant: constant, at: priority)
-            .centerY(lessThanOrEqualTo: attribute, of: item2, multiplier: multiplier, constant: constant, at: priority)
+    public func center(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return centerX(lessThanOrEqualTo: attribute, of: item2, multiplyBy: multiplier, plus: constant, at: priority)
+            .centerY(lessThanOrEqualTo: attribute, of: item2, multiplyBy: multiplier, plus: constant, at: priority)
     }
     
-    /// Make center (centerX & centerY) lessThanOrEqualTo item2.center
+    /// Make center (centerX & centerY) lessThanOrEqualTo item2.center * multiplier + constant
     @discardableResult
-    public func center(lessThanOrEqualTo item2: Item, multiplier: CGFloat = 1, constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return centerX(lessThanOrEqualTo: .centerX, of: item2, multiplier: multiplier, constant: constant, at: priority)
-            .centerY(lessThanOrEqualTo: .centerY, of: item2, multiplier: multiplier, constant: constant, at: priority)
+    public func center(lessThanOrEqualTo item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return centerX(lessThanOrEqualTo: .centerX, of: item2, multiplyBy: multiplier, plus: constant, at: priority)
+            .centerY(lessThanOrEqualTo: .centerY, of: item2, multiplyBy: multiplier, plus: constant, at: priority)
+    }
+    
+    /// Make center (centerX & centerY) lessThanOrEqualTo item2.attribute * multiplier - constant
+    @discardableResult
+    public func center(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return centerX(lessThanOrEqualTo: attribute, of: item2, multiplyBy: multiplier, minus: constant, at: priority)
+            .centerY(lessThanOrEqualTo: attribute, of: item2, multiplyBy: multiplier, minus: constant, at: priority)
+    }
+    
+    /// Make center (centerX & centerY) lessThanOrEqualTo item2.center * multiplier - constant
+    @discardableResult
+    public func center(lessThanOrEqualTo item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        return centerX(lessThanOrEqualTo: .centerX, of: item2, multiplyBy: multiplier, minus: constant, at: priority)
+            .centerY(lessThanOrEqualTo: .centerY, of: item2, multiplyBy: multiplier, minus: constant, at: priority)
     }
     
 }
