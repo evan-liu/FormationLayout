@@ -24,38 +24,77 @@
 
 import UIKit
 
+public struct PinEdges: OptionSet, Hashable {
+    
+    public static let left = PinEdges(rawValue: 1 << 0)
+    public static let right = PinEdges(rawValue: 1 << 1)
+    
+    public static let top = PinEdges(rawValue: 1 << 2)
+    public static let bottom = PinEdges(rawValue: 1 << 3)
+    
+    public static let leading = PinEdges(rawValue: 1 << 4)
+    public static let trailing = PinEdges(rawValue: 1 << 5)
+    
+    public static let leftRight: PinEdges = [.left, .right]
+    public static let topBottom: PinEdges = [.top, .bottom]
+    public static let leadingTrailing: PinEdges = [.leading, .trailing]
+    
+    public let rawValue: Int
+    public init(rawValue: Int) {
+        self.rawValue = rawValue
+    }
+    
+    public var hashValue: Int {
+        return rawValue.hashValue
+    }
+    
+}
+
 extension ConstraintMaker {
     
     @discardableResult
     public func pin(to item2: Item, margin: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return left(equalTo: item2, constant: margin, at: priority)
-            .right(equalTo: item2, constant: margin, at: priority)
+            .right(equalTo: item2, constant: -margin, at: priority)
             .top(equalTo: item2, constant: margin, at: priority)
-            .bottom(equalTo: item2, constant: margin, at: priority)
+            .bottom(equalTo: item2, constant: -margin, at: priority)
     }
     
     @discardableResult
     public func pin(to item2: Item, margin: UIEdgeInsets, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return left(equalTo: item2, constant: margin.left, at: priority)
-            .top(equalTo: item2, constant: margin.top, at: priority)
             .right(equalTo: item2, constant: -margin.right, at: priority)
+            .top(equalTo: item2, constant: margin.top, at: priority)
             .bottom(equalTo: item2, constant: -margin.bottom, at: priority)
     }
     
     @discardableResult
-    public func pin(to item2: Item, by attributes: NSLayoutAttribute..., margin: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        for attribute in attributes {
-            makeConstraint(attribute: attribute, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: 1, constant: margin, priority: priority)
+    public func pin(to item2: Item, edges: PinEdges, margin: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        if edges.contains(.left) {
+            left(equalTo: item2, constant: margin, at: priority)
+        }
+        if edges.contains(.right) {
+            right(equalTo: item2, constant: -margin, at: priority)
+        }
+        if edges.contains(.top) {
+            top(equalTo: item2, constant: margin, at: priority)
+        }
+        if edges.contains(.bottom) {
+            bottom(equalTo: item2, constant: -margin, at: priority)
+        }
+        if edges.contains(.leading) {
+            leading(equalTo: item2, constant: margin, at: priority)
+        }
+        if edges.contains(.trailing) {
+            trailing(equalTo: item2, constant: -margin, at: priority)
         }
         return self
     }
     
     @discardableResult
-    public func pin(to item2: Item, byMargins margins: [NSLayoutAttribute: CGFloat], at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        let negativeAttributes: [NSLayoutAttribute] = [.bottom, .right, .trailing]
-        for (attribute, margin) in margins {
-            let constant = negativeAttributes.contains(attribute) ? -margin : margin
-            makeConstraint(attribute: attribute, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: 1, constant: constant, priority: priority)
+    public func pin(to item2: Item, edgesWithMargin: [PinEdges: CGFloat], at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+        for (edges, margin) in edgesWithMargin {
+            pin(to: item2, edges: edges, margin: margin, at: priority)
         }
         return self
     }
