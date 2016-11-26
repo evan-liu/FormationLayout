@@ -24,34 +24,26 @@
 
 import UIKit
 
-public protocol Item: class {
+public final class GroupConstraintMaker: ConstraintMaker {
     
-    func prepareAutoLayout(in rootView: UIView)
-}
-
-extension View: Item {
-    public func prepareAutoLayout(in rootView: View) {
-        translatesAutoresizingMaskIntoConstraints = false
-        if superview == nil && rootView !== self {
-            rootView.addSubview(self)
+    private let items: [ItemConstraintMaker]
+    init(items: [ItemConstraintMaker]) {
+        self.items = items
+    }
+    
+    public func makeConstraint(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, toItem item2: Any?, attribute attr2: NSLayoutAttribute, multiplier: CGFloat, constant c: CGFloat, priority: UILayoutPriority) -> Self {
+        for item in items {
+            item.makeConstraint(attribute: attribute, relatedBy: relation, toItem: item2, attribute: attr2, multiplier: multiplier, constant: c, priority: priority)
         }
+        return self
     }
+    
 }
 
-public final class ItemConstraintMaker: ConstraintMaker {
+extension LayoutManager {
     
-    let item: Item
-    let manager: ConstraintManager
-    
-    init(item: Item, manager: ConstraintManager) {
-        self.item = item
-        self.manager = manager
-    }
-    
-    @discardableResult
-    public func makeConstraint(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, toItem item2: Any? = nil, attribute attr2: NSLayoutAttribute = .notAnAttribute, multiplier: CGFloat = 1, constant c: CGFloat = 0, priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        manager.add(NSLayoutConstraint(item: item, attribute: attribute, relatedBy: relation, toItem: item2, attribute: attr2, multiplier: multiplier, constant: c)).priority = priority
-        return self
+    public func group(_ items: Item...) -> GroupConstraintMaker {
+        return GroupConstraintMaker(items: items.map { self[$0] } )
     }
     
 }
