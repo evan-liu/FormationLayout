@@ -57,7 +57,7 @@ extension ConstraintMaker {
         return left(equalTo: item2, plus: margin, at: priority)
             .right(equalTo: item2, minus: margin, at: priority)
             .top(equalTo: item2, plus: margin, at: priority)
-            .bottom(equalTo: item2, minus: -margin, at: priority)
+            .bottom(equalTo: item2, minus: margin, at: priority)
     }
     
     @discardableResult
