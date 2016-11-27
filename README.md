@@ -134,6 +134,25 @@ demo { canvas, icon in
 
 ![ConditionNot](https://github.com/evan-liu/FormationLayout/blob/master/Documentation/Images/ConditionNot.png)
 
+### Priority
+
+All constraints have UILayoutPriorityRequired by default.
+
+```swift
+demo { canvas, icon in
+    let layout = FormationLayout(rootView: canvas)
+    layout[icon].centerX(equalTo: canvas).size(equalTo: 20)
+        .centerY(equalTo: canvas, at: UILayoutPriorityDefaultLow) // Try UILayoutPriorityRequired
+        .bottom(equalTo: canvas, at: UILayoutPriorityDefaultHigh)
+}
+```
+
+![PriorityLow](https://github.com/evan-liu/FormationLayout/blob/master/Documentation/Images/PriorityLow.png)
+
+UILayoutPriorityRequired: 
+
+![PriorityRequired](https://github.com/evan-liu/FormationLayout/blob/master/Documentation/Images/PriorityRequired.png)
+
 ## Playground
 
 - Open **Documentation/Doc.xcworkspace**.
