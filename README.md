@@ -124,3 +124,7 @@ demo { canvas, icon in
 ```
 
 ![Condition](https://github.com/evan-liu/FormationLayout/blob/master/Documentation/Images/Condition.png)
+
+`isLoggedIn = false`
+
+![ConditionNot](https://github.com/evan-liu/FormationLayout/blob/master/Documentation/Images/ConditionNot.png)
