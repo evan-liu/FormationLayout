@@ -2,6 +2,11 @@
 
 ![banner](https://github.com/evan-liu/FormationLayout/blob/master/Documentation/Doc.playground/Resources/banner.png)
 
+![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+[![CocoaPods](https://img.shields.io/cocoapods/v/FormationLayout.svg)](https://cocoapods.org/)
+[![Carthage](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
 ## Documentation
  
 `FormationLayout` is the top level layout class for one root view. 
@@ -136,3 +141,16 @@ demo { canvas, icon in
 - Open **Doc** playground in the **Project navigator**.
 - Click "Show Result" button at the most right side of each `demo` line.
 
+## Install
+
+### CocoaPods 
+
+```
+pod 'FormationLayout', '~> 0.8.0'
+```
+
+### Carthage 
+
+```
+github "evan-liu/FormationLayout" >= 0.8.0
+```
