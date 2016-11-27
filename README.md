@@ -128,3 +128,11 @@ demo { canvas, icon in
 `isLoggedIn = false`
 
 ![ConditionNot](https://github.com/evan-liu/FormationLayout/blob/master/Documentation/Images/ConditionNot.png)
+
+## Playground
+
+- Open **Documentation/Doc.xcworkspace**.
+- Build the **FormationLayout-iOS** scheme (⌘+B).
+- Open **Doc** playground in the **Project navigator**.
+- Click "Show Result" button at the most right side of each `demo` line.
+
