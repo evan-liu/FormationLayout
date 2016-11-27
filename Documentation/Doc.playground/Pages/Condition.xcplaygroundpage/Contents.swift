@@ -1,4 +1,4 @@
-//: [Home](Home) | [Previous](@previous)
+//: [Home](Home) | [Previous](@previous) | [Next](@next)
 
 import UIKit
 import FormationLayout
@@ -26,4 +26,4 @@ demo { canvas, icon in
     layout.update()
 }
 
-//: [Home](Home) | [Previous](@previous)
+//: [Home](Home) | [Previous](@previous) | [Next](@next)

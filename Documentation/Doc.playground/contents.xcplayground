@@ -8,5 +8,6 @@
         <page name='Pin'/>
         <page name='Group'/>
         <page name='Condition'/>
+        <page name='Priority'/>
     </pages>
 </playground>
