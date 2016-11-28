@@ -29,6 +29,9 @@ public protocol ConstraintMaker {
     @discardableResult
     func makeConstraint(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, toItem item2: Any?, attribute attr2: NSLayoutAttribute, multiplier: CGFloat, constant c: CGFloat, priority: UILayoutPriority) -> Self
     
+    @discardableResult
+    func makeConstraintToItem(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, toAttribute attr2: NSLayoutAttribute, multiplier: CGFloat, constant c: CGFloat, priority: UILayoutPriority) -> Self
+    
 }
 
 extension ConstraintMaker {

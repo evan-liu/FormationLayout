@@ -31,9 +31,18 @@ public final class GroupConstraintMaker: ConstraintMaker {
         self.items = items
     }
     
+    @discardableResult
     public func makeConstraint(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, toItem item2: Any?, attribute attr2: NSLayoutAttribute, multiplier: CGFloat, constant c: CGFloat, priority: UILayoutPriority) -> Self {
         for item in items {
             item.makeConstraint(attribute: attribute, relatedBy: relation, toItem: item2, attribute: attr2, multiplier: multiplier, constant: c, priority: priority)
+        }
+        return self
+    }
+    
+    @discardableResult
+    public func makeConstraintToItem(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, toAttribute attr2: NSLayoutAttribute, multiplier: CGFloat, constant c: CGFloat, priority: UILayoutPriority) -> Self {
+        for item in items {
+            item.makeConstraint(attribute: attribute, relatedBy: relation, toItem: item, attribute: attr2, multiplier: multiplier, constant: c, priority: priority)
         }
         return self
     }

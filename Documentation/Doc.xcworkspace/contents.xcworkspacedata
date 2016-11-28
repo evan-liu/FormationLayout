@@ -5,6 +5,9 @@
       location = "group:Doc.playground">
    </FileRef>
    <FileRef
+      location = "group:../README.md">
+   </FileRef>
+   <FileRef
       location = "container:../FormationLayout.xcodeproj">
    </FileRef>
 </Workspace>

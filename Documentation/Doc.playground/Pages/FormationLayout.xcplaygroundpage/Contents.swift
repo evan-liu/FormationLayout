@@ -10,7 +10,7 @@ import FormationLayout
  `FormationLayout` is the top level layout class for one root view.
  
  - `FormationLayout` takes a `UIView` as its `rootView`.
- - `translatesAutoresizingMaskIntoConstraints` of `rootView` is set to false by default but can also be true if set in constructor.
+ - `translatesAutoresizingMaskIntoConstraints` of `rootView` is not set to false by default but can be set in constructor.
  - `translatesAutoresizingMaskIntoConstraints` of subviews will be set to false automaticly.
  - Subviews with no `superView` will be added to `rootView` automaticly.
  */

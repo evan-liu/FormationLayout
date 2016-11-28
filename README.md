@@ -12,7 +12,7 @@
 `FormationLayout` is the top level layout class for one root view. 
 
 - `FormationLayout` takes a `UIView` as its `rootView`.
-- `translatesAutoresizingMaskIntoConstraints` of `rootView` is set to false by default but can also be true if set in constructor.
+- `translatesAutoresizingMaskIntoConstraints` of `rootView` is not set to false by default but can be set in constructor.
 - `translatesAutoresizingMaskIntoConstraints` of subviews will be set to false automaticly.
 - Subviews with no `superView` will be added to `rootView` automaticly.
  
@@ -50,14 +50,16 @@ demo { canvas, icon1, icon2, icon3 in
 
 ### Helpers
  
+- aspectRatio: `width:height`
 - size: width & height
 - center: centerX & centerY
 
 ```swift
-demo { canvas, icon1, icon2 in
+demo { canvas, icon1, icon2, icon3 in
     let layout = FormationLayout(rootView: canvas)
-    layout[icon1].size(equalTo: 30).center(equalTo: canvas, multiplyBy: 0.8)
-    layout[icon2].size(equalTo: icon1, minus: 10).center(equalTo: icon1, plus: 30)
+    layout[icon1].aspectRatio(equalTo: 1.5).width(equalTo: 30)
+    layout[icon2].size(equalTo: 30).center(equalTo: canvas, multiplyBy: 0.8)
+    layout[icon3].size(equalTo: icon2, minus: 10).center(equalTo: icon2, plus: 30)
 }
 ```
 

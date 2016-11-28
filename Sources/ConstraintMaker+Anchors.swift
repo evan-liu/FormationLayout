@@ -423,7 +423,7 @@ extension ConstraintMaker {
     /// Make item.left greaterThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
     public func left(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .left, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
+        return makeConstraint(attribute: .left, relatedBy: .greaterThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     /// Make item.left greaterThanOrEqualTo item2.left * multiplier + constant
@@ -435,7 +435,7 @@ extension ConstraintMaker {
     /// Make item.left greaterThanOrEqualTo item2.attribute * multiplier - constant
     @discardableResult
     public func left(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .left, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
+        return makeConstraint(attribute: .left, relatedBy: .greaterThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
     }
     
     /// Make item.left greaterThanOrEqualTo item2.left * multiplier - constant
@@ -451,7 +451,7 @@ extension ConstraintMaker {
     /// Make item.right greaterThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
     public func right(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .right, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
+        return makeConstraint(attribute: .right, relatedBy: .greaterThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     /// Make item.right greaterThanOrEqualTo item2.right * multiplier + constant
@@ -463,7 +463,7 @@ extension ConstraintMaker {
     /// Make item.right greaterThanOrEqualTo item2.attribute * multiplier - constant
     @discardableResult
     public func right(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .right, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
+        return makeConstraint(attribute: .right, relatedBy: .greaterThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
     }
     
     /// Make item.right greaterThanOrEqualTo item2.right * multiplier - constant
@@ -479,7 +479,7 @@ extension ConstraintMaker {
     /// Make item.top greaterThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
     public func top(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .top, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
+        return makeConstraint(attribute: .top, relatedBy: .greaterThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     /// Make item.top greaterThanOrEqualTo item2.top * multiplier + constant
@@ -491,7 +491,7 @@ extension ConstraintMaker {
     /// Make item.top greaterThanOrEqualTo item2.attribute * multiplier - constant
     @discardableResult
     public func top(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .top, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
+        return makeConstraint(attribute: .top, relatedBy: .greaterThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
     }
     
     /// Make item.top greaterThanOrEqualTo item2.top * multiplier - constant
@@ -507,7 +507,7 @@ extension ConstraintMaker {
     /// Make item.bottom greaterThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
     public func bottom(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .bottom, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
+        return makeConstraint(attribute: .bottom, relatedBy: .greaterThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     /// Make item.bottom greaterThanOrEqualTo item2.bottom * multiplier + constant
@@ -519,7 +519,7 @@ extension ConstraintMaker {
     /// Make item.bottom greaterThanOrEqualTo item2.attribute * multiplier - constant
     @discardableResult
     public func bottom(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .bottom, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
+        return makeConstraint(attribute: .bottom, relatedBy: .greaterThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
     }
     
     /// Make item.bottom greaterThanOrEqualTo item2.bottom * multiplier - constant
@@ -535,7 +535,7 @@ extension ConstraintMaker {
     /// Make item.leading greaterThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
     public func leading(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .leading, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
+        return makeConstraint(attribute: .leading, relatedBy: .greaterThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     /// Make item.leading greaterThanOrEqualTo item2.leading * multiplier + constant
@@ -547,7 +547,7 @@ extension ConstraintMaker {
     /// Make item.leading greaterThanOrEqualTo item2.attribute * multiplier - constant
     @discardableResult
     public func leading(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .leading, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
+        return makeConstraint(attribute: .leading, relatedBy: .greaterThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
     }
     
     /// Make item.leading greaterThanOrEqualTo item2.leading * multiplier - constant
@@ -563,7 +563,7 @@ extension ConstraintMaker {
     /// Make item.trailing greaterThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
     public func trailing(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .trailing, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
+        return makeConstraint(attribute: .trailing, relatedBy: .greaterThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     /// Make item.trailing greaterThanOrEqualTo item2.trailing * multiplier + constant
@@ -575,7 +575,7 @@ extension ConstraintMaker {
     /// Make item.trailing greaterThanOrEqualTo item2.attribute * multiplier - constant
     @discardableResult
     public func trailing(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .trailing, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
+        return makeConstraint(attribute: .trailing, relatedBy: .greaterThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
     }
     
     /// Make item.trailing greaterThanOrEqualTo item2.trailing * multiplier - constant
@@ -591,7 +591,7 @@ extension ConstraintMaker {
     /// Make item.width greaterThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
     public func width(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .width, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
+        return makeConstraint(attribute: .width, relatedBy: .greaterThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     /// Make item.width greaterThanOrEqualTo item2.width * multiplier + constant
@@ -603,7 +603,7 @@ extension ConstraintMaker {
     /// Make item.width greaterThanOrEqualTo item2.attribute * multiplier - constant
     @discardableResult
     public func width(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .width, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
+        return makeConstraint(attribute: .width, relatedBy: .greaterThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
     }
     
     /// Make item.width greaterThanOrEqualTo item2.width * multiplier - constant
@@ -619,7 +619,7 @@ extension ConstraintMaker {
     /// Make item.height greaterThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
     public func height(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .height, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
+        return makeConstraint(attribute: .height, relatedBy: .greaterThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     /// Make item.height greaterThanOrEqualTo item2.height * multiplier + constant
@@ -631,7 +631,7 @@ extension ConstraintMaker {
     /// Make item.height greaterThanOrEqualTo item2.attribute * multiplier - constant
     @discardableResult
     public func height(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .height, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
+        return makeConstraint(attribute: .height, relatedBy: .greaterThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
     }
     
     /// Make item.height greaterThanOrEqualTo item2.height * multiplier - constant
@@ -647,7 +647,7 @@ extension ConstraintMaker {
     /// Make item.centerX greaterThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
     public func centerX(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .centerX, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
+        return makeConstraint(attribute: .centerX, relatedBy: .greaterThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     /// Make item.centerX greaterThanOrEqualTo item2.centerX * multiplier + constant
@@ -659,7 +659,7 @@ extension ConstraintMaker {
     /// Make item.centerX greaterThanOrEqualTo item2.attribute * multiplier - constant
     @discardableResult
     public func centerX(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .centerX, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
+        return makeConstraint(attribute: .centerX, relatedBy: .greaterThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
     }
     
     /// Make item.centerX greaterThanOrEqualTo item2.centerX * multiplier - constant
@@ -675,7 +675,7 @@ extension ConstraintMaker {
     /// Make item.centerY greaterThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
     public func centerY(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .centerY, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
+        return makeConstraint(attribute: .centerY, relatedBy: .greaterThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     /// Make item.centerY greaterThanOrEqualTo item2.centerY * multiplier + constant
@@ -687,7 +687,7 @@ extension ConstraintMaker {
     /// Make item.centerY greaterThanOrEqualTo item2.attribute * multiplier - constant
     @discardableResult
     public func centerY(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .centerY, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
+        return makeConstraint(attribute: .centerY, relatedBy: .greaterThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
     }
     
     /// Make item.centerY greaterThanOrEqualTo item2.centerY * multiplier - constant
@@ -703,7 +703,7 @@ extension ConstraintMaker {
     /// Make item.lastBaseline greaterThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
     public func lastBaseline(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .lastBaseline, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
+        return makeConstraint(attribute: .lastBaseline, relatedBy: .greaterThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     /// Make item.lastBaseline greaterThanOrEqualTo item2.lastBaseline * multiplier + constant
@@ -715,7 +715,7 @@ extension ConstraintMaker {
     /// Make item.lastBaseline greaterThanOrEqualTo item2.attribute * multiplier - constant
     @discardableResult
     public func lastBaseline(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .lastBaseline, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
+        return makeConstraint(attribute: .lastBaseline, relatedBy: .greaterThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
     }
     
     /// Make item.lastBaseline greaterThanOrEqualTo item2.lastBaseline * multiplier - constant
@@ -731,7 +731,7 @@ extension ConstraintMaker {
     /// Make item.firstBaseline greaterThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
     public func firstBaseline(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .firstBaseline, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
+        return makeConstraint(attribute: .firstBaseline, relatedBy: .greaterThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     /// Make item.firstBaseline greaterThanOrEqualTo item2.firstBaseline * multiplier + constant
@@ -743,7 +743,7 @@ extension ConstraintMaker {
     /// Make item.firstBaseline greaterThanOrEqualTo item2.attribute * multiplier - constant
     @discardableResult
     public func firstBaseline(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .firstBaseline, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
+        return makeConstraint(attribute: .firstBaseline, relatedBy: .greaterThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
     }
     
     /// Make item.firstBaseline greaterThanOrEqualTo item2.firstBaseline * multiplier - constant
@@ -759,7 +759,7 @@ extension ConstraintMaker {
     /// Make item.centerXWithinMargins greaterThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
     public func centerXWithinMargins(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .centerXWithinMargins, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
+        return makeConstraint(attribute: .centerXWithinMargins, relatedBy: .greaterThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     /// Make item.centerXWithinMargins greaterThanOrEqualTo item2.centerXWithinMargins * multiplier + constant
@@ -771,7 +771,7 @@ extension ConstraintMaker {
     /// Make item.centerXWithinMargins greaterThanOrEqualTo item2.attribute * multiplier - constant
     @discardableResult
     public func centerXWithinMargins(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .centerXWithinMargins, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
+        return makeConstraint(attribute: .centerXWithinMargins, relatedBy: .greaterThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
     }
     
     /// Make item.centerXWithinMargins greaterThanOrEqualTo item2.centerXWithinMargins * multiplier - constant
@@ -787,7 +787,7 @@ extension ConstraintMaker {
     /// Make item.centerYWithinMargins greaterThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
     public func centerYWithinMargins(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .centerYWithinMargins, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
+        return makeConstraint(attribute: .centerYWithinMargins, relatedBy: .greaterThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     /// Make item.centerYWithinMargins greaterThanOrEqualTo item2.centerYWithinMargins * multiplier + constant
@@ -799,7 +799,7 @@ extension ConstraintMaker {
     /// Make item.centerYWithinMargins greaterThanOrEqualTo item2.attribute * multiplier - constant
     @discardableResult
     public func centerYWithinMargins(greaterThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .centerYWithinMargins, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
+        return makeConstraint(attribute: .centerYWithinMargins, relatedBy: .greaterThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
     }
     
     /// Make item.centerYWithinMargins greaterThanOrEqualTo item2.centerYWithinMargins * multiplier - constant
@@ -815,7 +815,7 @@ extension ConstraintMaker {
     /// Make item.left lessThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
     public func left(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .left, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
+        return makeConstraint(attribute: .left, relatedBy: .lessThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     /// Make item.left lessThanOrEqualTo item2.left * multiplier + constant
@@ -827,7 +827,7 @@ extension ConstraintMaker {
     /// Make item.left lessThanOrEqualTo item2.attribute * multiplier - constant
     @discardableResult
     public func left(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .left, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
+        return makeConstraint(attribute: .left, relatedBy: .lessThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
     }
     
     /// Make item.left lessThanOrEqualTo item2.left * multiplier - constant
@@ -843,7 +843,7 @@ extension ConstraintMaker {
     /// Make item.right lessThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
     public func right(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .right, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
+        return makeConstraint(attribute: .right, relatedBy: .lessThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     /// Make item.right lessThanOrEqualTo item2.right * multiplier + constant
@@ -855,7 +855,7 @@ extension ConstraintMaker {
     /// Make item.right lessThanOrEqualTo item2.attribute * multiplier - constant
     @discardableResult
     public func right(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .right, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
+        return makeConstraint(attribute: .right, relatedBy: .lessThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
     }
     
     /// Make item.right lessThanOrEqualTo item2.right * multiplier - constant
@@ -871,7 +871,7 @@ extension ConstraintMaker {
     /// Make item.top lessThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
     public func top(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .top, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
+        return makeConstraint(attribute: .top, relatedBy: .lessThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     /// Make item.top lessThanOrEqualTo item2.top * multiplier + constant
@@ -883,7 +883,7 @@ extension ConstraintMaker {
     /// Make item.top lessThanOrEqualTo item2.attribute * multiplier - constant
     @discardableResult
     public func top(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .top, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
+        return makeConstraint(attribute: .top, relatedBy: .lessThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
     }
     
     /// Make item.top lessThanOrEqualTo item2.top * multiplier - constant
@@ -899,7 +899,7 @@ extension ConstraintMaker {
     /// Make item.bottom lessThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
     public func bottom(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .bottom, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
+        return makeConstraint(attribute: .bottom, relatedBy: .lessThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     /// Make item.bottom lessThanOrEqualTo item2.bottom * multiplier + constant
@@ -911,7 +911,7 @@ extension ConstraintMaker {
     /// Make item.bottom lessThanOrEqualTo item2.attribute * multiplier - constant
     @discardableResult
     public func bottom(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .bottom, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
+        return makeConstraint(attribute: .bottom, relatedBy: .lessThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
     }
     
     /// Make item.bottom lessThanOrEqualTo item2.bottom * multiplier - constant
@@ -927,7 +927,7 @@ extension ConstraintMaker {
     /// Make item.leading lessThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
     public func leading(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .leading, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
+        return makeConstraint(attribute: .leading, relatedBy: .lessThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     /// Make item.leading lessThanOrEqualTo item2.leading * multiplier + constant
@@ -939,7 +939,7 @@ extension ConstraintMaker {
     /// Make item.leading lessThanOrEqualTo item2.attribute * multiplier - constant
     @discardableResult
     public func leading(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .leading, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
+        return makeConstraint(attribute: .leading, relatedBy: .lessThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
     }
     
     /// Make item.leading lessThanOrEqualTo item2.leading * multiplier - constant
@@ -955,7 +955,7 @@ extension ConstraintMaker {
     /// Make item.trailing lessThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
     public func trailing(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .trailing, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
+        return makeConstraint(attribute: .trailing, relatedBy: .lessThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     /// Make item.trailing lessThanOrEqualTo item2.trailing * multiplier + constant
@@ -967,7 +967,7 @@ extension ConstraintMaker {
     /// Make item.trailing lessThanOrEqualTo item2.attribute * multiplier - constant
     @discardableResult
     public func trailing(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .trailing, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
+        return makeConstraint(attribute: .trailing, relatedBy: .lessThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
     }
     
     /// Make item.trailing lessThanOrEqualTo item2.trailing * multiplier - constant
@@ -983,7 +983,7 @@ extension ConstraintMaker {
     /// Make item.width lessThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
     public func width(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .width, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
+        return makeConstraint(attribute: .width, relatedBy: .lessThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     /// Make item.width lessThanOrEqualTo item2.width * multiplier + constant
@@ -995,7 +995,7 @@ extension ConstraintMaker {
     /// Make item.width lessThanOrEqualTo item2.attribute * multiplier - constant
     @discardableResult
     public func width(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .width, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
+        return makeConstraint(attribute: .width, relatedBy: .lessThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
     }
     
     /// Make item.width lessThanOrEqualTo item2.width * multiplier - constant
@@ -1011,7 +1011,7 @@ extension ConstraintMaker {
     /// Make item.height lessThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
     public func height(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .height, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
+        return makeConstraint(attribute: .height, relatedBy: .lessThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     /// Make item.height lessThanOrEqualTo item2.height * multiplier + constant
@@ -1023,7 +1023,7 @@ extension ConstraintMaker {
     /// Make item.height lessThanOrEqualTo item2.attribute * multiplier - constant
     @discardableResult
     public func height(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .height, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
+        return makeConstraint(attribute: .height, relatedBy: .lessThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
     }
     
     /// Make item.height lessThanOrEqualTo item2.height * multiplier - constant
@@ -1039,7 +1039,7 @@ extension ConstraintMaker {
     /// Make item.centerX lessThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
     public func centerX(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .centerX, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
+        return makeConstraint(attribute: .centerX, relatedBy: .lessThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     /// Make item.centerX lessThanOrEqualTo item2.centerX * multiplier + constant
@@ -1051,7 +1051,7 @@ extension ConstraintMaker {
     /// Make item.centerX lessThanOrEqualTo item2.attribute * multiplier - constant
     @discardableResult
     public func centerX(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .centerX, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
+        return makeConstraint(attribute: .centerX, relatedBy: .lessThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
     }
     
     /// Make item.centerX lessThanOrEqualTo item2.centerX * multiplier - constant
@@ -1067,7 +1067,7 @@ extension ConstraintMaker {
     /// Make item.centerY lessThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
     public func centerY(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .centerY, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
+        return makeConstraint(attribute: .centerY, relatedBy: .lessThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     /// Make item.centerY lessThanOrEqualTo item2.centerY * multiplier + constant
@@ -1079,7 +1079,7 @@ extension ConstraintMaker {
     /// Make item.centerY lessThanOrEqualTo item2.attribute * multiplier - constant
     @discardableResult
     public func centerY(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .centerY, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
+        return makeConstraint(attribute: .centerY, relatedBy: .lessThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
     }
     
     /// Make item.centerY lessThanOrEqualTo item2.centerY * multiplier - constant
@@ -1095,7 +1095,7 @@ extension ConstraintMaker {
     /// Make item.lastBaseline lessThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
     public func lastBaseline(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .lastBaseline, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
+        return makeConstraint(attribute: .lastBaseline, relatedBy: .lessThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     /// Make item.lastBaseline lessThanOrEqualTo item2.lastBaseline * multiplier + constant
@@ -1107,7 +1107,7 @@ extension ConstraintMaker {
     /// Make item.lastBaseline lessThanOrEqualTo item2.attribute * multiplier - constant
     @discardableResult
     public func lastBaseline(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .lastBaseline, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
+        return makeConstraint(attribute: .lastBaseline, relatedBy: .lessThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
     }
     
     /// Make item.lastBaseline lessThanOrEqualTo item2.lastBaseline * multiplier - constant
@@ -1123,7 +1123,7 @@ extension ConstraintMaker {
     /// Make item.firstBaseline lessThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
     public func firstBaseline(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .firstBaseline, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
+        return makeConstraint(attribute: .firstBaseline, relatedBy: .lessThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     /// Make item.firstBaseline lessThanOrEqualTo item2.firstBaseline * multiplier + constant
@@ -1135,7 +1135,7 @@ extension ConstraintMaker {
     /// Make item.firstBaseline lessThanOrEqualTo item2.attribute * multiplier - constant
     @discardableResult
     public func firstBaseline(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .firstBaseline, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
+        return makeConstraint(attribute: .firstBaseline, relatedBy: .lessThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
     }
     
     /// Make item.firstBaseline lessThanOrEqualTo item2.firstBaseline * multiplier - constant
@@ -1151,7 +1151,7 @@ extension ConstraintMaker {
     /// Make item.centerXWithinMargins lessThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
     public func centerXWithinMargins(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .centerXWithinMargins, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
+        return makeConstraint(attribute: .centerXWithinMargins, relatedBy: .lessThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     /// Make item.centerXWithinMargins lessThanOrEqualTo item2.centerXWithinMargins * multiplier + constant
@@ -1163,7 +1163,7 @@ extension ConstraintMaker {
     /// Make item.centerXWithinMargins lessThanOrEqualTo item2.attribute * multiplier - constant
     @discardableResult
     public func centerXWithinMargins(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .centerXWithinMargins, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
+        return makeConstraint(attribute: .centerXWithinMargins, relatedBy: .lessThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
     }
     
     /// Make item.centerXWithinMargins lessThanOrEqualTo item2.centerXWithinMargins * multiplier - constant
@@ -1179,7 +1179,7 @@ extension ConstraintMaker {
     /// Make item.centerYWithinMargins lessThanOrEqualTo item2.attribute * multiplier + constant
     @discardableResult
     public func centerYWithinMargins(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .centerYWithinMargins, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
+        return makeConstraint(attribute: .centerYWithinMargins, relatedBy: .lessThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant, priority: priority)
     }
     
     /// Make item.centerYWithinMargins lessThanOrEqualTo item2.centerYWithinMargins * multiplier + constant
@@ -1191,7 +1191,7 @@ extension ConstraintMaker {
     /// Make item.centerYWithinMargins lessThanOrEqualTo item2.attribute * multiplier - constant
     @discardableResult
     public func centerYWithinMargins(lessThanOrEqualTo attribute: NSLayoutAttribute, of item2: Item, multiplyBy multiplier: CGFloat = 1, minus constant: CGFloat, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
-        return makeConstraint(attribute: .centerYWithinMargins, relatedBy: .equal, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
+        return makeConstraint(attribute: .centerYWithinMargins, relatedBy: .lessThanOrEqual, toItem: item2, attribute: attribute, multiplier: multiplier, constant: -constant, priority: priority)
     }
     
     /// Make item.centerYWithinMargins lessThanOrEqualTo item2.centerYWithinMargins * multiplier - constant

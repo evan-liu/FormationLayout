@@ -54,4 +54,9 @@ public final class ItemConstraintMaker: ConstraintMaker {
         return self
     }
     
+    @discardableResult
+    public func makeConstraintToItem(attribute: NSLayoutAttribute, relatedBy relation: NSLayoutRelation, toAttribute attr2: NSLayoutAttribute, multiplier: CGFloat, constant c: CGFloat, priority: UILayoutPriority) -> Self {
+        return makeConstraint(attribute: attribute, relatedBy: relation, toItem: item, attribute: attr2, multiplier: multiplier, constant: c, priority: priority)
+    }
+    
 }
