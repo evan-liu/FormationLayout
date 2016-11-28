@@ -36,10 +36,13 @@ public final class FormationLayout: LayoutManager {
     
     public let rootView: View
     
-    public init(rootView: View, translatesAutoresizing: Bool = false, autoresizing: UIViewAutoresizing? = nil) {
-        rootView.translatesAutoresizingMaskIntoConstraints = translatesAutoresizing
-        if translatesAutoresizing, let autoresizingMask = autoresizing {
-            rootView.autoresizingMask = autoresizingMask
+    public init(rootView: View, translatesAutoresizing: Bool? = nil, autoresizing: UIViewAutoresizing? = nil) {
+        if let translatesAutoresizing = translatesAutoresizing {
+            rootView.translatesAutoresizingMaskIntoConstraints = translatesAutoresizing
+            
+            if translatesAutoresizing, let autoresizingMask = autoresizing {
+                rootView.autoresizingMask = autoresizingMask
+            }
         }
         self.rootView = rootView
     }
