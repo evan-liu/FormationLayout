@@ -14,16 +14,18 @@ import FormationLayout
  */
 
 demo { canvas, icon in
-    var isLoggedIn = true // Set to false to see the changes
+    var isLoggedIn = false
     
     let layout = FormationLayout(rootView: canvas)
     let loggedInLayout = layout.when { isLoggedIn }
     
     layout[icon].centerX(equalTo: canvas)
     loggedInLayout[icon].top(equalTo: canvas, plus: 10)
-    loggedInLayout.not[icon].bottom(equalTo: canvas, minus: 10)
+    loggedInLayout.not[icon].centerY(equalTo: canvas)
     
-    layout.update()
+    layout.update {
+        isLoggedIn = true // Set to false to see the changes
+    }
 }
 
 //: [Home](Home) | [Previous](@previous) | [Next](@next)

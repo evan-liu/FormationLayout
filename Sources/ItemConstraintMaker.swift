@@ -24,9 +24,9 @@
 
 import UIKit
 
+/// Auto Layout Item.
 public protocol Item: class {
-    
-    func prepareAutoLayout(in rootView: UIView)
+    func prepareAutoLayout(in rootView: View)
 }
 
 extension View: Item {
@@ -38,6 +38,7 @@ extension View: Item {
     }
 }
 
+/// 
 public final class ItemConstraintMaker: ConstraintMaker {
     
     let item: Item

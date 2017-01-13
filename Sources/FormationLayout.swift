@@ -24,6 +24,7 @@
 
 import UIKit
 
+/// View type. `UIView` for iOS.
 public typealias View = UIView
 
 public protocol LayoutManager {
@@ -57,7 +58,8 @@ public final class FormationLayout: LayoutManager {
         return condition
     }
     
-    public func update() {
+    public func update(block: () -> Void = {}) {
+        block()
         conditions.forEach { $0.update() }
     }
     
