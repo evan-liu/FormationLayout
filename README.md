@@ -185,11 +185,11 @@ UILayoutPriorityRequired:
 ### CocoaPods 
 
 ```
-pod 'FormationLayout', '~> 0.8.4'
+pod 'FormationLayout', '~> 0.8.5'
 ```
 
 ### Carthage 
 
 ```
-github "evan-liu/FormationLayout" >= 0.8.4
+github "evan-liu/FormationLayout" >= 0.8.5
 ```
