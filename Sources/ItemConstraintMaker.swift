@@ -38,6 +38,15 @@ extension View: Item {
     }
 }
 
+@available(iOS 9.0, *)
+extension UILayoutGuide: Item {
+    public func prepareAutoLayout(in rootView: View) {
+        if owningView == nil {
+            rootView.addLayoutGuide(self)
+        }
+    }
+}
+
 /// 
 public final class ItemConstraintMaker: ConstraintMaker {
     
