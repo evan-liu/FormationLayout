@@ -19,8 +19,10 @@
  - [Anchors](Anchors)
  - [Helpers](Helpers)
  - [Pin](Pin)
+ - [Abreast](Abreast)
  - [Group](Group)
  - [Condition](Condition)
+ - [Priority](Priority)
  
  ----
  [Next](@next)
