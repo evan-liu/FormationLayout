@@ -39,6 +39,13 @@ public struct PinEdges: OptionSet, Hashable {
     public static let topBottom: PinEdges = [.top, .bottom]
     public static let leadingTrailing: PinEdges = [.leading, .trailing]
     
+    public static let topFill: PinEdges = [.top, .leftRight]
+    public static let bottomFill: PinEdges = [.bottom, .leftRight]
+    public static let leftFill: PinEdges = [.left, .topBottom]
+    public static let rightFill: PinEdges = [.right, .topBottom]
+    public static let leadingFill: PinEdges = [.leading, .topBottom]
+    public static let trailingFill: PinEdges = [.trailing, .topBottom]
+    
     public let rawValue: Int
     public init(rawValue: Int) {
         self.rawValue = rawValue
