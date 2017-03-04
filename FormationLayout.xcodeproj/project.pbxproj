@@ -13,6 +13,7 @@
 		2030A2851DE4C7410035E9D8 /* ConstraintMaker+Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2030A2841DE4C7410035E9D8 /* ConstraintMaker+Pin.swift */; };
 		20698A181DEA45B300FCDC3D /* GroupConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20698A171DEA45B300FCDC3D /* GroupConstraintMaker.swift */; };
 		20BB2DA21DE6D836007455B9 /* ConstraintMaker+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BB2DA11DE6D836007455B9 /* ConstraintMaker+Helpers.swift */; };
+		20CE17881E6A8709006DBE5C /* ConstraintMaker+Abreast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE17871E6A8709006DBE5C /* ConstraintMaker+Abreast.swift */; };
 		20DA6D011DE610F100D40F93 /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DA6D001DE610F100D40F93 /* ConstraintMaker.swift */; };
 		52D6D9871BEFF229002C0205 /* FormationLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* FormationLayout.framework */; };
 		52D6D9981BEFF375002C0205 /* FormationLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D9961BEFF375002C0205 /* FormationLayout.swift */; };
@@ -38,6 +39,7 @@
 		20BB2D9F1DE6BAAC007455B9 /* anchors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = anchors.swift; sourceTree = "<group>"; };
 		20BB2DA11DE6D836007455B9 /* ConstraintMaker+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ConstraintMaker+Helpers.swift"; path = "Sources/ConstraintMaker+Helpers.swift"; sourceTree = "<group>"; };
 		20BB2DA31DE6DB7D007455B9 /* helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = helpers.swift; sourceTree = "<group>"; };
+		20CE17871E6A8709006DBE5C /* ConstraintMaker+Abreast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ConstraintMaker+Abreast.swift"; path = "Sources/ConstraintMaker+Abreast.swift"; sourceTree = "<group>"; };
 		20DA6D001DE610F100D40F93 /* ConstraintMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Sources/ConstraintMaker.swift; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* FormationLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FormationLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* FormationLayout-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FormationLayout-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +87,7 @@
 				2030A2821DE4C6830035E9D8 /* ConstraintMaker+Anchors.swift */,
 				20BB2DA11DE6D836007455B9 /* ConstraintMaker+Helpers.swift */,
 				2030A2841DE4C7410035E9D8 /* ConstraintMaker+Pin.swift */,
+				20CE17871E6A8709006DBE5C /* ConstraintMaker+Abreast.swift */,
 				2030A2801DE4BECF0035E9D8 /* ItemConstraintMaker.swift */,
 				20698A171DEA45B300FCDC3D /* GroupConstraintMaker.swift */,
 				20BB2D9E1DE6BA88007455B9 /* Scripts */,
@@ -238,6 +241,7 @@
 			files = (
 				200020381DE96F1100B33F58 /* ConstraintCondition.swift in Sources */,
 				2030A2811DE4BECF0035E9D8 /* ItemConstraintMaker.swift in Sources */,
+				20CE17881E6A8709006DBE5C /* ConstraintMaker+Abreast.swift in Sources */,
 				52D6D9981BEFF375002C0205 /* FormationLayout.swift in Sources */,
 				2030A2851DE4C7410035E9D8 /* ConstraintMaker+Pin.swift in Sources */,
 				20BB2DA21DE6D836007455B9 /* ConstraintMaker+Helpers.swift in Sources */,
