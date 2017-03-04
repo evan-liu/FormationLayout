@@ -29,13 +29,13 @@ extension ConstraintMaker {
     
     /// Make item.top equalTo item2.bottom + constant
     @discardableResult
-    public func below(_ item2: UILayoutSupport, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+    public func below(_ item2: UILayoutSupport, gap constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return makeConstraint(attribute: .top, relatedBy: .equal, toItem: item2, attribute: .bottom, multiplier: 1, constant: constant, priority: priority)
     }
     
     /// Make item.bottom equalTo item2.top - constant
     @discardableResult
-    public func above(_ item2: UILayoutSupport, minus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+    public func above(_ item2: UILayoutSupport, gap constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return makeConstraint(attribute: .bottom, relatedBy: .equal, toItem: item2, attribute: .top, multiplier: 1, constant: -constant, priority: priority)
     }
     
@@ -45,13 +45,13 @@ extension ConstraintMaker {
     
     /// Make item.top equalTo item2.bottom + constant
     @discardableResult
-    public func below(_ item2: Item, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+    public func below(_ item2: Item, gap constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return top(equalTo: .bottom, of: item2, plus: constant, at: priority)
     }
     
     /// Make item.bottom equalTo item2.top - constant
     @discardableResult
-    public func above(_ item2: Item, minus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+    public func above(_ item2: Item, gap constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return bottom(equalTo: .top, of: item2, minus: constant, at: priority)
     }
     
@@ -61,13 +61,13 @@ extension ConstraintMaker {
     
     /// Make item.leading equalTo item2.trailing + constant
     @discardableResult
-    public func after(_ item2: Item, plus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+    public func after(_ item2: Item, gap constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return leading(equalTo: .trailing, of: item2, plus: constant, at: priority)
     }
     
     /// Make item.trailing equalTo item2.leading - constant
     @discardableResult
-    public func before(_ item2: Item, minus constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
+    public func before(_ item2: Item, gap constant: CGFloat = 0, at priority: UILayoutPriority = UILayoutPriorityRequired) -> Self {
         return trailing(equalTo: .leading, of: item2, minus: constant, at: priority)
     }
     
