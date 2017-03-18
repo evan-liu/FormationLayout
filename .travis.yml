@@ -1,0 +1,6 @@
+language: objective-c
+osx_image: xcode8
+script:
+  - set -o pipefail
+  - xcodebuild -scheme "FormationLayout-iOS" -sdk "iphonesimulator" -destination "OS=10.0,name=iPhone 7 Plus" -configuration Release -enableCodeCoverage YES test
+  - bash <(curl -s https://codecov.io/bash)
